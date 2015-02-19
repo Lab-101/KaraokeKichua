@@ -25,8 +25,6 @@ public class MusicListUI : MonoBehaviour {
 			newItem.transform.SetParent(gameObject.transform);	
 
 			newItem.transform.GetChild(0).GetComponent<Text>().text = songs[i].urlSong;
-			newItem.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);// 0f;
-			newItem.GetComponent<RectTransform>().localScale = new Vector3(1f, 1f, 1f);
 
 		}
 		//Destroy (itemPrefab);
