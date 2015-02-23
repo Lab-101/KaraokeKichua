@@ -6,7 +6,6 @@ public class MusicListController : MonoBehaviour {
 	public Player player;
 
 	void Start () {
-		playSongInList (0);
 	}
 
 	void Update () {

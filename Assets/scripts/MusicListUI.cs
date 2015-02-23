@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MusicListUI : MonoBehaviour {
 	public MusicListController musicListController;
@@ -10,6 +11,10 @@ public class MusicListUI : MonoBehaviour {
 
 	void Start () {
 		drawMusicList (musicListController.songsList.songs);
+		if (indexItemSelected < transform.childCount) {
+			selectItemOnEventSystem (transform.GetChild (indexItemSelected).gameObject);
+			musicListController.playSongInList(indexItemSelected);
+		}
 	}
 
 	public void drawMusicList(List<Song> songs){
@@ -36,6 +41,10 @@ public class MusicListUI : MonoBehaviour {
 
 	public int getIndexOfSongInList(GameObject itemSelected){
 		return int.Parse(itemSelected.name.Substring(9));
+	}
+
+	public void selectItemOnEventSystem(GameObject item){
+		EventSystem.current.SetSelectedGameObject (item);
 	}
 
 }
