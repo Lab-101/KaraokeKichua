@@ -2,16 +2,18 @@
 using System.Collections;
 
 public class MusicListController : MonoBehaviour {
-	public MusicListUI musicListUI;
 	public SongsList songsList;
+	public Player player;
 
-	// Use this for initialization
 	void Start () {
-		musicListUI.drawMusicList(songsList.songs);
+		playSongInList (0);
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
-	
+	}
+
+	public void playSongInList(int indexSong){		
+		player.setAudioClipToAudioSource (songsList.songs[indexSong].audioSong);
+		player.play();
 	}
 }
