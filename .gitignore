@@ -1,7 +1,5 @@
 Temp/
 Library/
-Assembly-CSharp-Editor-vs.csproj
-Assembly-CSharp-Editor.csproj
-karaokekichua-csharp.sln
-karaokekichua.sln
-karaokekichua.userprefs
+*.csproj
+*.sln
+*.userprefs
