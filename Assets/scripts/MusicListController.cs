@@ -21,8 +21,7 @@ public class MusicListController : MonoBehaviour {
 
 	}
 
-	private void HandleSongSelected (string selectedSongUrl)
-	{
+	private void HandleSongSelected (string selectedSongUrl)	{
 		AudioClip song = Resources.Load (selectedSongUrl) as AudioClip;
 		PlaySong (song);
 	}
@@ -32,7 +31,7 @@ public class MusicListController : MonoBehaviour {
 		player.play(player.songStartTime, player.songPlayTime);
 	}
 
-	public void playCurrentSong(){		
+	public void PlayCurrentSong(){		
 		player.play(0, player.GetSongLength()+2);
 	}
 

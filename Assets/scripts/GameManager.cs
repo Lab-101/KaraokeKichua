@@ -28,10 +28,13 @@ public class GameManager : MonoBehaviour {
 
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
+		musicList.PlayCurrentSong ();
+		Invoke ("HandleSongPreview", musicList.player.GetSongLength () + 2);
 	}
 
 	private void HandleSongPreview (){
 		gameState = GameState.SelectingSong;
+		musicList.ui.SelectFirstSong ();
 	}
 
 }

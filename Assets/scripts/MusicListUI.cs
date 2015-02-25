@@ -13,14 +13,12 @@ public class MusicListUI : MonoBehaviour {
 
 	public void SetSongs(List<Song> songs) {
 		DrawMusicList (songs);
-		SelectItemOnEventSystem (transform.GetChild (0).gameObject);
 		SelectFirstSong ();
 	}
 
 	private void DrawMusicList(List<Song> songs){
 
 		foreach (Song song in songs){
-
 			Button newItem = Instantiate(itemPrefab) as Button;
 			newItem.name = song.urlSong;
 			newItem.transform.SetParent(gameObject.transform, false);	
@@ -43,9 +41,9 @@ public class MusicListUI : MonoBehaviour {
 		EventSystem.current.SetSelectedGameObject (item);
 	}
 
-	private void SelectFirstSong ()
-	{
+	public void SelectFirstSong (){
 		Button firstSong = buttons[0];
+		SelectItemOnEventSystem (transform.GetChild (0).gameObject);
 		SelectSongInList (firstSong.gameObject);
 	}
 }
