@@ -5,5 +5,4 @@ using System;
 public struct Song {
 
 	public string urlSong;
-	public AudioClip audioSong;
 }

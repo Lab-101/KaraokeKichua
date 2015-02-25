@@ -3,48 +3,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
 
 public class MusicListUI : MonoBehaviour {
-	public MusicListController musicListController;
-	public GameObject itemPrefab;
-	public int indexItemSelected;
 
-	void Start () {
-		drawMusicList (musicListController.songsList.songs);
-		if (indexItemSelected < transform.childCount) {
-			selectItemOnEventSystem (transform.GetChild (indexItemSelected).gameObject);
-			musicListController.playSongInList(indexItemSelected);
-		}
+	public Button itemPrefab;
+	public Action <string> songSelected;
+	private List <Button> buttons = new List<Button>();
+
+	public void SetSongs(List<Song> songs) {
+		DrawMusicList (songs);
+		SelectItemOnEventSystem (transform.GetChild (0).gameObject);
+		SelectFirstSong ();
 	}
 
-	public void drawMusicList(List<Song> songs){
-		int itemCount = songs.Count; 
+	private void DrawMusicList(List<Song> songs){
 
-		for (int i = 0; i < itemCount; i++){
+		foreach (Song song in songs){
 
-			GameObject newItem = Instantiate(itemPrefab) as GameObject;
-			newItem.name = "itemSong_" + i;
+			Button newItem = Instantiate(itemPrefab) as Button;
+			newItem.name = song.urlSong;
 			newItem.transform.SetParent(gameObject.transform, false);	
-
-			newItem.transform.GetChild(0).GetComponent<Text>().text = songs[i].urlSong;
-			newItem.GetComponent<Button>().onClick.AddListener(delegate {
-				selectSongInList(newItem);
+			newItem.transform.GetChild(0).GetComponent<Text>().text = song.urlSong;
+			newItem.onClick.AddListener(delegate {
+				SelectSongInList(newItem.gameObject);
 			});
 
+			buttons.Add(newItem);
 		}
 	}
 	
-	public void selectSongInList(GameObject song){
-		indexItemSelected = getIndexOfSongInList (song);
-		musicListController.playSongInList(indexItemSelected);
+	public void SelectSongInList(GameObject song){
+		if (songSelected != null) {
+			songSelected(song.GetComponent<Button>().name);
+		}
 	}
 
-	public int getIndexOfSongInList(GameObject itemSelected){
-		return int.Parse(itemSelected.name.Substring(9));
-	}
-
-	public void selectItemOnEventSystem(GameObject item){
+	public void SelectItemOnEventSystem(GameObject item){
 		EventSystem.current.SetSelectedGameObject (item);
 	}
 
+	private void SelectFirstSong ()
+	{
+		Button firstSong = buttons[0];
+		SelectSongInList (firstSong.gameObject);
+	}
 }
