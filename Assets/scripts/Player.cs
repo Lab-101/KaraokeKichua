@@ -36,6 +36,4 @@ public class Player : MonoBehaviour {
 		float songLength = audioSource.clip.length;
 		return songLength;
 	}
-
-
 }

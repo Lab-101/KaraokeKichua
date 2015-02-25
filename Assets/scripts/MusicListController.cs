@@ -11,7 +11,6 @@ public class MusicListController : MonoBehaviour {
 	public Action songStarted;
 
 	void Start () {
-
 		playButton.onClick.AddListener(delegate {
 			if(songStarted != null)
 				songStarted();
@@ -37,7 +36,7 @@ public class MusicListController : MonoBehaviour {
 		player.play(0, player.GetSongLength()+2);
 	}
 
-	public void stopSong(){
+	public void StopSong(){
 		player.Stop();
 	}
 

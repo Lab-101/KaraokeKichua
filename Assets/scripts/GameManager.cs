@@ -4,9 +4,8 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 
 	public GameObject viewCurrent;
-	public MusicListController musicListController;
 	public MusicListController musicList;
-	public GameObject playerUI;
+	public KaraokeController karaoke;
 
 	public GameState gameState;
 
@@ -14,51 +13,25 @@ public class GameManager : MonoBehaviour {
 		gameState = GameState.SelectingSong;
 		viewCurrent.SetActive (true);
 		musicList.songStarted += HandleSongStarted;
+		karaoke.songPreview += HandleSongPreview;
 	}
 
 	void Update(){
 		if (gameState == GameState.SelectingSong) {
 			musicList.SetActive();
-			playerUI.SetActive(false);
+			karaoke.SetInactive();
 		} else {
-			musicList.gameObject.SetActive(false);
-			playerUI.SetActive(true);
+			musicList.SetInactive();
+			karaoke.SetActive();
 		}
 	}
 
-	private void HandleSongStarted ()
-	{
+	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
 	}
 
-	public void changeViewPanel(GameObject view){
-		HideView (viewCurrent);
-		ShowView (view);
-		viewCurrent = view;
-	}
-
-	public void ShowView(GameObject view){
-		/*musicListController.stopSong();
-		float songLengthInSeconds = musicListController.player.GetSongLength ()+2;
-
-		if (view.name == "SongSelectionMenuUI") {
-			musicListController.playSongInList (0);
-		} else {			
-			musicListController.playCurrentSong ();
-			//Invoke ("endSongClosesKaraokePanel", songLengthInSeconds);
-		}
-
-		view.SetActive (true);*/
-	}
-
-	public void HideView(GameObject view){
-		view.SetActive (false);
-	}
-
-	public void endSongClosesKaraokePanel (){
-		Debug.Log("Se acabo");
-		musicListController.player.Stop();
-		changeViewPanel (viewCurrent);
+	private void HandleSongPreview (){
+		gameState = GameState.SelectingSong;
 	}
 
 }
