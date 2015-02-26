@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
 		musicList.PlayCurrentSong ();
-		Invoke ("HandleSongPreview", musicList.player.GetSongLength () + 2);
+		Invoke ("HandleSongPreview", musicList.player.GetSongLength () + 1);
 	}
 
 	private void HandleSongPreview (){

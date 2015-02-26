@@ -10,14 +10,21 @@ public class MusicListUI : MonoBehaviour {
 	public Button itemPrefab;
 	public Action <string> songSelected;
 	private List <Button> buttons = new List<Button>();
+	private Button currentButtonSelected;
 
 	public void SetSongs(List<Song> songs) {
 		DrawMusicList (songs);
 		SelectFirstSong ();
 	}
 
-	private void DrawMusicList(List<Song> songs){
+	public void SelectFirstSong (){
+		Button firstSong = buttons[0];
+		SelectItemOnEventSystem (transform.GetChild (0).gameObject);
+		SelectSongInList (firstSong.gameObject);
+	}
 
+	private void DrawMusicList(List<Song> songs){
+		
 		foreach (Song song in songs){
 			Button newItem = Instantiate(itemPrefab) as Button;
 			newItem.name = song.urlSong;
@@ -26,24 +33,28 @@ public class MusicListUI : MonoBehaviour {
 			newItem.onClick.AddListener(delegate {
 				SelectSongInList(newItem.gameObject);
 			});
-
+			
 			buttons.Add(newItem);
 		}
 	}
-	
-	public void SelectSongInList(GameObject song){
+
+	private void SelectSongInList(GameObject song){
+		ChangeStylesOfButtonSelected (song);
+		currentButtonSelected = song.GetComponent<Button>();
 		if (songSelected != null) {
-			songSelected(song.GetComponent<Button>().name);
+			songSelected(currentButtonSelected.name);
 		}
 	}
-
-	public void SelectItemOnEventSystem(GameObject item){
+	
+	private void ChangeStylesOfButtonSelected(GameObject song){		
+		if(currentButtonSelected != null)
+			currentButtonSelected.image.color = Color.white;
+		
+		song.GetComponent<Button>().image.color = Color.red;
+	}
+	
+	private void SelectItemOnEventSystem(GameObject item){
 		EventSystem.current.SetSelectedGameObject (item);
 	}
 
-	public void SelectFirstSong (){
-		Button firstSong = buttons[0];
-		SelectItemOnEventSystem (transform.GetChild (0).gameObject);
-		SelectSongInList (firstSong.gameObject);
-	}
 }
