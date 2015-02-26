@@ -8,11 +8,11 @@ public class Player : MonoBehaviour {
 
 	public AudioSource audioSource;
 
-	public void setAudioClipToAudioSource(AudioClip clip){
+	public void SetAudioClipToAudioSource(AudioClip clip){
 		audioSource.clip = clip;
 	}
 
-	public void play(float startTime, float playTime ){
+	public void Play(float startTime, float playTime ){
 		Stop ();
 		songLengthInSeconds = playTime;
 		audioSource.time = startTime;
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 		if (songLengthInSeconds > 0) {
 			songLengthInSeconds -= Time.deltaTime;
 			if (songLengthInSeconds <= 0) {
-				play(songStartTime, songPlayTime);
+				Play(songStartTime, songPlayTime);
 			}
 		}
 	}

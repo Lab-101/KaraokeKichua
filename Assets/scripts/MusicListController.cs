@@ -27,12 +27,12 @@ public class MusicListController : MonoBehaviour {
 	}
 
 	private void PlaySong (AudioClip song){
-		player.setAudioClipToAudioSource (song);
-		player.play(player.songStartTime, player.songPlayTime);
+		player.SetAudioClipToAudioSource (song);
+		player.Play(player.songStartTime, player.songPlayTime);
 	}
 
 	public void PlayCurrentSong(){		
-		player.play(0, player.GetSongLength()+2);
+		player.Play(0, player.GetSongLength()+2);
 	}
 
 	public void StopSong(){
