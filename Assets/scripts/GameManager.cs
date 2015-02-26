@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void Update(){
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+			Application.Quit(); 
+		
 		if (gameState == GameState.SelectingSong) {
 			musicList.SetActive();
 			karaoke.SetInactive();
