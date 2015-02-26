@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
-	public GameObject viewCurrent;
 	public MusicListController musicList;
 	public KaraokeController karaoke;
 
@@ -11,7 +10,6 @@ public class GameManager : MonoBehaviour {
 
 	void Start () {
 		gameState = GameState.SelectingSong;
-		viewCurrent.SetActive (true);
 		musicList.songStarted += HandleSongStarted;
 		karaoke.songPreview += HandleSongPreview;
 	}
