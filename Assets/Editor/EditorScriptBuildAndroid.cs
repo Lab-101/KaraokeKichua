@@ -4,20 +4,15 @@ using UnityEditor;
 using System;
 using System.Collections.Generic;
 
-class EditorScriptBuild {
+class EditorScriptBuildAndroid {
 
 		static string[] SCENES = FindEnabledEditorScenes();
 		
-		static string APP_NAME = "KaraokeKichua";
-		static string TARGET_DIR = "/Users/Shared/Jenkins/Home/workspace/KaraokeKichua";
+		static string APP_NAME = "KaraokeKichua-Android";
+		static string TARGET_DIR = "/Users/Shared/Jenkins/Home/workspace/KaraokeKichua-Android";
 		
 		[MenuItem ("Custom/CI/Build Mac OS X")]
-		static void PerformMacIphone()
-		{
-			string target_dir = APP_NAME + "";
-		GenericBuild(SCENES, TARGET_DIR + "/" + target_dir, BuildTarget.iPhone,BuildOptions.None);
-		}
-
+		
 		static void PerformAndroid()
 		{
 			string target_dir = APP_NAME + ".apk";
