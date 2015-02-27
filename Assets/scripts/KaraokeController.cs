@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class KaraokeController : MonoBehaviour {	
 	public Button finishButton;
 	public Action songPreview;
+	public Text lyricText;
 	
 	void Start () {
 		finishButton.onClick.AddListener(delegate {

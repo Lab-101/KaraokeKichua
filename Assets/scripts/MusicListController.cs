@@ -9,6 +9,7 @@ public class MusicListController : MonoBehaviour {
 	public MusicListUI ui;
 	public Button playButton;
 	public Action songStarted;
+	public string songLyricsText;
 
 	void Start () {
 		playButton.onClick.AddListener(delegate {
@@ -22,7 +23,9 @@ public class MusicListController : MonoBehaviour {
 	}
 
 	private void HandleSongSelected (string selectedSongUrl)	{
-		AudioClip song = Resources.Load (selectedSongUrl) as AudioClip;
+		AudioClip song = Resources.Load (selectedSongUrl, typeof(AudioClip)) as AudioClip;
+		TextAsset SongLyrics = Resources.Load (selectedSongUrl, typeof(TextAsset)) as TextAsset;
+		songLyricsText = SongLyrics.text;
 		PlaySong (song);
 	}
 
