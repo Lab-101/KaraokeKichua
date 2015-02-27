@@ -8,13 +8,18 @@ public class FacebookManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+
+		loginButton.onClick.AddListener (delegate {
+			HandleLoginSelected();
+		});
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}
-
-
+	
+	private void HandleLoginSelected ()
+	{
+		Debug.Log ("Se presiono el boton de login");
+	}
 }
