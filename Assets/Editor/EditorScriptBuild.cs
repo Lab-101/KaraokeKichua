@@ -8,8 +8,8 @@ class EditorScriptBuild {
 
 		static string[] SCENES = FindEnabledEditorScenes();
 		
-		static string APP_NAME = "KaraokeKichua-Iphone";
-		static string TARGET_DIR = "/Users/Shared/Jenkins/Home/workspace/KaraokeKichua-Iphone";
+		static string APP_NAME = "KaraokeKichua";
+		static string TARGET_DIR = "/Users/Shared/Jenkins/Home/workspace/KaraokeKichua";
 		
 		[MenuItem ("Custom/CI/Build Mac OS X")]
 		static void PerformMacIphone()
