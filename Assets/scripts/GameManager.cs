@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour {
 
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
-		karaoke.lyricText.rectTransform.position = new Vector3(-50f, 0f , 100f);
 		karaoke.lyricText.text = musicList.songLyricsText;
 		musicList.PlayCurrentSong ();
 		Invoke ("HandleSongPreview", musicList.player.GetSongLength () + 1);
