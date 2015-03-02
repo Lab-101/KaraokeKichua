@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
 		gameState = GameState.SelectingSong;
 		musicList.songStarted += HandleSongStarted;
 		karaoke.songPreview += HandleSongPreview;
+		karaoke.songPause += HandleSongPause;
 	}
 
 	void Update(){
@@ -37,6 +39,10 @@ public class GameManager : MonoBehaviour {
 	private void HandleSongPreview (){
 		gameState = GameState.SelectingSong;
 		musicList.ui.SelectFirstSong ();
+	}
+
+	private void HandleSongPause (){
+		musicList.PauseSong ();
 	}
 
 }

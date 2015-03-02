@@ -8,6 +8,16 @@ public class Player : MonoBehaviour {
 
 	public AudioSource audioSource;
 
+	
+	void Update () {
+		if (songLengthInSeconds > 0) {
+			songLengthInSeconds -= Time.deltaTime;
+			if (songLengthInSeconds <= 0) {
+				Play(songStartTime, songPlayTime);
+			}
+		}
+	}
+
 	public void SetAudioClipToAudioSource(AudioClip clip){
 		audioSource.clip = clip;
 	}
@@ -23,17 +33,15 @@ public class Player : MonoBehaviour {
 		audioSource.Stop ();
 	}
 
-	void Update () {
-		if (songLengthInSeconds > 0) {
-			songLengthInSeconds -= Time.deltaTime;
-			if (songLengthInSeconds <= 0) {
-				Play(songStartTime, songPlayTime);
-			}
-		}
-	}
-
 	public float GetSongLength (){
 		float songLength = audioSource.clip.length;
 		return songLength;
+	}
+
+	public void Pause(){		
+		if (audioSource.isPlaying)
+			audioSource.audio.Pause ();
+		else
+			audioSource.Play ();
 	}
 }

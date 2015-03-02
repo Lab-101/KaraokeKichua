@@ -42,6 +42,10 @@ public class MusicListController : MonoBehaviour {
 		player.Stop();
 	}
 
+	public void PauseSong(){
+		player.Pause();
+	}
+
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
