@@ -8,7 +8,8 @@ public class KaraokeController : MonoBehaviour {
 	public Button pauseButton;
 	public Action songPreview;
 	public Action songPause;
-	public Text lyricText;
+	public LyricSyncManager lyricSync;
+	public string songLyricsText;
 	
 	void Start () {
 		finishButton.onClick.AddListener(delegate {
@@ -38,5 +39,9 @@ public class KaraokeController : MonoBehaviour {
 			pauseButton.GetComponentInChildren<Text> ().text = "Continuar";
 		else
 			pauseButton.GetComponentInChildren<Text> ().text = "Pause";
+	}
+
+	public void BeginSubtitles(string songLyric, AudioSource clip){
+		lyricSync.BeginDialogue(songLyric, clip);
 	}
 }

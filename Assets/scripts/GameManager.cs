@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour {
 
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
-		karaoke.lyricText.text = musicList.songLyricsText;
+		karaoke.BeginSubtitles (musicList.songLyricsAsset.text, musicList.player.audioSource);
 		musicList.PlayCurrentSong ();
 		Invoke ("HandleSongPreview", musicList.player.GetSongLength () + 1);
 	}
