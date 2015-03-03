@@ -68,7 +68,7 @@
 <time/>255.0|bueno… pero la voz no la vendemos
 <time/>258.0|puerta… y lo que opinen de nosotros
 <time/>261.0|léeme los labios… a mi me vale madre
-
-tengo pomada pa' to' los dolores
-remedios para toda clase de errores
-también recetas pa' la desilusión...
+<time/>264.0|tengo pomada pa' to' los dolores
+<time/>268.0|remedios para toda clase de errores
+<time/>270.0|también recetas pa' la desilusión...
+<time/>300.0|etceterá...
