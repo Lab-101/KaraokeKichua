@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class LyricSyncManager : MonoBehaviour {
 
-	private const float _RATE = 44100.0f;
-	
 	//Subtitle variables
 	private string[] fileLines;
 	private List<string> subtitleLines = new List<string>();	
@@ -39,6 +37,7 @@ public class LyricSyncManager : MonoBehaviour {
 	}
 	
 	public void BeginDialogue (string songLyricSync, AudioSource clip) {
+		lyricText.text = "";
 		audio = clip;
 		nextSubtitle = 0;
 		nextTrigger = 0;
@@ -84,7 +83,7 @@ public class LyricSyncManager : MonoBehaviour {
 		for(int cnt = 0; cnt < subtitleLines.Count; cnt++){
 			string[] splitTemp = subtitleLines[cnt].Split('|');
 			subtitleTimingStrings.Add(splitTemp[0]);
-			subtitleTimings.Add(float.Parse(CleanTimeString(subtitleTimingStrings[cnt]))-1.0f);
+			subtitleTimings.Add(float.Parse(CleanTimeString(subtitleTimingStrings[cnt])));
 			subtitleText.Add(splitTemp[1]);						
 		}
 	}
@@ -113,8 +112,7 @@ public class LyricSyncManager : MonoBehaviour {
 	void OnGUI () {
 		//Increment nextSubtitle when we hit the associated time point
 		if(nextSubtitle < subtitleText.Count){
-			if(audio.timeSamples/_RATE > subtitleTimings[nextSubtitle]){
-				Debug.Log(audio.timeSamples/_RATE);
+			if(audio.time > subtitleTimings[nextSubtitle]){
 				displaySubtitle = subtitleText[nextSubtitle];
 				lyricText.text = displaySubtitle;
 				nextSubtitle++;
