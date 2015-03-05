@@ -44,4 +44,12 @@ public class Player : MonoBehaviour {
 		else
 			audioSource.Play ();
 	}
+
+	public void SetActive(){
+		gameObject.SetActive (true);
+	}
+	
+	public void SetInactive(){
+		gameObject.SetActive (false);
+	}
 }
