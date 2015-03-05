@@ -6,6 +6,8 @@ using System.Collections;
 public class WriteActivityController : MonoBehaviour {
 	public Button exitButton;
 	public Action songPreview;
+	public PhraseUI phraseUI;
+	public Phrase phrase;
 
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
@@ -13,6 +15,7 @@ public class WriteActivityController : MonoBehaviour {
 				songPreview();
 			}
 		});
+		phraseUI.DrawPhrase (phrase);
 	}
 
 	public void SetActive(){
