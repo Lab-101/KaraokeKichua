@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class PhraseUI : MonoBehaviour {
 	public Button letterVisiblePrefab;
 	public Button letterHidePrefab;
+	private int numberWords;
 	
 	void Start () {
 	}
@@ -14,7 +15,9 @@ public class PhraseUI : MonoBehaviour {
 			foreach(char letter in word.text){
 				createLetter(letter+"", word.isHide);
 			}
-			createLetter("", true);
+			numberWords++;
+			if (numberWords < phrase.words.Count)
+				createLetter("", false);
 		}
 	}
 
@@ -28,6 +31,7 @@ public class PhraseUI : MonoBehaviour {
 	private void createLetter(string letter, bool isLetterHide){
 		Button newItem;
 		newItem = GetPrefab (isLetterHide);
+		newItem.image.color = isLetterHide ? Color.cyan : Color.white;
 		newItem.name = letter;
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).GetComponent<Text>().text = letter;
