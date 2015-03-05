@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using System;
 
-public class FacebookManager : MonoBehaviour {
+public class FacebookController : MonoBehaviour {
 
 	public Button loginButton;
 	public Text loadingMessage;
