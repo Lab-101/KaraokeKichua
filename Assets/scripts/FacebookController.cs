@@ -27,9 +27,14 @@ public class FacebookController : MonoBehaviour {
 	}
 
 	private void HandleInitComplete () {
-		if (!FB.IsLoggedIn)
-			FB.Login(permissions, HandleLoginComplete);
-		HideLoginButton ();
+
+		if (!FB.IsLoggedIn) {
+			FB.Login (permissions, HandleLoginComplete);
+			HideLoginButton ();
+		} else {
+			ShowLoading();
+		}
+
 	}
 
 	private void HandleLoginComplete(FBResult result) {
