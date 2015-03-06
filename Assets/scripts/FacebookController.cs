@@ -8,35 +8,36 @@ public class FacebookController : MonoBehaviour {
 	public Button loginButton;
 	public Text loadingMessage;
 	public Text sessionMessage;
-	private string permissions = "public_profile,email,user_friends";
+	private string permissions = "user_about_me, user_birthday";
 
 	void Start () {
+
+		CheckForSession ();
 
 		loginButton.onClick.AddListener (delegate {
 			HandleLoginSelected();
 		});
 	}
-	
-	void Update () {
 
-	}
-	
-	private void HandleLoginSelected () {
-		ShowLoading ();
-		FB.Init(HandleInitComplete);
+	private void CheckForSession ()
+	{
+		FB.Init (HandleInitComplete);
 	}
 
 	private void HandleInitComplete () {
-
-		if (!FB.IsLoggedIn) {
-			FB.Login (permissions, HandleLoginComplete);
-			HideLoginButton ();
+		
+		if (FB.IsLoggedIn) {
+			ObtainUserInfo ();
 		} else {
-			ShowLoading();
-		}
-
+			ShowLoginButton ();
+		} 
 	}
 
+	private void HandleLoginSelected () {
+		FB.Login (permissions, HandleLoginComplete);
+		HideLoginButton ();
+	}
+	
 	private void HandleLoginComplete(FBResult result) {
 		if (FB.IsLoggedIn) {
 			ObtainUserInfo();
