@@ -4,10 +4,11 @@ using System;
 using System.Collections;
 
 public class WriteActivityController : MonoBehaviour {
+	public Phrase phrase;
 	public Button exitButton;
 	public Action songPreview;
 	public PhraseUI phraseUI;
-	public Phrase phrase;
+	public WordUI wordUI;
 
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
@@ -16,6 +17,7 @@ public class WriteActivityController : MonoBehaviour {
 			}
 		});
 		phraseUI.DrawPhrase (phrase);
+		wordUI.DrawWord (phrase.words [0].text);
 	}
 
 	public void SetActive(){
