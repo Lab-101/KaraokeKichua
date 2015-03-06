@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class WordUI : MonoBehaviour {
@@ -26,7 +26,11 @@ public class WordUI : MonoBehaviour {
 	}
 
 	private string RandomizeWord(string word){
-		return word;
+		List<string> letterList = new List<string> ();
+		foreach (char letter in word.ToCharArray())
+			letterList.Add (letter.ToString());
+		letterList.Shuffle ();
+		return string.Concat(letterList.ToArray());
 	}
 
 }
