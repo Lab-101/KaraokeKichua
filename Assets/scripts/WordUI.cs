@@ -1,28 +1,38 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using System;
 
 public class WordUI : MonoBehaviour {
 
 	public Button letterRandomPrefab;
+	public Action <Button> LetterButtonSelected;
+
+	private List<Button> randomLetters = new List<Button>();
 	
 	void Start () {
+		//randomLetters = new List<Button>();
 	}
-	
+
+
 	public void DrawWord(string word){
 		string randomWord = RandomizeWord(word);
-		
 		foreach(char letter in randomWord){
-			createLetter(letter+"");
+			randomLetters.Add(createLetter(letter+""));
 		}
 	}
 		
-	private void createLetter(string letter){
+	private Button createLetter(string letter){
 		Button newItem;
 		newItem = Instantiate(letterRandomPrefab) as Button;
 		newItem.name = letter;
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).GetComponent<Text>().text = letter;
+		newItem.onClick.AddListener (delegate {
+			if(LetterButtonSelected!=null)
+				LetterButtonSelected(newItem);
+		});
+		return newItem;
 	}
 
 	private string RandomizeWord(string word){
@@ -33,4 +43,8 @@ public class WordUI : MonoBehaviour {
 		return string.Concat(letterList.ToArray());
 	}
 
+	public void deleteLetter(Button letterButton){
+		letterButton.image.color= Color.red;
+		letterButton.interactable = false;
+	}
 }

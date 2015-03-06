@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 
 public class WriteActivityController : MonoBehaviour {
 	public Phrase phrase;
@@ -17,7 +17,16 @@ public class WriteActivityController : MonoBehaviour {
 			}
 		});
 		phraseUI.DrawPhrase (phrase);
-		wordUI.DrawWord (phrase.words [0].text);
+		wordUI.DrawWord (GetNextWord(phrase.words));
+		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
+	}
+
+	public string GetNextWord (List<Word> words){
+		foreach (Word word in words) {
+			if (word.isHide)
+				return word.text;
+		}
+		throw new Exception ("No hay palabras ocultas");
 	}
 
 	public void SetActive(){
@@ -26,5 +35,10 @@ public class WriteActivityController : MonoBehaviour {
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+
+	void HandleLetterButtonSelected (Button letterButton)	{
+		string letter = letterButton.transform.GetChild (0).GetComponent<Text> ().text;
+		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
 	}
 }
