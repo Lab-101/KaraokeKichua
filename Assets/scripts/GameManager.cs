@@ -39,9 +39,9 @@ public class GameManager : MonoBehaviour {
 	}
 
 	private void HandleSongStarted (){
-		musicList.player.SetActive ();
 		gameState = GameState.PlayingSong;
 		karaoke.BeginSubtitles (musicList.songLyricsAsset.text, musicList.player.audioSource);
+		musicList.player.SetActive ();
 		musicList.PlayCurrentSong ();
 		Invoke ("HandleSongWrite", musicList.player.GetSongLength () + 1);
 	}
@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour {
 	private void HandleSongWrite (){
 		gameState = GameState.WriteActivitySong;
 		musicList.player.SetInactive ();
+		writeActivity.Reset (musicList.selectedSong);
 	}
 
 	private void HandleSongPreview (){

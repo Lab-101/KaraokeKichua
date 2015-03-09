@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic; //Needed for Lists
-using System.Text.RegularExpressions; //Needed for some string parsing
+using System.Collections.Generic; 
+using System.Text.RegularExpressions; 
 using UnityEngine.UI;
 
 public class LyricSyncManager : MonoBehaviour {

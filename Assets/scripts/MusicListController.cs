@@ -10,6 +10,7 @@ public class MusicListController : MonoBehaviour {
 	public Button playButton;
 	public Action songStarted;
 	public TextAsset songLyricsAsset;
+	public Song selectedSong;
 
 	void Start () {
 		playButton.onClick.AddListener(delegate {
@@ -19,13 +20,22 @@ public class MusicListController : MonoBehaviour {
 
 		ui.songSelected += HandleSongSelected;
 		ui.SetSongs (songsList.songs);
-
 	}
 
 	private void HandleSongSelected (string selectedSongUrl)	{
 		AudioClip song = Resources.Load (selectedSongUrl, typeof(AudioClip)) as AudioClip;
 		songLyricsAsset = Resources.Load (selectedSongUrl, typeof(TextAsset)) as TextAsset;
 		PlaySong (song);
+		selectedSong = GetSongFrom(selectedSongUrl);
+	}
+
+	private Song GetSongFrom(string selectedSongUrl){
+		foreach (Song song in songsList.songs){
+			if(song.urlSong == selectedSongUrl)
+				return song;
+		}
+		
+		throw new Exception ("Palabra no encontrada");
 	}
 
 	private void PlaySong (AudioClip song){

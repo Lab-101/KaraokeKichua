@@ -4,9 +4,7 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class PhraseUI : MonoBehaviour {
-	public Button letterVisiblePrefab;
-	public Button letterHidePrefab;
-	private int numberWords;
+	public Button letterPrefab;
 	private int currentLetter=0;
 
 	[SerializeField]
@@ -18,13 +16,13 @@ public class PhraseUI : MonoBehaviour {
 
 	public void DrawPhrase(Phrase phrase){
 		int hiddenWordsCounter = 0;
+		int numberWords = 0;
 		foreach (Word word in phrase.words){
 			List<Button> letters = new List<Button>();
 			foreach(char letter in word.text){
 				letters.Add( createLetter(letter+"", word.isHide));
 			}
-			if (word.isHide)
-			{
+			if (word.isHide){
 				hiddenWords.Add(hiddenWordsCounter, letters);
 				hiddenWordsCounter++;
 			}
@@ -34,19 +32,13 @@ public class PhraseUI : MonoBehaviour {
 		}
 	}
 
-	private Button GetPrefab(bool isWordHide){
-		if(isWordHide)
-			return Instantiate(letterHidePrefab) as Button;
-
-		return Instantiate(letterVisiblePrefab) as Button;
-	}
-
 	private Button createLetter(string letter, bool isLetterHide){
 		Button newItem;
-		newItem = GetPrefab (isLetterHide);
+		newItem = Instantiate(letterPrefab) as Button;;
 		newItem.image.color = isLetterHide ? Color.cyan : Color.white;
 		newItem.name = letter;
 		newItem.transform.SetParent(gameObject.transform, false);	
+		newItem.transform.GetChild(0).gameObject.SetActive(!isLetterHide);
 		newItem.transform.GetChild(0).GetComponent<Text>().text = letter;
 		return newItem;
 	}
@@ -62,8 +54,11 @@ public class PhraseUI : MonoBehaviour {
 		return false;
 	}
 
-	private Text GetTextFrom(Button button)
-	{
+	public void ClearHiddenWords(){
+		hiddenWords.Clear ();
+	}
+
+	private Text GetTextFrom(Button button){
 		return button.transform.GetChild(0).GetComponent<Text>() as Text;
 	}
 }
