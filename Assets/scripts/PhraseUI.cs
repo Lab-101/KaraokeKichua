@@ -6,9 +6,10 @@ using System;
 
 public class PhraseUI : MonoBehaviour {
 	public Button letterPrefab;
+	public Action<int> FinishedWord;
 	private int currentLetter = 0;
 	private int currentHiddenWord = 0;
-	public Action<int> FinishedWord;
+	private bool isFirstHiddenWord = true;
 
 	[SerializeField]
 	private Hashtable hiddenWords;
@@ -27,7 +28,11 @@ public class PhraseUI : MonoBehaviour {
 			foreach(char letter in word.text){
 				letters.Add( createLetter(letter+"", word.isHide));
 			}
-			if (word.isHide){
+			if (word.isHide){				
+				if(isFirstHiddenWord){
+					ChangeColorListLetters(letters, Color.red);
+					isFirstHiddenWord = false;
+				}
 				hiddenWords.Add(hiddenWordsCounter, letters);
 				hiddenWordsCounter++;
 			}
@@ -59,11 +64,19 @@ public class PhraseUI : MonoBehaviour {
 				currentHiddenWord++;
 				if (FinishedWord != null){
 					FinishedWord(currentHiddenWord);
+					ChangeColorListLetters(letters, Color.cyan);
+					letters = hiddenWords[currentHiddenWord] as List<Button>;
+					ChangeColorListLetters(letters, Color.red);
 				}
 			}
 			return true;
 		}
 		return false;
+	}
+
+	private void ChangeColorListLetters(List<Button> letters, Color color){
+		foreach (Button letter in letters)
+			letter.image.color = color;
 	}
 
 	public void ClearHiddenWords(){
