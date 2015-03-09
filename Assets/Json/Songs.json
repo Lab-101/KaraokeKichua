@@ -1,0 +1,80 @@
+[
+    {
+        "name": "alejandro sanz no es lo mismo",
+        "0": {
+            "phrase": "Eres tanta gente, que dime",
+            "words": [
+                {
+                    "word": "Eres",
+                    "status": "0"
+                },
+                {
+                    "word": "tanta",
+                    "status": "0"
+                },
+                {
+                    "word": "gente",
+                    "status": "0"
+                },
+                {
+                    "word": "que",
+                    "status": "0"
+                },
+                {
+                    "word": "dime",
+                    "status": "0"
+                }
+            ]
+        },
+        "1": {
+            "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+            "words": [
+                {
+                    "word": "con",
+                    "status": "0"
+                },
+                {
+                    "word": "qui\u00e9n",
+                    "status": "0"
+                },
+                {
+                    "word": "hablo",
+                    "status": "0"
+                },
+                {
+                    "word": "ahora",
+                    "status": "0"
+                }
+            ]
+        },
+        "2": {
+            "phrase": "\u00bfno ves que no sois iguales?",
+            "words": [
+                {
+                    "word": "no",
+                    "status": "0"
+                },
+                {
+                    "word": "ves",
+                    "status": "0"
+                },
+                {
+                    "word": "que",
+                    "status": "0"
+                },
+                {
+                    "word": "no",
+                    "status": "0"
+                },
+                {
+                    "word": "sois",
+                    "status": "0"
+                },
+                {
+                    "word": "iguales",
+                    "status": "0"
+                }
+            ]
+        }
+    }
+]
