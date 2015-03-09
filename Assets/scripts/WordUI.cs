@@ -35,11 +35,22 @@ public class WordUI : MonoBehaviour {
 		return newItem;
 	}
 
-	private string RandomizeWord(string word){
+	private List<string> ParseStringToList (string text){
 		List<string> letterList = new List<string> ();
-		foreach (char letter in word.ToCharArray())
+		foreach (char letter in text.ToCharArray())
 			letterList.Add (letter.ToString());
+
+		return letterList;
+	}
+
+
+	private string RandomizeWord(string word){
+		List<string> letterList = ParseStringToList(word);
 		letterList.Shuffle ();
+		if (letterList.Count > 1)
+			while (word == string.Concat(letterList.ToArray()))
+				letterList.Shuffle ();
+
 		return string.Concat(letterList.ToArray());
 	}
 
