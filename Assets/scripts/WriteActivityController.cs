@@ -17,11 +17,17 @@ public class WriteActivityController : MonoBehaviour {
 			}
 		});
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
+		phraseUI.FinishedWord += HandleFinishedWord;
 	}
 
 	void HandleLetterButtonSelected (Button letterButton)	{
 		string letter = letterButton.transform.GetChild (0).GetComponent<Text> ().text;
 		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
+	}
+
+	void HandleFinishedWord (int indexNextWord)	{
+		DestroyWord ();
+		wordUI.DrawWord (GetNextWord(phrase.words, indexNextWord));
 	}
 	
 	public void SetActive(){
@@ -37,7 +43,7 @@ public class WriteActivityController : MonoBehaviour {
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (song);
 		phraseUI.DrawPhrase (phrase);
-		wordUI.DrawWord (GetNextWord(phrase.words));
+		wordUI.DrawWord (GetNextWord(phrase.words, 0));
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){
@@ -52,10 +58,16 @@ public class WriteActivityController : MonoBehaviour {
 		this.phrase = phrase;
 	}
 
-	private string GetNextWord (List<Word> words){
+	private string GetNextWord (List<Word> words, int hiddenWordNumber){
+		int hiddenWordCounter = 0;
 		foreach (Word word in words) {
-			if (word.isHide)
-				return word.text;
+			if (word.isHide){
+				if (hiddenWordNumber == hiddenWordCounter)
+					return word.text;
+
+				hiddenWordCounter++;
+			}
+				
 		}
 		throw new Exception ("No hay palabras ocultas");
 	}

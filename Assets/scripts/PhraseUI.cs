@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class PhraseUI : MonoBehaviour {
 	public Button letterPrefab;
 	private int currentLetter = 0;
 	private int currentHiddenWord = 0;
+	public Action<int> FinishedWord;
 
 	[SerializeField]
 	private Hashtable hiddenWords;
@@ -55,6 +57,9 @@ public class PhraseUI : MonoBehaviour {
 			if (currentLetter>=letters.Count){
 				currentLetter = 0;
 				currentHiddenWord++;
+				if (FinishedWord != null){
+					FinishedWord(currentHiddenWord);
+				}
 			}
 			return true;
 		}
