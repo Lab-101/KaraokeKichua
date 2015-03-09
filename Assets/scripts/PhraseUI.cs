@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class PhraseUI : MonoBehaviour {
 	public Button letterPrefab;
-	private int currentLetter=0;
+	private int currentLetter = 0;
+	private int currentHiddenWord = 0;
 
 	[SerializeField]
 	private Hashtable hiddenWords;
@@ -16,6 +17,8 @@ public class PhraseUI : MonoBehaviour {
 
 	public void DrawPhrase(Phrase phrase){
 		int hiddenWordsCounter = 0;
+		currentHiddenWord = 0;
+		currentLetter = 0;
 		int numberWords = 0;
 		foreach (Word word in phrase.words){
 			List<Button> letters = new List<Button>();
@@ -44,11 +47,15 @@ public class PhraseUI : MonoBehaviour {
 	}
 
 	public bool CheckCorrectLetter(string letter){
-		List<Button> letters = hiddenWords[0] as List<Button>;
+		List<Button> letters = hiddenWords[currentHiddenWord] as List<Button>;
 		Text buttonText = GetTextFrom (letters [currentLetter]);
 		if (buttonText.text == letter){
 			buttonText.gameObject.SetActive(true);
 			currentLetter++;
+			if (currentLetter>=letters.Count){
+				currentLetter = 0;
+				currentHiddenWord++;
+			}
 			return true;
 		}
 		return false;
