@@ -38,6 +38,10 @@ public class Player : MonoBehaviour {
 		return songLength;
 	}
 
+	public void SetSongLengthInSeconds (float seconds){
+		 songLengthInSeconds = seconds;
+	}
+
 	public void Pause(){		
 		if (audioSource.isPlaying)
 			audioSource.audio.Pause ();

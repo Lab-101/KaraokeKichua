@@ -50,11 +50,14 @@ public class GameManager : MonoBehaviour {
 		gameState = GameState.WriteActivitySong;
 		musicList.player.SetInactive ();
 		writeActivity.Reset (musicList.selectedSong);
+		CancelInvoke ();
 	}
 
 	private void HandleSongPreview (){
 		gameState = GameState.SelectingSong;
 		musicList.player.SetActive();
+		musicList.player.SetSongLengthInSeconds (0.01f);
+
 	}
 
 	private void HandleSongPause (){
