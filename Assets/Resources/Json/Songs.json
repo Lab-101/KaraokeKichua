@@ -36,11 +36,11 @@
 	                },
 	                {
 	                    "text": "qui\u00e9n",
-	                    "isHidden": false
+	                    "isHidden": true
 	                },
 	                {
 	                    "text": "hablo",
-	                    "isHidden": false
+	                    "isHidden": true
 	                },
 	                {
 	                    "text": "ahora",
@@ -61,7 +61,7 @@
 	                },
 	                {
 	                    "text": "que",
-	                    "isHidden": false
+	                    "isHidden": true
 	                },
 	                {
 	                    "text": "no",
@@ -73,7 +73,7 @@
 	                },
 	                {
 	                    "text": "iguales",
-	                    "isHidden": false
+	                    "isHidden": true
 	                }
 	            ]
 	        }

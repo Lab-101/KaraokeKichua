@@ -69,7 +69,7 @@ public class WriteActivityController : MonoBehaviour {
 			}
 				
 		}
-		throw new Exception ("No hay palabras ocultas");
+		Debug.LogWarning ("No hay mas palabras ocultas");
 	}
 
 	private void DestroyPhrase(){
