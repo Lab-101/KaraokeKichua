@@ -9,7 +9,7 @@ public class PhraseUI : MonoBehaviour {
 	public Action<int> FinishedWord;
 	private int currentLetter = 0;
 	private int currentHiddenWord = 0;
-	private bool isFirstHiddenWord = true;
+	public bool isFirstHiddenWord = true;
 
 	[SerializeField]
 	private Hashtable hiddenWords;
@@ -28,9 +28,9 @@ public class PhraseUI : MonoBehaviour {
 			foreach(char letter in word.text){
 				letters.Add( createLetter(letter+"", word.isHide));
 			}
-			if (word.isHide){				
+			if (word.isHide){
 				if(isFirstHiddenWord){
-					ChangeColorListLetters(letters, Color.red);
+					ChangeColorListLetters(letters, new Color32(147, 185, 249, 255));
 					isFirstHiddenWord = false;
 				}
 				hiddenWords.Add(hiddenWordsCounter, letters);
@@ -59,14 +59,17 @@ public class PhraseUI : MonoBehaviour {
 		if (buttonText.text == letter){
 			buttonText.gameObject.SetActive(true);
 			currentLetter++;
-			if (currentLetter>=letters.Count){
+			if (currentLetter >= letters.Count){
 				currentLetter = 0;
 				currentHiddenWord++;
-				if (FinishedWord != null){
+				if (FinishedWord != null){		
+					ChangeColorListLetters(letters, Color.green);
 					FinishedWord(currentHiddenWord);
-					ChangeColorListLetters(letters, Color.cyan);
 					letters = hiddenWords[currentHiddenWord] as List<Button>;
-					ChangeColorListLetters(letters, Color.red);
+					ChangeColorListLetters(letters, new Color32(147, 185, 249, 255));
+				}
+				if (currentHiddenWord >= (hiddenWords.Count - 1)){
+					isFirstHiddenWord = true;
 				}
 			}
 			return true;
