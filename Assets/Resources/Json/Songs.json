@@ -1,0 +1,82 @@
+[
+    {
+        "name": "alejandro sanz no es lo mismo",
+        "phrases":[
+        	{
+	            "phrase": "Eres tanta gente, que dime",
+	            "words": [
+	                {
+	                    "text": "Eres",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "tanta",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "gente",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "que",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "dime",
+	                    "isHidden": false
+	                }
+	            ]
+	        },
+	        {
+	            "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+	            "words": [
+	                {
+	                    "text": "con",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "qui\u00e9n",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "hablo",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "ahora",
+	                    "isHidden": false
+	                }
+	            ]
+	        },
+	        {
+	            "phrase": "\u00bfno ves que no sois iguales?",
+	            "words": [
+	                {
+	                    "text": "no",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "ves",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "que",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "no",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "sois",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "iguales",
+	                    "isHidden": false
+	                }
+	            ]
+	        }
+        ]
+    }
+]
