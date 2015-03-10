@@ -5,30 +5,20 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
-public class JsonSongs : MonoBehaviour {
+public class JsonSongsParser {
 
-	public TextAsset jsonString;
+	private List<Song> songsList; 
 
-	Dictionary <string,object> dict = new Dictionary <string,object>();
+	public string JSONString {
+		set {
+			songsList = CreateSongsList (Json.Deserialize (value)as List<object>);
+		}
+	}
 
-	// Use this for initialization
-	void Start () {
-
-	/*	List<object> songList = Json.Deserialize (jsonString.text)as List<object>; //as List<Dictionary<string, object>>;
-		foreach(Dictionary<string, object> song in songList){
-			Debug.Log("nombre: "+song["name"]);
-			foreach(Dictionary<string, object> phrase in song["phrases"] as List<object>)
-			{
-				Debug.Log("\tfrase: "+phrase["phrase"]);
-				foreach(Dictionary<string, object> word in phrase["words"] as List<object>)
-				{
-					Debug.Log("\t\tpalabra: "+word["word"]);
-					Debug.Log("\t\tvisibilidad: "+word["status"]);
-				}
-			}
-		}*/
-
-		List<Song> songsList = CreateSongsList (Json.Deserialize (jsonString.text)as List<object>);
+	public List<Song> SongsList  {
+		get {
+				return songsList;
+		}
 	}
 
 	private List<Song> CreateSongsList(List<object> songs)
@@ -82,7 +72,6 @@ public class JsonSongs : MonoBehaviour {
 		return wordObject;
 	}
 
-	// Update is called once per frame
 	void Update () {
 	
 	}

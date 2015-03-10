@@ -7,7 +7,7 @@
 	            "words": [
 	                {
 	                    "text": "Eres",
-	                    "isHidden": false
+	                    "isHidden": true
 	                },
 	                {
 	                    "text": "tanta",
@@ -19,7 +19,7 @@
 	                },
 	                {
 	                    "text": "que",
-	                    "isHidden": false
+	                    "isHidden": true
 	                },
 	                {
 	                    "text": "dime",
