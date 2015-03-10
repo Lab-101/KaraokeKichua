@@ -16,9 +16,11 @@ public class WordUI : MonoBehaviour {
 
 
 	public void DrawWord(string word){
-		string randomWord = RandomizeWord(word);
-		foreach(char letter in randomWord){
-			randomLetters.Add(createLetter(letter+""));
+		if (word != null){
+			string randomWord = RandomizeWord(word);
+			foreach(char letter in randomWord){
+				randomLetters.Add(createLetter(letter+""));
+			}
 		}
 	}
 		

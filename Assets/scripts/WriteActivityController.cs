@@ -8,16 +8,19 @@ public class WriteActivityController : MonoBehaviour {
 	public Action songPreview;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
+	public GameObject WinMessage;
 	private Phrase phrase;
 
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
 			if(songPreview != null){
+				WinMessage.SetActive(false);
 				songPreview();
 			}
 		});
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
-		phraseUI.FinishedWord += HandleFinishedWord;
+		phraseUI.WordFinished += HandleWordFinished;
+		phraseUI.PhraseFinished += HandlePhraseFinished;
 	}
 
 	void HandleLetterButtonSelected (Button letterButton)	{
@@ -25,9 +28,14 @@ public class WriteActivityController : MonoBehaviour {
 		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
 	}
 
-	void HandleFinishedWord (int indexNextWord)	{
+	void HandleWordFinished (int indexNextWord)	{
 		DestroyWord ();
 		wordUI.DrawWord (GetNextWord(phrase.words, indexNextWord));
+	}
+
+	void HandlePhraseFinished ()
+	{
+		WinMessage.SetActive(true);
 	}
 	
 	public void SetActive(){
@@ -69,7 +77,7 @@ public class WriteActivityController : MonoBehaviour {
 			}
 				
 		}
-		Debug.LogWarning ("No hay mas palabras ocultas");
+		return null;
 	}
 
 	private void DestroyPhrase(){
