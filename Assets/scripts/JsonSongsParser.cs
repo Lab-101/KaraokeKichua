@@ -68,7 +68,6 @@ public class JsonSongsParser {
 	{
 		Word wordObject = new Word ();
 		wordObject.text = word ["text"].ToString();
-		wordObject.isHide = (bool)word ["isHidden"] ;
 		return wordObject;
 	}
 
