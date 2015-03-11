@@ -79,4 +79,132 @@
 	        }
         ]
     }
+	{
+        "name": "Ariana Grande - Problem (ft Iggy Azalea)",
+        "phrases":[
+        	{
+	            "phrase": "I got!!! One less problem without you!",
+	            "words": [
+	                {
+	                    "text": "I",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "got",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "one",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "less",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "problem",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "without",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "you",
+	                    "isHidden": true
+	                }
+	            ]
+	        },
+	        {
+	            "phrase": "Head in the clouds got no weight on my shoulders",
+	            "words": [
+	                {
+	                    "text": "Head",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "in",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "the",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "clouds",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "got",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "no",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "weight",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "on",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "my",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "shoulders",
+	                    "isHidden": true
+	                }					
+	            ]
+	        },
+	        {
+	            "phrase": "Every time you touch me and say you love me",
+	            "words": [
+	                {
+	                    "text": "Every",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "time",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "you",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "touch",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "me",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "and",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "say",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "you",
+	                    "isHidden": false
+	                },
+	                {
+	                    "text": "love",
+	                    "isHidden": true
+	                },
+	                {
+	                    "text": "me",
+	                    "isHidden": false
+	                }
+	            ]
+	        }
+        ]
+    }
 ]
