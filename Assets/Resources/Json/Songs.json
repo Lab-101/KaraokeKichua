@@ -37,4 +37,51 @@
             }
         ]
     }
+	{
+        "name": "Ariana Grande - Problem (ft Iggy Azalea)",
+        "phrases": [
+            {
+                "phrase": "I got one less problem without you!",
+                "words": [
+                    {
+                        "text": "one"
+                    },
+                    {
+                        "text": "problem"
+                    },
+                    {
+                        "text": "you"
+                    }
+                ]
+            },
+            {
+                "phrase": "Head in the clouds got no weight on my shoulders",
+                "words": [
+                    {
+                        "text": "Head"
+                    },
+                    {
+                        "text": "shoulders"
+                    }
+                ]
+            },
+            {
+                "phrase": "Every time you touch me and say you love me",
+                "words": [
+                    {
+                        "text": "time"
+                    },
+                    {
+                        "text": "touch"
+                    },
+					{
+                        "text": "love"
+                    },
+                    {
+                        "text": "me"
+                    }
+                ]
+            }
+        ]
+    }
 ]
