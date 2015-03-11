@@ -1,21 +1,25 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
 
 public class WriteActivityController : MonoBehaviour {
 	public Button exitButton;
-	public Action songPreview;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
 	public GameObject WinMessage;
 	private Phrase phrase;
 
+	public Action BackActionExecuted {
+		get;
+		set;
+	}
+
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
-			if(songPreview != null){
+			if(BackActionExecuted != null){
 				WinMessage.SetActive(false);
-				songPreview();
+				BackActionExecuted();
 			}
 		});
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;

@@ -6,21 +6,29 @@ using UnityEngine.UI;
 public class KaraokeController : MonoBehaviour {	
 	public Button finishButton;
 	public Button pauseButton;
-	public Action songWrite;
-	public Action songPause;
 	public LyricSyncManager lyricSync;
 	public string songLyricsText;
+
+	public Action SongFinished {
+		get;
+		set;
+	}
+
+	public Action SongPaused {
+		get;
+		set;
+	}
 	
 	void Start () {
 		finishButton.onClick.AddListener(delegate {
-			if(songWrite != null){
-				songWrite();
+			if(SongFinished != null){
+				SongFinished();
 				pauseButton.GetComponentInChildren<Text> ().text = "Pause";
 			}
 		});
 		pauseButton.onClick.AddListener(delegate {
-			if(songPause != null){
-				songPause();
+			if(SongPaused != null){
+				SongPaused();
 				ChangeTextPauseButton();
 			}
 		});

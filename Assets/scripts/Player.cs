@@ -1,32 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Player : MonoBehaviour {
-	public float songStartTime;
-	public float songPlayTime;
+	public AudioSource audioSource;
 	private float songLengthInSeconds;
 
-	public AudioSource audioSource;
-
+	public Action PlayFinished {
+		get;
+		set;
+	}
 	
 	void Update () {
 		if (songLengthInSeconds > 0) {
 			songLengthInSeconds -= Time.deltaTime;
 			if (songLengthInSeconds <= 0) {
-				Play(songStartTime, songPlayTime);
+				if(PlayFinished != null)
+					PlayFinished();
+				//Play(songStartTime, songPlayTime);
 			}
 		}
 	}
 
-	public void SetAudioClipToAudioSource(AudioClip clip){
+	private void SetAudioClipToAudioSource(AudioClip clip){
 		audioSource.clip = clip;
 	}
 
-	public void Play(float startTime, float playTime ){
+	private void Play(float startTime, float playTime ){
 		Stop ();
 		songLengthInSeconds = playTime;
 		audioSource.time = startTime;
 		audioSource.Play ();
+	}
+
+	public void PlaySong(AudioClip song ){
+		SetAudioClipToAudioSource (song);
+		Play (0, GetSongLength () + 2);
+	}
+
+	public void PlayPreview(AudioClip song ){
+		SetAudioClipToAudioSource (song);
+		Play (GameSettings.Instance.songStartTime, GameSettings.Instance.songPlayTime);
 	}
 
 	public void Stop(){

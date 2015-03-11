@@ -13,9 +13,9 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 		gameState = GameState.SelectingSong;
 		musicList.songStarted += HandleSongStarted;
-		karaoke.songWrite += HandleSongWrite;
-		karaoke.songPause += HandleSongPause;
-		writeActivity.songPreview += HandleSongPreview;
+		karaoke.SongFinished += HandleSongFinished;
+		karaoke.SongPaused += HandleSongPaused;
+		writeActivity.BackActionExecuted += HandleBackActionExecuted;
 	}
 
 	void Update(){
@@ -35,32 +35,32 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive();
 			writeActivity.SetActive();
 		}
-
 	}
 
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
 		karaoke.BeginSubtitles (musicList.songLyricsAsset.text, musicList.player.audioSource);
-		musicList.player.SetActive ();
-		musicList.PlayCurrentSong ();
-		Invoke ("HandleSongWrite", musicList.player.GetSongLength () + 1);
+		Invoke ("HandleSongFinished", musicList.player.GetSongLength () + 1);
 	}
 
-	private void HandleSongWrite (){
+	private void HandleSongFinished (){
 		gameState = GameState.WriteActivitySong;
 		musicList.player.SetInactive ();
 		writeActivity.Reset (musicList.selectedSong);
 		CancelInvoke ();
 	}
 
-	private void HandleSongPreview (){
+	private void HandleBackActionExecuted (){
 		gameState = GameState.SelectingSong;
-		musicList.player.SetActive();
-		musicList.player.SetSongLengthInSeconds (0.01f);
-
+		RestartPlayer ();
 	}
 
-	private void HandleSongPause (){
+	private void RestartPlayer(){		
+		musicList.player.SetActive();
+		musicList.player.SetSongLengthInSeconds (0.01f);
+	}
+
+	private void HandleSongPaused (){
 		musicList.PauseSong ();
 	}
 
