@@ -6,13 +6,22 @@ using System;
 
 public class PhraseUI : MonoBehaviour {
 	public Button letterPrefab;
-	public Action<int> FinishedWord;
 	private int currentLetter = 0;
 	private int currentHiddenWord = 0;
 	public bool isFirstHiddenWord = true;
 
 	[SerializeField]
 	private Hashtable hiddenWords;
+
+	public Action<int> WordFinished {
+		get;
+		set;
+	}
+
+	public Action PhraseFinished {
+		get;
+		set;
+	}
 	
 	void Start () {
 		hiddenWords = new Hashtable ();
@@ -62,14 +71,18 @@ public class PhraseUI : MonoBehaviour {
 			if (currentLetter >= letters.Count){
 				currentLetter = 0;
 				currentHiddenWord++;
-				if (FinishedWord != null){		
+				if (WordFinished != null){		
 					ChangeColorListLetters(letters, Color.green);
-					FinishedWord(currentHiddenWord);
+					WordFinished(currentHiddenWord);
+				}
+				if (currentHiddenWord >= hiddenWords.Count) {
+					if (PhraseFinished!=null)
+						PhraseFinished();
+					isFirstHiddenWord = true;
+				}
+				else {
 					letters = hiddenWords[currentHiddenWord] as List<Button>;
 					ChangeColorListLetters(letters, new Color32(147, 185, 249, 255));
-				}
-				if (currentHiddenWord >= (hiddenWords.Count - 1)){
-					isFirstHiddenWord = true;
 				}
 			}
 			return true;
