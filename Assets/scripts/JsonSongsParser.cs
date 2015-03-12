@@ -51,24 +51,22 @@ public class JsonSongsParser {
 	Phrase CreatePhraseObject (Dictionary<string,object> phrase)
 	{
 		Phrase phraseObject = new Phrase ();
-		phraseObject.words = CreateWordsList(phrase["words"] as List<object>);
+		phraseObject.words = CreateWordsList (phrase);
 		return phraseObject;
 	}
 
-	List<Word> CreateWordsList (List<object> words)
+	List<Word> CreateWordsList (Dictionary<string,object> phrase)
 	{
-		List<Word> wordsList = new List<Word> ();
-		foreach(Dictionary<string, object> word in words){
-			wordsList.Add(CreateWordObject(word));
-		}
-		return wordsList;
+		PhraseSplitter splitter = new PhraseSplitter ();
+		splitter.FullPhrase = phrase ["phrase"].ToString ();
+		splitter.HiddenWords = phrase["words"] as List<object>;
+		return splitter.WordsList;
 	}
 
 	Word CreateWordObject (Dictionary<string, object> word)
 	{
 		Word wordObject = new Word ();
 		wordObject.text = word ["text"].ToString();
-		wordObject.isHide = (bool)word ["isHidden"] ;
 		return wordObject;
 	}
 

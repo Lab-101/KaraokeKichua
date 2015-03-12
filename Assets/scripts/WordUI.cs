@@ -14,7 +14,6 @@ public class WordUI : MonoBehaviour {
 		//randomLetters = new List<Button>();
 	}
 
-
 	public void DrawWord(string word){
 		if (word != null){
 			string randomWord = RandomizeWord(word);

@@ -1,82 +1,87 @@
 [
     {
         "name": "alejandro sanz no es lo mismo",
-        "phrases":[
-        	{
-	            "phrase": "Eres tanta gente, que dime",
-	            "words": [
-	                {
-	                    "text": "Eres",
-	                    "isHidden": true
-	                },
-	                {
-	                    "text": "tanta",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "gente",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "que",
-	                    "isHidden": true
-	                },
-	                {
-	                    "text": "dime",
-	                    "isHidden": false
-	                }
-	            ]
-	        },
-	        {
-	            "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-	            "words": [
-	                {
-	                    "text": "con",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "qui\u00e9n",
-	                    "isHidden": true
-	                },
-	                {
-	                    "text": "hablo",
-	                    "isHidden": true
-	                },
-	                {
-	                    "text": "ahora",
-	                    "isHidden": false
-	                }
-	            ]
-	        },
-	        {
-	            "phrase": "\u00bfno ves que no sois iguales?",
-	            "words": [
-	                {
-	                    "text": "no",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "ves",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "que",
-	                    "isHidden": true
-	                },
-	                {
-	                    "text": "no",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "sois",
-	                    "isHidden": false
-	                },
-	                {
-	                    "text": "iguales",
-	                    "isHidden": true
-	                }
-	            ]
-	        }
+        "phrases": [
+            {
+                "phrase": "Eres tanta gente, que dime",
+                "words": [
+                    {
+                        "text": "Eres"
+                    },
+                    {
+                        "text": "tanta"
+                    },
+                    {
+                        "text": "gente"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "words": [
+                    {
+                        "text": "con"
+                    },
+                    {
+                        "text": "qui\u00e9n"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfno ves que no sois iguales?",
+                "words": [
+                    {
+                        "text": "iguales"
+                    }
+                ]
+            }
+        ]
+    }
+	{
+        "name": "Ariana Grande - Problem (ft Iggy Azalea)",
+        "phrases": [
+            {
+                "phrase": "I got one less problem without you!",
+                "words": [
+                    {
+                        "text": "one"
+                    },
+                    {
+                        "text": "problem"
+                    },
+                    {
+                        "text": "you"
+                    }
+                ]
+            },
+            {
+                "phrase": "Head in the clouds got no weight on my shoulders",
+                "words": [
+                    {
+                        "text": "Head"
+                    },
+                    {
+                        "text": "shoulders"
+                    }
+                ]
+            },
+            {
+                "phrase": "Every time you touch me and say you love me",
+                "words": [
+                    {
+                        "text": "time"
+                    },
+                    {
+                        "text": "touch"
+                    },
+					{
+                        "text": "love"
+                    },
+                    {
+                        "text": "me"
+                    }
+                ]
+            }
         ]
     }
 ]
