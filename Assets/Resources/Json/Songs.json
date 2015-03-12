@@ -84,4 +84,42 @@
             }
         ]
     }
+    {
+        "name": "Mirada ardilla. !chan chan chaaann!",
+        "phrases": [
+            {
+                "phrase": "Eres tanta gente, que dime",
+                "words": [
+                    {
+                        "text": "Eres"
+                    },
+                    {
+                        "text": "tanta"
+                    },
+                    {
+                        "text": "gente"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "words": [
+                    {
+                        "text": "con"
+                    },
+                    {
+                        "text": "qui\u00e9n"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfno ves que no sois iguales?",
+                "words": [
+                    {
+                        "text": "iguales"
+                    }
+                ]
+            }
+        ]
+    }
 ]

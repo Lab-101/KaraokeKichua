@@ -109,7 +109,7 @@ public class LyricSyncManager : MonoBehaviour {
 		return digitsOnly.Replace(timeString, "");
 	}
 	
-	void OnGUI () {
+	void Update () {
 		//Increment nextSubtitle when we hit the associated time point
 		if(nextSubtitle < subtitleText.Count){
 			if(audio.time > subtitleTimings[nextSubtitle]){

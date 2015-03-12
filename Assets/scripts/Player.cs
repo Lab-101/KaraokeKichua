@@ -17,7 +17,6 @@ public class Player : MonoBehaviour {
 			if (songLengthInSeconds <= 0) {
 				if(PlayFinished != null)
 					PlayFinished();
-				//Play(songStartTime, songPlayTime);
 			}
 		}
 	}

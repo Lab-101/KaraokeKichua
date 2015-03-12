@@ -7,15 +7,25 @@ using System.Collections.Generic;
 public class MusicListController : MonoBehaviour {
 	public MusicListUI ui;
 	public Button playButton;
-	public Action songStarted;
 	public TextAsset songLyricsAsset;
 	public Song selectedSong;
 	public TextAsset json;
+
 	private AudioClip selectedClip;
 	private List<Song> songsList;
 
 	[SerializeField]
-	public Player player;
+	private Player player;
+
+	public Action SongStarted {
+		get;
+		set;
+	}
+
+	public Action SongFinished {
+		get;
+		set;
+	}
 
 	void Start () {
 		ParseJsonData ();
@@ -23,6 +33,7 @@ public class MusicListController : MonoBehaviour {
 		playButton.onClick.AddListener(HandlePlayActionExecuted);
 
 		ui.songSelected += HandleSongSelected;
+		player.PlayFinished += HandlePlayFinished;
 		ui.SetSongs (songsList);
 	}
 
@@ -32,8 +43,8 @@ public class MusicListController : MonoBehaviour {
 		songsList = parser.SongsList;
 	}
 
-	public void StopSong(){
-		player.Stop();
+	public AudioSource GetAudioSourceFromPlayer(){
+		return player.audioSource;
 	}
 
 	public void PauseSong(){
@@ -45,12 +56,20 @@ public class MusicListController : MonoBehaviour {
 		player.SetSongLengthInSeconds (0.01f);
 	}
 
+	public void PlayPreview(){		
+		player.PlayPreview (selectedClip);
+	}
+
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
 
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+
+	public void SetInactivePlayer(){
+		player.SetInactive ();
 	}
 		
 	private void HandleSongSelected (string selectedSongUrl)	{
@@ -61,11 +80,16 @@ public class MusicListController : MonoBehaviour {
 	}
 	
 	private void HandlePlayActionExecuted(){
-		if(songStarted != null){
-			songStarted();
+		if(SongStarted != null){
+			SongStarted();
 			player.SetActive ();
 			player.PlaySong(selectedClip);
 		}
+	}
+
+	private void HandlePlayFinished (){
+		if (SongFinished != null)
+			SongFinished ();
 	}
 	
 	private Song GetSongFrom(string selectedSongUrl){
