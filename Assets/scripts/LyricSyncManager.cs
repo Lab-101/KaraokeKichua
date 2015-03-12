@@ -14,15 +14,7 @@ public class LyricSyncManager : MonoBehaviour {
 	public List<string> subtitleText = new List<string>();	
 	private int nextSubtitle = 0;	
 	private string displaySubtitle;	
-	//Trigger variables
-	private List<string> triggerLines = new List<string>();	
-	private List<string> triggerTimingStrings = new List<string>();
-	public List<float> triggerTimings = new List<float>();	
-	private List<string> triggers = new List<string>();
-	public List<string> triggerObjectNames = new List<string>();
-	public List<string> triggerMethodNames = new List<string>();
 	private AudioSource audio;
-	private int nextTrigger = 0;
 	public Text lyricText;
 
 	public static LyricSyncManager Instance { get; private set; }
@@ -31,8 +23,7 @@ public class LyricSyncManager : MonoBehaviour {
 		if(Instance != null && Instance != this)
 			Destroy(gameObject);
 		
-		Instance = this;
-		
+		Instance = this;		
 		gameObject.AddComponent<AudioSource>();
 	}
 	
@@ -40,17 +31,14 @@ public class LyricSyncManager : MonoBehaviour {
 		lyricText.text = "";
 		audio = clip;
 		nextSubtitle = 0;
-		nextTrigger = 0;
 		fileLines = songLyricSync.Split('\n');
 		ResetSubtitlesList ();
-		SplitSubtitlesAndTriggers ();
+		SplitSubtitles();
 		SplitOutSubtitles ();
-		SplitOutTriggers ();
 
 		//Set initial subtitle text
 		if(subtitleText[0] != null)
 			displaySubtitle = subtitleText[0];
-
 	}
 
 	private void ResetSubtitlesList(){
@@ -58,24 +46,13 @@ public class LyricSyncManager : MonoBehaviour {
 		subtitleLines = new List<string>();
 		subtitleTimingStrings = new List<string>();
 		subtitleTimings = new List<float>();
-		subtitleText = new List<string>();
-		
-		triggerLines = new List<string>();
-		triggerTimingStrings = new List<string>();
-		triggerTimings = new List<float>();
-		triggers = new List<string>();
-		triggerObjectNames = new List<string>();
-		triggerMethodNames = new List<string>();			
+		subtitleText = new List<string>();		
 	}
 
-	private void SplitSubtitlesAndTriggers(){
-		//Split subtitle and trigger related lines into different lists
-		foreach(string line in fileLines){
-			if(line.Contains("<trigger/>"))
-				triggerLines.Add(line);
-			else
-				subtitleLines.Add(line);
-		}
+	private void SplitSubtitles(){
+		//Split subtitle and related lines into different lists
+		foreach(string line in fileLines)
+			subtitleLines.Add(line);
 	}
 
 	private void SplitOutSubtitles (){
@@ -85,21 +62,6 @@ public class LyricSyncManager : MonoBehaviour {
 			subtitleTimingStrings.Add(splitTemp[0]);
 			subtitleTimings.Add(float.Parse(CleanTimeString(subtitleTimingStrings[cnt])));
 			subtitleText.Add(splitTemp[1]);						
-		}
-	}
-
-	void SplitOutTriggers (){
-		//Split out our trigger elements
-		for(int cnt = 0; cnt < triggerLines.Count; cnt++){
-			string[] splitTemp1 = triggerLines[cnt].Split('|');
-			triggerTimingStrings.Add(splitTemp1[0]);
-			triggerTimings.Add(float.Parse(CleanTimeString(triggerTimingStrings[cnt])));
-			
-			triggers.Add(splitTemp1[1]);
-			string[] splitTemp2 = triggers[cnt].Split('-');
-			splitTemp2[0] = splitTemp2[0].Replace("<trigger/>", "");
-			triggerObjectNames.Add(splitTemp2[0]);
-			triggerMethodNames.Add(splitTemp2[1]);
 		}
 	}
 
@@ -118,6 +80,5 @@ public class LyricSyncManager : MonoBehaviour {
 				nextSubtitle++;
 			}
 		}
-
 	}
 }
