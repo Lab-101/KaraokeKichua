@@ -24,6 +24,7 @@ public class KaraokeController : MonoBehaviour {
 			if(SongFinished != null){
 				SongFinished();
 				pauseButton.GetComponentInChildren<Text> ().text = "Pause";
+				finishButton.gameObject.SetActive(false);
 			}
 		});
 		pauseButton.onClick.AddListener(delegate {
@@ -43,10 +44,14 @@ public class KaraokeController : MonoBehaviour {
 	}
 	
 	private void ChangeTextPauseButton(){
-		if(pauseButton.GetComponentInChildren<Text> ().text == "Pause")
+		if(pauseButton.GetComponentInChildren<Text> ().text == "Pause"){
 			pauseButton.GetComponentInChildren<Text> ().text = "Continuar";
-		else
+			finishButton.gameObject.SetActive(true);
+		}
+		else{
 			pauseButton.GetComponentInChildren<Text> ().text = "Pause";
+			finishButton.gameObject.SetActive(false);
+		}
 	}
 
 	public void BeginSubtitles(string songLyric, AudioSource clip){
