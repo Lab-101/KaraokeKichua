@@ -29,9 +29,7 @@ public class MusicListController : MonoBehaviour {
 
 	void Start () {
 		ParseJsonData ();
-
 		playButton.onClick.AddListener(HandlePlayActionExecuted);
-
 		ui.songSelected += HandleSongSelected;
 		player.PlayFinished += HandlePlayFinished;
 		ui.SetSongs (songsList);

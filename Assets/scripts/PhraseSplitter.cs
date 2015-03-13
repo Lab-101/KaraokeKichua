@@ -12,18 +12,18 @@ public class PhraseSplitter {
 		private get;
 	}
 
-	public List<object> HiddenWords{
+	public List<object> HiddenWords {
 		set;
 		private get;
 	}
 
-	public List<Word> WordsList{
+	public List<Word> WordsList {
 		get {
 			return SplitPhrase();
 		}
 	}
 
-	private List<Word> SplitPhrase(){
+	private List<Word> SplitPhrase() {
 		List<Word> wordsList = new List<Word> ();
 		string[] words = SplitBySpaceAndPunctuations();
 		foreach(string word in words)
@@ -33,8 +33,7 @@ public class PhraseSplitter {
 		return wordsList;
 	}
 
-	private string[] SplitBySpaceAndPunctuations()
-	{
+	private string[] SplitBySpaceAndPunctuations() {
 		List<string> stringList = new List<string> ();
 		Regex regex = new Regex(pattern);
 		if (regex.IsMatch(FullPhrase))
@@ -50,21 +49,18 @@ public class PhraseSplitter {
 		return stringList.ToArray ();
 	}
 
-	private bool IsNullOrWhiteSpace(string aString)
-	{
+	private bool IsNullOrWhiteSpace(string aString)	{
 		return string.IsNullOrEmpty (aString) || aString.Trim ().Length == 0;
 	}
 
-	private Word CreateWord(string word)
-	{
+	private Word CreateWord(string word) {
 		Word wordObject = new Word();
 		wordObject.text = word;
-		wordObject.isHide = IsHiddenWord(word);
+		wordObject.isHidden = IsHiddenWord(word);
 		return wordObject;
 	}
 
-	private bool IsHiddenWord (string word)
-	{
+	private bool IsHiddenWord (string word) {
 		foreach(Dictionary<string, object> hiddenWord in HiddenWords)
 			if (word == (string)hiddenWord["text"])
 				return true;

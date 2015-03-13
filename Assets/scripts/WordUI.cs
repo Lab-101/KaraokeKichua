@@ -10,10 +10,6 @@ public class WordUI : MonoBehaviour {
 
 	private List<Button> randomLetters = new List<Button>();
 	
-	void Start () {
-		//randomLetters = new List<Button>();
-	}
-
 	public void DrawWord(string word){
 		if (word != null){
 			string randomWord = RandomizeWord(word);
@@ -21,6 +17,11 @@ public class WordUI : MonoBehaviour {
 				randomLetters.Add(createLetter(letter+""));
 			}
 		}
+	}
+
+	public void deleteLetter(Button letterButton){
+		letterButton.image.color= Color.red;
+		letterButton.interactable = false;
 	}
 		
 	private Button createLetter(string letter){
@@ -53,10 +54,5 @@ public class WordUI : MonoBehaviour {
 				letterList.Shuffle ();
 
 		return string.Concat(letterList.ToArray());
-	}
-
-	public void deleteLetter(Button letterButton){
-		letterButton.image.color= Color.red;
-		letterButton.interactable = false;
 	}
 }

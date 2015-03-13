@@ -21,17 +21,6 @@ public class Player : MonoBehaviour {
 		}
 	}
 
-	private void SetAudioClipToAudioSource(AudioClip clip){
-		audioSource.clip = clip;
-	}
-
-	private void Play(float startTime, float playTime ){
-		Stop ();
-		songLengthInSeconds = playTime;
-		audioSource.time = startTime;
-		audioSource.Play ();
-	}
-
 	public void PlaySong(AudioClip song ){
 		SetAudioClipToAudioSource (song);
 		Play (0, GetSongLength () + 2);
@@ -46,27 +35,38 @@ public class Player : MonoBehaviour {
 		audioSource.Stop ();
 	}
 
-	public float GetSongLength (){
-		float songLength = audioSource.clip.length;
-		return songLength;
-	}
-
-	public void SetSongLengthInSeconds (float seconds){
-		 songLengthInSeconds = seconds;
-	}
-
 	public void Pause(){		
 		if (audioSource.isPlaying)
 			audioSource.audio.Pause ();
 		else
 			audioSource.Play ();
 	}
-
+	
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+
+	public void SetSongLengthInSeconds (float seconds){
+		songLengthInSeconds = seconds;
+	}
+
+	public float GetSongLength (){
+		float songLength = audioSource.clip.length;
+		return songLength;
+	}
+
+	private void SetAudioClipToAudioSource(AudioClip clip){
+		audioSource.clip = clip;
+	}
+	
+	private void Play(float startTime, float playTime ){
+		Stop ();
+		songLengthInSeconds = playTime;
+		audioSource.time = startTime;
+		audioSource.Play ();
 	}
 }

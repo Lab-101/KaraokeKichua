@@ -56,5 +56,4 @@ public class MusicListUI : MonoBehaviour {
 	private void SelectItemOnEventSystem(GameObject item){
 		EventSystem.current.SetSelectedGameObject (item);
 	}
-
 }

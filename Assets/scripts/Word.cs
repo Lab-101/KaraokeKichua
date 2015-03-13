@@ -6,5 +6,5 @@ using System;
 public class Word {
 	public string text;
 	public Sprite image;
-	public Boolean isHide;
+	public Boolean isHidden;
 }

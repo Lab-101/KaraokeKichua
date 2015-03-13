@@ -6,8 +6,10 @@ using System;
 
 public class PhraseUI : MonoBehaviour {
 	public Button letterPrefab;
-	private int currentLetter = 0;
-	private int currentHiddenWord = 0;
+	private int currentLetter;
+	private int currentHiddenWord;
+	private int hiddenWordsCounter;
+	private int numberWords;
 	public bool isFirstHiddenWord = true;
 
 	[SerializeField]
@@ -28,27 +30,55 @@ public class PhraseUI : MonoBehaviour {
 	}
 
 	public void DrawPhrase(Phrase phrase){
-		int hiddenWordsCounter = 0;
-		currentHiddenWord = 0;
-		currentLetter = 0;
-		int numberWords = 0;
+		ResetPhraseCounters ();
 		foreach (Word word in phrase.words){
 			List<Button> letters = new List<Button>();
 			foreach(char letter in word.text){
-				letters.Add( createLetter(letter+"", word.isHide));
+				letters.Add( createLetter(letter+"", word.isHidden));
 			}
-			if (word.isHide){
-				if(isFirstHiddenWord){
-					ChangeColorListLetters(letters, new Color32(147, 185, 249, 255));
-					isFirstHiddenWord = false;
-				}
-				hiddenWords.Add(hiddenWordsCounter, letters);
-				hiddenWordsCounter++;
-			}
-			numberWords++;
-			if (numberWords < phrase.words.Count)
-				createLetter("", false);
+			if (word.isHidden)
+				AddHiddenWordInList(letters);
+			AddSpacesAfterWord(phrase.words);
 		}
+	}
+
+	public bool CheckCorrectLetter(string letter){
+		List<Button> letters = hiddenWords[currentHiddenWord] as List<Button>;
+		Text buttonText = GetTextFrom (letters [currentLetter]);
+		if (buttonText.text == letter){
+			buttonText.gameObject.SetActive(true);
+			currentLetter++;
+			if (currentLetter >= letters.Count)
+				SetNextHiddenWord(letters);
+			return true;
+		}
+		return false;
+	}
+
+	public void ClearHiddenWords(){
+		hiddenWords.Clear ();
+	}
+
+	private void ResetPhraseCounters(){		
+		hiddenWordsCounter = 0;
+		currentHiddenWord = 0;
+		currentLetter = 0;
+		numberWords = 0;
+	}
+
+	private void AddHiddenWordInList(List<Button> hiddenWordButtons){
+		if(isFirstHiddenWord){
+			ChangeColorListLetters(hiddenWordButtons, new Color32(147, 185, 249, 255));
+			isFirstHiddenWord = false;
+		}
+		hiddenWords.Add(hiddenWordsCounter, hiddenWordButtons);
+		hiddenWordsCounter++;
+	}
+
+	private void AddSpacesAfterWord(List<Word> wordList){
+		numberWords++;
+		if (numberWords < wordList.Count)
+			createLetter("", false);
 	}
 
 	private Button createLetter(string letter, bool isLetterHide){
@@ -62,41 +92,37 @@ public class PhraseUI : MonoBehaviour {
 		return newItem;
 	}
 
-	public bool CheckCorrectLetter(string letter){
-		List<Button> letters = hiddenWords[currentHiddenWord] as List<Button>;
-		Text buttonText = GetTextFrom (letters [currentLetter]);
-		if (buttonText.text == letter){
-			buttonText.gameObject.SetActive(true);
-			currentLetter++;
-			if (currentLetter >= letters.Count){
-				currentLetter = 0;
-				currentHiddenWord++;
-				if (WordFinished != null){		
-					ChangeColorListLetters(letters, Color.green);
-					WordFinished(currentHiddenWord);
-				}
-				if (currentHiddenWord >= hiddenWords.Count) {
-					if (PhraseFinished!=null)
-						PhraseFinished();
-					isFirstHiddenWord = true;
-				}
-				else {
-					letters = hiddenWords[currentHiddenWord] as List<Button>;
-					ChangeColorListLetters(letters, new Color32(147, 185, 249, 255));
-				}
-			}
-			return true;
-		}
-		return false;
+	private void SetNextHiddenWord(List<Button> letterButton){
+		currentLetter = 0;
+		currentHiddenWord++;
+		PaintWordFinished(letterButton);
+		if (currentHiddenWord >= hiddenWords.Count)
+			FinishGame();
+		else
+			PaintNextWordInPhrase(letterButton);
 	}
 
+	private void PaintWordFinished(List<Button> finishedWordButtons){
+		if (WordFinished != null){		
+			ChangeColorListLetters(finishedWordButtons, Color.green);
+			WordFinished(currentHiddenWord);
+		}
+	}
+
+	private void PaintNextWordInPhrase(List<Button> netxWordButtons){
+		netxWordButtons = hiddenWords[currentHiddenWord] as List<Button>;
+		ChangeColorListLetters(netxWordButtons, new Color32(147, 185, 249, 255));
+	}
+
+	private void FinishGame(){
+		if (PhraseFinished!=null)
+			PhraseFinished();
+		isFirstHiddenWord = true;
+	}
+		
 	private void ChangeColorListLetters(List<Button> letters, Color color){
 		foreach (Button letter in letters)
 			letter.image.color = color;
-	}
-
-	public void ClearHiddenWords(){
-		hiddenWords.Clear ();
 	}
 
 	private Text GetTextFrom(Button button){

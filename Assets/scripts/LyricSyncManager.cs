@@ -26,6 +26,17 @@ public class LyricSyncManager : MonoBehaviour {
 		Instance = this;		
 		gameObject.AddComponent<AudioSource>();
 	}
+
+	void Update () {
+		//Increment nextSubtitle when we hit the associated time point
+		if(nextSubtitle < subtitleText.Count){
+			if(audio.time > subtitleTimings[nextSubtitle]){
+				displaySubtitle = subtitleText[nextSubtitle];
+				lyricText.text = displaySubtitle;
+				nextSubtitle++;
+			}
+		}
+	}
 	
 	public void BeginDialogue (string songLyricSync, AudioSource clip) {
 		lyricText.text = "";
@@ -69,16 +80,5 @@ public class LyricSyncManager : MonoBehaviour {
 	private string CleanTimeString(string timeString)	{
 		Regex digitsOnly = new Regex(@"[^\d+(\.\d+)*$]");
 		return digitsOnly.Replace(timeString, "");
-	}
-	
-	void Update () {
-		//Increment nextSubtitle when we hit the associated time point
-		if(nextSubtitle < subtitleText.Count){
-			if(audio.time > subtitleTimings[nextSubtitle]){
-				displaySubtitle = subtitleText[nextSubtitle];
-				lyricText.text = displaySubtitle;
-				nextSubtitle++;
-			}
-		}
 	}
 }

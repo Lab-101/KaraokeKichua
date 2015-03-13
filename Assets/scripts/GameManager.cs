@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour {
 			musicList.RestartPlayer ();
 			musicList.PlayPreview();
 		}
-
 	}
 
 	private void HandleBackActionExecuted (){
@@ -63,5 +62,4 @@ public class GameManager : MonoBehaviour {
 	private void HandleSongPaused (){
 		musicList.PauseSong ();
 	}
-
 }

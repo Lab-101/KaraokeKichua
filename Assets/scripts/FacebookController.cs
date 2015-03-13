@@ -11,21 +11,17 @@ public class FacebookController : MonoBehaviour {
 	private string permissions = "user_about_me, user_birthday";
 
 	void Start () {
-
 		CheckForSession ();
-
 		loginButton.onClick.AddListener (delegate {
 			HandleLoginSelected();
 		});
 	}
 
-	private void CheckForSession ()
-	{
+	private void CheckForSession (){
 		FB.Init (HandleInitComplete);
 	}
 
-	private void HandleInitComplete () {
-		
+	private void HandleInitComplete () {		
 		if (FB.IsLoggedIn) {
 			ObtainUserInfo ();
 		} else {
@@ -66,8 +62,7 @@ public class FacebookController : MonoBehaviour {
 		FB.API("/me?fields=first_name", Facebook.HttpMethod.GET, HandleUserInfoObtained);
 	}
 
-	private void HandleUserInfoObtained(FBResult result)
-	{
+	private void HandleUserInfoObtained(FBResult result){
 		if (result.Error != null)
 			Debug.Log("Error Response:\n" + result.Error);
 		else if (!FB.IsLoggedIn)
@@ -78,8 +73,7 @@ public class FacebookController : MonoBehaviour {
 		}
 	}
 
-	private void ShowLoggedInMessage(string message)
-	{
+	private void ShowLoggedInMessage(string message){
 		HideLoginButton ();
 		sessionMessage.gameObject.SetActive (true);
 		sessionMessage.text = sessionMessage.text + " " + message;

@@ -5,5 +5,5 @@ using System.Collections.Generic;
 [Serializable]
 public struct Song {
 	public string urlSong;
-	public List<Phrase> pharses;
+	public List<Phrase> phrases;
 }

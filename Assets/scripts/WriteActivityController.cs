@@ -27,18 +27,17 @@ public class WriteActivityController : MonoBehaviour {
 		phraseUI.PhraseFinished += HandlePhraseFinished;
 	}
 
-	void HandleLetterButtonSelected (Button letterButton)	{
+	void HandleLetterButtonSelected (Button letterButton) {
 		string letter = letterButton.transform.GetChild (0).GetComponent<Text> ().text;
 		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
 	}
 
 	void HandleWordFinished (int indexNextWord)	{
 		DestroyWord ();
-		wordUI.DrawWord (GetNextWord(phrase.words, indexNextWord));
+		wordUI.DrawWord (GetHiddenWord(phrase.words, indexNextWord));
 	}
 
-	void HandlePhraseFinished ()
-	{
+	void HandlePhraseFinished () {
 		WinMessage.SetActive(true);
 	}
 	
@@ -55,13 +54,13 @@ public class WriteActivityController : MonoBehaviour {
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (song);
 		phraseUI.DrawPhrase (phrase);
-		wordUI.DrawWord (GetNextWord(phrase.words, 0));
+		wordUI.DrawWord (GetHiddenWord(phrase.words, 0));
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){
-		if (song.pharses.Count != 0) {
-			int randomIndex = UnityEngine.Random.Range(0, song.pharses.Count);
-			return song.pharses[randomIndex];		
+		if (song.phrases.Count != 0) {
+			int randomIndex = UnityEngine.Random.Range(0, song.phrases.Count);
+			return song.phrases[randomIndex];		
 		}
 		throw new Exception ("La cancion no tiene frases");
 	}
@@ -70,16 +69,16 @@ public class WriteActivityController : MonoBehaviour {
 		this.phrase = phrase;
 	}
 
-	private string GetNextWord (List<Word> words, int hiddenWordNumber){
+	private string GetHiddenWord (List<Word> words, int hiddenWordNumber){
 		int hiddenWordCounter = 0;
 		foreach (Word word in words) {
-			if (word.isHide){
+			if (word.isHidden){
 				if (hiddenWordNumber == hiddenWordCounter)
 					return word.text;
 
 				hiddenWordCounter++;
 			}
-				
+
 		}
 		return null;
 	}
@@ -96,5 +95,4 @@ public class WriteActivityController : MonoBehaviour {
 			Destroy (child.gameObject);
 		}
 	}
-
 }

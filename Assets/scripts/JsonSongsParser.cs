@@ -34,7 +34,7 @@ public class JsonSongsParser {
 	{
 		Song songObject = new Song ();
 		songObject.urlSong = song ["name"].ToString();
-		songObject.pharses = CreatePhrasesList(song["phrases"] as List<object>);
+		songObject.phrases = CreatePhrasesList(song["phrases"] as List<object>);
 		return songObject;
 	}
 
@@ -68,10 +68,6 @@ public class JsonSongsParser {
 		Word wordObject = new Word ();
 		wordObject.text = word ["text"].ToString();
 		return wordObject;
-	}
-
-	void Update () {
-	
 	}
 }
 
