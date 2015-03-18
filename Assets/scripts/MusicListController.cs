@@ -74,23 +74,39 @@ public class MusicListController : MonoBehaviour {
 	
 	private void HandleSongSelected (string selectedSongUrl)	{
 		selectedClip = Resources.Load (selectedSongUrl, typeof(AudioClip)) as AudioClip;
-		subtitleList = GetSubtitlesFormFile (selectedSongUrl);
+		GetSubtitlesFormFile (selectedSongUrl);
 		selectedSong = GetSongFrom(selectedSongUrl);
 		player.PlayPreview (selectedClip);
 	}
 	
-	private List<string> GetSubtitlesFormFile (string songName){
-		List<string> list = new List<string>();
-		using (StreamReader reader = new StreamReader("Assets/Resources/" + songName + ".ass"))
+	private void GetSubtitlesFormFile (string songName){
+		string songNamePath = GetDirectionBySystemOperative (songName);
+		SubtitleLoader loader = new SubtitleLoader ();
+		loader.SubtitlesObtained += HandleSubtitlesObtained;
+		loader.URL = songNamePath;
+		StartCoroutine (loader.Start());
+	}
+
+	private void HandleSubtitlesObtained(string subtitle)
+	{
+		subtitleList = new List<string>();
+		foreach(string line in subtitle.Split('\n')) 
 		{
-			string line;
-			while ((line = reader.ReadLine()) != null)
+			if(line.Contains("Dialogue: "))
 			{
-				if(line.Contains("Dialogue: "))
-					list.Add(line);
+				Debug.Log(line);
+				subtitleList.Add(line);
 			}
 		}
-		return list;
+	}
+	
+	private string GetDirectionBySystemOperative (string name){
+		if (Application.platform == RuntimePlatform.Android) 
+			return Application.streamingAssetsPath + "/" + name + ".ass";
+		else if (Application.platform == RuntimePlatform.IPhonePlayer) 
+			return Application.streamingAssetsPath + "/" + name + ".ass";
+		else 
+			return "file://" + Application.streamingAssetsPath + "/" + name + ".ass";
 	}
 	
 	private void HandlePlayActionExecuted(){
@@ -113,5 +129,18 @@ public class MusicListController : MonoBehaviour {
 		}
 		
 		throw new Exception ("Palabra no encontrada");
+	}
+}
+
+class SubtitleLoader {
+	public string URL;
+	public Action<string> SubtitlesObtained;
+
+	public IEnumerator Start() {
+		Debug.Log (URL);
+		WWW www = new WWW(URL);
+		yield return www;
+		if (SubtitlesObtained != null)
+			SubtitlesObtained(www.text);
 	}
 }

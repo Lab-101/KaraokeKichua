@@ -69,6 +69,7 @@ public class LyricSyncManager : MonoBehaviour {
 						subtitleFromLine += ",";
 					subtitleFromLine += splitTemp[i];
 				}
+				GetTimeForWord(subtitleFromLine);
 				string cleanedSubtitle = CleanSubtitleString(subtitleFromLine);
 				subtitleText.Add(cleanedSubtitle);
 				subtitleFromLine = "";
@@ -91,5 +92,27 @@ public class LyricSyncManager : MonoBehaviour {
 			return subtitle.Substring(1);
 		}
 		return subtitle;
+	}
+
+	private void GetTimeForWord(string subtitle)	{
+		List<string> stringList = new List<string> ();
+		Regex regex = new Regex(@" ?\{.*?\}");
+		if (regex.IsMatch(subtitle))
+		{
+			Match match = regex.Match(subtitle);
+			
+			foreach (Capture capture in match.Groups[0].Captures)
+			{
+				Debug.Log (capture.Value);
+			}
+		}
+	/*
+		Regex digitsOnly = new Regex(@" ?\{.*?\}");
+		Match subtitleMatch = digitsOnly.Matches(subtitle);
+		//foreach (Match m in subtitleMatch) {
+		Debug.Log (m.Groups[1].Value);
+		//}
+		//Debug.Log (subtitle);*/
+		//return subtitle;
 	}
 }
