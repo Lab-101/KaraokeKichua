@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Collections.Generic; 
 using UnityEngine.UI;
 
 public class KaraokeController : MonoBehaviour {
@@ -8,12 +9,12 @@ public class KaraokeController : MonoBehaviour {
 	public Button pauseButton;
 	public LyricSyncManager lyricSync;
 	public string songLyricsText;
-
+	
 	public Action SongFinished {
 		get;
 		set;
 	}
-
+	
 	public Action SongPaused {
 		get;
 		set;
@@ -33,7 +34,7 @@ public class KaraokeController : MonoBehaviour {
 			}
 		});
 	}
-
+	
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
@@ -41,20 +42,20 @@ public class KaraokeController : MonoBehaviour {
 	public void SetInactive(){
 		gameObject.SetActive (false);
 	}
-
+	
 	private void ChangePauseState(){
 		if(pauseButton.GetComponentInChildren<Text> ().text == "Pausa")
 			ChangePauseElements("Continuar", true);
 		else
 			ChangePauseElements("Pausa", false);
 	}
-
+	
 	private void ChangePauseElements(string pauseState, bool isVisibleFinishButton){
 		pauseButton.GetComponentInChildren<Text> ().text = pauseState;
 		finishButton.gameObject.SetActive(isVisibleFinishButton);
 	}
-
-	public void BeginSubtitles(string songLyric, AudioSource clip){
+	
+	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
 		lyricSync.BeginDialogue(songLyric, clip);
 	}
 }

@@ -6,10 +6,9 @@ public class GameManager : MonoBehaviour {
 
 	public MusicListController musicList;
 	public KaraokeController karaoke;
-	public WriteActivityController writeActivity;
-
+	public WriteActivityController writeActivity;	
 	public GameState gameState;
-
+	
 	void Start () {
 		gameState = GameState.SelectingSong;
 		musicList.SongStarted += HandleSongStarted;
@@ -18,7 +17,7 @@ public class GameManager : MonoBehaviour {
 		karaoke.SongPaused += HandleSongPaused;
 		writeActivity.BackActionExecuted += HandleBackActionExecuted;
 	}
-
+	
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit(); 
@@ -37,12 +36,12 @@ public class GameManager : MonoBehaviour {
 			writeActivity.SetActive();
 		}
 	}
-
+	
 	private void HandleSongStarted (){
 		gameState = GameState.PlayingSong;
-		karaoke.BeginSubtitles (musicList.songLyricsAsset.text, musicList.GetAudioSourceFromPlayer());
+		karaoke.BeginSubtitles (musicList.subtitleList, musicList.GetAudioSourceFromPlayer());
 	}
-
+	
 	private void HandleSongFinished (){
 		if (gameState == GameState.PlayingSong) {
 			gameState = GameState.WriteActivitySong;
@@ -53,12 +52,12 @@ public class GameManager : MonoBehaviour {
 			musicList.PlayPreview();
 		}
 	}
-
+	
 	private void HandleBackActionExecuted (){
 		gameState = GameState.SelectingSong;
 		musicList.RestartPlayer ();
 	}
-
+	
 	private void HandleSongPaused (){
 		musicList.PauseSong ();
 	}

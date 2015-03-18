@@ -5,18 +5,18 @@ using System.Text.RegularExpressions;
 using UnityEngine.UI;
 
 public class LyricSyncManager : MonoBehaviour {
-
+	
 	//Subtitle variables
 	private string[] fileLines;
-	private List<string> subtitleLines = new List<string>();	
-	private List<string> subtitleTimingStrings = new List<string>();
+	private List<string> subtitleLines = new List<string>();
 	public List<float> subtitleTimings = new List<float>();	
 	public List<string> subtitleText = new List<string>();	
 	private int nextSubtitle = 0;	
 	private string displaySubtitle;	
 	private AudioSource audio;
+	private string subtitleFromLine;
 	public Text lyricText;
-
+	
 	public static LyricSyncManager Instance { get; private set; }
 	
 	void Awake(){
@@ -26,7 +26,7 @@ public class LyricSyncManager : MonoBehaviour {
 		Instance = this;		
 		gameObject.AddComponent<AudioSource>();
 	}
-
+	
 	void Update () {
 		//Increment nextSubtitle when we hit the associated time point
 		if(nextSubtitle < subtitleText.Count){
@@ -38,47 +38,58 @@ public class LyricSyncManager : MonoBehaviour {
 		}
 	}
 	
-	public void BeginDialogue (string songLyricSync, AudioSource clip) {
+	public void BeginDialogue (List<string> songLyricSync, AudioSource clip) {
 		lyricText.text = "";
 		audio = clip;
 		nextSubtitle = 0;
-		fileLines = songLyricSync.Split('\n');
 		ResetSubtitlesList ();
-		SplitSubtitles();
+		subtitleLines = songLyricSync;
 		SplitOutSubtitles ();
-
 		//Set initial subtitle text
 		if(subtitleText[0] != null)
 			displaySubtitle = subtitleText[0];
 	}
-
+	
 	private void ResetSubtitlesList(){
 		//Reset all lists
 		subtitleLines = new List<string>();
-		subtitleTimingStrings = new List<string>();
 		subtitleTimings = new List<float>();
 		subtitleText = new List<string>();		
-	}
-
-	private void SplitSubtitles(){
-		//Split subtitle and related lines into different lists
-		foreach(string line in fileLines)
-			subtitleLines.Add(line);
 	}
 
 	private void SplitOutSubtitles (){
 		//Split out our subtitle elements splitTemp[0]= timeNumber splitTemp[1]= Text
 		for(int cnt = 0; cnt < subtitleLines.Count; cnt++){
-			string[] splitTemp = subtitleLines[cnt].Split('|');
-			subtitleTimingStrings.Add(splitTemp[0]);
-			subtitleTimings.Add(float.Parse(CleanTimeString(subtitleTimingStrings[cnt])));
-			subtitleText.Add(splitTemp[1]);						
+			string[] splitTemp = subtitleLines[cnt].Split(',');
+			if (splitTemp[9] != "") {
+				subtitleTimings.Add(ParseTimeToSeconds(splitTemp[1]));
+				for (int i = 9; i < splitTemp.Length; i++)
+				{
+					if (i>9)
+						subtitleFromLine += ",";
+					subtitleFromLine += splitTemp[i];
+				}
+				string cleanedSubtitle = CleanSubtitleString(subtitleFromLine);
+				subtitleText.Add(cleanedSubtitle);
+				subtitleFromLine = "";
+			}
 		}
 	}
 
-	//Remove all characters that are not part of the timing float: (<time/>num)
-	private string CleanTimeString(string timeString)	{
-		Regex digitsOnly = new Regex(@"[^\d+(\.\d+)*$]");
-		return digitsOnly.Replace(timeString, "");
+	//Set time to seconds
+	private float ParseTimeToSeconds(string time){
+		string[] timeArray = time.Split(':');
+		float seconds = float.Parse(timeArray [0]) * 3600 + float.Parse(timeArray [1]) * 60 + float.Parse(timeArray [2]);
+		return seconds;
+	}
+	
+	//Remove all characters in brackets
+	private string CleanSubtitleString(string subtitle)	{
+		Regex digitsOnly = new Regex(@" ?\{.*?\}");
+		if(subtitle.Contains("}")){
+			subtitle = digitsOnly.Replace (subtitle, " ");
+			return subtitle.Substring(1);
+		}
+		return subtitle;
 	}
 }
