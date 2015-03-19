@@ -37,9 +37,7 @@ public class WriteActivityController : MonoBehaviour {
 
 	void HandleWordFinished (int indexNextWord)	{
 		DestroyWord ();
-		Word nextWord = GetHiddenWord (phrase.words, indexNextWord);
-		wordUI.DrawWord (nextWord.text);
-		imageHiddenWord.sprite = nextWord.image;
+		GetHiddenWordByIndex (indexNextWord);
 	}
 
 	void HandlePhraseFinished () {
@@ -59,9 +57,15 @@ public class WriteActivityController : MonoBehaviour {
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (song);
 		phraseUI.DrawPhrase (phrase);
-		Word nextWord = GetHiddenWord (phrase.words, 0);
-		wordUI.DrawWord (nextWord.text);
-		imageHiddenWord.sprite = nextWord.image;
+		GetHiddenWordByIndex (0);
+	}
+
+	void GetHiddenWordByIndex (int indexHiddenWord)	{
+		Word nextWord = GetHiddenWordByIndex (phrase.words, indexHiddenWord);
+		if (nextWord != null) {
+			wordUI.DrawWord (nextWord.text);
+			imageHiddenWord.sprite = nextWord.image;
+		}
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){
@@ -76,7 +80,7 @@ public class WriteActivityController : MonoBehaviour {
 		this.phrase = phrase;
 	}
 
-	private Word GetHiddenWord (List<Word> words, int hiddenWordNumber){
+	private Word GetHiddenWordByIndex (List<Word> words, int hiddenWordNumber){
 		int hiddenWordCounter = 0;
 		foreach (Word word in words) {
 			if (word.isHidden){
