@@ -115,6 +115,7 @@ public class MusicListController : MonoBehaviour {
 	}
 	
 	private string GetDirectionBySystemOperative (string name){
+		Debug.Log ("Este es el streaming!!! " + Application.streamingAssetsPath + " en " + Application.platform);
 		if (Application.platform == RuntimePlatform.Android) 
 			return Application.streamingAssetsPath + "/" + name + ".ass";
 		else if (Application.platform == RuntimePlatform.IPhonePlayer) 

@@ -10,12 +10,14 @@ public class LyricSyncManager : MonoBehaviour {
 	private string[] fileLines;
 	private List<string> subtitleLines = new List<string>();
 	public List<float> subtitleTimings = new List<float>();	
-	public List<string> subtitleText = new List<string>();	
+	public List<string> subtitleText = new List<string>();
+	public List<string> subtitleTimesByWord = new List<string>();
 	private int nextSubtitle = 0;	
-	private string displaySubtitle;	
+	private string displaySubtitle;
 	private AudioSource audio;
 	private string subtitleFromLine;
 	public Text lyricText;
+	public Regex regex = new Regex(@" ?\{.*?\}");
 	
 	public static LyricSyncManager Instance { get; private set; }
 	
@@ -54,14 +56,15 @@ public class LyricSyncManager : MonoBehaviour {
 		//Reset all lists
 		subtitleLines = new List<string>();
 		subtitleTimings = new List<float>();
-		subtitleText = new List<string>();		
+		subtitleText = new List<string>();
+		subtitleTimesByWord = new List<string>();
 	}
 
 	private void SplitOutSubtitles (){
 		//Split out our subtitle elements splitTemp[0]= timeNumber splitTemp[1]= Text
 		for(int cnt = 0; cnt < subtitleLines.Count; cnt++){
 			string[] splitTemp = subtitleLines[cnt].Split(',');
-			if (splitTemp[9] != "") {
+			if (!IsSubtitleEmpty(splitTemp[9])) {
 				subtitleTimings.Add(ParseTimeToSeconds(splitTemp[1]));
 				for (int i = 9; i < splitTemp.Length; i++)
 				{
@@ -69,9 +72,10 @@ public class LyricSyncManager : MonoBehaviour {
 						subtitleFromLine += ",";
 					subtitleFromLine += splitTemp[i];
 				}
-				GetTimeForWord(subtitleFromLine);
+				string wordTimeByPhrase = GetTimeForWord(subtitleFromLine);
 				string cleanedSubtitle = CleanSubtitleString(subtitleFromLine);
 				subtitleText.Add(cleanedSubtitle);
+				subtitleTimesByWord.Add(wordTimeByPhrase);
 				subtitleFromLine = "";
 			}
 		}
@@ -86,33 +90,33 @@ public class LyricSyncManager : MonoBehaviour {
 	
 	//Remove all characters in brackets
 	private string CleanSubtitleString(string subtitle)	{
-		Regex digitsOnly = new Regex(@" ?\{.*?\}");
 		if(subtitle.Contains("}")){
-			subtitle = digitsOnly.Replace (subtitle, " ");
+			subtitle = regex.Replace (subtitle, " ");
 			return subtitle.Substring(1);
 		}
 		return subtitle;
 	}
 
-	private void GetTimeForWord(string subtitle)	{
-		List<string> stringList = new List<string> ();
-		Regex regex = new Regex(@" ?\{.*?\}");
-		if (regex.IsMatch(subtitle))
-		{
-			Match match = regex.Match(subtitle);
-			
-			foreach (Capture capture in match.Groups[0].Captures)
-			{
-				Debug.Log (capture.Value);
+	private string GetTimeForWord(string subtitle) {
+		int wordCounter = 1;
+		string wordTime = "";
+		string[] subtitleArray = subtitle.Split(' ');
+		foreach(string numberWord in subtitleArray){
+			if (regex.IsMatch(numberWord)) {
+				wordTime += regex.Match(numberWord).Groups[0].Value.Replace (@"{\k", "").Replace("}", "");
+				wordTime += SetSpacesBetweenNumbers(wordCounter++, subtitleArray.Length);
 			}
 		}
-	/*
-		Regex digitsOnly = new Regex(@" ?\{.*?\}");
-		Match subtitleMatch = digitsOnly.Matches(subtitle);
-		//foreach (Match m in subtitleMatch) {
-		Debug.Log (m.Groups[1].Value);
-		//}
-		//Debug.Log (subtitle);*/
-		//return subtitle;
+		return wordTime;
+	}
+
+	private string SetSpacesBetweenNumbers(int counter, int arraySize){
+		if (counter < arraySize)
+			return " ";
+		return "";
+	}
+
+	private bool IsSubtitleEmpty(string subtitle){
+		return subtitle.Length <= 1 || subtitle == "" || subtitle == null;
 	}
 }
