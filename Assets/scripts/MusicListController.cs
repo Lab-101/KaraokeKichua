@@ -14,6 +14,7 @@ public class MusicListController : MonoBehaviour {
 	public List<string> subtitleList;
 	
 	private AudioClip selectedClip;
+	private float timeSelectedClip;
 	private List<Song> songsList;
 	
 	[SerializeField]
@@ -47,8 +48,17 @@ public class MusicListController : MonoBehaviour {
 		return player.audioSource;
 	}
 	
-	public void PauseSong(){
-		player.Pause();
+	
+	public void PauseSong(){		
+		if (player.IsPlaying()) {
+			Debug.Log("From Resume to Pause");
+			player.Pause ();
+			player.SetInactive();
+		} else {
+			player.SetActive();
+			player.Resume();
+			Debug.Log("From Pause to Resume");
+		}
 	}
 	
 	public void RestartPlayer(){		
@@ -70,6 +80,10 @@ public class MusicListController : MonoBehaviour {
 	
 	public void SetInactivePlayer(){
 		player.SetInactive ();
+	}
+
+	public void SetActivePlayer(){
+		player.SetActive ();
 	}
 	
 	private void HandleSongSelected (string selectedSongUrl)	{

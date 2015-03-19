@@ -59,6 +59,6 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void HandleSongPaused (){
-		musicList.PauseSong ();
+		musicList.PauseSong ();	
 	}
 }

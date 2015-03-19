@@ -5,6 +5,7 @@ using System;
 public class Player : MonoBehaviour {
 	public AudioSource audioSource;
 	private float songLengthInSeconds;
+	private float timeAudioSource;
 
 	public Action PlayFinished {
 		get;
@@ -14,7 +15,8 @@ public class Player : MonoBehaviour {
 	void Update () {
 		if (songLengthInSeconds > 0) {
 			songLengthInSeconds -= Time.deltaTime;
-			if (songLengthInSeconds <= 0) {
+
+			if (songLengthInSeconds <= 0 ) {
 				if(PlayFinished != null)
 					PlayFinished();
 			}
@@ -31,17 +33,6 @@ public class Player : MonoBehaviour {
 		Play (GameSettings.Instance.songStartTime, GameSettings.Instance.songPlayTime);
 	}
 
-	public void Stop(){
-		audioSource.Stop ();
-	}
-
-	public void Pause(){		
-		if (audioSource.isPlaying)
-			audioSource.audio.Pause ();
-		else
-			audioSource.Play ();
-	}
-	
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
@@ -54,7 +45,22 @@ public class Player : MonoBehaviour {
 		songLengthInSeconds = seconds;
 	}
 
-	public float GetSongLength (){
+
+	public bool IsPlaying ()	{
+		return audioSource.isPlaying;
+	}
+
+	public void Pause (){
+		timeAudioSource = audioSource.time;
+		audioSource.Pause ();
+	}
+
+	public void Resume (){
+		audioSource.time = timeAudioSource;
+		audioSource.Play ();
+	}
+	
+	private float GetSongLength (){
 		float songLength = audioSource.clip.length;
 		return songLength;
 	}
@@ -64,7 +70,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	private void Play(float startTime, float playTime ){
-		Stop ();
+		audioSource.Stop ();
 		songLengthInSeconds = playTime;
 		audioSource.time = startTime;
 		audioSource.Play ();
