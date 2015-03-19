@@ -8,7 +8,6 @@ using System.IO;
 public class MusicListController : MonoBehaviour {
 	public MusicListUI ui;
 	public Button playButton;
-	public TextAsset songLyricsAsset;
 	public Song selectedSong;
 	public TextAsset json;
 	public List<string> subtitleList;

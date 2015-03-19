@@ -7,7 +7,6 @@ public class WordUI : MonoBehaviour {
 
 	public Button letterRandomPrefab;
 	public Action <Button> LetterButtonSelected;
-
 	private List<Button> randomLetters = new List<Button>();
 	
 	public void DrawWord(string word){

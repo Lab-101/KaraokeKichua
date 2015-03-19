@@ -57,6 +57,8 @@ public class PhraseSplitter {
 		Word wordObject = new Word();
 		wordObject.text = word;
 		wordObject.isHidden = IsHiddenWord(word);
+		if(wordObject.isHidden)
+			wordObject.image = GetImageFrom (wordObject.text);
 		return wordObject;
 	}
 
@@ -65,5 +67,9 @@ public class PhraseSplitter {
 			if (word == (string)hiddenWord["text"])
 				return true;
 		return false;
+	}
+
+	private Sprite GetImageFrom(string word){
+		return Resources.Load ("Images/"+word, typeof(Sprite)) as Sprite;
 	}
 }

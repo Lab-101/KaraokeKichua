@@ -10,6 +10,9 @@ public class WriteActivityController : MonoBehaviour {
 	public GameObject WinMessage;
 	private Phrase phrase;
 
+	[SerializeField]
+	private Image imageHiddenWord;
+
 	public Action BackActionExecuted {
 		get;
 		set;
@@ -34,7 +37,9 @@ public class WriteActivityController : MonoBehaviour {
 
 	void HandleWordFinished (int indexNextWord)	{
 		DestroyWord ();
-		wordUI.DrawWord (GetHiddenWord(phrase.words, indexNextWord));
+		Word nextWord = GetHiddenWord (phrase.words, indexNextWord);
+		wordUI.DrawWord (nextWord.text);
+		imageHiddenWord.sprite = nextWord.image;
 	}
 
 	void HandlePhraseFinished () {
@@ -54,7 +59,9 @@ public class WriteActivityController : MonoBehaviour {
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (song);
 		phraseUI.DrawPhrase (phrase);
-		wordUI.DrawWord (GetHiddenWord(phrase.words, 0));
+		Word nextWord = GetHiddenWord (phrase.words, 0);
+		wordUI.DrawWord (nextWord.text);
+		imageHiddenWord.sprite = nextWord.image;
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){
@@ -69,12 +76,12 @@ public class WriteActivityController : MonoBehaviour {
 		this.phrase = phrase;
 	}
 
-	private string GetHiddenWord (List<Word> words, int hiddenWordNumber){
+	private Word GetHiddenWord (List<Word> words, int hiddenWordNumber){
 		int hiddenWordCounter = 0;
 		foreach (Word word in words) {
 			if (word.isHidden){
 				if (hiddenWordNumber == hiddenWordCounter)
-					return word.text;
+					return word;
 
 				hiddenWordCounter++;
 			}
