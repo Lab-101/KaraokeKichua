@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -7,33 +7,61 @@ public class GameManager : MonoBehaviour {
 	public MusicListController musicList;
 	public KaraokeController karaoke;
 	public WriteActivityController writeActivity;	
+	public ResultsController results;
 	public GameState gameState;
+
+	private bool IsSelectingSong 
+	{
+		get{
+			return gameState == GameState.SelectingSong;
+		}
+	}
+
+	private bool IsPlayingSong
+	{
+		get{
+			return gameState == GameState.PlayingSong;
+		}
+	}
+
+	private bool IsShowingResults {
+		get{
+			return gameState == GameState.ShowingResults;
+		}
+	}
 	
 	void Start () {
 		gameState = GameState.SelectingSong;
 		musicList.SongStarted += HandleSongStarted;
 		musicList.SongFinished += HandleSongFinished;
-		karaoke.SongFinished += HandleSongFinished;
+		karaoke.SongFinished += HandleFinishSongButtonSelected;
 		karaoke.SongPaused += HandleSongPaused;
 		writeActivity.BackActionExecuted += HandleBackActionExecuted;
+		writeActivity.ActivityFinished += HandleActivityFinished;
+		results.BackActionExecuted += HandleBackActionExecuted;
+		results.RetryActionExecuted += HandleRetryActionExecuted;
 	}
 	
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit(); 
 		
-		if (gameState == GameState.SelectingSong) {
-			musicList.SetActive();
-			karaoke.SetInactive();
-			writeActivity.SetInactive();
-		} else if (gameState == GameState.PlayingSong){
-			musicList.SetInactive();
-			karaoke.SetActive();
-			writeActivity.SetInactive();
+		if (IsSelectingSong) {
+			musicList.SetActive ();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			results.SetInactive();
+		} else if (IsPlayingSong) {
+			musicList.SetInactive ();
+			karaoke.SetActive ();
+			writeActivity.SetInactive ();
+		} else if (IsShowingResults){
+			musicList.SetInactive ();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			results.SetActive();
 		} else {
-			musicList.SetInactive();
-			karaoke.SetInactive();
-			writeActivity.SetActive();
+			karaoke.SetInactive ();
 		}
 	}
 	
@@ -43,21 +71,40 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void HandleSongFinished (){
-		if (gameState == GameState.PlayingSong) {
-			gameState = GameState.WriteActivitySong;			
-			musicList.RestartPlayer ();
-			writeActivity.Reset (musicList.selectedSong);
-		} else if(gameState == GameState.SelectingSong){			
+
+		if (IsPlayingSong) {
+			StartWriteActivity();
+		} else if(IsSelectingSong){			
 			musicList.RestartPlayer ();
 		}
+	}
+
+	private void HandleFinishSongButtonSelected (){
+		if (IsPlayingSong) {
+			StartWriteActivity ();
+		}
+	}
+
+	private void StartWriteActivity ()
+	{
+		gameState = GameState.WriteActivitySong;
+		musicList.SetInactive ();
+		writeActivity.Reset (musicList.selectedSong);
+	}
+	
+	private void HandleSongPaused (){
+		musicList.PauseSong ();
 	}
 	
 	private void HandleBackActionExecuted (){
 		gameState = GameState.SelectingSong;
 		musicList.RestartPlayer ();
 	}
-	
-	private void HandleSongPaused (){
-		musicList.PauseSong ();	
+
+	private void HandleActivityFinished() {
+		gameState = GameState.ShowingResults;
+	}
+	private void HandleRetryActionExecuted() {
+		gameState = GameState.WriteActivitySong;
 	}
 }

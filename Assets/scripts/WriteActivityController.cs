@@ -7,7 +7,7 @@ public class WriteActivityController : MonoBehaviour {
 	public Button exitButton;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
-	public GameObject WinMessage;
+	public Button resultsButton;
 	private Phrase phrase;
 
 	[SerializeField]
@@ -18,13 +18,26 @@ public class WriteActivityController : MonoBehaviour {
 		set;
 	}
 
+	public Action ActivityFinished {
+		get;
+		set;
+	}
+
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
 			if(BackActionExecuted != null){
-				WinMessage.SetActive(false);
+				resultsButton.gameObject.SetActive(false);
 				BackActionExecuted();
 			}
 		});
+
+		resultsButton.onClick.AddListener (delegate {
+			if(ActivityFinished != null){
+				resultsButton.gameObject.SetActive(false);
+				ActivityFinished();
+			}
+		});
+
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
@@ -41,7 +54,7 @@ public class WriteActivityController : MonoBehaviour {
 	}
 
 	void HandlePhraseFinished () {
-		WinMessage.SetActive(true);
+		resultsButton.gameObject.SetActive(true);
 	}
 	
 	public void SetActive(){
@@ -53,6 +66,7 @@ public class WriteActivityController : MonoBehaviour {
 	}
 
 	public void Reset(Song song){
+		SetActive ();
 		DestroyPhrase ();
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (song);
@@ -66,6 +80,9 @@ public class WriteActivityController : MonoBehaviour {
 			wordUI.DrawWord (nextWord.text);
 			imageHiddenWord.sprite = nextWord.image;
 		}
+
+
+
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){

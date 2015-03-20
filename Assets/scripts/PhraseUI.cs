@@ -13,7 +13,7 @@ public class PhraseUI : MonoBehaviour {
 	public bool isFirstHiddenWord = true;
 
 	[SerializeField]
-	private Hashtable hiddenWords;
+	private Hashtable hiddenWords = new Hashtable ();
 
 	public Action<int> WordFinished {
 		get;
@@ -23,10 +23,6 @@ public class PhraseUI : MonoBehaviour {
 	public Action PhraseFinished {
 		get;
 		set;
-	}
-	
-	void Start () {
-		hiddenWords = new Hashtable ();
 	}
 
 	public void DrawPhrase(Phrase phrase){
@@ -56,7 +52,9 @@ public class PhraseUI : MonoBehaviour {
 	}
 
 	public void ClearHiddenWords(){
-		hiddenWords.Clear ();
+		if (hiddenWords != null) {
+			hiddenWords.Clear ();
+		}
 	}
 
 	private void ResetPhraseCounters(){		
