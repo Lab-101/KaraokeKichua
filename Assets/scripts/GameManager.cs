@@ -44,12 +44,11 @@ public class GameManager : MonoBehaviour {
 	
 	private void HandleSongFinished (){
 		if (gameState == GameState.PlayingSong) {
-			gameState = GameState.WriteActivitySong;
-			musicList.SetInactivePlayer ();
+			gameState = GameState.WriteActivitySong;			
+			musicList.RestartPlayer ();
 			writeActivity.Reset (musicList.selectedSong);
 		} else if(gameState == GameState.SelectingSong){			
 			musicList.RestartPlayer ();
-			musicList.PlayPreview();
 		}
 	}
 	

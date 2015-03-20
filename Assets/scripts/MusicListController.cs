@@ -60,29 +60,17 @@ public class MusicListController : MonoBehaviour {
 		}
 	}
 	
-	public void RestartPlayer(){		
+	public void RestartPlayer(){
 		player.SetActive();
 		player.SetSongLengthInSeconds (0.01f);
 	}
-	
-	public void PlayPreview(){		
-		player.PlayPreview (selectedClip);
-	}
-	
+		
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
-	}
-	
-	public void SetInactivePlayer(){
-		player.SetInactive ();
-	}
-
-	public void SetActivePlayer(){
-		player.SetActive ();
 	}
 	
 	private void HandleSongSelected (string selectedSongUrl)	{

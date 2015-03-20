@@ -18,7 +18,8 @@ public class Player : MonoBehaviour {
 
 			if (songLengthInSeconds <= 0 ) {
 				if(PlayFinished != null)
-					PlayFinished();
+					audioSource.Stop();
+					PlayFinished();					
 			}
 		}
 	}
