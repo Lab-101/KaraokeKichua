@@ -106,7 +106,7 @@ public class MusicListController : MonoBehaviour {
 		if (Application.platform == RuntimePlatform.Android) 
 			return Application.streamingAssetsPath + "/" + name + ".ass";
 		else if (Application.platform == RuntimePlatform.IPhonePlayer) 
-			return Application.streamingAssetsPath + "/" + name + ".ass";
+			return "file://" + Application.streamingAssetsPath + "/" + WWW.EscapeURL (name).Replace("+","%20") + ".ass";
 		else 
 			return "file://" + Application.streamingAssetsPath + "/" + name + ".ass";
 	}
@@ -139,7 +139,7 @@ class SubtitleLoader {
 	public Action<string> SubtitlesObtained;
 
 	public IEnumerator Start() {
-		Debug.Log (URL);
+		Debug.Log ("Este es la url: " + URL);
 		WWW www = new WWW(URL);
 		yield return www;
 		if (SubtitlesObtained != null)
