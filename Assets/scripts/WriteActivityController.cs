@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 
 public class WriteActivityController : MonoBehaviour {
+
 	public Button exitButton;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
@@ -24,9 +25,9 @@ public class WriteActivityController : MonoBehaviour {
 	}
 
 	void Start () {
-		exitButton.onClick.AddListener(delegate {
+
+		exitButton.onClick.AddListener (delegate {
 			if(BackActionExecuted != null){
-				resultsButton.gameObject.SetActive(false);
 				BackActionExecuted();
 			}
 		});

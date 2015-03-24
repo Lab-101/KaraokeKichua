@@ -24,6 +24,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	private bool IsPlayingWriteActivity {
+		get{
+			return gameState == GameState.WriteActivitySong;
+		}
+	}
+
 	private bool IsShowingResults {
 		get{
 			return gameState == GameState.ShowingResults;
@@ -50,11 +56,17 @@ public class GameManager : MonoBehaviour {
 			musicList.SetActive ();
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
-			results.SetInactive();
+			results.SetInactive ();
 		} else if (IsPlayingSong) {
 			musicList.SetInactive ();
 			karaoke.SetActive ();
 			writeActivity.SetInactive ();
+			results.SetInactive();
+		} else if (IsPlayingWriteActivity) {
+			musicList.SetInactive ();
+			karaoke.SetInactive ();
+			writeActivity.SetActive ();
+			results.SetInactive ();
 		} else if (IsShowingResults){
 			musicList.SetInactive ();
 			karaoke.SetInactive ();
@@ -106,5 +118,6 @@ public class GameManager : MonoBehaviour {
 	}
 	private void HandleRetryActionExecuted() {
 		gameState = GameState.WriteActivitySong;
+		StartWriteActivity ();
 	}
 }
