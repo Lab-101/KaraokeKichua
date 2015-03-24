@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class WriteActivityController : MonoBehaviour {
 
-	public Button exitButton;
+	//public Button exitButton;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
 	public Button resultsButton;
@@ -14,10 +14,10 @@ public class WriteActivityController : MonoBehaviour {
 	[SerializeField]
 	private Image imageHiddenWord;
 
-	public Action BackActionExecuted {
+	/*public Action BackActionExecuted {
 		get;
 		set;
-	}
+	}*/
 
 	public Action ActivityFinished {
 		get;
@@ -26,11 +26,11 @@ public class WriteActivityController : MonoBehaviour {
 
 	void Start () {
 
-		exitButton.onClick.AddListener (delegate {
+		/*exitButton.onClick.AddListener (delegate {
 			if(BackActionExecuted != null){
 				BackActionExecuted();
 			}
-		});
+		});*/
 
 		resultsButton.onClick.AddListener (delegate {
 			if(ActivityFinished != null){

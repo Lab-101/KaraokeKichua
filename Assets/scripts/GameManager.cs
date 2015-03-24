@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour {
 		musicList.SongFinished += HandleSongFinished;
 		karaoke.SongFinished += HandleFinishSongButtonSelected;
 		karaoke.SongPaused += HandleSongPaused;
-		writeActivity.BackActionExecuted += HandleBackActionExecuted;
+		//writeActivity.BackActionExecuted += HandleBackActionExecuted;
 		writeActivity.ActivityFinished += HandleActivityFinished;
 		results.BackActionExecuted += HandleBackActionExecuted;
 		results.RetryActionExecuted += HandleRetryActionExecuted;
