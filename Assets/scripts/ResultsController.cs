@@ -7,6 +7,8 @@ public class ResultsController : MonoBehaviour {
 
 	public Button exitButton;
 	public Button retryButton;
+	public WriteActivityController writeActivity;
+
 
 	public Action BackActionExecuted {
 		get;
@@ -18,6 +20,9 @@ public class ResultsController : MonoBehaviour {
 	}
 
 	void Start () {
+
+		Debug.Log (writeActivity.elapsedTimeOfActivity);
+
 		exitButton.onClick.AddListener(delegate {
 			if(BackActionExecuted != null){
 				BackActionExecuted();

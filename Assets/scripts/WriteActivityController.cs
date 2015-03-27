@@ -5,19 +5,14 @@ using System.Collections.Generic;
 
 public class WriteActivityController : MonoBehaviour {
 
-	//public Button exitButton;
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
 	public Button resultsButton;
 	private Phrase phrase;
+	public float elapsedTimeOfActivity;
 
 	[SerializeField]
 	private Image imageHiddenWord;
-
-	/*public Action BackActionExecuted {
-		get;
-		set;
-	}*/
 
 	public Action ActivityFinished {
 		get;
@@ -26,16 +21,11 @@ public class WriteActivityController : MonoBehaviour {
 
 	void Start () {
 
-		/*exitButton.onClick.AddListener (delegate {
-			if(BackActionExecuted != null){
-				BackActionExecuted();
-			}
-		});*/
-
 		resultsButton.onClick.AddListener (delegate {
 			if(ActivityFinished != null){
 				resultsButton.gameObject.SetActive(false);
 				ActivityFinished();
+				elapsedTimeOfActivity = Time.time;
 			}
 		});
 
@@ -124,4 +114,20 @@ public class WriteActivityController : MonoBehaviour {
 			Destroy (child.gameObject);
 		}
 	}
+
+	void Update ()
+	{
+		//Debug.Log (Time.time);
+
+		/*roundTimeLeft = Time.time - startTime;
+		if (roundTimeLeft >= roundTimeSeconds)
+		{
+			startTime = Time.time;
+			roundTimeLeft = 0;
+		}*/
+	}
+
+
+
+
 }
