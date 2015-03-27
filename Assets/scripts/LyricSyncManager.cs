@@ -11,14 +11,23 @@ public class LyricSyncManager : MonoBehaviour {
 	private List<string> subtitleLines = new List<string>();
 	public List<float> subtitleTimings = new List<float>();	
 	public List<string> subtitleText = new List<string>();
-	public List<string> subtitleTimesByWord = new List<string>();
+	public List<object> subtitleTimesByWord = new List<object>();
 	private int nextSubtitle = 0;	
 	private string displaySubtitle;
 	private AudioSource audio;
 	private string subtitleFromLine;
 	public Text lyricText;
 	public Regex regex = new Regex(@" ?\{.*?\}");
-	
+	private float counter = 0;
+	private int nextWord = 0;
+	private List<float> timeSubtitle = new List<float>();
+	private string color = "<color=#00ffffff>";
+	private string endColor = "</color>";
+	private string coloredWords = "";
+	private string uncoloredWords = "";
+	private bool startSubtitles = false;	
+	public string[] timeArray;
+
 	public static LyricSyncManager Instance { get; private set; }
 	
 	void Awake(){
@@ -34,12 +43,38 @@ public class LyricSyncManager : MonoBehaviour {
 		if(nextSubtitle < subtitleText.Count){
 			if(audio.time > subtitleTimings[nextSubtitle]){
 				displaySubtitle = subtitleText[nextSubtitle];
-				lyricText.text = displaySubtitle;
+				timeSubtitle = (List<float>)subtitleTimesByWord[nextSubtitle] ;				
+				uncoloredWords = displaySubtitle.Replace ("*", " ");
+				coloredWords = displaySubtitle.Split('*')[0] + " ";
+				startSubtitles=true;
 				nextSubtitle++;
+				nextWord = 0;
 			}
 		}
+		if (startSubtitles)
+			GetDataBySubtitle(displaySubtitle, timeSubtitle);
 	}
 	
+	private void GetDataBySubtitle(string subtitle, List<float> time){
+		string[] subtitleArray = subtitle.Split('*');
+		try {
+			if (audio.time > time[nextWord] && nextWord < (time.Count-1)) {
+				nextWord ++;
+				if(time.Count - 1 == nextWord ){
+					coloredWords += subtitleArray[nextWord];
+				}
+				else
+					coloredWords += subtitleArray[nextWord]+" ";
+			}
+			Regex uncoloredWordsRegex = new Regex(Regex.Escape(coloredWords));
+			string newUncoloredWords = uncoloredWordsRegex.Replace(uncoloredWords, "", 1);
+			lyricText.text = color + coloredWords + endColor + newUncoloredWords;
+		}
+		catch {
+			lyricText.text = color + coloredWords + endColor;
+		}
+	}
+
 	public void BeginDialogue (List<string> songLyricSync, AudioSource clip) {
 		lyricText.text = "";
 		audio = clip;
@@ -57,7 +92,8 @@ public class LyricSyncManager : MonoBehaviour {
 		subtitleLines = new List<string>();
 		subtitleTimings = new List<float>();
 		subtitleText = new List<string>();
-		subtitleTimesByWord = new List<string>();
+		subtitleTimesByWord = new List<object>();
+		startSubtitles = false;
 	}
 
 	private void SplitOutSubtitles (){
@@ -71,9 +107,9 @@ public class LyricSyncManager : MonoBehaviour {
 					if (i>9)
 						subtitleFromLine += ",";
 					subtitleFromLine += splitTemp[i];
-				}
-				string wordTimeByPhrase = GetTimeForWord(subtitleFromLine);
+				}				
 				string cleanedSubtitle = CleanSubtitleString(subtitleFromLine);
+				List<float> wordTimeByPhrase = GetTimeForWord(subtitleFromLine, subtitleTimings[cnt]);
 				subtitleText.Add(cleanedSubtitle);
 				subtitleTimesByWord.Add(wordTimeByPhrase);
 				subtitleFromLine = "";
@@ -91,23 +127,36 @@ public class LyricSyncManager : MonoBehaviour {
 	//Remove all characters in brackets
 	private string CleanSubtitleString(string subtitle)	{
 		if(subtitle.Contains("}")){
-			subtitle = regex.Replace (subtitle, " ");
+			subtitle = regex.Replace (subtitle, "*");
 			return subtitle.Substring(1);
 		}
 		return subtitle;
 	}
 
-	private string GetTimeForWord(string subtitle) {
+	private List<float> GetTimeForWord(string subtitle, float startTime) {
 		int wordCounter = 1;
 		string wordTime = "";
-		string[] subtitleArray = subtitle.Split(' ');
+		string[] subtitleArray = subtitle.Split('{');
 		foreach(string numberWord in subtitleArray){
-			if (regex.IsMatch(numberWord)) {
-				wordTime += regex.Match(numberWord).Groups[0].Value.Replace (@"{\k", "").Replace("}", "");
-				wordTime += SetSpacesBetweenNumbers(wordCounter++, subtitleArray.Length);
+			string numberWordText = "{" + numberWord.ToString();
+			if (regex.IsMatch(numberWordText)) {
+				string time = regex.Match(numberWordText).Groups[0].Value.Replace (@"{\k", "").Replace("}", "");
+				wordTime += (time + SetSpacesBetweenNumbers(wordCounter++, (subtitleArray.Length - 1)));
 			}
 		}
-		return wordTime;
+		return ParseRealTimesByPhrase (wordTime, startTime);
+	}
+
+	private List<float> ParseRealTimesByPhrase (string timeByWord, float start){
+		List<float> timeByWordArray = new List<float>();
+		if (!IsSubtitleEmpty(timeByWord)){
+			string [] timeByWordString = timeByWord.Split(' ');
+			for (int i = 0; i < timeByWordString.Length; i++){
+				start += (float.Parse (timeByWordString [i])/100);
+				timeByWordArray.Add(start);
+			}
+		}
+		return timeByWordArray;
 	}
 
 	private string SetSpacesBetweenNumbers(int counter, int arraySize){

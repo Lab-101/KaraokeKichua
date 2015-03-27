@@ -95,7 +95,6 @@ public class MusicListController : MonoBehaviour {
 		{
 			if(line.Contains("Dialogue: "))
 			{
-				Debug.Log(line);
 				subtitleList.Add(line);
 			}
 		}
