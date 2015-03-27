@@ -10,6 +10,9 @@ public class WriteActivityController : MonoBehaviour {
 	public Button resultsButton;
 	public float elapsedTimeOfActivity;
 	public Score score;
+	public float minTime;
+	public float maxTime;
+
 	private Phrase phrase;
 
 	[SerializeField]
