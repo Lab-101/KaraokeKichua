@@ -11,7 +11,6 @@ public class ResultsController : MonoBehaviour {
 	public WriteActivityController writeActivity;
 	public int scoreLevel;
 
-
 	public Action BackActionExecuted {
 		get;
 		set;
@@ -22,9 +21,6 @@ public class ResultsController : MonoBehaviour {
 	}
 
 	void Start () {
-
-		Debug.Log (writeActivity.elapsedTimeOfActivity);
-
 		exitButton.onClick.AddListener(delegate {
 			if(BackActionExecuted != null){
 				BackActionExecuted();
@@ -36,6 +32,8 @@ public class ResultsController : MonoBehaviour {
 				RetryActionExecuted();
 			}
 		});
+
+		scoreLevel = writeActivity.score.CalculateScore ();
 		scoreDescription.text = messageLevel (scoreLevel);
 	}
 	public void SetActive(){

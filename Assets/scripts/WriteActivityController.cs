@@ -8,8 +8,9 @@ public class WriteActivityController : MonoBehaviour {
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
 	public Button resultsButton;
-	private Phrase phrase;
 	public float elapsedTimeOfActivity;
+	public Score score;
+	private Phrase phrase;
 
 	[SerializeField]
 	private Image imageHiddenWord;
@@ -26,12 +27,16 @@ public class WriteActivityController : MonoBehaviour {
 				resultsButton.gameObject.SetActive(false);
 				ActivityFinished();
 				elapsedTimeOfActivity = Time.time;
+				score.SetTime (elapsedTimeOfActivity);
 			}
 		});
 
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
+		score = new Score ();
+		score.SetMin (10);
+		score.SetMax (20);
 	}
 
 	void HandleLetterButtonSelected (Button letterButton) {
