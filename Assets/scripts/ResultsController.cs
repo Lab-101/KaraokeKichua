@@ -12,6 +12,7 @@ public class ResultsController : MonoBehaviour {
 	public WriteActivityController writeActivity;
 	public int scoreLevel;
 	public Text time;
+	public ProgressBarController progressBar;
 
 	public Action BackActionExecuted {
 		get;
@@ -43,7 +44,7 @@ public class ResultsController : MonoBehaviour {
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = messageLevel (scoreLevel);
 		time.text = "Tiempo de la actividad: "+ writeActivity.elapsedTimeOfActivity;
-		Debug.Log (writeActivity.elapsedTimeOfActivity);
+		progressBar.SetFillerSize (scoreLevel);
 	}
 	
 	public void SetInactive(){
@@ -53,11 +54,11 @@ public class ResultsController : MonoBehaviour {
 	private string messageLevel(int level){
 		switch (level) {
 			case 1:
-				return "Felicitaciones! Eres Muy Noob";
+				return "Bien! Tienes que esforzarte más pero vas por buen camino";
 			case 2:
 				return "Muy bien! Has practicado mucho y se ve en los resultados";
 			case 3:
-				return "Bien! Tienes que esforzarte más pero vas por buen camino";
+				return "Felicitaciones! Eres Muy Noob-Pro";
 			default:
 				return "No se ha obtenido nivel";
 		}

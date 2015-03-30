@@ -21,11 +21,11 @@ public class Score {
 	public int CalculateScore ()	{
 		int points;
 		if (IsBestScore())
-			points = 1;
+			points = 3;
 		else if (IsNormalScore())
 			points = 2;
 		else
-			points = 3;
+			points = 1;
 
 		return points;
 	}
