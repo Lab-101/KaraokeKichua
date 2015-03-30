@@ -50,13 +50,11 @@ public class MusicListController : MonoBehaviour {
 	
 	public void PauseSong(){		
 		if (player.IsPlaying()) {
-			Debug.Log("From Resume to Pause");
 			player.Pause ();
 			player.SetInactive();
 		} else {
 			player.SetActive();
 			player.Resume();
-			Debug.Log("From Pause to Resume");
 		}
 	}
 	
@@ -138,7 +136,6 @@ class SubtitleLoader {
 	public Action<string> SubtitlesObtained;
 
 	public IEnumerator Start() {
-		Debug.Log ("Este es la url: " + URL);
 		WWW www = new WWW(URL);
 		yield return www;
 		if (SubtitlesObtained != null)

@@ -8,12 +8,13 @@ public class WriteActivityController : MonoBehaviour {
 	public PhraseUI phraseUI;
 	public WordUI wordUI;
 	public Button resultsButton;
-	public float elapsedTimeOfActivity;
-	public Score score;
 	public float timeA;
 	public float timeB;
+	public Score score;
 
 	private Phrase phrase;
+	private bool isActivityFinished;
+	private float elapsedTimeOfActivity;
 
 	[SerializeField]
 	private Image imageHiddenWord;
@@ -23,13 +24,19 @@ public class WriteActivityController : MonoBehaviour {
 		set;
 	}
 
+	void Awake () {
+		score = new Score ();
+		score.SetTimeA (10);
+		score.SetTimeB (20);
+		isActivityFinished = true;
+	}
+
 	void Start () {
 
 		resultsButton.onClick.AddListener (delegate {
 			if(ActivityFinished != null){
-				resultsButton.gameObject.SetActive(false);
 				ActivityFinished();
-				elapsedTimeOfActivity = Time.time;
+				resultsButton.gameObject.SetActive(false);
 				score.SetTime (elapsedTimeOfActivity);
 			}
 		});
@@ -37,9 +44,6 @@ public class WriteActivityController : MonoBehaviour {
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
-		score = new Score ();
-		score.SetTimeA (10);
-		score.SetTimeB (20);
 	}
 
 	void HandleLetterButtonSelected (Button letterButton) {
@@ -71,17 +75,18 @@ public class WriteActivityController : MonoBehaviour {
 		phrase = GetRandomPhraseFromSong (song);
 		phraseUI.DrawPhrase (phrase);
 		GetHiddenWordByIndex (0);
+		elapsedTimeOfActivity = 0;
+		isActivityFinished = false;
 	}
 
-	void GetHiddenWordByIndex (int indexHiddenWord)	{
+	private void GetHiddenWordByIndex (int indexHiddenWord)	{
 		Word nextWord = GetHiddenWordByIndex (phrase.words, indexHiddenWord);
 		if (nextWord != null) {
 			wordUI.DrawWord (nextWord.text);
 			imageHiddenWord.sprite = nextWord.image;
+		} else {
+			isActivityFinished = true;
 		}
-
-
-
 	}
 
 	private Phrase GetRandomPhraseFromSong(Song song){
@@ -105,7 +110,6 @@ public class WriteActivityController : MonoBehaviour {
 
 				hiddenWordCounter++;
 			}
-
 		}
 		return null;
 	}
@@ -123,16 +127,9 @@ public class WriteActivityController : MonoBehaviour {
 		}
 	}
 
-	void Update ()
-	{
-		//Debug.Log (Time.time);
-
-		/*roundTimeLeft = Time.time - startTime;
-		if (roundTimeLeft >= roundTimeSeconds)
-		{
-			startTime = Time.time;
-			roundTimeLeft = 0;
-		}*/
+	void Update ()	{
+		if(!isActivityFinished)
+			elapsedTimeOfActivity += Time.deltaTime;
 	}
 
 

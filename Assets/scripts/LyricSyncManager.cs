@@ -14,11 +14,10 @@ public class LyricSyncManager : MonoBehaviour {
 	public List<object> subtitleTimesByWord = new List<object>();
 	private int nextSubtitle = 0;	
 	private string displaySubtitle;
-	private AudioSource audio;
+	private AudioSource audioSource;
 	private string subtitleFromLine;
 	public Text lyricText;
 	public Regex regex = new Regex(@" ?\{.*?\}");
-	private float counter = 0;
 	private int nextWord = 0;
 	private List<float> timeSubtitle = new List<float>();
 	private string color = "<color=#00ffffff>";
@@ -41,7 +40,7 @@ public class LyricSyncManager : MonoBehaviour {
 	void Update () {
 		//Increment nextSubtitle when we hit the associated time point
 		if(nextSubtitle < subtitleText.Count){
-			if(audio.time > subtitleTimings[nextSubtitle]){
+			if(audioSource.time > subtitleTimings[nextSubtitle]){
 				displaySubtitle = subtitleText[nextSubtitle];
 				timeSubtitle = (List<float>)subtitleTimesByWord[nextSubtitle] ;				
 				uncoloredWords = displaySubtitle.Replace ("*", " ");
@@ -58,7 +57,7 @@ public class LyricSyncManager : MonoBehaviour {
 	private void GetDataBySubtitle(string subtitle, List<float> time){
 		string[] subtitleArray = subtitle.Split('*');
 		try {
-			if (audio.time > time[nextWord] && nextWord < (time.Count-1)) {
+			if (audioSource.time > time[nextWord] && nextWord < (time.Count-1)) {
 				nextWord ++;
 				if(time.Count - 1 == nextWord ){
 					coloredWords += subtitleArray[nextWord];
@@ -77,7 +76,7 @@ public class LyricSyncManager : MonoBehaviour {
 
 	public void BeginDialogue (List<string> songLyricSync, AudioSource clip) {
 		lyricText.text = "";
-		audio = clip;
+		audioSource = clip;
 		nextSubtitle = 0;
 		ResetSubtitlesList ();
 		subtitleLines = songLyricSync;
