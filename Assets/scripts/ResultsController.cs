@@ -11,6 +11,7 @@ public class ResultsController : MonoBehaviour {
 	public Text scoreDescription;
 	public WriteActivityController writeActivity;
 	public int scoreLevel;
+	public Text time;
 
 	public Action BackActionExecuted {
 		get;
@@ -34,12 +35,15 @@ public class ResultsController : MonoBehaviour {
 			}
 		});
 
+
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
 		scoreLevel = writeActivity.score.CalculateScore ();
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = messageLevel (scoreLevel);
+		time.text = "Tiempo de la actividad: "+ writeActivity.elapsedTimeOfActivity;
+		Debug.Log (writeActivity.elapsedTimeOfActivity);
 	}
 	
 	public void SetInactive(){

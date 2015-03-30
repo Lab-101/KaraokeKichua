@@ -14,7 +14,7 @@ public class WriteActivityController : MonoBehaviour {
 
 	private Phrase phrase;
 	private bool isActivityFinished;
-	private float elapsedTimeOfActivity;
+	public float elapsedTimeOfActivity;
 
 	[SerializeField]
 	private Image imageHiddenWord;
