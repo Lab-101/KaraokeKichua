@@ -10,8 +10,8 @@ public class WriteActivityController : MonoBehaviour {
 	public Button resultsButton;
 	public float elapsedTimeOfActivity;
 	public Score score;
-	public float minTime;
-	public float maxTime;
+	public float timeA;
+	public float timeB;
 
 	private Phrase phrase;
 
@@ -38,8 +38,8 @@ public class WriteActivityController : MonoBehaviour {
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
 		score = new Score ();
-		score.SetMin (10);
-		score.SetMax (20);
+		score.SetTimeA (10);
+		score.SetTimeB (20);
 	}
 
 	void HandleLetterButtonSelected (Button letterButton) {

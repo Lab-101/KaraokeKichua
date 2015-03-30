@@ -2,20 +2,20 @@
 using System.Collections;
 
 public class Score {
-	private float time;
-	private float min;
-	private float max;
+	private float elapseTime;
+	private float timeA;
+	private float timeB;
 
 	public void SetTime (float time){
-		this.time = time;
+		this.elapseTime = time;
 	}
 
-	public void SetMin (float min){
-		this.min = min;
+	public void SetTimeA (float time){
+		this.timeA = time;
 	}
 
-	public void SetMax (float max)	{
-		this.max = max;
+	public void SetTimeB (float time)	{
+		this.timeB = time;
 	}
 
 	public int CalculateScore ()	{
@@ -31,16 +31,16 @@ public class Score {
 	}
 
 	private float GetMaxValueToBestScore(){
-		float delta = (max - min)/3;
-		return min + delta;
+		float delta = (timeB - timeA)/3;
+		return timeA + delta;
 	}
 
 	private bool IsBestScore(){
-		return time <= GetMaxValueToBestScore ();
+		return elapseTime <= GetMaxValueToBestScore ();
 	}
 
 	private bool IsNormalScore(){
-		return time <= max;
+		return elapseTime <= timeB;
 	}
 
 }

@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 [TestFixture]
 public class ScoreTest {
@@ -7,8 +7,8 @@ public class ScoreTest {
 
 	private void SetScoreProperties (float time, float min, float max)	{
 		score.SetTime (time);
-		score.SetMin (min);
-		score.SetMax (max);
+		score.SetTimeA (min);
+		score.SetTimeB (max);
 	}
 
 	[Test]
@@ -18,12 +18,12 @@ public class ScoreTest {
 
 	[Test]
 	public void CanISetMinValueToAScore()	{
-		score.SetMin (0f);
+		score.SetTimeA (0f);
 	}
 
 	[Test]
 	public void CanISetMaxValueToAScore()	{
-		score.SetMax (0f);
+		score.SetTimeB (0f);
 	}
 
 	[Test]
