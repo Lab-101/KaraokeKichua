@@ -1,0 +1,32 @@
+[
+    {
+        "name": "alejandro sanz no es lo mismo",
+        "showWords": [
+            "Eres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora"
+        ],
+        "wordsValids": [
+            "Eres",
+            "ahora"
+        ],
+        "level": 1
+    },
+	{
+        "name": "alejandro sanz no es lo mismo",
+        "showWords": [
+            "Eres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora"
+        ],
+        "wordsValids": [
+            "Eres",
+            "ahora"
+        ],
+        "level": 2
+    }
+]
