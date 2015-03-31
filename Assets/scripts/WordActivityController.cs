@@ -1,9 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
+
+using UnityEngine;
+
+
 public class WordActivityController : MonoBehaviour {
+	
+	protected Score score;
+	private WordActivityData data;
+	public TextAsset json;
 
 	public RandomWordsController randomWords;	
 	private List<string> correctWordsList = new List<string>();	
@@ -12,33 +21,31 @@ public class WordActivityController : MonoBehaviour {
 	private bool isActivityFinished;
 	public float elapsedTimeOfActivity;
 	
-	[SerializeField]
-
-	public Action ActivityFinished {
-		get;
-		set;
-	}
-	
-	void Start () {
-
-		correctWordsList.Add ("cinco");
-		correctWordsList.Add ("uno");
-		randomWordsList.Add ("uno");
-		randomWordsList.Add ("dos");
-		randomWordsList.Add ("tres");
-		randomWordsList.Add ("cuatro");
-		randomWordsList.Add ("cinco");
+	void Start(){
+		data = new WordActivityData ();
+		JsonWordsParser parser = new JsonWordsParser ();
+		parser.SetLevelFilter (1);
+		parser.JSONString = json.text;
+		data = parser.Data;
+		randomWordsList = data.wordsList;
+		correctWordsList = data.wordsValidsList;
 		randomWords.DrawButtonsByWord(randomWordsList);
 		randomWords.RandomWordSelected += HandleRandomWordSelected;
 		
 		resultsButton.onClick.AddListener (delegate {
 			if(ActivityFinished != null){
 				ActivityFinished();
-				}
+			}
 		});
-		
-		}
+	}
 	
+	[SerializeField]
+
+	public Action ActivityFinished {
+		get;
+		set;
+	}
+
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
