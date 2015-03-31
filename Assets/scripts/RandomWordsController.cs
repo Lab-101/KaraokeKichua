@@ -8,19 +8,10 @@ public class RandomWordsController : MonoBehaviour {
 
 	public Button wordPrefab;
 	private List<Button> randomWordsButtons = new List<Button>();
-	private List<string> randomWords = new List<string>();
-
-	void Start(){
-		randomWords.Add ("uno");
-		randomWords.Add ("dos");
-		randomWords.Add ("tres");
-		randomWords.Add ("cuatro");
-		randomWords.Add ("cinco");
-		randomWords.Shuffle ();
-		DrawButtonsByWord(randomWords);
-	}
+	public Action <Button> RandomWordSelected;
 
 	public void DrawButtonsByWord(List<string> wordList){
+		wordList.Shuffle ();
 		foreach(string word in wordList){
 			randomWordsButtons.Add(createWordButton(word));
 		}
@@ -32,6 +23,10 @@ public class RandomWordsController : MonoBehaviour {
 		newItem.name = name;
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).GetComponent<Text>().text = name;
+		newItem.onClick.AddListener (delegate {
+			if(RandomWordSelected!=null)
+				RandomWordSelected(newItem);
+		});
 		return newItem;
 	}
 }
