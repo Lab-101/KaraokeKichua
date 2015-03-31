@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WordActivity : Activity {
-
+public class WordActivity : MonoBehaviour {
+	
+	protected Score score;
 	private WordActivityData data;
 	public TextAsset json;
 

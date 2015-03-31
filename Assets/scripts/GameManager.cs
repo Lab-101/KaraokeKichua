@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour {
 
 	public MusicListController musicList;
 	public KaraokeController karaoke;
-	public WriteActivityController writeActivity;	
+	public WriteActivityController writeActivity;
+	public WordActivityController wordActivity;
 	public ResultsController results;
 	public GameState gameState;
 
@@ -30,6 +31,12 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	private bool IsPlayingWordActivity {
+		get{
+			return gameState == GameState.WordActivitySong;
+		}
+	}
+
 	private bool IsShowingResults {
 		get{
 			return gameState == GameState.ShowingResults;
@@ -42,7 +49,7 @@ public class GameManager : MonoBehaviour {
 		musicList.SongFinished += HandleSongFinished;
 		karaoke.SongFinished += HandleFinishSongButtonSelected;
 		karaoke.SongPaused += HandleSongPaused;
-		writeActivity.ActivityFinished += HandleActivityFinished;
+		wordActivity.ActivityFinished += HandleActivityFinished;
 		results.BackActionExecuted += HandleBackActionExecuted;
 		results.RetryActionExecuted += HandleRetryActionExecuted;
 	}
@@ -55,21 +62,31 @@ public class GameManager : MonoBehaviour {
 			musicList.SetActive ();
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
 			results.SetInactive ();
 		} else if (IsPlayingSong) {
 			musicList.SetInactive ();
 			karaoke.SetActive ();
 			writeActivity.SetInactive ();
-			results.SetInactive();
+			wordActivity.SetInactive ();
+			results.SetInactive ();
 		} else if (IsPlayingWriteActivity) {
 			musicList.SetInactive ();
 			karaoke.SetInactive ();
 			writeActivity.SetActive ();
+			wordActivity.SetInactive ();
+			results.SetInactive ();
+		}else if (IsPlayingWordActivity) {
+			musicList.SetInactive ();
+			karaoke.SetInactive ();
+			wordActivity.SetActive ();
+			writeActivity.SetInactive ();
 			results.SetInactive ();
 		} else if (IsShowingResults){
 			musicList.SetInactive ();
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
 			results.SetActive();
 		} else {
 			karaoke.SetInactive ();
@@ -83,16 +100,15 @@ public class GameManager : MonoBehaviour {
 	
 	private void HandleSongFinished (){
 
-		if (IsPlayingSong) {
-			StartWriteActivity();
-		} else if(IsSelectingSong){			
-			musicList.RestartPlayer ();
-		}
+	if (IsPlayingSong) {
+		StartWordActivity();
+	} else if(IsSelectingSong){			
+		musicList.RestartPlayer ();
 	}
-
+}
 	private void HandleFinishSongButtonSelected (){
 		if (IsPlayingSong) {
-			StartWriteActivity ();
+			StartWordActivity ();
 		}
 	}
 
@@ -101,6 +117,12 @@ public class GameManager : MonoBehaviour {
 		gameState = GameState.WriteActivitySong;
 		musicList.SetInactive ();
 		writeActivity.Reset (musicList.selectedSong);
+	}
+
+	private void StartWordActivity ()
+	{
+		gameState = GameState.WordActivitySong;
+		musicList.SetInactive ();
 	}
 	
 	private void HandleSongPaused (){
