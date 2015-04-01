@@ -10,6 +10,11 @@ public class RandomWordsController : MonoBehaviour {
 	private List<Button> randomWordsButtons = new List<Button>();
 	public Action <Button> RandomWordSelected;
 
+	public Action SelectedCorrectWords {
+		get;
+		set;
+	}
+
 	public void DrawButtonsByWord(List<string> wordList){
 		wordList.Shuffle ();
 		foreach(string word in wordList){
@@ -29,4 +34,17 @@ public class RandomWordsController : MonoBehaviour {
 		});
 		return newItem;
 	}
+
+	public void DisableAllButtons(){
+		foreach(Button word in randomWordsButtons){
+			word.interactable = false;
+		}
+		FinishGame ();
+	}
+
+	private void FinishGame(){
+		if (SelectedCorrectWords!=null)
+			SelectedCorrectWords();
+	}
+
 }
