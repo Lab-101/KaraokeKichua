@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	public MusicListController musicList;
 	public KaraokeController karaoke;
 	public WriteActivityController writeActivity;
-	public WordActivityController wordActivity;
+	public WordActivity wordActivity;
 	public ResultsController results;
 	public GameState gameState;
 

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class WordActivityController : MonoBehaviour {
+public class WordActivity : MonoBehaviour {
 
 	public RandomWordsController randomWords;
 	public Button resultsButton;
@@ -114,7 +114,6 @@ public class WordActivityController : MonoBehaviour {
 	}
 
 	void HandleRandomWordSelected (Button wordButton) {
-		Debug.Log ("oprimio!");
 		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
 		foreach (string correctWord in correctWordsList) {
 			if (nameButton == correctWord){

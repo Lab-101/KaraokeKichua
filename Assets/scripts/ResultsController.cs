@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ public class ResultsController : MonoBehaviour {
 	public Text score;
 	public Text scoreDescription;
 	public WriteActivityController writeActivity;
-	public WordActivityController wordActivity;
+	public WordActivity wordActivity;
 	public int scoreLevel;
 	public Text time;
 	public ProgressBarController progressBar;

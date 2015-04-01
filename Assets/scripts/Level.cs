@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Level : MonoBehaviour {
 
 	public int numberLevel;
 	private Activity writeActivity;
-	private WordActivityController wordActivity;
+	private WordActivity wordActivity;
 
 	void Start(){
-		wordActivity = new WordActivityController ();
+		wordActivity = new WordActivity ();
 	}
 
 }
