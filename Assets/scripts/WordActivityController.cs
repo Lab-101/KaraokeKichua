@@ -24,6 +24,17 @@ public class WordActivityController : MonoBehaviour {
 	public float elapsedTimeOfActivity;
 	private int correctWords;
 
+	private List<Image> imageList = new List<Image>();
+	[SerializeField]
+	private Image firstImage;
+	[SerializeField]
+	private Image secondImage;
+	private List<Text> titleList = new List<Text>();
+	[SerializeField]
+	private Text firstTitle;
+	[SerializeField]
+	private Text secondTitle;
+
 	public Action ActivityFinished {
 		get;
 		set;
@@ -58,6 +69,7 @@ public class WordActivityController : MonoBehaviour {
 		SetActive ();
 		DestroyWordList ();
 		SetDataToActivity();
+		ClearElements ();
 		randomWords.DrawButtonsByWord(randomWordsList);
 		//phrase = GetRandomPhraseFromSong (song);
 		elapsedTimeOfActivity = 0;
@@ -70,6 +82,19 @@ public class WordActivityController : MonoBehaviour {
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+
+	private void ClearElements(){
+		imageList = new List<Image>();
+		imageList.Add (firstImage);
+		imageList.Add (secondImage);
+		foreach (Image picture in imageList)
+			picture.sprite = null;
+		titleList = new List<Text>();
+		titleList.Add (firstTitle);
+		titleList.Add (secondTitle);
+		foreach (Text title in titleList)
+			title.text = "";
 	}
 
 	private void SetDataToActivity(){
@@ -94,6 +119,8 @@ public class WordActivityController : MonoBehaviour {
 		foreach (string correctWord in correctWordsList) {
 			if (nameButton == correctWord){
 				wordButton.image.color = Color.green;
+				titleList[correctWords].text = correctWord;
+				imageList[correctWords].sprite = GetImageFrom(correctWord);
 				correctWords++;
 				break;
 			}
@@ -110,5 +137,10 @@ public class WordActivityController : MonoBehaviour {
 
 	void HandleSelectedCorrectWords () {
 		resultsButton.gameObject.SetActive(true);
+	}
+
+	
+	private Sprite GetImageFrom(string word){
+		return Resources.Load ("Images/"+word, typeof(Sprite)) as Sprite;
 	}
 }
