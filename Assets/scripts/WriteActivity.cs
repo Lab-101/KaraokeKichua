@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class WriteActivity : Activity {
-	// Variables Data Activity
+	// Data Activity
 	public TextAsset json;
 	private WriteActivityData data = new WriteActivityData ();
 	private Phrase phrase = new Phrase();
@@ -20,7 +20,7 @@ public class WriteActivity : Activity {
 	[SerializeField]
 	private Image imageHiddenWord;
 
-	void Start(){
+	void Awake(){
 		ReadDataFromJson ();
 
 		resultsButton.onClick.AddListener (delegate {
@@ -35,13 +35,11 @@ public class WriteActivity : Activity {
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
 		ActivityReseted += HandleActivityReseted;
-	}
 
-	void Awake () {
 		score = new Score ();
 		score.SetTimeA (10);
 		score.SetTimeB (20);
-		isActivityFinished = true;
+		SetActivityAsFinished ();
 	}
 
 	private void SetActivityAsFinished(){
@@ -78,13 +76,12 @@ public class WriteActivity : Activity {
 	}
 
 	private void GetHiddenWordByIndex (int indexHiddenWord)	{
-		Debug.Log ("---" + phrase.words);
 		Word nextWord = GetHiddenWordByIndex (phrase.words, indexHiddenWord);
 		if (nextWord != null) {
 			wordUI.DrawWord (nextWord.text);
 			imageHiddenWord.sprite = nextWord.image;
 		} else {
-			isActivityFinished = true;
+			SetActivityAsFinished ();
 		}
 	}
 	

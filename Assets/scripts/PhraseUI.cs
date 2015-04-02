@@ -27,7 +27,7 @@ public class PhraseUI : MonoBehaviour {
 
 	public void DrawPhrase(Phrase phrase){
 		ResetPhraseCounters ();
-		foreach (Word word in phrase.words){
+		foreach (Word word in phrase.words){;
 			List<Button> letters = new List<Button>();
 			foreach(char letter in word.text){
 				letters.Add( createLetter(letter+"", word.isHidden));

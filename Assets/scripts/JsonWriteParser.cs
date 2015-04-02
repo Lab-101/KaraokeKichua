@@ -29,8 +29,10 @@ public class JsonWriteParser {
 	{
 		WriteActivityData data = new WriteActivityData ();
 		foreach(Dictionary<string, object> level in levels){
-			if( levelFilter.ToString() == level["level"].ToString() )
+			if( levelFilter.ToString() == level["level"].ToString() ){
 				data.phrases = CreatePhrasesList(level["phrases"] as List<object>);
+				return data;
+			}
 		}
 		return data;
 	}

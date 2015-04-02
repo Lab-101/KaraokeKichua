@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 
 	public MusicListController musicList;
 	public KaraokeController karaoke;
-	public WriteActivityController writeActivity;
+	public WriteActivity writeActivity;
 	public WordActivity wordActivity;
 	public ResultsController results;
 	public GameState gameState;
@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour {
 	{
 		gameState = GameState.WriteActivitySong;
 		musicList.SetInactive ();
-		writeActivity.Reset (musicList.selectedSong);
+		writeActivity.Reset ();
 	}
 
 	private void StartWordActivity ()

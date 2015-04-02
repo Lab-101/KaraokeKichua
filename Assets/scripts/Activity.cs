@@ -23,7 +23,7 @@ public class Activity : MonoBehaviour {
 			elapsedTimeOfActivity += Time.deltaTime;
 	}
 
-	public void Reset(Song song){
+	public void Reset(){
 		SetActive ();
 		elapsedTimeOfActivity = 0;
 		isActivityFinished = false;
