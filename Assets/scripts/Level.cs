@@ -5,10 +5,11 @@ public class Level : MonoBehaviour {
 
 	public int numberLevel;
 	private Activity writeActivity;
-	private WordActivity wordActivity;
+	private Activity wordActivity;
 
 	void Start(){
-		wordActivity = new WordActivity ();
+		wordActivity = new WordActivity();
+		writeActivity = new WriteActivity ();
 	}
 
 }

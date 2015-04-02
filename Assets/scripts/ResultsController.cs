@@ -9,7 +9,7 @@ public class ResultsController : MonoBehaviour {
 	public Button retryButton;
 	public Text score;
 	public Text scoreDescription;
-	public WriteActivityController writeActivity;
+	public WriteActivity writeActivity;
 	public WordActivity wordActivity;
 	public int scoreLevel;
 	public Text time;
@@ -44,13 +44,11 @@ public class ResultsController : MonoBehaviour {
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
-		//scoreLevel = writeActivity.score.CalculateScore ();
 		progressBar.SetFillerSize (scoreLevel);
-		scoreLevel = wordActivity.score.CalculateScore ();
+		scoreLevel = wordActivity.GetScorePoints();
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel);
-		//time.text = "Tiempo de la actividad: "+ writeActivity.elapsedTimeOfActivity;
-		time.text = "Tiempo de la actividad: "+ wordActivity.elapsedTimeOfActivity;
+		time.text = "Tiempo de la actividad: "+ wordActivity.GetElapsedTime();
 
 	}
 	

@@ -10,7 +10,7 @@ public class WriteActivity : Activity {
 	private WriteActivityData data = new WriteActivityData ();
 	private Phrase phrase = new Phrase();
 
-	// Variables GUI Objects
+	// GUI Objects
 	[SerializeField]
 	private PhraseUI phraseUI;
 	[SerializeField]
@@ -39,11 +39,7 @@ public class WriteActivity : Activity {
 		score = new Score ();
 		score.SetTimeA (10);
 		score.SetTimeB (20);
-		SetActivityAsFinished ();
-	}
-
-	private void SetActivityAsFinished(){
-		isActivityFinished = true;
+		SetActivityAsNotFinished ();
 	}
 
 	private void ReadDataFromJson (){

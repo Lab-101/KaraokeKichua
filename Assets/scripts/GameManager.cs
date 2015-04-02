@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour {
 	{
 		gameState = GameState.WordActivitySong;
 		musicList.SetInactive ();
-		wordActivity.Reset (musicList.selectedSong);
+		wordActivity.Reset ();
 	}
 	
 	private void HandleSongPaused (){

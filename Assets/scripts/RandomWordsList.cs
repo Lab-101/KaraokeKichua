@@ -1,10 +1,10 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using System;
 
-public class RandomWordsController : MonoBehaviour {
+public class RandomWordsList : MonoBehaviour {
 
 	public Button wordPrefab;
 	private List<Button> randomWordsButtons = new List<Button>();

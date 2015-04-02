@@ -24,9 +24,9 @@ public class Activity : MonoBehaviour {
 	}
 
 	public void Reset(){
-		SetActive ();
 		elapsedTimeOfActivity = 0;
-		isActivityFinished = false;
+		SetActive ();
+		SetActivityAsNotFinished ();
 		if (ActivityReseted != null) {
 			ActivityReseted ();
 		}
@@ -38,5 +38,21 @@ public class Activity : MonoBehaviour {
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+
+	public int GetScorePoints(){
+		return score.CalculateScore();
+	}
+
+	public float GetElapsedTime(){
+		return elapsedTimeOfActivity;
+	}
+
+	protected void SetActivityAsFinished(){
+		isActivityFinished = true;
+	}
+
+	protected void SetActivityAsNotFinished(){
+		isActivityFinished = false;
 	}
 }
