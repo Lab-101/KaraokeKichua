@@ -16,40 +16,26 @@ public class WriteActivity : Activity {
 	[SerializeField]
 	private WordUI wordUI;
 	[SerializeField]
-	private Button resultsButton;
-	[SerializeField]
 	private Image imageHiddenWord;
 
 	void Awake(){
 		ReadDataFromJson ();
 
-		resultsButton.onClick.AddListener (delegate {
-			if(ActivityFinished != null){
-				ActivityFinished();
-				resultsButton.gameObject.SetActive(false);
-				score.SetTime (elapsedTimeOfActivity);
-			}
-		});
-		
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
 		ActivityReseted += HandleActivityReseted;
-
-		score = new Score ();
-		score.SetTimeA (10);
-		score.SetTimeB (20);
-		SetActivityAsNotFinished ();
 	}
 
 	private void ReadDataFromJson (){
 		JsonWriteParser parser = new JsonWriteParser();
-		parser.SetLevelFilter (1);
+		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
 	}
 	
 	private void HandleActivityReseted(){
+		ReadDataFromJson ();
 		DestroyPhrase ();
 		DestroyWord ();
 		phrase = GetRandomPhraseFromSong (data.phrases);

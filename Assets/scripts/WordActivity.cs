@@ -16,8 +16,6 @@ public class WordActivity : Activity {
 	[SerializeField]
 	private RandomWordsList randomWords;
 	[SerializeField]
-	private Button resultsButton;
-	[SerializeField]
 	private Image firstImage;
 	[SerializeField]
 	private Image secondImage;
@@ -28,33 +26,21 @@ public class WordActivity : Activity {
 
 	void Awake(){
 		ReadDataFromJson ();
-		
-		resultsButton.onClick.AddListener (delegate {
-			if(ActivityFinished != null){
-				ActivityFinished();
-				resultsButton.gameObject.SetActive(false);
-				score.SetTime (elapsedTimeOfActivity);
-			}
-		});
-		
+				
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityReseted += HandleActivityReseted;
-		
-		score = new Score ();
-		score.SetTimeA (10);
-		score.SetTimeB (20);
-		SetActivityAsNotFinished ();
 	}
 
 	private void ReadDataFromJson (){
 		JsonWordsParser parser = new JsonWordsParser();
-		parser.SetLevelFilter (1);
+		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
 	}
 
 	private void HandleActivityReseted(){
+		ReadDataFromJson ();
 		DestroyWordList ();
 		ClearElements ();
 		randomWords.DrawButtonsByWord(data.wordsList);

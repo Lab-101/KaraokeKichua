@@ -29,13 +29,13 @@ public class ScoreTest {
 	[Test]
 	public void GetFirstScore()	{
 		SetScoreProperties (0, 1, 2);
-		Assert.AreEqual (1, score.CalculateScore());
+		Assert.AreEqual (3, score.CalculateScore());
 		
 		SetScoreProperties (1, 1, 2);
-		Assert.AreEqual (1, score.CalculateScore());
+		Assert.AreEqual (3, score.CalculateScore());
 		
 		SetScoreProperties (1.33f, 1, 2);	
-		Assert.AreEqual (1, score.CalculateScore());
+		Assert.AreEqual (3, score.CalculateScore());
 	}
 
 	[Test]
@@ -54,14 +54,14 @@ public class ScoreTest {
 	[Test]
 	public void GetThirdScore()	{
 		SetScoreProperties (2.01f, 1, 2);
-		Assert.AreEqual (3, score.CalculateScore());
+		Assert.AreEqual (1, score.CalculateScore());
 		
 		
 		SetScoreProperties (3, 1, 2);
-		Assert.AreEqual (3, score.CalculateScore());		
+		Assert.AreEqual (1, score.CalculateScore());		
 		
 		SetScoreProperties (10000, 1, 2);	
-		Assert.AreEqual (3, score.CalculateScore());
+		Assert.AreEqual (1, score.CalculateScore());
 	}
 
 }

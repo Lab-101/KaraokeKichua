@@ -1,15 +1,23 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Level : MonoBehaviour {
 
 	public int numberLevel;
-	private Activity writeActivity;
-	private Activity wordActivity;
+	[SerializeField]
+	private string introduction;
+	[SerializeField]
+	private List<Activity> activities;
 
-	void Start(){
-		wordActivity = new WordActivity();
-		writeActivity = new WriteActivity ();
+	void Awake(){
+		SetLevelToActivities ();
 	}
 
+	private void SetLevelToActivities(){
+		foreach (Activity activity in activities) {
+			if(activity != null)
+				activity.SetLevel(numberLevel);
+		}
+	}
 }

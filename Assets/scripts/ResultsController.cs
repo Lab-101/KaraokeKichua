@@ -4,19 +4,20 @@ using System;
 using System.Collections.Generic;
 
 public class ResultsController : MonoBehaviour {
+	//Data
+	public Activity activity;
+	public int scoreLevel;
 
+	//GUI Objects
 	public Button exitButton;
 	public Button retryButton;
 	public Text score;
 	public Text scoreDescription;
-	public WriteActivity writeActivity;
-	public WordActivity wordActivity;
-	public int scoreLevel;
 	public Text time;
+	public Image imageRegularScore;
+	public Image imageNormalScore;
+	public Image imageBestScore;
 	public ProgressBarController progressBar;
-	public Image Image1;
-	public Image Image2;
-	public Image Image3;
 
 	public Action BackActionExecuted {
 		get;
@@ -44,11 +45,11 @@ public class ResultsController : MonoBehaviour {
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
-		progressBar.SetFillerSize (scoreLevel);
-		scoreLevel = wordActivity.GetScorePoints();
+		scoreLevel = activity.GetScorePoints();
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel);
-		time.text = "Tiempo de la actividad: "+ wordActivity.GetElapsedTime();
+		time.text = "Tiempo de la actividad: "+ activity.GetElapsedTime();
+		progressBar.SetFillerSize (scoreLevel);
 
 	}
 	
@@ -73,9 +74,9 @@ public class ResultsController : MonoBehaviour {
 	}
 
 	private void SetColor(Color color1, Color color2, Color color3){
-		Image1.color = color1;
-		Image2.color = color2;
-		Image3.color = color3;
+		imageRegularScore.color = color1;
+		imageNormalScore.color = color2;
+		imageBestScore.color = color3;
 	}
 }
 
