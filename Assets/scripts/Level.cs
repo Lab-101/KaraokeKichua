@@ -19,5 +19,10 @@ public class Level : MonoBehaviour {
 			if(activity != null)
 				activity.SetLevel(numberLevel);
 		}
+	}	
+	
+	private void OpenActivity (Activity activity) {
+		activity.ActivityStarted();
 	}
+
 }

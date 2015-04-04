@@ -9,49 +9,47 @@ public class GameManager : MonoBehaviour {
 	public WriteActivity writeActivity;
 	public WordActivity wordActivity;
 	public ResultsController results;
-	public GameState gameState;
+	public GameStateBehaviour gameStateBehaviour;
 
 	private bool IsSelectingSong 
 	{
 		get{
-			return gameState == GameState.SelectingSong;
+			return gameStateBehaviour.GameState == GameState.SelectingSong;
 		}
 	}
 
 	private bool IsPlayingSong
 	{
 		get{
-			return gameState == GameState.PlayingSong;
+			return gameStateBehaviour.GameState == GameState.PlayingSong;
 		}
 	}
 
 	private bool IsPlayingWriteActivity {
 		get{
-			return gameState == GameState.WriteActivitySong;
+			return gameStateBehaviour.GameState == GameState.WriteActivity;
 		}
 	}
 
 	private bool IsPlayingWordActivity {
 		get{
-			return gameState == GameState.WordActivitySong;
+			return gameStateBehaviour.GameState == GameState.WordActivity;
 		}
 	}
 
 	private bool IsShowingResults {
 		get{
-			return gameState == GameState.ShowingResults;
+			return gameStateBehaviour.GameState == GameState.ShowingResults;
 		}
 	}
-	
+
 	void Start () {
-		gameState = GameState.SelectingSong;
+		gameStateBehaviour.GameState = GameState.SelectingSong;
 		musicList.SongStarted += HandleSongStarted;
 		musicList.SongFinished += HandleSongFinished;
 		karaoke.SongFinished += HandleFinishSongButtonSelected;
 		karaoke.SongPaused += HandleSongPaused;
-		wordActivity.ActivityFinished += HandleActivityFinished;
 		results.BackActionExecuted += HandleBackActionExecuted;
-		results.RetryActionExecuted += HandleRetryActionExecuted;
 	}
 	
 	void Update(){
@@ -94,34 +92,31 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	private void HandleSongStarted (){
-		gameState = GameState.PlayingSong;
+		gameStateBehaviour.GameState = GameState.PlayingSong;
 		karaoke.BeginSubtitles (musicList.subtitleList, musicList.GetAudioSourceFromPlayer());
 	}
 	
 	private void HandleSongFinished (){
-
-	if (IsPlayingSong) {
-		StartWordActivity();
-	} else if(IsSelectingSong){			
-		musicList.RestartPlayer ();
+		if (IsPlayingSong) 
+			StartWordActivity();
+		else if(IsSelectingSong)			
+			musicList.RestartPlayer ();
 	}
-}
+
 	private void HandleFinishSongButtonSelected (){
 		if (IsPlayingSong) {
 			StartWordActivity ();
 		}
 	}
 
-	private void StartWriteActivity ()
-	{
-		gameState = GameState.WriteActivitySong;
+	private void StartWriteActivity ()	{
+		gameStateBehaviour.GameState = GameState.WriteActivity;
 		musicList.SetInactive ();
 		writeActivity.Reset ();
 	}
 
-	private void StartWordActivity ()
-	{
-		gameState = GameState.WordActivitySong;
+	private void StartWordActivity ()	{
+		gameStateBehaviour.GameState = GameState.WordActivity;
 		musicList.SetInactive ();
 		wordActivity.Reset ();
 	}
@@ -129,17 +124,10 @@ public class GameManager : MonoBehaviour {
 	private void HandleSongPaused (){
 		musicList.PauseSong ();
 	}
-	
+
 	private void HandleBackActionExecuted (){
-		gameState = GameState.SelectingSong;
+		gameStateBehaviour.GameState = GameState.SelectingSong;
 		musicList.RestartPlayer ();
 	}
 
-	private void HandleActivityFinished() {
-		gameState = GameState.ShowingResults;
-	}
-	private void HandleRetryActionExecuted() {
-		gameState = GameState.WriteActivitySong;
-		StartWriteActivity ();
-	}
 }

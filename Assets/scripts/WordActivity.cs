@@ -29,7 +29,9 @@ public class WordActivity : Activity {
 				
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
-		ActivityReseted += HandleActivityReseted;
+		result.RetryActionExecuted += HandleActivityStarted;
+		ActivityReseted += HandleActivityReseted;		
+		ActivityStarted += HandleActivityStarted;
 	}
 
 	private void ReadDataFromJson (){
@@ -37,13 +39,6 @@ public class WordActivity : Activity {
 		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
-	}
-
-	private void HandleActivityReseted(){
-		ReadDataFromJson ();
-		DestroyWordList ();
-		ClearElements ();
-		randomWords.DrawButtonsByWord(data.wordsList);
 	}
 
 	private void DestroyWordList(){
@@ -88,13 +83,23 @@ public class WordActivity : Activity {
 		if (correctWords >= 2) {
 			randomWords.DisableAllButtons();
 			correctWords = 0;
-			isActivityFinished = true;
+			SetActivityAsFinished();
 		}
 	}
-	
+
 	private void HandleSelectedCorrectWords () {
 		resultsButton.gameObject.SetActive(true);
 	}
 	
-
+	private void HandleActivityStarted () {
+		Reset ();
+		gameStateBehaviour.GameState = GameState.WordActivity;
+	}
+	
+	private void HandleActivityReseted(){
+		ReadDataFromJson ();
+		DestroyWordList ();
+		ClearElements ();
+		randomWords.DrawButtonsByWord(data.wordsList);
+	}
 }

@@ -37,7 +37,7 @@ public class RandomWordsList : MonoBehaviour {
 
 	public void DisableAllButtons(){
 		foreach(Button word in randomWordsButtons){
-			word.interactable = false;
+			if(word != null )word.interactable = false;
 		}
 		FinishGame ();
 	}

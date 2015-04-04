@@ -14,27 +14,25 @@ public class Activity : MonoBehaviour {
 	[SerializeField]
 	protected float timeB;
 	[SerializeField]
+	protected Button resultsButton;
+	[SerializeField]
 	protected ResultsController result;
 	[SerializeField]
-	protected Button resultsButton;
+	protected GameStateBehaviour gameStateBehaviour;
+
+	public Action ActivityStarted {
+		get;
+		set;
+	}
 
 	public Action ActivityReseted {
 		get;
 		set;
 	}
 
-	public Action ActivityFinished {
-		get;
-		set;
-	}
-
 	void Start (){		
 		resultsButton.onClick.AddListener (delegate {
-			if(ActivityFinished != null){
-				ActivityFinished();
-				resultsButton.gameObject.SetActive(false);
-				score.SetTime (elapsedTimeOfActivity);
-			}
+			CloseActivity ();
 		});
 
 		score = new Score ();
@@ -52,9 +50,9 @@ public class Activity : MonoBehaviour {
 		elapsedTimeOfActivity = 0;
 		SetActive ();
 		SetActivityAsNotFinished ();
-		if (ActivityReseted != null) {
+
+		if (ActivityReseted != null)
 			ActivityReseted ();
-		}
 	}
 
 	public void SetActive(){
@@ -69,14 +67,6 @@ public class Activity : MonoBehaviour {
 		this.level = level;
 	}
 
-	public int GetScorePoints(){
-		return score.CalculateScore();
-	}
-
-	public float GetElapsedTime(){
-		return elapsedTimeOfActivity;
-	}
-
 	protected void SetActivityAsFinished(){
 		isActivityFinished = true;
 	}
@@ -84,4 +74,13 @@ public class Activity : MonoBehaviour {
 	protected void SetActivityAsNotFinished(){
 		isActivityFinished = false;
 	}
+
+	private void CloseActivity ()	{
+		resultsButton.gameObject.SetActive (false);
+		score.SetTime (elapsedTimeOfActivity);
+		result.scoreLevel = score.CalculateScore ();
+		result.elapsedTime = elapsedTimeOfActivity;
+		gameStateBehaviour.GameState = GameState.ShowingResults;
+	}
+
 }

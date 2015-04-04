@@ -24,7 +24,9 @@ public class WriteActivity : Activity {
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
-		ActivityReseted += HandleActivityReseted;
+		result.RetryActionExecuted += HandleActivityStarted;
+		ActivityStarted += HandleActivityStarted;
+		ActivityReseted += HandleActivityReseted;	
 	}
 
 	private void ReadDataFromJson (){
@@ -32,29 +34,6 @@ public class WriteActivity : Activity {
 		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
-	}
-	
-	private void HandleActivityReseted(){
-		ReadDataFromJson ();
-		DestroyPhrase ();
-		DestroyWord ();
-		phrase = GetRandomPhraseFromSong (data.phrases);
-		phraseUI.DrawPhrase (phrase);
-		GetHiddenWordByIndex (0);
-	}
-
-	private void HandleLetterButtonSelected (Button letterButton) {
-		string letter = letterButton.transform.GetChild (0).GetComponent<Text> ().text;
-		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
-	}
-	
-	private void HandleWordFinished (int indexNextWord)	{
-		DestroyWord ();
-		GetHiddenWordByIndex (indexNextWord);
-	}
-	
-	private void HandlePhraseFinished () {
-		resultsButton.gameObject.SetActive(true);
 	}
 
 	private void GetHiddenWordByIndex (int indexHiddenWord)	{
@@ -99,5 +78,33 @@ public class WriteActivity : Activity {
 		foreach(Transform  child in wordUI.transform ) {
 			Destroy (child.gameObject);
 		}
+	}
+	
+	private void HandleActivityReseted(){
+		ReadDataFromJson ();
+		DestroyPhrase ();
+		DestroyWord ();
+		phrase = GetRandomPhraseFromSong (data.phrases);
+		phraseUI.DrawPhrase (phrase);
+		GetHiddenWordByIndex (0);
+	}
+	
+	private void HandleLetterButtonSelected (Button letterButton) {
+		string letter = letterButton.transform.GetChild (0).GetComponent<Text> ().text;
+		letterButton.interactable = !phraseUI.CheckCorrectLetter (letter);
+	}
+	
+	private void HandleWordFinished (int indexNextWord)	{
+		DestroyWord ();
+		GetHiddenWordByIndex (indexNextWord);
+	}
+	
+	private void HandlePhraseFinished () {
+		resultsButton.gameObject.SetActive(true);
+	}
+
+	private void HandleActivityStarted () {
+		Reset ();
+		gameStateBehaviour.GameState = GameState.WriteActivity;
 	}
 }

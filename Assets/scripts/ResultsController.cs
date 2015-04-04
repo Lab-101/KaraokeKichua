@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ResultsController : MonoBehaviour {
 	//Data
-	public Activity activity;
+	public float elapsedTime;
 	public int scoreLevel;
 
 	//GUI Objects
@@ -45,10 +45,9 @@ public class ResultsController : MonoBehaviour {
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
-		scoreLevel = activity.GetScorePoints();
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel);
-		time.text = "Tiempo de la actividad: "+ activity.GetElapsedTime();
+		time.text = "Tiempo de la actividad: "+ elapsedTime;
 		progressBar.SetFillerSize (scoreLevel);
 
 	}
