@@ -17,14 +17,16 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private GameObject activityList;
 	[SerializeField]
-	private Button selectLevel;
+	private Button levelButton;
 	[SerializeField]
 	private Text levelName;
 
 	void Awake(){
 		SetUpActivities ();
 		ClearActivitysList ();
-		selectLevel.onClick.AddListener(() => ShowActivitysList());
+		levelButton.onClick.AddListener(delegate {
+			HandleLevelButtonClicked ();
+		} );
 	}
 
 	private void SetUpActivities(){	
@@ -57,9 +59,9 @@ public class Level : MonoBehaviour {
 		string name = "";
 
 		if(activity is  WordActivity)
-			name = "Karaoke + Actividad de palabras"+ "\n" + "Aprende cantando";
+			name =  GameSettings.Instance.wordActivityName + "\n" + GameSettings.Instance.wordActivityInstruction;
 		if(activity is WriteActivity)
-			name = "Actividad de escritura"+ "\n" + "Descubre la palabra";
+			name = GameSettings.Instance.writeActivityName + "\n" + GameSettings.Instance.writeActivityInstruction;
 
 		return name;
 	}
@@ -71,22 +73,23 @@ public class Level : MonoBehaviour {
 		}
 	}
 
-	private void ShowActivitysList ()
-	{
+	private void ShowActivitysList () {
 		IdentifyActiveLevel ();
 		ClearActivitysList ();
 		SetUpActivities ();
 	}
 
-	private void ClearActivitysList ()
-	{
+	private void ClearActivitysList () {
 		foreach(Transform  child in activityList.transform ) {
 			Destroy (child.gameObject);
 		}
 	}
 
-	private void IdentifyActiveLevel ()
-	{
-		selectLevel.image.color = Color.green;
+	private void IdentifyActiveLevel ()	{
+		levelButton.image.color = Color.green;
+	}
+
+	private void HandleLevelButtonClicked () {
+		ShowActivitysList ();
 	}
 }

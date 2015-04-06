@@ -6,6 +6,10 @@ public class GameSettings : ScriptableObject {
 
 	public float songStartTime;
 	public float songPlayTime;
+	public string wordActivityName;
+	public string wordActivityInstruction;
+	public string writeActivityName;
+	public string writeActivityInstruction;
 
 	private static GameSettings instance; 
 	
