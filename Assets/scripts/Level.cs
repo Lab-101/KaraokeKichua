@@ -18,6 +18,8 @@ public class Level : MonoBehaviour {
 	private GameObject activityList;
 	[SerializeField]
 	private Button selectLevel;
+	[SerializeField]
+	private Text levelName;
 
 	void Awake(){
 		SetUpActivities ();
@@ -32,6 +34,7 @@ public class Level : MonoBehaviour {
 				activity.SetLevel(numberLevel);
 				DrawActivity(activity, index);
 				index++;
+				levelName.text = "Nivel: "+ numberLevel ;
 			}
 		}
 	}
@@ -54,9 +57,9 @@ public class Level : MonoBehaviour {
 		string name = "";
 
 		if(activity is  WordActivity)
-			name = "Karaoke + Actividad de palabreas";
+			name = "Karaoke + Actividad de palabras"+ "\n" + "Aprende cantando";
 		if(activity is WriteActivity)
-			name = "Actividad de escritura";
+			name = "Actividad de escritura"+ "\n" + "Descubre la palabra";
 
 		return name;
 	}
