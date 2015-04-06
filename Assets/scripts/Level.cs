@@ -16,9 +16,11 @@ public class Level : MonoBehaviour {
 	private Button activityButtonPrefab;
 	[SerializeField]
 	private GameObject activityList;
+	[SerializeField]
+	private Button selectLevel;
 
 	void Start(){
-		SetUpActivities ();
+		selectLevel.onClick.AddListener(() => ShowActivitysList());
 	}
 
 	private void SetUpActivities(){	
@@ -61,6 +63,20 @@ public class Level : MonoBehaviour {
 		foreach (Activity activity in activities) {
 			if(activityButton.name == GetActivityType(activity))
 				activity.StartActivity();
+		}
+	}
+
+	private void ShowActivitysList ()
+	{
+		ClearActivitysList ();
+		SetUpActivities ();
+		DrawActivity ();
+	}
+	
+	private void ClearActivitysList ()
+	{
+		foreach(Transform  child in activityList.transform ) {
+			Destroy (child.gameObject);
 		}
 	}
 }
