@@ -66,7 +66,7 @@ public class PhraseUI : MonoBehaviour {
 
 	private void AddHiddenWordInList(List<Button> hiddenWordButtons){
 		if(isFirstHiddenWord){
-			ChangeColorListLetters(hiddenWordButtons, new Color32(147, 185, 249, 255));
+			ChangeColorListLetters(hiddenWordButtons, "seleccionada", new Color32(227, 197, 8, 255));
 			isFirstHiddenWord = false;
 		}
 		hiddenWords.Add(hiddenWordsCounter, hiddenWordButtons);
@@ -81,8 +81,8 @@ public class PhraseUI : MonoBehaviour {
 
 	private Button createLetter(string letter, bool isLetterHide){
 		Button newItem;
-		newItem = Instantiate(letterPrefab) as Button;;
-		newItem.image.color = isLetterHide ? Color.cyan : Color.white;
+		newItem = Instantiate(letterPrefab) as Button;
+		newItem.image.sprite = isLetterHide ? GetImageFrom("siguiente") : GetImageFrom("visible");
 		newItem.name = letter;
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).gameObject.SetActive(!isLetterHide);
@@ -102,14 +102,14 @@ public class PhraseUI : MonoBehaviour {
 
 	private void PaintWordFinished(List<Button> finishedWordButtons){
 		if (WordFinished != null){		
-			ChangeColorListLetters(finishedWordButtons, Color.green);
+			ChangeColorListLetters(finishedWordButtons, "completa", Color.white);
 			WordFinished(currentHiddenWord);
 		}
 	}
 
 	private void PaintNextWordInPhrase(List<Button> netxWordButtons){
 		netxWordButtons = hiddenWords[currentHiddenWord] as List<Button>;
-		ChangeColorListLetters(netxWordButtons, new Color32(147, 185, 249, 255));
+		ChangeColorListLetters(netxWordButtons, "seleccionada", new Color32(227, 197, 8, 255));
 	}
 
 	private void FinishGame(){
@@ -118,9 +118,15 @@ public class PhraseUI : MonoBehaviour {
 		isFirstHiddenWord = true;
 	}
 		
-	private void ChangeColorListLetters(List<Button> letters, Color color){
-		foreach (Button letter in letters)
-			letter.image.color = color;
+	private void ChangeColorListLetters(List<Button> letters, string nameImage, Color colorLetter){
+		foreach (Button letter in letters){
+			letter.image.sprite = GetImageFrom(nameImage);
+			letter.transform.GetChild(0).GetComponent<Text>().color = colorLetter;
+		}
+	}
+
+	private Sprite GetImageFrom(string word){
+		return Resources.Load ("Images/Texturas/bg_letra_"+word, typeof(Sprite)) as Sprite;
 	}
 
 	private Text GetTextFrom(Button button){
