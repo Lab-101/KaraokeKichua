@@ -70,9 +70,8 @@ public class Level : MonoBehaviour {
 	{
 		ClearActivitysList ();
 		SetUpActivities ();
-		DrawActivity ();
 	}
-	
+
 	private void ClearActivitysList ()
 	{
 		foreach(Transform  child in activityList.transform ) {
