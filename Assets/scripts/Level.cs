@@ -16,8 +16,6 @@ public class Level : MonoBehaviour {
 	private Button activityButtonPrefab;
 	[SerializeField]
 	private GameObject activityList;
-	[SerializeField]
-	private MusicListController musicList;
 
 	void Awake(){
 		SetLevelToActivities ();

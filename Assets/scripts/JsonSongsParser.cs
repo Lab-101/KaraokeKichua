@@ -34,7 +34,6 @@ public class JsonSongsParser {
 	{
 		Song songObject = new Song ();
 		songObject.urlSong = song ["name"].ToString();
-		songObject.phrases = CreatePhrasesList(song["phrases"] as List<object>);
 		return songObject;
 	}
 
