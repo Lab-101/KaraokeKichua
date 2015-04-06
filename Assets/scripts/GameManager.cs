@@ -9,8 +9,7 @@ public class GameManager : MonoBehaviour {
 	public WordActivity wordActivity;
 	public ResultsController results;
 	public GameStateBehaviour gameStateBehaviour;
-	public GameObject levelPanel;
-	public bool WasActivatedAwake;
+	public GameObject mainScreen;
 
 	private bool IsSelectingSong 
 	{
@@ -73,37 +72,37 @@ public class GameManager : MonoBehaviour {
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
-			levelPanel.SetActive(false);
+			mainScreen.SetActive(false);
 		} else if (IsPlayingSong) {
 			karaoke.SetActive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
-			levelPanel.SetActive(false);
+			mainScreen.SetActive(false);
 		} else if (IsPlayingWriteActivity) {
 			karaoke.SetInactive ();
 			writeActivity.SetActive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
-			levelPanel.SetActive(false);
+			mainScreen.SetActive(false);
 		}else if (IsPlayingWordActivity) {
 			karaoke.SetInactive ();
 			wordActivity.SetActive ();
 			writeActivity.SetInactive ();
 			results.SetInactive ();
-			levelPanel.SetActive(false);
+			mainScreen.SetActive(false);
 		} else if (IsShowingResults){
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetActive();
-			levelPanel.SetActive(false);
+			mainScreen.SetActive(false);
 		} else if(IsSelectingLevel) {
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetInactive();
-			levelPanel.SetActive(true);
+			mainScreen.SetActive(true);
 		}else {
 			karaoke.SetInactive ();
 		}

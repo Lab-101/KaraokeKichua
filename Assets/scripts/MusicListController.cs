@@ -133,15 +133,3 @@ public class MusicListController : MonoBehaviour {
 		gameStateBehaviour.GameState = GameState.WordActivity;
 	}
 }
-
-class SubtitleLoader {
-	public string URL;
-	public Action<string> SubtitlesObtained;
-
-	public IEnumerator Start() {
-		WWW www = new WWW(URL);
-		yield return www;
-		if (SubtitlesObtained != null)
-			SubtitlesObtained(www.text);
-	}
-}

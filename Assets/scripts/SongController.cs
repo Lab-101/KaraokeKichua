@@ -32,9 +32,11 @@ public class SongController : MonoBehaviour {
 	}
 	
 	public void SetSong (string songName){
-		song = songName;
-		songAudioClip = Resources.Load (songName, typeof(AudioClip)) as AudioClip;
-		GetSubtitlesFormFile (songName);
+		if (songName != null) {
+			song = songName;
+			songAudioClip = Resources.Load (songName, typeof(AudioClip)) as AudioClip;
+			GetSubtitlesFormFile (songName);
+		}
 	}
 	
 	public void StartKaraoke(){
