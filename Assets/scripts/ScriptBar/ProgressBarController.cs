@@ -3,11 +3,12 @@ using UnityEngine.UI;
 
 public class  ProgressBarController : MonoBehaviour
 {
-	public RectTransform fillerCharge;
+	[SerializeField]
+	private RectTransform fillerCharge;
 	private float maxBarWidth;
 	private float XOffset;
 
-	void Start()
+	void Awake()
 	{
 		maxBarWidth = fillerCharge.rect.width;
 	    XOffset = (transform.GetComponent<RectTransform>().rect.width - fillerCharge.rect.width) /2 ;
