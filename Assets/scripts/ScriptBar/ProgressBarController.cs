@@ -7,14 +7,12 @@ public class  ProgressBarController : MonoBehaviour
 	private float maxBarWidth;
 	private float XOffset;
 
-	void Start()
-	{
+	void Start() {
 		maxBarWidth = fillerCharge.rect.width;
 	    XOffset = (transform.GetComponent<RectTransform>().rect.width - fillerCharge.rect.width) /2 ;
 	}
 
-	public void SetFillerSize(int levelActivity)
-	{
+	public void SetFillerSize(int levelActivity) {
 		float barFulled = levelActivity * maxBarWidth / 12 ;
 		fillerCharge.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, XOffset, barFulled);
 	}

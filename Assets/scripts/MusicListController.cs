@@ -34,8 +34,7 @@ public class MusicListController : MonoBehaviour {
 	}
 	
 	void Start () {
-		ParseJsonData ();
-		playButton.onClick.AddListener(HandlePlayActionExecuted);
+		playButton.onClick.AddListener(StartKaraoke);
 		ui.songSelected += HandleSongSelected;
 		player.PlayFinished += HandlePlayFinished;
 		karaoke.SongFinished += HandleSongFinished;
@@ -43,18 +42,22 @@ public class MusicListController : MonoBehaviour {
 		ui.SetSongs (songsList);
 	}
 	
-	void ParseJsonData (){
-		JsonSongsParser parser = new JsonSongsParser ();
-		parser.JSONString = json.text;
-		songsList = parser.SongsList;
+	public void SetSongList (List<Song> songs){
+		songsList = songs;
 	}
 	
-	public AudioSource GetAudioSourceFromPlayer(){
+	public void StartKaraoke(){
+		gameStateBehaviour.GameState = GameState.PlayingSong;
+		karaoke.BeginSubtitles (subtitleList, GetAudioSourceFromPlayer ());
+		player.SetActive ();
+		player.PlaySong(selectedClip);
+	}
+
+	private AudioSource GetAudioSourceFromPlayer(){
 		return player.audioSource;
-	}
+	}	
 	
-	
-	public void PauseSong(){		
+	private void PauseSong(){		
 		if (player.IsPlaying()) {
 			player.Pause ();
 			player.SetInactive();
@@ -64,17 +67,9 @@ public class MusicListController : MonoBehaviour {
 		}
 	}
 	
-	public void RestartPlayer(){
+	private void RestartPlayer(){
 		player.SetActive();
 		player.SetSongLengthInSeconds (0.01f);
-	}
-		
-	public void SetActive(){
-		gameObject.SetActive (true);
-	}
-	
-	public void SetInactive(){
-		gameObject.SetActive (false);
 	}
 	
 	private void GetSubtitlesFormFile (string songName){
@@ -118,27 +113,24 @@ public class MusicListController : MonoBehaviour {
 				subtitleList.Add(line);
 	}
 
-	private void HandlePlayActionExecuted(){
-		gameStateBehaviour.GameState = GameState.PlayingSong;
-		karaoke.BeginSubtitles (subtitleList, GetAudioSourceFromPlayer ());
-		player.SetActive ();
-		player.PlaySong(selectedClip);
-	}
-	
 	private void HandlePlayFinished (){
 		if (gameStateBehaviour.GameState == GameState.PlayingSong)
-			gameStateBehaviour.GameState = GameState.SelectingLevel;
+			OpenWordActivity ();
 		else
 			RestartPlayer ();
 	}
 
 	private void HandleSongFinished () {
-		gameStateBehaviour.GameState = GameState.SelectingLevel;
+		OpenWordActivity ();
 		RestartPlayer ();
 	}
 	
 	private void HandleSongPaused () {
 		PauseSong ();
+	}
+
+	private void OpenWordActivity(){		
+		gameStateBehaviour.GameState = GameState.WordActivity;
 	}
 }
 
