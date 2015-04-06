@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -27,9 +27,9 @@ public class MusicListUI : MonoBehaviour {
 		
 		foreach (Song song in songs){
 			Button newItem = Instantiate(itemPrefab) as Button;
-			newItem.name = song.urlSong;
+			newItem.name = song.songName;
 			newItem.transform.SetParent(gameObject.transform, false);	
-			newItem.transform.GetChild(0).GetComponent<Text>().text = song.urlSong;
+			newItem.transform.GetChild(0).GetComponent<Text>().text = song.songName;
 			newItem.onClick.AddListener(delegate {
 				SelectSongInList(newItem.gameObject);
 			});

@@ -4,5 +4,5 @@ using System.Collections.Generic;
 
 [Serializable]
 public struct Song {
-	public string urlSong;
+	public string songName;
 }

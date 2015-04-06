@@ -92,7 +92,7 @@ public class MusicListController : MonoBehaviour {
 
 	private Song GetSongFrom(string selectedSongUrl){
 		foreach (Song song in songsList){
-			if(song.urlSong == selectedSongUrl)
+			if(song.songName == selectedSongUrl)
 				return song;
 		}
 		

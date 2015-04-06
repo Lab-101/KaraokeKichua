@@ -33,7 +33,7 @@ public class JsonSongsParser {
 	private Song CreateSongObject (Dictionary<string, object> song)
 	{
 		Song songObject = new Song ();
-		songObject.urlSong = song ["name"].ToString();
+		songObject.songName = song ["name"].ToString();
 		return songObject;
 	}
 

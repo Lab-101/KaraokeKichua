@@ -22,13 +22,13 @@ public class WordActivity : Activity {
 	[SerializeField]
 	private Text firstTitle;
 	[SerializeField]
-	private Text secondTitle;	
+	private Text secondTitle;
 	[SerializeField]
-	private MusicListController musicList;
+	protected SongController songController;
 
 	void Awake(){
 		ReadDataFromJson ();
-		SetDataMusicList ();
+		SetDataSong (data.songName);
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityReseted += HandleActivityReseted;
@@ -66,12 +66,8 @@ public class WordActivity : Activity {
 		return Resources.Load ("Images/"+word, typeof(Sprite)) as Sprite;
 	}
 
-	private void SetDataMusicList(){
-		List<Song> songs = new List<Song> ();
-		Song song = new Song ();
-		song.urlSong = data.songName;
-		songs.Add (song);
-		musicList.SetSongList (songs);
+	private void SetDataSong(string song){
+		songController.SetSong(song);
 	} 
 
 	private void HandleRandomWordSelected (Button wordButton) {
@@ -104,7 +100,7 @@ public class WordActivity : Activity {
 		DestroyWordList ();
 		ClearElements ();
 		randomWords.DrawButtonsByWord(data.wordsList);
-		result.RetryActionExecuted += StartActivity;
-		musicList.StartKaraoke ();
+		result.RetryActionExecuted = StartActivity;
+		songController.StartKaraoke ();
 	}
 }

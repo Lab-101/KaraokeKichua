@@ -17,37 +17,36 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private GameObject activityList;
 
-	void Awake(){
-		SetLevelToActivities ();
-		DrawActivityList (activities);
+	void Start(){
+		SetUpActivities ();
 	}
 
-	private void SetLevelToActivities(){
-		foreach (Activity activity in activities) {
-			if(activity != null)
-				activity.SetLevel(numberLevel);
-		}
-	}	
-
-	private void DrawActivityList(List<Activity> activities){	
+	private void SetUpActivities(){	
 		int index = 0;
-		foreach (Activity activity in activities){
-			Button newItem = Instantiate(activityButtonPrefab) as Button;
-			newItem.name = GetActivityType(activity);
-			newItem.transform.GetChild(0).GetComponent<Text>().text = GetActivityName(activity);
-			newItem.transform.SetParent(activityList.gameObject.transform, false);	
-			newItem.onClick.AddListener(delegate {
-				HandleClickButtonActivity(newItem.gameObject);
-			});
-			index ++;
+		foreach (Activity activity in activities) {
+			if(activity != null){
+				activity.SetLevel(numberLevel);
+				DrawActivity(activity, index);
+				index++;
+			}
 		}
+	}
+
+	private void DrawActivity (Activity activity, int index){
+		Button newItem = Instantiate(activityButtonPrefab) as Button;
+		newItem.name = GetActivityType(activity);
+		newItem.transform.GetChild(0).GetComponent<Text>().text = GetActivityName(activity);
+		newItem.transform.SetParent(activityList.gameObject.transform, false);	
+		newItem.onClick.AddListener(delegate {
+			HandleClickButtonActivity(newItem.gameObject);
+		});
 	}
 
 	private string GetActivityType(Activity activity){
 		return activity.GetType ().ToString();
 	}
 
-	private string GetActivityName(Activity activity){
+	private string GetActivityName (Activity activity){
 		string name = "";
 
 		if(activity is  WordActivity)
