@@ -70,6 +70,7 @@ public class Level : MonoBehaviour {
 
 	private void ShowActivitysList ()
 	{
+		IdentifyActiveLevel ();
 		ClearActivitysList ();
 		SetUpActivities ();
 	}
@@ -79,5 +80,10 @@ public class Level : MonoBehaviour {
 		foreach(Transform  child in activityList.transform ) {
 			Destroy (child.gameObject);
 		}
+	}
+
+	private void IdentifyActiveLevel ()
+	{
+		selectLevel.image.color = Color.green;
 	}
 }
