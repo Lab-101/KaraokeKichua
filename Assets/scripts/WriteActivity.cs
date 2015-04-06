@@ -19,12 +19,14 @@ public class WriteActivity : Activity {
 	private Image imageHiddenWord;
 
 	void Awake(){
-		ReadDataFromJson ();
-
+		if (level != null) {
+			ReadDataFromJson ();
+		}
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
 		ActivityReseted += HandleActivityReseted;	
+
 	}
 
 	private void ReadDataFromJson (){

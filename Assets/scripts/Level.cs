@@ -19,7 +19,9 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private Button selectLevel;
 
-	void Start(){
+	void Awake(){
+		SetUpActivities ();
+		ClearActivitysList ();
 		selectLevel.onClick.AddListener(() => ShowActivitysList());
 	}
 
