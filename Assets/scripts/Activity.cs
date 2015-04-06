@@ -20,12 +20,12 @@ public class Activity : MonoBehaviour {
 	[SerializeField]
 	protected GameStateBehaviour gameStateBehaviour;
 
-	public Action ActivityStarted {
+	protected Action ActivityStarted {
 		get;
 		set;
 	}
 
-	public Action ActivityReseted {
+	protected Action ActivityReseted {
 		get;
 		set;
 	}
@@ -46,9 +46,8 @@ public class Activity : MonoBehaviour {
 			elapsedTimeOfActivity += Time.deltaTime;
 	}
 
-	public void Reset(){
+	public void StartActivity(){
 		elapsedTimeOfActivity = 0;
-		SetActive ();
 		SetActivityAsNotFinished ();
 
 		if (ActivityReseted != null)
@@ -82,5 +81,4 @@ public class Activity : MonoBehaviour {
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
 	}
-
 }

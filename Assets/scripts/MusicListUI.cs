@@ -39,7 +39,7 @@ public class MusicListUI : MonoBehaviour {
 	}
 
 	private void SelectSongInList(GameObject song){
-		ChangeStylesOfButtonSelected (song);
+		//ChangeStylesOfButtonSelected (song);
 		currentButtonSelected = song.GetComponent<Button>();
 		if (songSelected != null) {
 			songSelected(currentButtonSelected.name);

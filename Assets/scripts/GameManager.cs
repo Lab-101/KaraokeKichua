@@ -4,12 +4,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
-	public MusicListController musicList;
 	public KaraokeController karaoke;
 	public WriteActivity writeActivity;
 	public WordActivity wordActivity;
 	public ResultsController results;
 	public GameStateBehaviour gameStateBehaviour;
+	public GameObject levelPanel;
+	public bool WasActivatedAwake;
 
 	private bool IsSelectingSong 
 	{
@@ -43,91 +44,69 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	private bool IsSelectingLevel {
+		get{
+			return gameStateBehaviour.GameState == GameState.SelectingLevel;
+		}
+	}
+
 	void Start () {
-		gameStateBehaviour.GameState = GameState.SelectingSong;
-		musicList.SongStarted += HandleSongStarted;
-		musicList.SongFinished += HandleSongFinished;
-		karaoke.SongFinished += HandleFinishSongButtonSelected;
-		karaoke.SongPaused += HandleSongPaused;
-		results.BackActionExecuted += HandleBackActionExecuted;
+		gameStateBehaviour.GameState = GameState.SelectingLevel;
+
+		karaoke.SetActive ();
+		writeActivity.SetActive ();
+		wordActivity.SetActive ();
+		results.SetActive ();		
+
+		karaoke.SetInactive ();
+		writeActivity.SetInactive ();
+		wordActivity.SetInactive ();
+		results.SetInactive ();
 	}
 	
 	void Update(){
 		if (Input.GetKeyDown(KeyCode.Escape)) 
 			Application.Quit(); 
-		
+
 		if (IsSelectingSong) {
-			musicList.SetActive ();
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
+			levelPanel.SetActive(false);
 		} else if (IsPlayingSong) {
-			musicList.SetInactive ();
 			karaoke.SetActive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
+			levelPanel.SetActive(false);
 		} else if (IsPlayingWriteActivity) {
-			musicList.SetInactive ();
 			karaoke.SetInactive ();
 			writeActivity.SetActive ();
 			wordActivity.SetInactive ();
 			results.SetInactive ();
+			levelPanel.SetActive(false);
 		}else if (IsPlayingWordActivity) {
-			musicList.SetInactive ();
 			karaoke.SetInactive ();
 			wordActivity.SetActive ();
 			writeActivity.SetInactive ();
 			results.SetInactive ();
+			levelPanel.SetActive(false);
 		} else if (IsShowingResults){
-			musicList.SetInactive ();
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
 			results.SetActive();
-		} else {
+			levelPanel.SetActive(false);
+		} else if(IsSelectingLevel) {
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			results.SetInactive();
+			levelPanel.SetActive(true);
+		}else {
 			karaoke.SetInactive ();
 		}
-	}
-	
-	private void HandleSongStarted (){
-		gameStateBehaviour.GameState = GameState.PlayingSong;
-		karaoke.BeginSubtitles (musicList.subtitleList, musicList.GetAudioSourceFromPlayer());
-	}
-	
-	private void HandleSongFinished (){
-		if (IsPlayingSong) 
-			StartWordActivity();
-		else if(IsSelectingSong)			
-			musicList.RestartPlayer ();
-	}
-
-	private void HandleFinishSongButtonSelected (){
-		if (IsPlayingSong) {
-			StartWordActivity ();
-		}
-	}
-
-	private void StartWriteActivity ()	{
-		gameStateBehaviour.GameState = GameState.WriteActivity;
-		musicList.SetInactive ();
-		writeActivity.Reset ();
-	}
-
-	private void StartWordActivity ()	{
-		gameStateBehaviour.GameState = GameState.WordActivity;
-		musicList.SetInactive ();
-		wordActivity.Reset ();
-	}
-	
-	private void HandleSongPaused (){
-		musicList.PauseSong ();
-	}
-
-	private void HandleBackActionExecuted (){
-		gameStateBehaviour.GameState = GameState.SelectingSong;
-		musicList.RestartPlayer ();
 	}
 
 }

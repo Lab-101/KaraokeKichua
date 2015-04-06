@@ -22,16 +22,16 @@ public class WordActivity : Activity {
 	[SerializeField]
 	private Text firstTitle;
 	[SerializeField]
-	private Text secondTitle;
+	private Text secondTitle;	
+	[SerializeField]
+	public KaraokeController karaoke;
 
 	void Awake(){
 		ReadDataFromJson ();
 				
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
-		result.RetryActionExecuted += HandleActivityStarted;
 		ActivityReseted += HandleActivityReseted;		
-		ActivityStarted += HandleActivityStarted;
 	}
 
 	private void ReadDataFromJson (){
@@ -91,15 +91,12 @@ public class WordActivity : Activity {
 		resultsButton.gameObject.SetActive(true);
 	}
 	
-	private void HandleActivityStarted () {
-		Reset ();
-		gameStateBehaviour.GameState = GameState.WordActivity;
-	}
-	
 	private void HandleActivityReseted(){
 		ReadDataFromJson ();
 		DestroyWordList ();
 		ClearElements ();
 		randomWords.DrawButtonsByWord(data.wordsList);
+		gameStateBehaviour.GameState = GameState.WordActivity;
+		result.RetryActionExecuted += HandleActivityReseted;
 	}
 }

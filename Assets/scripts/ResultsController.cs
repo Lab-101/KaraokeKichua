@@ -18,6 +18,8 @@ public class ResultsController : MonoBehaviour {
 	public Image imageNormalScore;
 	public Image imageBestScore;
 	public ProgressBarController progressBar;
+	[SerializeField]
+	protected GameStateBehaviour gameStateBehaviour;
 
 	public Action BackActionExecuted {
 		get;
@@ -30,9 +32,7 @@ public class ResultsController : MonoBehaviour {
 
 	void Start () {
 		exitButton.onClick.AddListener(delegate {
-			if(BackActionExecuted != null){
-				BackActionExecuted();
-			}
+			gameStateBehaviour.GameState = GameState.SelectingLevel;
 		});
 
 		retryButton.onClick.AddListener(delegate {

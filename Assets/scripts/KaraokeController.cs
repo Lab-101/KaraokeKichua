@@ -8,7 +8,6 @@ public class KaraokeController : MonoBehaviour {
 	public Button finishButton;
 	public Button pauseButton;
 	public LyricSyncManager lyricSync;
-	public string songLyricsText;
 	
 	public Action SongFinished {
 		get;

@@ -24,8 +24,6 @@ public class WriteActivity : Activity {
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
-		result.RetryActionExecuted += HandleActivityStarted;
-		ActivityStarted += HandleActivityStarted;
 		ActivityReseted += HandleActivityReseted;	
 	}
 
@@ -87,6 +85,8 @@ public class WriteActivity : Activity {
 		phrase = GetRandomPhraseFromSong (data.phrases);
 		phraseUI.DrawPhrase (phrase);
 		GetHiddenWordByIndex (0);
+		gameStateBehaviour.GameState = GameState.WriteActivity;
+		result.RetryActionExecuted += HandleActivityReseted;
 	}
 	
 	private void HandleLetterButtonSelected (Button letterButton) {
@@ -101,10 +101,5 @@ public class WriteActivity : Activity {
 	
 	private void HandlePhraseFinished () {
 		resultsButton.gameObject.SetActive(true);
-	}
-
-	private void HandleActivityStarted () {
-		Reset ();
-		gameStateBehaviour.GameState = GameState.WriteActivity;
 	}
 }

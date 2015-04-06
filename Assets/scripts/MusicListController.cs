@@ -18,6 +18,10 @@ public class MusicListController : MonoBehaviour {
 	
 	[SerializeField]
 	private Player player;
+	[SerializeField]
+	private KaraokeController karaoke;
+	[SerializeField]
+	protected GameStateBehaviour gameStateBehaviour;
 	
 	public Action SongStarted {
 		get;
@@ -34,6 +38,8 @@ public class MusicListController : MonoBehaviour {
 		playButton.onClick.AddListener(HandlePlayActionExecuted);
 		ui.songSelected += HandleSongSelected;
 		player.PlayFinished += HandlePlayFinished;
+		karaoke.SongFinished += HandleSongFinished;
+		karaoke.SongPaused += HandleSongPaused;
 		ui.SetSongs (songsList);
 	}
 	
@@ -71,31 +77,12 @@ public class MusicListController : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 	
-	private void HandleSongSelected (string selectedSongUrl)	{
-		selectedClip = Resources.Load (selectedSongUrl, typeof(AudioClip)) as AudioClip;
-		GetSubtitlesFormFile (selectedSongUrl);
-		selectedSong = GetSongFrom(selectedSongUrl);
-		player.PlayPreview (selectedClip);
-	}
-	
 	private void GetSubtitlesFormFile (string songName){
 		string songNamePath = GetDirectionBySystemOperative (songName);
 		SubtitleLoader loader = new SubtitleLoader ();
 		loader.SubtitlesObtained += HandleSubtitlesObtained;
 		loader.URL = songNamePath;
 		StartCoroutine (loader.Start());
-	}
-
-	private void HandleSubtitlesObtained(string subtitle)
-	{
-		subtitleList = new List<string>();
-		foreach(string line in subtitle.Split('\n')) 
-		{
-			if(line.Contains("Dialogue: "))
-			{
-				subtitleList.Add(line);
-			}
-		}
 	}
 	
 	private string GetDirectionBySystemOperative (string name){
@@ -107,20 +94,7 @@ public class MusicListController : MonoBehaviour {
 		else 
 			return "file://" + Application.streamingAssetsPath + "/" + name + ".ass";
 	}
-	
-	private void HandlePlayActionExecuted(){
-		if(SongStarted != null){
-			SongStarted();
-			player.SetActive ();
-			player.PlaySong(selectedClip);
-		}
-	}
-	
-	private void HandlePlayFinished (){
-		if (SongFinished != null)
-			SongFinished ();
-	}
-	
+
 	private Song GetSongFrom(string selectedSongUrl){
 		foreach (Song song in songsList){
 			if(song.urlSong == selectedSongUrl)
@@ -128,6 +102,43 @@ public class MusicListController : MonoBehaviour {
 		}
 		
 		throw new Exception ("Palabra no encontrada");
+	}
+	
+	private void HandleSongSelected (string selectedSongUrl)	{
+		selectedClip = Resources.Load (selectedSongUrl, typeof(AudioClip)) as AudioClip;
+		GetSubtitlesFormFile (selectedSongUrl);
+		selectedSong = GetSongFrom(selectedSongUrl);
+		player.PlayPreview (selectedClip);
+	}
+	
+	private void HandleSubtitlesObtained(string subtitle){
+		subtitleList = new List<string>();
+		foreach(string line in subtitle.Split('\n')) 
+			if(line.Contains("Dialogue: "))
+				subtitleList.Add(line);
+	}
+
+	private void HandlePlayActionExecuted(){
+		gameStateBehaviour.GameState = GameState.PlayingSong;
+		karaoke.BeginSubtitles (subtitleList, GetAudioSourceFromPlayer ());
+		player.SetActive ();
+		player.PlaySong(selectedClip);
+	}
+	
+	private void HandlePlayFinished (){
+		if (gameStateBehaviour.GameState == GameState.PlayingSong)
+			gameStateBehaviour.GameState = GameState.SelectingLevel;
+		else
+			RestartPlayer ();
+	}
+
+	private void HandleSongFinished () {
+		gameStateBehaviour.GameState = GameState.SelectingLevel;
+		RestartPlayer ();
+	}
+	
+	private void HandleSongPaused () {
+		PauseSong ();
 	}
 }
 
