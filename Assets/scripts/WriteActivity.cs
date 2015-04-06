@@ -86,7 +86,7 @@ public class WriteActivity : Activity {
 		phraseUI.DrawPhrase (phrase);
 		GetHiddenWordByIndex (0);
 		gameStateBehaviour.GameState = GameState.WriteActivity;
-		result.RetryActionExecuted += HandleActivityReseted;
+		result.RetryActionExecuted += StartActivity;
 	}
 	
 	private void HandleLetterButtonSelected (Button letterButton) {

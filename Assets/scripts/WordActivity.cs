@@ -97,6 +97,6 @@ public class WordActivity : Activity {
 		ClearElements ();
 		randomWords.DrawButtonsByWord(data.wordsList);
 		gameStateBehaviour.GameState = GameState.WordActivity;
-		result.RetryActionExecuted += HandleActivityReseted;
+		result.RetryActionExecuted += StartActivity;
 	}
 }
