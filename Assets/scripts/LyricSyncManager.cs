@@ -20,7 +20,7 @@ public class LyricSyncManager : MonoBehaviour {
 	public Regex regex = new Regex(@" ?\{.*?\}");
 	private int nextWord = 0;
 	private List<float> timeSubtitle = new List<float>();
-	private string color = "<color=#00ffffff>";
+	private string color = "<color=#ffffffff>";
 	private string endColor = "</color>";
 	private string coloredWords = "";
 	private string uncoloredWords = "";
