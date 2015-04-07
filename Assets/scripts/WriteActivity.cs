@@ -25,8 +25,8 @@ public class WriteActivity : Activity {
 		wordUI.LetterButtonSelected += HandleLetterButtonSelected;
 		phraseUI.WordFinished += HandleWordFinished;
 		phraseUI.PhraseFinished += HandlePhraseFinished;
-		ActivityReseted += HandleActivityReseted;	
-
+		ActivityStarted += HandleActivityStarted;	
+		ActivityDataReseted += ReadDataFromJson;	
 	}
 
 	private void ReadDataFromJson (){
@@ -79,16 +79,27 @@ public class WriteActivity : Activity {
 			Destroy (child.gameObject);
 		}
 	}
-	
-	private void HandleActivityReseted(){
-		ReadDataFromJson ();
+
+	private void ClearActivity () {
 		DestroyPhrase ();
 		DestroyWord ();
+	}
+
+	private void CreateActivity () {
 		phrase = GetRandomPhraseFromSong (data.phrases);
 		phraseUI.DrawPhrase (phrase);
 		GetHiddenWordByIndex (0);
-		gameStateBehaviour.GameState = GameState.WriteActivity;
 		result.RetryActionExecuted = StartActivity;
+	}
+
+	void BeginActivity ()	{
+		gameStateBehaviour.GameState = GameState.WriteActivity;
+	}
+	
+	private void HandleActivityStarted(){
+		ClearActivity ();
+		CreateActivity ();
+		BeginActivity ();
 	}
 	
 	private void HandleLetterButtonSelected (Button letterButton) {

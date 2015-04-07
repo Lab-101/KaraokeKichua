@@ -24,8 +24,7 @@ public class Activity : MonoBehaviour {
 		get;
 		set;
 	}
-
-	protected Action ActivityReseted {
+	protected Action ActivityDataReseted {
 		get;
 		set;
 	}
@@ -46,14 +45,6 @@ public class Activity : MonoBehaviour {
 			elapsedTimeOfActivity += Time.deltaTime;
 	}
 
-	public void StartActivity(){
-		elapsedTimeOfActivity = 0;
-		SetActivityAsNotFinished ();
-
-		if (ActivityReseted != null)
-			ActivityReseted ();
-	}
-
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
@@ -64,6 +55,19 @@ public class Activity : MonoBehaviour {
 
 	public void SetLevel(int level){
 		this.level = level;
+	}
+
+	public void ResetData(){
+		if (ActivityDataReseted != null)
+			ActivityDataReseted ();
+	}
+
+	public void StartActivity(){
+		elapsedTimeOfActivity = 0;
+		SetActivityAsNotFinished ();
+		
+		if (ActivityStarted != null)
+			ActivityStarted ();
 	}
 
 	protected void SetActivityAsFinished(){

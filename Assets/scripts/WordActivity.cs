@@ -29,11 +29,15 @@ public class WordActivity : Activity {
 	void Awake(){
 		if (level != null) {
 			ReadDataFromJson ();
-			SetDataSong (data.songName);
 		}
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
-		ActivityReseted += HandleActivityReseted;
+		ActivityStarted += HandleActivityStarted;
+		ActivityDataReseted += ReadDataFromJson;
+	}
+
+	public void PlayPreview ()	{
+		songController.PlayPreview(data.songName);
 	}
 
 	private void ReadDataFromJson (){
@@ -41,6 +45,7 @@ public class WordActivity : Activity {
 		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
+		SetDataSong (data.songName);
 	}
 
 	private void DestroyWordList(){
@@ -49,7 +54,7 @@ public class WordActivity : Activity {
 		}
 	}
 
-	private void ClearElements(){
+	private void ClearImagesAndTittles(){
 		imageList = new List<Image>();
 		imageList.Add (firstImage);
 		imageList.Add (secondImage);
@@ -71,6 +76,16 @@ public class WordActivity : Activity {
 	private void SetDataSong(string song){
 		songController.SetSong(song);
 	} 
+	
+	private void ClearActivity () {
+		DestroyWordList ();
+		ClearImagesAndTittles ();
+	}
+	
+	private void CreateActivity ()	{
+		randomWords.DrawButtonsByWord (data.wordsList);
+		result.RetryActionExecuted = StartActivity;
+	}
 
 	private void HandleRandomWordSelected (Button wordButton) {
 		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
@@ -97,12 +112,9 @@ public class WordActivity : Activity {
 		resultsButton.gameObject.SetActive(true);
 	}
 	
-	private void HandleActivityReseted(){
-		ReadDataFromJson ();
-		DestroyWordList ();
-		ClearElements ();
-		randomWords.DrawButtonsByWord(data.wordsList);
-		result.RetryActionExecuted = StartActivity;
+	private void HandleActivityStarted(){
+		ClearActivity ();
+		CreateActivity ();
 		songController.StartKaraoke ();
 	}
 }

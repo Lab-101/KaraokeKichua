@@ -34,6 +34,7 @@ public class Level : MonoBehaviour {
 		foreach (Activity activity in activities) {
 			if(activity != null){
 				activity.SetLevel(numberLevel);
+				activity.ResetData();
 				DrawActivity(activity, index);
 				index++;
 				levelName.text = "Nivel: "+ numberLevel ;
@@ -91,5 +92,20 @@ public class Level : MonoBehaviour {
 
 	private void HandleLevelButtonClicked () {
 		ShowActivitysList ();
+		PlayPreviewWordActivity ();
+	}
+
+	private WordActivity FindWordActivity(){
+		foreach (Activity activity in activities) {
+			if(activity is WordActivity)
+				return (WordActivity) activity;
+		}
+		return null;
+	}
+
+	private void PlayPreviewWordActivity(){
+		WordActivity wordActivity = FindWordActivity ();
+		if (wordActivity != null)
+			wordActivity.PlayPreview ();
 	}
 }
