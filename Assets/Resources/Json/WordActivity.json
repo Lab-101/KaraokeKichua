@@ -2,31 +2,16 @@
     {
         "name": "alejandro sanz no es lo mismo",
         "showWords": [
-            "Eres",
+            "Eres-heres",
             "tanta",
             "gente",
             "qui\u00e9n",
-            "ahora"
+            "ahora-hahora"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "Eres-heres",
+            "ahora-hahora"
         ],
         "level": 1
-    },
-	{
-        "name": "Mirada ardilla. !chan chan chaaann!",
-        "showWords": [
-            "la",
-            "wea",
-            "fome",
-            "asdasd",
-            "chileno"
-        ],
-        "wordsValids": [
-            "wea",
-            "chileno"
-        ],
-        "level": 2
     }
 ]
