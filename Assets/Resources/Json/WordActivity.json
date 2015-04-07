@@ -13,5 +13,20 @@
             "ahora-hahora"
         ],
         "level": 1
+    },
+	{
+        "name": "alejandro sanz no es lo mismo",
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "Eres-heres",
+            "ahora-hahora"
+        ],
+        "level": 2
     }
 ]
