@@ -6,8 +6,11 @@ using System.Collections.Generic;
 public class Level : MonoBehaviour {
 	//Data level
 	public int numberLevel;
+	public string nameLevel;
 	[SerializeField]
 	private string introduction;
+	[SerializeField]
+	private KaraokeController karaoke;
 	[SerializeField]
 	private List<Activity> activities;
 
@@ -38,6 +41,7 @@ public class Level : MonoBehaviour {
 				DrawActivity(activity, index);
 				index++;
 				levelName.text = "Nivel: "+ numberLevel ;
+				karaoke.SetHeaderInfo(numberLevel, nameLevel);
 			}
 		}
 	}

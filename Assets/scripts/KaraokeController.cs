@@ -8,6 +8,10 @@ public class KaraokeController : MonoBehaviour {
 	public Button finishButton;
 	public Button pauseButton;
 	public LyricSyncManager lyricSync;
+	[SerializeField]
+	private Text levelNameText;
+	[SerializeField]
+	private Text songNameText;
 	
 	public Action SongFinished {
 		get;
@@ -41,6 +45,11 @@ public class KaraokeController : MonoBehaviour {
 	public void SetInactive(){
 		gameObject.SetActive (false);
 	}
+
+	public void SetHeaderInfo (int numberLevel, string nameLevel)
+	{
+		levelNameText.text = "<size=47><color=#E5C507FF>NIVEL " + numberLevel + "</color></size><size=57><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";
+	}
 	
 	private void ChangePauseState(){
 		if(pauseButton.GetComponentInChildren<Text> ().text == "Pausa")
@@ -56,5 +65,9 @@ public class KaraokeController : MonoBehaviour {
 	
 	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
 		lyricSync.BeginDialogue(songLyric, clip);
+	}
+
+	public void SetSongName(string name){
+		songNameText.text = name;
 	}
 }

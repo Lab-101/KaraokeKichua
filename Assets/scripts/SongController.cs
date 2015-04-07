@@ -70,6 +70,7 @@ public class SongController : MonoBehaviour {
 	}
 	
 	private void GetSubtitlesFormFile (string songName){
+		karaoke.SetSongName (songName);
 		string songNamePath = GetDirectionBySystemOperative (songName);
 		SubtitleLoader loader = new SubtitleLoader ();
 		loader.SubtitlesObtained += HandleSubtitlesObtained;
