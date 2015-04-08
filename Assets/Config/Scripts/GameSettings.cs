@@ -10,6 +10,9 @@ public class GameSettings : ScriptableObject {
 	public string wordActivityInstruction;
 	public string writeActivityName;
 	public string writeActivityInstruction;
+	public string bestScoreMessage;
+	public string normalScoreMessage;
+	public string regularScoreMessage;
 
 	private static GameSettings instance; 
 	
