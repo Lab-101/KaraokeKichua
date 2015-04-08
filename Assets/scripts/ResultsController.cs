@@ -57,17 +57,17 @@ public class ResultsController : MonoBehaviour {
 
 	private string PutMessageAndRankByLevel(int level){
 		switch (level) {
-			case 1:
-				SetColor(Color.yellow, Color.gray, Color.gray);
-				return "Bien! Tienes que esforzarte más pero vas por buen camino";
-			case 2:
-				SetColor(Color.yellow, Color.yellow, Color.gray);
-				return "Muy bien! Has practicado mucho y se ve en los resultados";
-			case 3:
-				SetColor(Color.yellow, Color.yellow, Color.yellow);
-				return "Felicitaciones! Eres Muy Noob-Pro";
-			default:
-				return "No se ha obtenido nivel";
+		case 1:
+			SetColor(Color.yellow, Color.gray, Color.gray);
+			return GameSettings.Instance.regularScoreMessage;
+		case 2:
+			SetColor(Color.yellow, Color.yellow, Color.gray);
+			return GameSettings.Instance.normalScoreMessage;
+		case 3:
+			SetColor(Color.yellow, Color.yellow, Color.yellow);
+			return GameSettings.Instance.bestScoreMessage;
+		default:
+			return "No se ha obtenido nivel";
 		}
 	}
 
