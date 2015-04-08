@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Activity : MonoBehaviour {
+public abstract class Activity : MonoBehaviour {
 	protected int level;
 	protected Score score;
 	protected bool isActivityFinished;
@@ -25,6 +25,11 @@ public class Activity : MonoBehaviour {
 		set;
 	}
 	protected Action ActivityDataReseted {
+		get;
+		set;
+	}
+
+	protected Action<bool> ActivityIsData {
 		get;
 		set;
 	}
@@ -85,4 +90,6 @@ public class Activity : MonoBehaviour {
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
 	}
+
+	abstract public bool IsDataFound();
 }

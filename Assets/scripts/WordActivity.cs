@@ -127,4 +127,11 @@ public class WordActivity : Activity {
 		CreateActivity ();
 		gameStateBehaviour.GameState = GameState.WordActivity;
 	}
+
+	public override bool IsDataFound() {
+		if (data.wordsList.Count == 0 )
+			return false;
+
+		return true;
+	}
 }

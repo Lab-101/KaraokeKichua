@@ -74,6 +74,11 @@ public class Level : MonoBehaviour {
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
 		});
+		if (!activity.IsDataFound ()) {
+			newItem.interactable = false;
+		} else {
+			newItem.interactable = true;
+		}
 	}
 
 	private string GetActivityType(Activity activity){

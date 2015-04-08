@@ -115,4 +115,11 @@ public class WriteActivity : Activity {
 	private void HandlePhraseFinished () {
 		resultsButton.gameObject.SetActive(true);
 	}
+
+	public override bool IsDataFound() {
+		if (data.phrases == null )
+			return false;
+		
+		return true;
+	}
 }
