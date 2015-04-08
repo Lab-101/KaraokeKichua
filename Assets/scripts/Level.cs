@@ -13,6 +13,9 @@ public class Level : MonoBehaviour {
 	private KaraokeController karaoke;
 	[SerializeField]
 	private List<Activity> activities;
+	[SerializeField]
+	private bool introScreenItsOpened;
+	private static readonly object syncLock = new object();
 
 	//GUI objects
 	[SerializeField]
@@ -23,10 +26,13 @@ public class Level : MonoBehaviour {
 	private Button levelButton;
 	[SerializeField]
 	private Text levelName;
+	[SerializeField]
+	private GameObject introScreen;
 
 	private Map map;
 
 	void Awake(){
+		introScreenItsOpened = false;
 		map = new Map ();
 		SetUpActivities ();
 		ClearActivitysList ();
@@ -35,6 +41,15 @@ public class Level : MonoBehaviour {
 			map.IdentifyCurrentLevel (levelButton);
 			HandleLevelButtonClicked ();
 		} );
+	}
+
+	private void OpenIntroScreenFirstTime(){
+		lock (syncLock) {
+			if (!introScreenItsOpened) { 
+				introScreen.SetActive (true);
+				introScreenItsOpened = true;
+			}
+		}
 	}
 
 	private void SetUpActivities(){	
@@ -97,6 +112,7 @@ public class Level : MonoBehaviour {
 	}
 
 	private void HandleLevelButtonClicked () {
+		OpenIntroScreenFirstTime ();
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
 	}

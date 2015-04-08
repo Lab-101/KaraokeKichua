@@ -19,6 +19,7 @@ public class IntroController : MonoBehaviour {
 		returnButton.onClick.AddListener(delegate {
 			introScreen.SetActive(false);
 		} );
+
 	}
 	
 	// Update is called once per frame
