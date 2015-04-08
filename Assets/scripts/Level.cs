@@ -24,7 +24,10 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private Text levelName;
 
+	private Map map;
+
 	void Awake(){
+		map = new Map ();
 		SetUpActivities ();
 		ClearActivitysList ();
 		levelButton.onClick.AddListener(delegate {
@@ -33,6 +36,7 @@ public class Level : MonoBehaviour {
 	}
 
 	private void SetUpActivities(){	
+		map.SetNumberCurrentLevel (numberLevel);
 		int index = 0;
 		foreach (Activity activity in activities) {
 			if(activity != null){

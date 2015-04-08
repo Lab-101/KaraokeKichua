@@ -9,23 +9,32 @@ public class Map : MonoBehaviour {
 	[SerializeField]
 	private Button levelTwoButton;
 
+	private int numberCurrentLevel;
+
 	void Start()
 	{
-
-		IdentifyInactiveLevels ();
-
+		
 		levelOneButton.onClick.AddListener(delegate {
-			IdentifyCurrentLevel (levelOneButton);
+			IdentifyInactiveLevels ();
+			IdentifyCurrentLevel(levelOneButton);
 		} );
-
+		
 		levelTwoButton.onClick.AddListener(delegate {
-			IdentifyCurrentLevel (levelTwoButton);
+			IdentifyInactiveLevels ();
+			IdentifyCurrentLevel(levelTwoButton);
 		} );
 	}
 
-	private void IdentifyCurrentLevel (Button levelButton)	{
-		IdentifyInactiveLevels ();
-		levelButton.image.color = Color.green;
+	public void SetNumberCurrentLevel(int numberLevel) {
+		this.numberCurrentLevel = numberLevel;
+	}
+
+	public int GetNumberCurrentLevel() {
+		return this.numberCurrentLevel;
+	}
+
+	public void IdentifyCurrentLevel (Button levelButton)	{
+	    levelButton.image.color = Color.green;
 	}
 
 	private void IdentifyInactiveLevels ()
