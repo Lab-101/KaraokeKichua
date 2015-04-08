@@ -48,7 +48,7 @@ public class KaraokeController : MonoBehaviour {
 
 	public void SetHeaderInfo (int numberLevel, string nameLevel)
 	{
-		levelNameText.text = "<size=47><color=#E5C507FF>NIVEL " + numberLevel + "</color></size><size=57><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";
+		levelNameText.text = "<color=#E5C507FF>NIVEL " + numberLevel + "</color><size=70><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";//47 57
 	}
 	
 	private void ChangePauseState(){
