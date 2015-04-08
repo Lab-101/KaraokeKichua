@@ -88,7 +88,7 @@ public class WordActivity : Activity {
 	
 	private void CreateActivity ()	{
 		randomWords.DrawButtonsByWord (data.wordsList);
-		result.RetryActionExecuted = StartActivity;
+		result.RetryActionExecuted = RetryActivity;
 	}
 
 	private void HandleRandomWordSelected (Button wordButton) {
@@ -120,5 +120,11 @@ public class WordActivity : Activity {
 		ClearActivity ();
 		CreateActivity ();
 		songController.StartKaraoke ();
+	}
+
+	private void RetryActivity(){
+		ClearActivity ();
+		CreateActivity ();
+		gameStateBehaviour.GameState = GameState.WordActivity;
 	}
 }
