@@ -50,6 +50,10 @@ public class SongController : MonoBehaviour {
 		player.PlayPreview (songAudioClip);
 	}
 
+	public void StopSong(){
+		player.Stop ();
+	}
+
 	private AudioSource GetAudioSourceFromPlayer(){
 		return player.audioSource;
 	}	

@@ -73,8 +73,10 @@ public class Level : MonoBehaviour {
 	
 	private void HandleClickButtonActivity (GameObject activityButton) {
 		foreach (Activity activity in activities) {
-			if(activityButton.name == GetActivityType(activity))
+			if(activityButton.name == GetActivityType(activity)){
+				StopPreviewWordActivity();
 				activity.StartActivity();
+			}
 		}
 	}
 
@@ -106,5 +108,11 @@ public class Level : MonoBehaviour {
 		WordActivity wordActivity = FindWordActivity ();
 		if (wordActivity != null)
 			wordActivity.PlayPreview ();
+	}
+
+	private void StopPreviewWordActivity(){
+		WordActivity wordActivity = FindWordActivity ();
+		if (wordActivity != null)
+			wordActivity.StopSong ();
 	}
 }

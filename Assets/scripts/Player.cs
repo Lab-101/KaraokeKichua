@@ -17,8 +17,8 @@ public class Player : MonoBehaviour {
 			songLengthInSeconds -= Time.deltaTime;
 
 			if (songLengthInSeconds <= 0 ) {
-				if(PlayFinished != null)
-					audioSource.Stop();
+				if (PlayFinished != null)
+					Stop ();
 					PlayFinished();					
 			}
 		}
@@ -51,6 +51,10 @@ public class Player : MonoBehaviour {
 		return audioSource.isPlaying;
 	}
 
+	public void Stop (){
+		audioSource.Stop ();
+	}
+
 	public void Pause (){
 		timeAudioSource = audioSource.time;
 		audioSource.Pause ();
@@ -71,7 +75,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	private void Play(float startTime, float playTime ){
-		audioSource.Stop ();
+		Stop ();
 		songLengthInSeconds = playTime;
 		audioSource.time = startTime;
 		audioSource.Play ();

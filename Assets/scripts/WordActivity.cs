@@ -40,6 +40,10 @@ public class WordActivity : Activity {
 		songController.PlayPreview(data.songName);
 	}
 
+	public void StopSong(){
+		songController.StopSong ();
+	}
+
 	private void ReadDataFromJson (){
 		JsonWordsParser parser = new JsonWordsParser();
 		parser.SetLevelFilter (level);
