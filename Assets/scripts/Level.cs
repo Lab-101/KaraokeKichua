@@ -31,12 +31,13 @@ public class Level : MonoBehaviour {
 		SetUpActivities ();
 		ClearActivitysList ();
 		levelButton.onClick.AddListener(delegate {
+			map.SetNumberCurrentLevel (numberLevel);
+			map.IdentifyCurrentLevel (levelButton);
 			HandleLevelButtonClicked ();
 		} );
 	}
 
 	private void SetUpActivities(){	
-		map.SetNumberCurrentLevel (numberLevel);
 		int index = 0;
 		foreach (Activity activity in activities) {
 			if(activity != null){

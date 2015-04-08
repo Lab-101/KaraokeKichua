@@ -29,18 +29,7 @@ public class Map : MonoBehaviour {
 
 	void Start()
 	{
-
 		IdentifyInactiveLevels ();
-
-		levelOneButton.onClick.AddListener(delegate {
-			IdentifyInactiveLevels ();
-			IdentifyCurrentLevel(levelOneButton);
-		} );
-		
-		levelTwoButton.onClick.AddListener(delegate {
-			IdentifyInactiveLevels ();
-			IdentifyCurrentLevel(levelTwoButton);
-		} );
 	}
 
 	public void SetNumberCurrentLevel(int numberLevel) {
@@ -55,7 +44,7 @@ public class Map : MonoBehaviour {
 	    levelButton.image.color = Color.green;
 	}
 
-	private void IdentifyInactiveLevels ()
+	public void IdentifyInactiveLevels ()
 	{
 		levelOneButton.image.color = Color.grey;
 		levelTwoButton.image.color = Color.grey;
