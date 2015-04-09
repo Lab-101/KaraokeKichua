@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class KaraokeController : MonoBehaviour {
 	public Button finishButton;
+	public Image pausePanel;
 	public Button pauseButton;
 	public LyricSyncManager lyricSync;
 	[SerializeField]
@@ -61,6 +62,7 @@ public class KaraokeController : MonoBehaviour {
 	private void ChangePauseElements(string pauseState, bool isVisibleFinishButton){
 		pauseButton.GetComponentInChildren<Text> ().text = pauseState;
 		finishButton.gameObject.SetActive(isVisibleFinishButton);
+		pausePanel.gameObject.SetActive (isVisibleFinishButton);
 	}
 	
 	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
