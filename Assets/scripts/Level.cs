@@ -7,6 +7,7 @@ public class Level : MonoBehaviour {
 	//Data level
 	public int numberLevel;
 	public string nameLevel;
+	public bool isUnlocked;
 	[SerializeField]
 	private string introduction;
 	[SerializeField]
@@ -29,27 +30,29 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private GameObject introScreen;
 
-	private Map map;
-
 	void Awake(){
 		introScreenItsOpened = false;
-		map = new Map ();
 		SetUpActivities ();
 		ClearActivitysList ();
-		levelButton.onClick.AddListener(delegate {
-			map.SetNumberCurrentLevel (numberLevel);
-			map.IdentifyCurrentLevel (levelButton);
-			HandleLevelButtonClicked ();
-		} );
+	}
+
+	public void BeginLevel () {
+		OpenIntroScreenFirstTime ();
+		ShowActivitysList ();
+		PlayPreviewWordActivity ();
 	}
 
 	private void OpenIntroScreenFirstTime(){
 		lock (syncLock) {
-			if (!introScreenItsOpened) { 
+			if (CanOpenIntroScreen ()) { 
 				introScreen.SetActive (true);
 				introScreenItsOpened = true;
 			}
 		}
+	}
+
+	private bool CanOpenIntroScreen ()	{
+		return introScreen != null && !introScreenItsOpened;
 	}
 
 	private void SetUpActivities(){	
@@ -114,12 +117,6 @@ public class Level : MonoBehaviour {
 		foreach(Transform  child in activityList.transform ) {
 			Destroy (child.gameObject);
 		}
-	}
-
-	private void HandleLevelButtonClicked () {
-		OpenIntroScreenFirstTime ();
-		ShowActivitysList ();
-		PlayPreviewWordActivity ();
 	}
 
 	private WordActivity FindWordActivity(){
