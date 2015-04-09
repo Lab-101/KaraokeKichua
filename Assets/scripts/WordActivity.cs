@@ -27,9 +27,7 @@ public class WordActivity : Activity {
 	protected SongController songController;
 
 	void Awake(){
-		if (level != null) {
-			ReadDataFromJson ();
-		}
+		ReadDataFromJson ();
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityStarted += HandleActivityStarted;

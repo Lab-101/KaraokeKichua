@@ -7,8 +7,6 @@ public class Level : MonoBehaviour {
 	//Data level
 	public int numberLevel;
 	public int scoreLevel;
-	[SerializeField]
-	private ProgressBarController barLevel;
 	public string nameLevel;
 	public bool isUnlocked;
 	[SerializeField]
@@ -25,15 +23,14 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private Button activityButtonPrefab;
 	[SerializeField]
-	private GameObject activityList;
-	[SerializeField]
-	private Button levelButton;
-	[SerializeField]
 	private Text levelName;
 	[SerializeField]
 	private GameObject introScreen;
+	private GameObject activityListUI;
+	private ProgressBarController barLevel;
 
 	void Awake(){
+		FindObjectInScene ();
 		introScreenItsOpened = false;
 		SetUpActivities ();
 		ClearActivitysList ();
@@ -43,6 +40,11 @@ public class Level : MonoBehaviour {
 		OpenIntroScreenFirstTime ();
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
+	}
+
+	private void FindObjectInScene ()	{
+		activityListUI = GameObject.FindGameObjectWithTag ("ActivityList");
+		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;
 	}
 
 	private void OpenIntroScreenFirstTime(){
@@ -77,7 +79,7 @@ public class Level : MonoBehaviour {
 		Button newItem = Instantiate(activityButtonPrefab) as Button;
 		newItem.name = GetActivityType(activity);
 		newItem.transform.GetChild(0).GetComponent<Text>().text = GetActivityName(activity);
-		newItem.transform.SetParent(activityList.gameObject.transform, false);	
+		newItem.transform.SetParent(activityListUI.gameObject.transform, false);	
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
 		});
@@ -118,7 +120,7 @@ public class Level : MonoBehaviour {
 	}
 
 	private void ClearActivitysList () {
-		foreach(Transform  child in activityList.transform ) {
+		foreach(Transform  child in activityListUI.transform ) {
 			Destroy (child.gameObject);
 		}
 	}
