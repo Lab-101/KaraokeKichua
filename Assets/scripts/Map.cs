@@ -58,9 +58,10 @@ public class Map : MonoBehaviour {
 	}
 
 	private void AddActionToButtonLevel(int index){
-		Action levelClicked = levels [index].BeginLevel;
+		Action levelBegun = levels [index].BeginLevel;	
 		listButtonLevel [index].onClick.AddListener (delegate {
-			levelClicked ();
+			levelBegun ();
+			SelectLevel(index);
 		});
 	
 	}
