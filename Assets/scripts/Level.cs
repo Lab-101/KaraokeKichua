@@ -6,58 +6,53 @@ using System.Collections.Generic;
 public class Level : MonoBehaviour {
 	//Data level
 	public int numberLevel;
-	public int scoreLevel;
 	public string nameLevel;
-	public bool isUnlocked;
 	[SerializeField]
 	private string introduction;
 	[SerializeField]
 	private KaraokeController karaoke;
 	[SerializeField]
+	private GameObject writeActivity;
+	[SerializeField]
 	private List<Activity> activities;
 	[SerializeField]
 	private bool introScreenItsOpened;
-	private static readonly object syncLock = new object();
+	[SerializeField]
+	private static readonly object lockIntroOnlyOnFirstTime = new object();
 
 	//GUI objects
 	[SerializeField]
 	private Button activityButtonPrefab;
 	[SerializeField]
+	private GameObject activityList;
+	[SerializeField]
+	private Button levelButton;
+	[SerializeField]
 	private Text levelName;
 	[SerializeField]
 	private GameObject introScreen;
-	private GameObject activityListUI;
-	private ProgressBarController barLevel;
+
+	private Map map;
 
 	void Awake(){
-		FindObjectInScene ();
 		introScreenItsOpened = false;
+		map = new Map ();
 		SetUpActivities ();
 		ClearActivitysList ();
-	}
-
-	public void BeginLevel () {
-		OpenIntroScreenFirstTime ();
-		ShowActivitysList ();
-		PlayPreviewWordActivity ();
-	}
-
-	private void FindObjectInScene ()	{
-		activityListUI = GameObject.FindGameObjectWithTag ("ActivityList");
-		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;
+		levelButton.onClick.AddListener(delegate {
+			map.SetNumberCurrentLevel (numberLevel);
+			map.IdentifyCurrentLevel (levelButton);
+			HandleLevelButtonClicked ();
+		} );
 	}
 
 	private void OpenIntroScreenFirstTime(){
-		lock (syncLock) {
-			if (CanOpenIntroScreen ()) { 
+		lock (lockIntroOnlyOnFirstTime) {
+			if (!introScreenItsOpened) { 
 				introScreen.SetActive (true);
 				introScreenItsOpened = true;
 			}
 		}
-	}
-
-	private bool CanOpenIntroScreen ()	{
-		return introScreen != null && !introScreenItsOpened;
 	}
 
 	private void SetUpActivities(){	
@@ -70,7 +65,6 @@ public class Level : MonoBehaviour {
 				index++;
 				levelName.text = "Nivel: "+ numberLevel ;
 				karaoke.SetHeaderInfo(numberLevel, nameLevel);
-				barLevel.SetFillerSize (scoreLevel);
 			}
 		}
 	}
@@ -79,15 +73,10 @@ public class Level : MonoBehaviour {
 		Button newItem = Instantiate(activityButtonPrefab) as Button;
 		newItem.name = GetActivityType(activity);
 		newItem.transform.GetChild(0).GetComponent<Text>().text = GetActivityName(activity);
-		newItem.transform.SetParent(activityListUI.gameObject.transform, false);	
+		newItem.transform.SetParent(activityList.gameObject.transform, false);	
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
 		});
-		if (!activity.IsDataFound ()) {
-			newItem.interactable = false;
-		} else {
-			newItem.interactable = true;
-		}
 	}
 
 	private string GetActivityType(Activity activity){
@@ -120,9 +109,15 @@ public class Level : MonoBehaviour {
 	}
 
 	private void ClearActivitysList () {
-		foreach(Transform  child in activityListUI.transform ) {
+		foreach(Transform  child in activityList.transform ) {
 			Destroy (child.gameObject);
 		}
+	}
+
+	private void HandleLevelButtonClicked () {
+		OpenIntroScreenFirstTime ();
+		ShowActivitysList ();
+		PlayPreviewWordActivity ();
 	}
 
 	private WordActivity FindWordActivity(){
