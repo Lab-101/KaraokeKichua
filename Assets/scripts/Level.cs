@@ -6,6 +6,9 @@ using System.Collections.Generic;
 public class Level : MonoBehaviour {
 	//Data level
 	public int numberLevel;
+	public int scoreLevel;
+	[SerializeField]
+	private ProgressBarController barLevel;
 	public string nameLevel;
 	public bool isUnlocked;
 	[SerializeField]
@@ -65,6 +68,7 @@ public class Level : MonoBehaviour {
 				index++;
 				levelName.text = "Nivel: "+ numberLevel ;
 				karaoke.SetHeaderInfo(numberLevel, nameLevel);
+				barLevel.SetFillerSize (scoreLevel);
 			}
 		}
 	}
