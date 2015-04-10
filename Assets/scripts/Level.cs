@@ -62,7 +62,7 @@ public class Level : MonoBehaviour {
 		}
 	}
 
-	private bool CanOpenIntroScreen ()	{
+	public bool CanOpenIntroScreen ()	{
 		return introScreen != null && !introScreenItsOpened;
 	}
 
