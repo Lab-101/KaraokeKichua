@@ -48,7 +48,7 @@ public class ResultsController : MonoBehaviour {
 		score.text = "Puntuacion de: "+ scoreLevel;
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel);
 		time.text = "Tiempo de la actividad: "+ elapsedTime;
-		progressBar.SetFillerSize (scoreLevel);
+		progressBar.SetFillerSize (scoreLevel, 2);
 	}
 	
 	public void SetInactive(){

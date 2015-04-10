@@ -5,16 +5,12 @@ public class  ProgressBarController : MonoBehaviour
 {
 	[SerializeField]
 	private RectTransform fillerCharge;
-	private float maxBarWidth;
 
-	void Awake()
+	public void SetFillerSize(int levelActivity, int window)
 	{
-		maxBarWidth = fillerCharge.rect.width;
-	}
-
-	public void SetFillerSize(int levelActivity)
-	{
-		float barFulled = levelActivity * maxBarWidth / 12 ;
-		fillerCharge.SetInsetAndSizeFromParentEdge(0, 0, barFulled);
+		float relationNumber = (window==1)? 227f : 465f;
+		float maxBarWidth = (relationNumber / 12f) * levelActivity - relationNumber;
+		fillerCharge.localPosition = new Vector2 (maxBarWidth , 0);
+		fillerCharge.sizeDelta = new Vector2 ((maxBarWidth*2) , 0);
 	}
 }
