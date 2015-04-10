@@ -3,8 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class SongController : MonoBehaviour {	
-	private string song;
+public class SongController : MonoBehaviour {
 	private AudioClip songAudioClip;
 	private float timeSelectedClip;
 	private List<string> subtitleList;
@@ -33,7 +32,6 @@ public class SongController : MonoBehaviour {
 	
 	public void SetSong (string songName){
 		if (songName != null) {
-			song = songName;
 			songAudioClip = Resources.Load (songName, typeof(AudioClip)) as AudioClip;
 			GetSubtitlesFormFile (songName);
 		}

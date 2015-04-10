@@ -20,6 +20,7 @@ public class Map : MonoBehaviour {
 	private void SelectLevel(int indexLevel){
 		SetLevelAsNotSelected (indexLevelSelected);
 		SetLevelAsSelected (indexLevel);
+		levels [indexLevel].StopPreviewWordActivity ();
 		indexLevelSelected = indexLevel;
 	}
 
@@ -60,8 +61,8 @@ public class Map : MonoBehaviour {
 	private void AddActionToButtonLevel(int index){
 		Action levelBegun = levels [index].BeginLevel;	
 		listButtonLevel [index].onClick.AddListener (delegate {
-			levelBegun ();
 			SelectLevel(index);
+			levelBegun ();
 		});
 	
 	}

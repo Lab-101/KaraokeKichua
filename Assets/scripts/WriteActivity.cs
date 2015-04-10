@@ -31,9 +31,18 @@ public class WriteActivity : Activity {
 
 	private void ReadDataFromJson (){
 		JsonWriteParser parser = new JsonWriteParser();
+		data = new WriteActivityData ();
 		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
-		data = parser.Data;	
+		data = parser.Data;
+		CheckIsDataFound ();
+	}
+	
+	private void CheckIsDataFound() {
+		if (data.phrases == null || data.phrases.Count == 0)
+			isDataFound = false;
+		else
+			isDataFound = true;
 	}
 
 	private void GetHiddenWordByIndex (int indexHiddenWord)	{
@@ -92,7 +101,7 @@ public class WriteActivity : Activity {
 		result.RetryActionExecuted = StartActivity;
 	}
 
-	void BeginActivity ()	{
+	private void BeginActivity ()	{
 		gameStateBehaviour.GameState = GameState.WriteActivity;
 	}
 	
@@ -114,12 +123,5 @@ public class WriteActivity : Activity {
 	
 	private void HandlePhraseFinished () {
 		resultsButton.gameObject.SetActive(true);
-	}
-
-	public override bool IsDataFound() {
-		if (data.phrases == null )
-			return false;
-		
-		return true;
 	}
 }

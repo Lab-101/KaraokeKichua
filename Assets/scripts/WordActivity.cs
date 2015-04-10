@@ -44,10 +44,19 @@ public class WordActivity : Activity {
 
 	private void ReadDataFromJson (){
 		JsonWordsParser parser = new JsonWordsParser();
+		data = new WordActivityData ();
 		parser.SetLevelFilter (level);
 		parser.JSONString = json.text;
 		data = parser.Data;	
+		CheckIsDataFound ();
 		SetDataSong (data.songName);
+	}
+	
+	private void CheckIsDataFound() {
+		if (data.wordsList.Count == 0 || data.wordsValidsList.Count == 0 || data.songName == null)
+			isDataFound = false;
+		else
+			isDataFound = true;
 	}
 
 	private void DestroyWordList(){
@@ -124,12 +133,5 @@ public class WordActivity : Activity {
 		ClearActivity ();
 		CreateActivity ();
 		gameStateBehaviour.GameState = GameState.WordActivity;
-	}
-
-	public override bool IsDataFound() {
-		if (data.wordsList.Count == 0 )
-			return false;
-
-		return true;
 	}
 }

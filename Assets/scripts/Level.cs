@@ -41,6 +41,12 @@ public class Level : MonoBehaviour {
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
 	}
+	
+	public void StopPreviewWordActivity(){
+		WordActivity wordActivity = FindWordActivity ();
+		if (wordActivity != null)
+			wordActivity.StopSong ();
+	}
 
 	private void FindObjectInScene ()	{
 		activityListUI = GameObject.FindGameObjectWithTag ("ActivityList");
@@ -67,10 +73,10 @@ public class Level : MonoBehaviour {
 				activity.SetLevel(numberLevel);
 				activity.ResetData();
 				DrawActivity(activity, index);
-				index++;
 				levelName.text = "Nivel: "+ numberLevel ;
 				karaoke.SetHeaderInfo(numberLevel, nameLevel);
 				barLevel.SetFillerSize (scoreLevel);
+				index++;
 			}
 		}
 	}
@@ -83,10 +89,10 @@ public class Level : MonoBehaviour {
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
 		});
-		if (!activity.IsDataFound ()) {
-			newItem.interactable = false;
-		} else {
+		if (activity.IsDataFound ()) {
 			newItem.interactable = true;
+		} else {
+			newItem.interactable = false;
 		}
 	}
 
@@ -135,13 +141,7 @@ public class Level : MonoBehaviour {
 
 	private void PlayPreviewWordActivity(){
 		WordActivity wordActivity = FindWordActivity ();
-		if (wordActivity != null)
-			wordActivity.PlayPreview ();
-	}
-
-	private void StopPreviewWordActivity(){
-		WordActivity wordActivity = FindWordActivity ();
-		if (wordActivity != null)
-			wordActivity.StopSong ();
+		if (wordActivity != null && wordActivity.IsDataFound ())
+				wordActivity.PlayPreview ();
 	}
 }

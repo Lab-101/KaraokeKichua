@@ -3,9 +3,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-public abstract class Activity : MonoBehaviour {
+public class Activity : MonoBehaviour {
 	protected int level;
 	protected Score score;
+	protected bool isDataFound;
 	protected bool isActivityFinished;
 	protected float elapsedTimeOfActivity;
 
@@ -63,6 +64,7 @@ public abstract class Activity : MonoBehaviour {
 	}
 
 	public void ResetData(){
+		isDataFound = false;
 		if (ActivityDataReseted != null)
 			ActivityDataReseted ();
 	}
@@ -73,6 +75,10 @@ public abstract class Activity : MonoBehaviour {
 		
 		if (ActivityStarted != null)
 			ActivityStarted ();
+	}
+		
+	public bool IsDataFound(){
+		return isDataFound;
 	}
 
 	protected void SetActivityAsFinished(){
@@ -90,6 +96,4 @@ public abstract class Activity : MonoBehaviour {
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
 	}
-
-	abstract public bool IsDataFound();
 }
