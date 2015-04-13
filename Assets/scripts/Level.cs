@@ -10,8 +10,6 @@ public class Level : MonoBehaviour {
 	public string nameLevel;
 	public bool isUnlocked;
 	[SerializeField]
-	private string introduction;
-	[SerializeField]
 	private KaraokeController karaoke;
 	[SerializeField]
 	private List<Activity> activities;
@@ -25,18 +23,25 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private Text levelName;
 	[SerializeField]
-	private GameObject introScreen;
+	private IntroController introController;
 	private GameObject activityListUI;
 	private ProgressBarController barLevel;
+	private Button introButton;
+	protected GameStateBehaviour gameStateBehaviour;
 
 	void Awake(){
-		FindObjectInScene ();
 		introScreenItsOpened = false;
+		FindObjectInScene ();
 		SetUpActivities ();
 		ClearActivitysList ();
+
+		introButton.onClick.AddListener (delegate {
+			gameStateBehaviour.GameState = GameState.ShowingIntro;
+		});
 	}
 
 	public void BeginLevel () {
+		SetUpIntroScreen ();
 		OpenIntroScreenFirstTime ();
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
@@ -58,20 +63,29 @@ public class Level : MonoBehaviour {
 
 	private void FindObjectInScene ()	{
 		activityListUI = GameObject.FindGameObjectWithTag ("ActivityList");
+		introButton = GameObject.FindGameObjectWithTag ("IntroButton").GetComponent (typeof(Button)) as Button;
 		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;
+		gameStateBehaviour = GameObject.FindGameObjectWithTag ("GameState").GetComponent (typeof(GameStateBehaviour)) as GameStateBehaviour;
 	}
 
 	private void OpenIntroScreenFirstTime(){
 		lock (syncLock) {
 			if (CanOpenIntroScreen ()) { 
-				introScreen.SetActive (true);
+				gameStateBehaviour.GameState = GameState.ShowingIntro;
 				introScreenItsOpened = true;
 			}
 		}
 	}
 
 	public bool CanOpenIntroScreen ()	{
-		return introScreen != null && !introScreenItsOpened;
+		return introController != null && !introScreenItsOpened;
+	}
+
+	private void SetUpIntroScreen(){
+		if(!introScreenItsOpened)
+			introController.ContinueButtonClicked = HandleFirstTimeContinueButtonClicked;
+		else
+			introController.ContinueButtonClicked = HandleContinueButtonClicked;
 	}
 
 	private void SetUpActivities(){	
@@ -151,5 +165,21 @@ public class Level : MonoBehaviour {
 		WordActivity wordActivity = FindWordActivity ();
 		if (wordActivity != null && wordActivity.IsDataFound ())
 				wordActivity.PlayPreview ();
+	}
+
+	private void HandleFirstTimeContinueButtonClicked (){
+		introController.ContinueButtonClicked = HandleContinueButtonClicked;
+
+		WordActivity wordActivity = FindWordActivity ();
+		if (wordActivity != null && wordActivity.IsDataFound ()) {
+			wordActivity.StopSong ();
+			wordActivity.StartActivity ();
+		} else {
+			gameStateBehaviour.GameState = GameState.SelectingLevel;
+		}
+	}
+
+	private void HandleContinueButtonClicked (){
+		gameStateBehaviour.GameState = GameState.SelectingLevel;
 	}
 }

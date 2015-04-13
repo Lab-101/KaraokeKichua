@@ -7,5 +7,6 @@ public enum GameState {
 	WriteActivity,
 	WordActivity,
 	ShowingResults,
-	SelectingLevel
+	SelectingLevel,
+	ShowingIntro
 }
