@@ -96,7 +96,8 @@ public class Level : MonoBehaviour {
 				activity.ResetData();
 				DrawActivity(activity, index);
 				levelName.text = "Nivel: "+ numberLevel ;
-				karaoke.SetHeaderInfo(numberLevel, nameLevel);
+				GameSettings.Instance.nameLevel[0] = numberLevel.ToString();
+				GameSettings.Instance.nameLevel[1] = nameLevel;
 				barLevel.SetFillerSize (scoreLevel, 1);
 				index++;
 			}

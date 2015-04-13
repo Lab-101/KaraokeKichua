@@ -19,6 +19,8 @@ public class ResultsController : MonoBehaviour {
 	public Image imageBestScore;
 	public ProgressBarController progressBar;
 	[SerializeField]
+	private Text levelName;
+	[SerializeField]
 	protected GameStateBehaviour gameStateBehaviour;
 
 	public Action BackActionExecuted {
@@ -45,8 +47,9 @@ public class ResultsController : MonoBehaviour {
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
-		score.text = "Puntuacion de: "+ scoreLevel;
-		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel);
+		score.text = PutMessageAndRankByLevel (scoreLevel, 1);
+		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel, 0);
+		levelName.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=40><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
 		time.text = "Tiempo de la actividad: "+ elapsedTime;
 		progressBar.SetFillerSize (scoreLevel, 2);
 	}
@@ -55,26 +58,30 @@ public class ResultsController : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 
-	private string PutMessageAndRankByLevel(int level){
+	private string PutMessageAndRankByLevel(int level, int phraseItem){
 		switch (level) {
 		case 1:
-			SetColor(Color.yellow, Color.gray, Color.gray);
-			return GameSettings.Instance.regularScoreMessage;
+			SetImagesByScore("yes", "no", "no");
+			return GameSettings.Instance.regularScoreMessage[phraseItem];
 		case 2:
-			SetColor(Color.yellow, Color.yellow, Color.gray);
-			return GameSettings.Instance.normalScoreMessage;
+			SetImagesByScore("yes", "yes", "no");
+			return GameSettings.Instance.normalScoreMessage[phraseItem];
 		case 3:
-			SetColor(Color.yellow, Color.yellow, Color.yellow);
-			return GameSettings.Instance.bestScoreMessage;
+			SetImagesByScore("yes", "yes", "yes");
+			return GameSettings.Instance.bestScoreMessage[phraseItem];
 		default:
 			return "No se ha obtenido nivel";
 		}
 	}
 
-	private void SetColor(Color color1, Color color2, Color color3){
-		imageRegularScore.color = color1;
-		imageNormalScore.color = color2;
-		imageBestScore.color = color3;
+	private void SetImagesByScore(string firstImage, string secondImage, string thirdImage){
+		imageRegularScore.sprite = GetImageFromScore(firstImage);
+		imageNormalScore.sprite = GetImageFromScore(secondImage);
+		imageBestScore.sprite = GetImageFromScore(thirdImage);
+	}
+
+	private Sprite GetImageFromScore(string word){
+		return Resources.Load ("Images/Texturas/corn_" + word, typeof(Sprite)) as Sprite;
 	}
 }
 

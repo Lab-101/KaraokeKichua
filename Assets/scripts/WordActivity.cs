@@ -132,6 +132,8 @@ public class WordActivity : Activity {
 	}
 
 	private void RetryActivity(){
+		elapsedTimeOfActivity = 0;
+		SetActivityAsNotFinished();
 		ClearActivity ();
 		CreateActivity ();
 		gameStateBehaviour.GameState = GameState.WordActivity;

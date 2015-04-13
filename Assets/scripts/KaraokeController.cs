@@ -47,11 +47,6 @@ public class KaraokeController : MonoBehaviour {
 		gameObject.SetActive (false);
 	}
 
-	public void SetHeaderInfo (int numberLevel, string nameLevel)
-	{
-		levelNameText.text = "<color=#E5C507FF>NIVEL " + numberLevel + "</color><size=80><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";
-	}
-	
 	private void ChangePauseState(){
 		if(pauseButton.GetComponentInChildren<Text> ().text == "Pausa")
 			ChangePauseElements("Continuar", true);
@@ -66,6 +61,7 @@ public class KaraokeController : MonoBehaviour {
 	}
 	
 	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
+		levelNameText.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=80><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
 		lyricSync.BeginDialogue(songLyric, clip);
 	}
 

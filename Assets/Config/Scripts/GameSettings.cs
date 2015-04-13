@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic; 
 
 public class GameSettings : ScriptableObject {
 	public const string ASSET_NAME = "GameSettings";
@@ -10,9 +11,10 @@ public class GameSettings : ScriptableObject {
 	public string wordActivityInstruction;
 	public string writeActivityName;
 	public string writeActivityInstruction;
-	public string bestScoreMessage;
-	public string normalScoreMessage;
-	public string regularScoreMessage;
+	public List<string> nameLevel;
+	public List<string> bestScoreMessage;
+	public List<string> normalScoreMessage;
+	public List<string> regularScoreMessage;
 
 	private static GameSettings instance; 
 	
