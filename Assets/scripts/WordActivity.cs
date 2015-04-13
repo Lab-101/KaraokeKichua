@@ -53,10 +53,12 @@ public class WordActivity : Activity {
 	}
 	
 	private void CheckIsDataFound() {
-		if (data.wordsList.Count == 0 || data.wordsValidsList.Count == 0 || data.songName == null)
+		if (data.wordsList.Count == 0 || data.wordsValidsList.Count == 0 || data.songName == null) {
 			isDataFound = false;
-		else
+			isCompleted = true;
+		} else {
 			isDataFound = true;
+		}
 	}
 
 	private void DestroyWordList(){

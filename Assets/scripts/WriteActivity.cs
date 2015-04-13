@@ -39,10 +39,12 @@ public class WriteActivity : Activity {
 	}
 	
 	private void CheckIsDataFound() {
-		if (data.phrases == null || data.phrases.Count == 0)
+		if (data.phrases == null || data.phrases.Count == 0) {
 			isDataFound = false;
-		else
+			isCompleted = true;
+		} else {
 			isDataFound = true;
+		}
 	}
 
 	private void GetHiddenWordByIndex (int indexHiddenWord)	{
