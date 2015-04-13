@@ -72,6 +72,15 @@ public class Map : MonoBehaviour {
 		buttonLevelList [index].onClick.AddListener (delegate {
 			SelectLevel(index);
 			levelBegun ();
+
+			SaveLoad.SaveActivityLevelScore(1,1,1);
+
+			foreach (ActivityScore scores in SaveLoad.dataActivitiesScore) {
+				Debug.Log("--------" + scores.level + " - " + scores.activity + " - " + scores.score + " - ");
+			}
+			
+
+
 		});
 	
 	}
@@ -79,6 +88,9 @@ public class Map : MonoBehaviour {
 	private void SetupLevelButton (){
 		for (int indexButtonLevel = 0; indexButtonLevel < buttonLevelList.Count ; indexButtonLevel++) {
 			if (IsTheLevelExist (indexButtonLevel)) {
+				//leer datos nivel
+				//SaveLoad.IsLevelUnLock(levelList [index].numberLevel, levelList [index-1].)
+				//modificar variable unlock
 				UnlockOrLockButtonLevel (indexButtonLevel);
 				SelectOrOrNotSelectButtonLevel(indexButtonLevel);
 				AddActionToButtonLevel(indexButtonLevel);
