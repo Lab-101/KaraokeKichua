@@ -48,6 +48,14 @@ public class Level : MonoBehaviour {
 			wordActivity.StopSong ();
 	}
 
+	public bool IsAllActivitiesCompleted(){
+		foreach (Activity activity in activities)
+			if (!activity.IsCompleted)
+				return false;
+
+		return true;
+	}
+
 	private void FindObjectInScene ()	{
 		activityListUI = GameObject.FindGameObjectWithTag ("ActivityList");
 		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;

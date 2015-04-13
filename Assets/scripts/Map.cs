@@ -9,43 +9,52 @@ public class Map : MonoBehaviour {
 	[SerializeField]
 	private int indexLevelSelected;
 	[SerializeField]
-	private List<Button> listButtonLevel;
+	private List<Button> buttonLevelList;
 	[SerializeField]
-	private List<Level> levels;
+	private List<Level> levelList;
 
 	void Start(){
 		SetupLevelButton ();
 	}
 
+	void Update(){
+		if (levelList [indexLevelSelected].IsAllActivitiesCompleted ()) {
+			if( indexLevelSelected+1 < levelList.Count){
+				levelList [indexLevelSelected + 1].isUnlocked = true;
+				UnlockOrLockButtonLevel (indexLevelSelected + 1);
+			}
+		}
+	}
+
 	private void SelectLevel(int indexLevel){
 		SetLevelAsNotSelected (indexLevelSelected);
 		SetLevelAsSelected (indexLevel);
-		levels [indexLevel].StopPreviewWordActivity ();
+		levelList [indexLevel].StopPreviewWordActivity ();
 		indexLevelSelected = indexLevel;
 	}
 
 	private void SetLevelAsSelected(int index){
-		listButtonLevel [index].image.color = Color.green;
+		buttonLevelList [index].image.color = Color.green;
 	}
 
 	private void SetLevelAsNotSelected(int index){
-		listButtonLevel [index].image.color = Color.grey;
+		buttonLevelList [index].image.color = Color.grey;
 	}
 
 	private void UnlockLevelButton(int index){
-		listButtonLevel [index].interactable = true;
+		buttonLevelList [index].interactable = true;
 	}
 
 	private void LockLevelButton(int index){
-		listButtonLevel [index].interactable = false;		
+		buttonLevelList [index].interactable = false;		
 	}
 
 	private bool IsTheLevelExist (int index) {
-		return index < levels.Count;
+		return index < levelList.Count;
 	}
 
 	private void UnlockOrLockButtonLevel(int index)	{
-		if (levels [index].isUnlocked)
+		if (levelList [index].isUnlocked)
 			UnlockLevelButton (index);
 		else
 			LockLevelButton (index);
@@ -59,8 +68,8 @@ public class Map : MonoBehaviour {
 	}
 
 	private void AddActionToButtonLevel(int index){
-		Action levelBegun = levels [index].BeginLevel;	
-		listButtonLevel [index].onClick.AddListener (delegate {
+		Action levelBegun = levelList [index].BeginLevel;	
+		buttonLevelList [index].onClick.AddListener (delegate {
 			SelectLevel(index);
 			levelBegun ();
 		});
@@ -68,7 +77,7 @@ public class Map : MonoBehaviour {
 	}
 
 	private void SetupLevelButton (){
-		for (int indexButtonLevel = 0; indexButtonLevel < listButtonLevel.Count ; indexButtonLevel++) {
+		for (int indexButtonLevel = 0; indexButtonLevel < buttonLevelList.Count ; indexButtonLevel++) {
 			if (IsTheLevelExist (indexButtonLevel)) {
 				UnlockOrLockButtonLevel (indexButtonLevel);
 				SelectOrOrNotSelectButtonLevel(indexButtonLevel);

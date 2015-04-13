@@ -8,6 +8,7 @@ public class Activity : MonoBehaviour {
 	protected Score score;
 	protected bool isDataFound;
 	protected bool isActivityFinished;
+	protected bool isCompleted;
 	protected float elapsedTimeOfActivity;
 
 	[SerializeField]
@@ -26,11 +27,6 @@ public class Activity : MonoBehaviour {
 		set;
 	}
 	protected Action ActivityDataReseted {
-		get;
-		set;
-	}
-
-	protected Action<bool> ActivityIsData {
 		get;
 		set;
 	}
@@ -63,8 +59,15 @@ public class Activity : MonoBehaviour {
 		this.level = level;
 	}
 
+	public bool IsCompleted {
+		get {
+			return isCompleted;
+		}
+	}
+
 	public void ResetData(){
 		isDataFound = false;
+		isCompleted = false;
 		if (ActivityDataReseted != null)
 			ActivityDataReseted ();
 	}
@@ -83,6 +86,7 @@ public class Activity : MonoBehaviour {
 
 	protected void SetActivityAsFinished(){
 		isActivityFinished = true;
+		isCompleted = true;
 	}
 
 	protected void SetActivityAsNotFinished(){
