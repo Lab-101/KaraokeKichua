@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections;
@@ -14,12 +14,14 @@ public class Map : MonoBehaviour {
 	private List<Level> levelList;
 
 	void Start(){
+		UpdateLockStateOfLevels ();
 		SetupLevelButton ();
 	}
 
 	void Update(){
 		if (levelList [indexLevelSelected].IsAllActivitiesCompleted ()) {
 			if( indexLevelSelected+1 < levelList.Count){
+				SaveLevelData(levelList [indexLevelSelected + 1].numberLevel, true);
 				levelList [indexLevelSelected + 1].isUnlocked = true;
 				UnlockOrLockButtonLevel (indexLevelSelected + 1);
 			}
@@ -72,32 +74,40 @@ public class Map : MonoBehaviour {
 		buttonLevelList [index].onClick.AddListener (delegate {
 			SelectLevel(index);
 			levelBegun ();
-
-			SaveLoad.SaveActivityLevelScore(1,1,1);
-
-			foreach (ActivityScore scores in SaveLoad.dataActivitiesScore) {
-				Debug.Log("--------" + scores.level + " - " + scores.activity + " - " + scores.score + " - ");
-			}
-			
-
-
 		});
 	
 	}
 
 	private void SetupLevelButton (){
-		for (int indexButtonLevel = 0; indexButtonLevel < buttonLevelList.Count ; indexButtonLevel++) {
-			if (IsTheLevelExist (indexButtonLevel)) {
-				//leer datos nivel
-				//SaveLoad.IsLevelUnLock(levelList [index].numberLevel, levelList [index-1].)
-				//modificar variable unlock
-				UnlockOrLockButtonLevel (indexButtonLevel);
-				SelectOrOrNotSelectButtonLevel(indexButtonLevel);
-				AddActionToButtonLevel(indexButtonLevel);
+		for (int index = 0; index < buttonLevelList.Count ; index++) {
+			if (IsTheLevelExist (index)) {
+				UnlockOrLockButtonLevel (index);
+				SelectOrOrNotSelectButtonLevel(index);
+				AddActionToButtonLevel(index);
 			} else {
-				LockLevelButton (indexButtonLevel);
+				LockLevelButton (index);
 			}
 		}
+	}
+
+	private void UpdateLockStateOfLevels(){
+		bool isFirstLevel = true;
+		foreach (Level level in levelList) {
+			if(isFirstLevel){
+				SaveLevelData(level.numberLevel, true);
+				isFirstLevel = false;
+			}
+
+			bool isLevelUnlocked = LevelDataPersistent.IsLevelUnlock (level.numberLevel);
+			level.isUnlocked = isLevelUnlocked;
+		}
+	}
+
+	private void SaveLevelData(int numberLevel, bool isLevelUnlock){		
+		LevelData data = new LevelData();
+		data.level = numberLevel;
+		data.isUnlocked = isLevelUnlock;
+		LevelDataPersistent.SaveLevelData(data);
 	}
 
 }
