@@ -10,6 +10,7 @@ public class Activity : MonoBehaviour {
 	protected bool isActivityFinished;
 	protected bool isCompleted;
 	protected float elapsedTimeOfActivity;
+	protected int bestObteinedScore;
 
 	[SerializeField]
 	protected float timeA;
@@ -65,6 +66,12 @@ public class Activity : MonoBehaviour {
 		}
 	}
 
+	public int BestObteinedScore {
+		get {
+			return bestObteinedScore;
+		}
+	}
+
 	public void ResetData(){
 		isDataFound = false;
 		isCompleted = false;
@@ -94,9 +101,15 @@ public class Activity : MonoBehaviour {
 	}
 
 	private void CloseActivity ()	{
+		int scoreCalculate = score.CalculateScore ();
+
+		if (bestObteinedScore <= scoreCalculate) {
+			bestObteinedScore = scoreCalculate;
+		}
+
 		resultsButton.gameObject.SetActive (false);
 		score.SetTime (elapsedTimeOfActivity);
-		result.scoreLevel = score.CalculateScore ();
+		result.scoreLevel = scoreCalculate;
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
 	}

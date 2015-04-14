@@ -51,7 +51,7 @@ public class ResultsController : MonoBehaviour {
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel, 0);
 		levelName.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=40><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
 		time.text = "Tiempo de la actividad: "+ elapsedTime;
-		progressBar.SetFillerSize (scoreLevel, 2);
+		progressBar.SetFillerSize (scoreLevel);
 	}
 	
 	public void SetInactive(){

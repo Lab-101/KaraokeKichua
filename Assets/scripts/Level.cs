@@ -45,6 +45,7 @@ public class Level : MonoBehaviour {
 		OpenIntroScreenFirstTime ();
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
+
 	}
 	
 	public void StopPreviewWordActivity(){
@@ -59,6 +60,13 @@ public class Level : MonoBehaviour {
 				return false;
 
 		return true;
+	}
+
+	private int GetTotalScore(){
+		int scoreLevel = 0;
+		foreach (Activity activity in activities)
+			scoreLevel += activity.BestObteinedScore;
+		return scoreLevel;
 	}
 
 	private void FindObjectInScene ()	{
@@ -98,7 +106,7 @@ public class Level : MonoBehaviour {
 				levelName.text = "Nivel: "+ numberLevel ;
 				GameSettings.Instance.nameLevel[0] = numberLevel.ToString();
 				GameSettings.Instance.nameLevel[1] = nameLevel;
-				barLevel.SetFillerSize (scoreLevel, 1);
+				barLevel.SetFillerSize (scoreLevel);
 				index++;
 			}
 		}
