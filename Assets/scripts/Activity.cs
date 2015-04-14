@@ -11,6 +11,7 @@ public class Activity : MonoBehaviour {
 	protected bool isCompleted;
 	protected float elapsedTimeOfActivity;
 	protected int bestObteinedScore;
+	protected int bestScoreObtained;
 
 	[SerializeField]
 	protected float timeA;
@@ -101,16 +102,34 @@ public class Activity : MonoBehaviour {
 	}
 
 	private void CloseActivity ()	{
-		int scoreCalculate = score.CalculateScore ();
-
-		if (bestObteinedScore <= scoreCalculate) {
-			bestObteinedScore = scoreCalculate;
-		}
-
-		resultsButton.gameObject.SetActive (false);
 		score.SetTime (elapsedTimeOfActivity);
+		
+		int scoreCalculate = score.CalculateScore ();
+		
+		if (scoreCalculate > bestScoreObtained) {
+			bestScoreObtained = scoreCalculate;
+			SaveBestScoreActivity ();
+		}
+		resultsButton.gameObject.SetActive (false);
 		result.scoreLevel = scoreCalculate;
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
+	}
+
+	private void SaveBestScoreActivity () {
+		ActivityScoreData activityScoreData = new ActivityScoreData ();
+		activityScoreData.level = level;
+		activityScoreData.activity = GetActivityName ();
+		activityScoreData.score = bestScoreObtained;
+		ActivityScorePersistent.SaveActivityLevelScore (activityScoreData);
+	}
+	
+	private void ReadScoreActivity () {
+		bestScoreObtained = ActivityScorePersistent.GetScoreByActivityAndLevel (level, GetActivityName());
+	}
+	
+	private string GetActivityName ()
+	{
+		return this.GetType ().ToString ();
 	}
 }

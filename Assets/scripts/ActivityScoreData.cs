@@ -5,12 +5,12 @@ using System.Collections;
 public class ActivityScoreData {
 
 	public int level;
-	public int activity;
+	public string activity;
 	public int score;
 
 	public ActivityScoreData () {
 		this.level = 0;
-		this.activity = 0;
+		this.activity = "";
 		this.score = 0;
 	}
 
