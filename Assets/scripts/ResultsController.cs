@@ -22,6 +22,8 @@ public class ResultsController : MonoBehaviour {
 	private Text levelName;
 	[SerializeField]
 	protected GameStateBehaviour gameStateBehaviour;
+	private float sizeNumberLevel;
+	private float sizeNameLevel;
 
 	public Action BackActionExecuted {
 		get;
@@ -43,13 +45,14 @@ public class ResultsController : MonoBehaviour {
 			}
 		});
 
-
+		sizeNumberLevel = Screen.width / 32;
+		sizeNameLevel = 5 * Screen.width / 128;
 	}
 	public void SetActive(){
 		gameObject.SetActive (true);
 		score.text = PutMessageAndRankByLevel (scoreLevel, 1);
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel, 0);
-		levelName.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=40><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
+		levelName.text = "<size=" + sizeNumberLevel + "><color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color></size><size=" + sizeNameLevel + "><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
 		time.text = "Tiempo de la actividad: "+ elapsedTime;
 		progressBar.SetFillerSize (scoreLevel);
 	}

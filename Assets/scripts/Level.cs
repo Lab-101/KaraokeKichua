@@ -20,7 +20,7 @@ public class Level : MonoBehaviour {
 	//GUI objects
 	[SerializeField]
 	private Button activityButtonPrefab;
-	[SerializeField]
+	private Text levelNumber;
 	private Text levelName;
 	[SerializeField]
 	private IntroController introController;
@@ -74,6 +74,8 @@ public class Level : MonoBehaviour {
 		introButton = GameObject.FindGameObjectWithTag ("IntroButton").GetComponent (typeof(Button)) as Button;
 		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;
 		gameStateBehaviour = GameObject.FindGameObjectWithTag ("GameState").GetComponent (typeof(GameStateBehaviour)) as GameStateBehaviour;
+		levelNumber = GameObject.FindGameObjectWithTag ("MainLevelNumber").GetComponent (typeof(Text)) as Text;
+		levelName = GameObject.FindGameObjectWithTag ("MainLevelName").GetComponent (typeof(Text)) as Text;
 	}
 
 	private void OpenIntroScreenFirstTime(){
@@ -103,7 +105,8 @@ public class Level : MonoBehaviour {
 				activity.SetLevel(numberLevel);
 				activity.ResetData();
 				DrawActivity(activity, index);
-				levelName.text = "Nivel: "+ numberLevel ;
+				levelNumber.text = "NIVEL " + numberLevel ;
+				levelName.text = nameLevel ;
 				GameSettings.Instance.nameLevel[0] = numberLevel.ToString();
 				GameSettings.Instance.nameLevel[1] = nameLevel;
 				barLevel.SetFillerSize (scoreLevel);
