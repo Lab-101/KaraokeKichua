@@ -54,7 +54,7 @@ public class ResultsController : MonoBehaviour {
 		scoreDescription.text = PutMessageAndRankByLevel (scoreLevel, 0);
 		levelName.text = "<size=" + sizeNumberLevel + "><color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color></size><size=" + sizeNameLevel + "><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
 		time.text = "Tiempo de la actividad: "+ elapsedTime;
-		progressBar.SetFillerSize (scoreLevel);
+		progressBar.SetFillerSize (GameSettings.Instance.scoreByCurrentLevel);
 	}
 	
 	public void SetInactive(){
@@ -87,5 +87,3 @@ public class ResultsController : MonoBehaviour {
 		return Resources.Load ("Images/Texturas/corn_" + word, typeof(Sprite)) as Sprite;
 	}
 }
-
-

@@ -10,8 +10,7 @@ public class Activity : MonoBehaviour {
 	protected bool isActivityFinished;
 	protected bool isCompleted;
 	protected float elapsedTimeOfActivity;
-	protected int bestObteinedScore;
-	protected int bestScoreObtained;
+	protected int scoreObtained;
 
 	[SerializeField]
 	protected float timeA;
@@ -24,6 +23,10 @@ public class Activity : MonoBehaviour {
 	[SerializeField]
 	protected GameStateBehaviour gameStateBehaviour;
 
+	public Action ActivityCompleted {
+		get;
+		set;
+	}
 	protected Action ActivityStarted {
 		get;
 		set;
@@ -67,15 +70,17 @@ public class Activity : MonoBehaviour {
 		}
 	}
 
-	public int BestObteinedScore {
+	public int ScoreObtained {
 		get {
-			return bestObteinedScore;
+			return scoreObtained;
 		}
 	}
 
 	public void ResetData(){
 		isDataFound = false;
 		isCompleted = false;
+		ReadScoreActivity ();
+
 		if (ActivityDataReseted != null)
 			ActivityDataReseted ();
 	}
@@ -103,29 +108,30 @@ public class Activity : MonoBehaviour {
 
 	private void CloseActivity ()	{
 		score.SetTime (elapsedTimeOfActivity);
-		
-		int scoreCalculate = score.CalculateScore ();
-		
-		if (scoreCalculate > bestScoreObtained) {
-			bestScoreObtained = scoreCalculate;
-			SaveBestScoreActivity ();
-		}
+		scoreObtained = score.CalculateScore();
+		SaveScore ();
+		if (ActivityCompleted != null)
+			ActivityCompleted ();
+		OpenResultsScreen ();
+	}
+
+	private void OpenResultsScreen(){
 		resultsButton.gameObject.SetActive (false);
-		result.scoreLevel = scoreCalculate;
+		result.scoreLevel = scoreObtained;
 		result.elapsedTime = elapsedTimeOfActivity;
 		gameStateBehaviour.GameState = GameState.ShowingResults;
 	}
 
-	private void SaveBestScoreActivity () {
+	private void SaveScore () {
 		ActivityScoreData activityScoreData = new ActivityScoreData ();
 		activityScoreData.level = level;
 		activityScoreData.activity = GetActivityName ();
-		activityScoreData.score = bestScoreObtained;
+		activityScoreData.score = scoreObtained;
 		ActivityScorePersistent.SaveActivityLevelScore (activityScoreData);
 	}
 	
 	private void ReadScoreActivity () {
-		bestScoreObtained = ActivityScorePersistent.GetScoreByActivityAndLevel (level, GetActivityName());
+		scoreObtained = ActivityScorePersistent.GetScoreByActivityAndLevel (level, GetActivityName());
 	}
 	
 	private string GetActivityName ()

@@ -31,6 +31,8 @@ public static class ActivityScorePersistent {
 	}
 	
 	public static int GetScoreByActivityAndLevel(int level, string activity){
+		Load ();
+
 		foreach (ActivityScoreData scores in scoresActivities) {			
 			if(level == scores.level && activity == scores.activity)
 				return scores.score;			
@@ -44,7 +46,6 @@ public static class ActivityScorePersistent {
 
 		foreach (ActivityScoreData scoreActivity in scoresActivities) {			
 			if(data.level == scoreActivity.level && data.activity == scoreActivity.activity){
-				Debug.Log("Guarde D:");
 				scoreActivity.score = data.score;
 				Save(scoresActivities);
 				return; 

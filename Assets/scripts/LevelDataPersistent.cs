@@ -56,6 +56,7 @@ public static class LevelDataPersistent {
 	}
 
 	public static bool IsLevelIntroOpened(int level){
+		Load ();
 		foreach (LevelData levelData in dataLevels) {			
 			if(levelData.level == level)
 				return levelData.isIntroOpened;			

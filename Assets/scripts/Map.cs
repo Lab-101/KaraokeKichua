@@ -14,9 +14,6 @@ public class Map : MonoBehaviour {
 	private List<Level> levelList;
 
 	void Start(){
-
-
-		LevelDataPersistent.log ();
 		UpdateLockStateOfLevels ();
 		SetupLevelButton ();
 	}
@@ -116,5 +113,4 @@ public class Map : MonoBehaviour {
 		data.isIntroOpened = isLevelIntroOpened;
 		LevelDataPersistent.SaveLevelData(data);
 	}
-
 }

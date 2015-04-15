@@ -44,7 +44,7 @@ public class Level : MonoBehaviour {
 		OpenIntroScreenFirstTime ();
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
-
+		SetUpLevelProperties ();
 	}
 	
 	public void StopPreviewWordActivity(){
@@ -61,10 +61,11 @@ public class Level : MonoBehaviour {
 		return true;
 	}
 
-	private int GetTotalScore(){
+	public int GetTotalScore(){
 		int scoreLevel = 0;
 		foreach (Activity activity in activities)
-			scoreLevel += activity.BestObteinedScore;
+			scoreLevel += activity.ScoreObtained;
+		GameSettings.Instance.scoreByCurrentLevel = scoreLevel;
 		return scoreLevel;
 	}
 
@@ -75,6 +76,15 @@ public class Level : MonoBehaviour {
 		gameStateBehaviour = GameObject.FindGameObjectWithTag ("GameState").GetComponent (typeof(GameStateBehaviour)) as GameStateBehaviour;
 		levelNumber = GameObject.FindGameObjectWithTag ("MainLevelNumber").GetComponent (typeof(Text)) as Text;
 		levelName = GameObject.FindGameObjectWithTag ("MainLevelName").GetComponent (typeof(Text)) as Text;
+	}
+
+	private void SetUpLevelProperties()	{
+		levelNumber.text = "NIVEL " + numberLevel;
+		levelName.text = nameLevel;
+		GameSettings.Instance.nameLevel [0] = numberLevel.ToString ();
+		GameSettings.Instance.nameLevel [1] = nameLevel;
+		scoreLevel = GetTotalScore ();
+		barLevel.SetFillerSize (scoreLevel);
 	}
 
 	private void OpenIntroScreenFirstTime(){
@@ -105,12 +115,8 @@ public class Level : MonoBehaviour {
 			if(activity != null){
 				activity.SetLevel(numberLevel);
 				activity.ResetData();
+				activity.ActivityCompleted = HandleActivityCompleted;
 				DrawActivity(activity, index);
-				levelNumber.text = "NIVEL " + numberLevel ;
-				levelName.text = nameLevel ;
-				GameSettings.Instance.nameLevel[0] = numberLevel.ToString();
-				GameSettings.Instance.nameLevel[1] = nameLevel;
-				barLevel.SetFillerSize (scoreLevel);
 				index++;
 			}
 		}
@@ -144,15 +150,6 @@ public class Level : MonoBehaviour {
 			name = GameSettings.Instance.writeActivityName + "\n" + GameSettings.Instance.writeActivityInstruction;
 
 		return name;
-	}
-	
-	private void HandleClickButtonActivity (GameObject activityButton) {
-		foreach (Activity activity in activities) {
-			if(activityButton.name == GetActivityType(activity)){
-				StopPreviewWordActivity();
-				activity.StartActivity();
-			}
-		}
 	}
 
 	private void ShowActivitysList () {
@@ -200,5 +197,19 @@ public class Level : MonoBehaviour {
 
 	private void HandleContinueButtonClicked (){
 		gameStateBehaviour.GameState = GameState.SelectingLevel;
+	}
+
+	private void HandleClickButtonActivity (GameObject activityButton) {
+		foreach (Activity activity in activities) {
+			if(activityButton.name == GetActivityType(activity)){
+				StopPreviewWordActivity();
+				activity.StartActivity();
+			}
+		}
+	}
+	
+	private void HandleActivityCompleted ()	{
+		scoreLevel = GetTotalScore ();
+		barLevel.SetFillerSize (scoreLevel);
 	}
 }
