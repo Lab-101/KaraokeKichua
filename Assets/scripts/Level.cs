@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -29,6 +30,8 @@ public class Level : MonoBehaviour {
 	private Button introButton;
 	protected GameStateBehaviour gameStateBehaviour;
 
+	public Action<Level> UnlockNextLevel;
+
 	void Awake(){
 		FindObjectInScene ();
 		SetUpActivities ();
@@ -45,6 +48,11 @@ public class Level : MonoBehaviour {
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
 		SetUpLevelProperties ();
+
+		if (IsAllActivitiesCompleted()) {
+			if (UnlockNextLevel != null)
+				UnlockNextLevel (this);
+		}
 	}
 	
 	public void StopPreviewWordActivity(){
@@ -211,5 +219,10 @@ public class Level : MonoBehaviour {
 	private void HandleActivityCompleted ()	{
 		scoreLevel = GetTotalScore ();
 		barLevel.SetFillerSize (scoreLevel);
+
+		if (IsAllActivitiesCompleted()) {
+			if (UnlockNextLevel != null)
+				UnlockNextLevel (this);
+		}
 	}
 }

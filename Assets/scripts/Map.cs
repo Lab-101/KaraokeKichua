@@ -14,20 +14,12 @@ public class Map : MonoBehaviour {
 	private List<Level> levelList;
 
 	void Start(){
-		UpdateLockStateOfLevels ();
+		UpdatePropertiesOfLevels ();
 		SetupLevelButton ();
 	}
 
 	void Update(){
-		if (levelList [indexLevelSelected].IsAllActivitiesCompleted ()) {
-			if( indexLevelSelected+1 < levelList.Count){
-				int numberLevel = levelList [indexLevelSelected + 1].numberLevel;
-				bool introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (numberLevel);
-				SaveLevelData(numberLevel, true, introScreenItsOpened);
-				levelList [indexLevelSelected + 1].isUnlocked = true;
-				UnlockOrLockButtonLevel (indexLevelSelected + 1);
-			}
-		}
+
 	}
 
 	private void SelectLevel(int indexLevel){
@@ -72,7 +64,7 @@ public class Map : MonoBehaviour {
 	}
 
 	private void AddActionToButtonLevel(int index){
-		Action levelBegun = levelList [index].BeginLevel;	
+		Action levelBegun = levelList [index].BeginLevel;
 		buttonLevelList [index].onClick.AddListener (delegate {
 			SelectLevel(index);
 			levelBegun ();
@@ -92,7 +84,7 @@ public class Map : MonoBehaviour {
 		}
 	}
 
-	private void UpdateLockStateOfLevels(){
+	private void UpdatePropertiesOfLevels(){
 		bool isFirstLevel = true;
 		foreach (Level level in levelList) {
 			if(isFirstLevel){
@@ -103,6 +95,7 @@ public class Map : MonoBehaviour {
 
 			bool isLevelUnlocked = LevelDataPersistent.IsLevelUnlock (level.numberLevel);
 			level.isUnlocked = isLevelUnlocked;
+			level.UnlockNextLevel = HandleUnlockNextLevel;
 		}
 	}
 
@@ -112,5 +105,20 @@ public class Map : MonoBehaviour {
 		data.isUnlocked = isLevelUnlock;
 		data.isIntroOpened = isLevelIntroOpened;
 		LevelDataPersistent.SaveLevelData(data);
+	}
+
+	private void HandleUnlockNextLevel (Level level) {
+		for (int index = 0; index < levelList.Count; index++) {
+			if(levelList [index] == level){
+				if( index+1 < levelList.Count){
+					int numberLevel = levelList [index + 1].numberLevel;
+					bool introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (numberLevel);
+					SaveLevelData(numberLevel, true, introScreenItsOpened);
+					levelList [index + 1].isUnlocked = true;
+					UnlockOrLockButtonLevel (index + 1);
+				}
+			}
+		}
+
 	}
 }
