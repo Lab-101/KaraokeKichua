@@ -133,7 +133,8 @@ public class Level : MonoBehaviour {
 	private void DrawActivity (Activity activity, int index){
 		Button newItem = Instantiate(activityButtonPrefab) as Button;
 		newItem.name = GetActivityType(activity);
-		newItem.transform.GetChild(0).GetComponent<Text>().text = GetActivityName(activity);
+		newItem.transform.FindChild("Title").GetComponent<Text>().text = GetActivityName(activity, 0);
+		newItem.transform.FindChild("Description").GetComponent<Text>().text = GetActivityName(activity, 1);
 		newItem.transform.SetParent(activityListUI.gameObject.transform, false);	
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
@@ -149,13 +150,13 @@ public class Level : MonoBehaviour {
 		return activity.GetType ().ToString();
 	}
 
-	private string GetActivityName (Activity activity){
+	private string GetActivityName (Activity activity, int index){
 		string name = "";
 
 		if(activity is  WordActivity)
-			name =  GameSettings.Instance.wordActivityName + "\n" + GameSettings.Instance.wordActivityInstruction;
+			name =  GameSettings.Instance.wordActivityTag[index];
 		if(activity is WriteActivity)
-			name = GameSettings.Instance.writeActivityName + "\n" + GameSettings.Instance.writeActivityInstruction;
+			name = GameSettings.Instance.writeActivityTag[index];
 
 		return name;
 	}
