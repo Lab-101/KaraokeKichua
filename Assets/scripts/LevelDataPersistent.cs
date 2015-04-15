@@ -45,6 +45,7 @@ public static class LevelDataPersistent {
 		foreach (LevelData levelData in dataLevels) {						
 			if(levelData.level == data.level){
 				levelData.isUnlocked = data.isUnlocked;
+				levelData.isIntroOpened = data.isIntroOpened;
 				Save(dataLevels);
 				return; 
 			}			
@@ -52,6 +53,23 @@ public static class LevelDataPersistent {
 		
 		dataLevels.Add (data);
 		Save (dataLevels);
+	}
+
+	public static bool IsLevelIntroOpened(int level){
+		foreach (LevelData levelData in dataLevels) {			
+			if(levelData.level == level)
+				return levelData.isIntroOpened;			
+		}
+		
+		return false;
+	}
+
+	public static void log(){
+		Load ();
+		foreach (LevelData levelData in dataLevels) {			
+			Debug.Log ("Guarde " + levelData.level+" - "+ levelData.isUnlocked + " - "+ levelData.isIntroOpened);			
+		}
+
 	}
 
 }

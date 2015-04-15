@@ -30,7 +30,6 @@ public class Level : MonoBehaviour {
 	protected GameStateBehaviour gameStateBehaviour;
 
 	void Awake(){
-		introScreenItsOpened = false;
 		FindObjectInScene ();
 		SetUpActivities ();
 		ClearActivitysList ();
@@ -92,6 +91,8 @@ public class Level : MonoBehaviour {
 	}
 
 	private void SetUpIntroScreen(){
+		introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (numberLevel);
+
 		if(!introScreenItsOpened)
 			introController.ContinueButtonClicked = HandleFirstTimeContinueButtonClicked;
 		else
@@ -180,6 +181,12 @@ public class Level : MonoBehaviour {
 	}
 
 	private void HandleFirstTimeContinueButtonClicked (){
+		LevelData data = new LevelData();
+		data.level = numberLevel;
+		data.isUnlocked = true;
+		data.isIntroOpened = true;
+		LevelDataPersistent.SaveLevelData(data);
+
 		introController.ContinueButtonClicked = HandleContinueButtonClicked;
 
 		WordActivity wordActivity = FindWordActivity ();

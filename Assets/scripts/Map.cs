@@ -14,6 +14,9 @@ public class Map : MonoBehaviour {
 	private List<Level> levelList;
 
 	void Start(){
+
+
+		LevelDataPersistent.log ();
 		UpdateLockStateOfLevels ();
 		SetupLevelButton ();
 	}
@@ -21,7 +24,9 @@ public class Map : MonoBehaviour {
 	void Update(){
 		if (levelList [indexLevelSelected].IsAllActivitiesCompleted ()) {
 			if( indexLevelSelected+1 < levelList.Count){
-				SaveLevelData(levelList [indexLevelSelected + 1].numberLevel, true);
+				int numberLevel = levelList [indexLevelSelected + 1].numberLevel;
+				bool introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (numberLevel);
+				SaveLevelData(numberLevel, true, introScreenItsOpened);
 				levelList [indexLevelSelected + 1].isUnlocked = true;
 				UnlockOrLockButtonLevel (indexLevelSelected + 1);
 			}
@@ -94,7 +99,8 @@ public class Map : MonoBehaviour {
 		bool isFirstLevel = true;
 		foreach (Level level in levelList) {
 			if(isFirstLevel){
-				SaveLevelData(level.numberLevel, true);
+				bool introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (level.numberLevel);
+				SaveLevelData(level.numberLevel, true, introScreenItsOpened);
 				isFirstLevel = false;
 			}
 
@@ -103,10 +109,11 @@ public class Map : MonoBehaviour {
 		}
 	}
 
-	private void SaveLevelData(int numberLevel, bool isLevelUnlock){		
+	private void SaveLevelData(int numberLevel, bool isLevelUnlock, bool isLevelIntroOpened){		
 		LevelData data = new LevelData();
 		data.level = numberLevel;
 		data.isUnlocked = isLevelUnlock;
+		data.isIntroOpened = isLevelIntroOpened;
 		LevelDataPersistent.SaveLevelData(data);
 	}
 
