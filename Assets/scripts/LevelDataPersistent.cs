@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
+using System;
 
 public static class LevelDataPersistent {
 	
 	public static List<LevelData> dataLevels = new List<LevelData>();
-	
+
 	public static void Save(List<LevelData> data) {
+		SetEnvironment ();
 		BinaryFormatter buffer = new BinaryFormatter();
 		FileStream file = File.Create (Application.persistentDataPath + "/LevelData.gd"); 
 		LevelDataPersistent.dataLevels = data;
@@ -17,6 +19,7 @@ public static class LevelDataPersistent {
 	}	
 	
 	public static void Load() {
+		SetEnvironment ();
 		if(File.Exists(Application.persistentDataPath + "/LevelData.gd")) {
 			BinaryFormatter buffer = new BinaryFormatter();
 			FileStream file = File.Open(Application.persistentDataPath + "/LevelData.gd", FileMode.Open);
@@ -73,4 +76,7 @@ public static class LevelDataPersistent {
 
 	}
 
+	private static void SetEnvironment ()	{
+		Environment.SetEnvironmentVariable ("MONO_REFLECTION_SERIALIZER", "yes");
+	}
 }
