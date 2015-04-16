@@ -11,6 +11,11 @@ public class Level : MonoBehaviour {
 	public string nameLevel;
 	public bool isUnlocked;
 	[SerializeField]
+	private Sprite imageIntroduction;
+	[SerializeField]
+	[Multiline]
+	private string informationIntroduction;
+	[SerializeField]
 	private KaraokeController karaoke;
 	[SerializeField]
 	private List<Activity> activities;
@@ -110,6 +115,9 @@ public class Level : MonoBehaviour {
 
 	private void SetUpIntroScreen(){
 		introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (numberLevel);
+		introController.SetSpriteImage (imageIntroduction);
+		introController.SetLevelTittle (numberLevel, nameLevel);
+		introController.SetInformation (informationIntroduction);
 
 		if(!introScreenItsOpened)
 			introController.ContinueButtonClicked = HandleFirstTimeContinueButtonClicked;
