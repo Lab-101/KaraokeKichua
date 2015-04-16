@@ -132,6 +132,8 @@ public class Activity : MonoBehaviour {
 	
 	private void ReadScoreActivity () {
 		scoreObtained = ActivityScorePersistent.GetScoreByActivityAndLevel (level, GetActivityName());
+		if (scoreObtained != 0)
+			isCompleted = true;
 	}
 	
 	private string GetActivityName ()
