@@ -8,7 +8,7 @@ public class IntroController : MonoBehaviour {
 	[SerializeField]
 	private Image image;
 	[SerializeField]
-	private Text tittle;
+	private Text title;
 	[SerializeField]
 	private Text information;
 	[SerializeField]
@@ -32,13 +32,13 @@ public class IntroController : MonoBehaviour {
 	}
 
 	public void SetLevelTittle(int numberLevel, string nameLevel){
-		if(tittle != null){
-			tittle.text = "<color=#E5C507FF>NIVEL " + numberLevel + "</color><size=" + (Screen.width/16) + "><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";
+		if(title != null){
+			title.text = "<color=#E5C507FF>NIVEL " + numberLevel + "</color><size=" + (Screen.width/17) + "><color=#FFFFFFFF><b> " + nameLevel + "</b></color></size>";
 		}
 	}
 
 	public void SetInformation(string informationText){
-		if(tittle != null){
+		if(title != null){
 			information.text = informationText;
 		}
 	}
