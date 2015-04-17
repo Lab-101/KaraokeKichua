@@ -31,7 +31,9 @@ public class Level : MonoBehaviour {
 	private GameObject activityListUI;
 	private ProgressBarController barLevel;
 	private Button introButton;
-	protected GameStateBehaviour gameStateBehaviour;
+	private GameStateBehaviour gameStateBehaviour;
+	[SerializeField]
+	private List<Button> buttonsActivities;
 
 	public Action<Level> UnlockNextLevel;
 
@@ -51,6 +53,7 @@ public class Level : MonoBehaviour {
 		ShowActivitysList ();
 		PlayPreviewWordActivity ();
 		SetUpLevelProperties ();
+		ChangeColorOfActivitiesCompleted ();
 
 		if (IsAllActivitiesCompleted()) {
 			if (UnlockNextLevel != null)
@@ -125,6 +128,7 @@ public class Level : MonoBehaviour {
 
 	private void SetUpActivities(){	
 		int index = 0;
+		buttonsActivities = new List<Button>();
 		foreach (Activity activity in activities) {
 			if(activity != null){
 				activity.SetLevel(numberLevel);
@@ -145,6 +149,7 @@ public class Level : MonoBehaviour {
 		newItem.onClick.AddListener(delegate {
 			HandleClickButtonActivity(newItem.gameObject);
 		});
+		buttonsActivities.Add (newItem);
 		if (activity.IsDataFound ()) {
 			newItem.interactable = true;
 		} else {
@@ -191,6 +196,29 @@ public class Level : MonoBehaviour {
 		if (wordActivity != null && wordActivity.IsDataFound ())
 				wordActivity.PlayPreview ();
 	}
+		
+	private void ChangeColorOfActivitiesCompleted(){
+		for (int index = 0; index < activities.Count; index++) {
+			Activity activity = activities [index];
+			if(activity.IsCompleted)
+				SetColorCompleteToBarButton(buttonsActivities[index]);
+		}
+	}
+
+	private Image GetImageBarFromActivityButton(Button activityButton){
+		Transform transformImageBar = activityButton.transform.FindChild("ImageBar");
+		return transformImageBar.GetComponent<Image> () as Image;
+	}
+
+	private void SetColorCompleteToBarButton(Button button){
+		Image imageBar =  GetImageBarFromActivityButton(button);
+		Color color = new Color();
+		color.r = 0;
+		color.g = 255;
+		color.b = 0;
+		color.a = 1;
+		imageBar.color = color;
+	}
 
 	private void HandleFirstTimeContinueButtonClicked (){
 		LevelData data = new LevelData();
@@ -226,6 +254,7 @@ public class Level : MonoBehaviour {
 	private void HandleActivityCompleted ()	{
 		scoreLevel = GetTotalScore ();
 		barLevel.SetFillerSize (scoreLevel);
+		ChangeColorOfActivitiesCompleted ();
 
 		if (IsAllActivitiesCompleted()) {
 			if (UnlockNextLevel != null)
