@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GameStateBehaviour : MonoBehaviour {
-	
+	[SerializeField]
 	private GameState gameState;
 
 	public GameState GameState {

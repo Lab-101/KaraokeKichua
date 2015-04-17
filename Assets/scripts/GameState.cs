@@ -6,6 +6,7 @@ public enum GameState {
 	PlayingSong,
 	WriteActivity,
 	WordActivity,
+	PharseActivity,
 	ShowingResults,
 	SelectingLevel,
 	ShowingIntro
