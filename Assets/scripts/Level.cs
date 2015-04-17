@@ -16,8 +16,6 @@ public class Level : MonoBehaviour {
 	[Multiline]
 	private string informationIntroduction;
 	[SerializeField]
-	private KaraokeController karaoke;
-	[SerializeField]
 	private List<Activity> activities;
 	[SerializeField]
 	private bool introScreenItsOpened;
@@ -26,8 +24,8 @@ public class Level : MonoBehaviour {
 	//GUI objects
 	[SerializeField]
 	private Button activityButtonPrefab;
-	private Text levelNumber;
-	private Text levelName;
+	private Text numberLevelField;
+	private Text nameLevelField;
 	[SerializeField]
 	private IntroController introController;
 	private GameObject activityListUI;
@@ -87,13 +85,13 @@ public class Level : MonoBehaviour {
 		introButton = GameObject.FindGameObjectWithTag ("IntroButton").GetComponent (typeof(Button)) as Button;
 		barLevel = GameObject.FindGameObjectWithTag ("ProgressBarLevel").GetComponent (typeof(ProgressBarController)) as ProgressBarController;
 		gameStateBehaviour = GameObject.FindGameObjectWithTag ("GameState").GetComponent (typeof(GameStateBehaviour)) as GameStateBehaviour;
-		levelNumber = GameObject.FindGameObjectWithTag ("MainLevelNumber").GetComponent (typeof(Text)) as Text;
-		levelName = GameObject.FindGameObjectWithTag ("MainLevelName").GetComponent (typeof(Text)) as Text;
+		numberLevelField = GameObject.FindGameObjectWithTag ("MainLevelNumber").GetComponent (typeof(Text)) as Text;
+		nameLevelField = GameObject.FindGameObjectWithTag ("MainLevelName").GetComponent (typeof(Text)) as Text;
 	}
 
 	private void SetUpLevelProperties()	{
-		levelNumber.text = "NIVEL " + numberLevel;
-		levelName.text = nameLevel;
+		numberLevelField.text = "NIVEL " + numberLevel;
+		nameLevelField.text = nameLevel;
 		GameSettings.Instance.nameLevel [0] = numberLevel.ToString ();
 		GameSettings.Instance.nameLevel [1] = nameLevel;
 		scoreLevel = GetTotalScore ();
