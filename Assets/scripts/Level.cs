@@ -128,7 +128,6 @@ public class Level : MonoBehaviour {
 
 	private void SetUpActivities(){	
 		int index = 0;
-		buttonsActivities = new List<Button>();
 		foreach (Activity activity in activities) {
 			if(activity != null){
 				activity.SetLevel(numberLevel);
@@ -178,6 +177,7 @@ public class Level : MonoBehaviour {
 	}
 
 	private void ClearActivitysList () {
+		buttonsActivities = new List<Button>();
 		foreach(Transform  child in activityListUI.transform ) {
 			Destroy (child.gameObject);
 		}
@@ -221,12 +221,6 @@ public class Level : MonoBehaviour {
 	}
 
 	private void HandleFirstTimeContinueButtonClicked (){
-		LevelData data = new LevelData();
-		data.level = numberLevel;
-		data.isUnlocked = true;
-		data.isIntroOpened = true;
-		LevelDataPersistent.SaveLevelData(data);
-
 		introController.ContinueButtonClicked = HandleContinueButtonClicked;
 
 		WordActivity wordActivity = FindWordActivity ();
@@ -235,6 +229,11 @@ public class Level : MonoBehaviour {
 			wordActivity.StartActivity ();
 		} else {
 			gameStateBehaviour.GameState = GameState.SelectingLevel;
+			LevelData data = new LevelData();
+			data.level = numberLevel;
+			data.isUnlocked = true;
+			data.isIntroOpened = true;
+			LevelDataPersistent.SaveLevelData(data);
 		}
 	}
 
