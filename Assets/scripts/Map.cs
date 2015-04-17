@@ -86,16 +86,18 @@ public class Map : MonoBehaviour {
 
 	private void UpdatePropertiesOfLevels(){
 		bool isFirstLevel = true;
-		foreach (Level level in levelList) {
-			if(isFirstLevel){
+		for (int index = 0; index < levelList.Count; index++) {
+			Level level = levelList [index];
+			if (isFirstLevel) {
 				bool introScreenItsOpened = LevelDataPersistent.IsLevelIntroOpened (level.numberLevel);
-				SaveLevelData(level.numberLevel, true, introScreenItsOpened);
+				SaveLevelData (level.numberLevel, true, introScreenItsOpened);
 				isFirstLevel = false;
 			}
-
 			bool isLevelUnlocked = LevelDataPersistent.IsLevelUnlock (level.numberLevel);
 			level.isUnlocked = isLevelUnlocked;
 			level.UnlockNextLevel = HandleUnlockNextLevel;
+			if (isLevelUnlocked)
+				indexLevelSelected = index;
 		}
 	}
 
