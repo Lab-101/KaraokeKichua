@@ -205,19 +205,29 @@ public class Level : MonoBehaviour {
 		}
 	}
 
-	private Image GetImageBarFromActivityButton(Button activityButton){
-		Transform transformImageBar = activityButton.transform.FindChild("ImageBar");
-		return transformImageBar.GetComponent<Image> () as Image;
+	private Transform GetImageBarFromActivityButton(Button activityButton){
+		return activityButton.transform.FindChild("ImageBar");
 	}
 
 	private void SetColorCompleteToBarButton(Button button){
-		Image imageBar =  GetImageBarFromActivityButton(button);
+		Transform transformImage = GetImageBarFromActivityButton (button);
+
+		Image imageBar =  transformImage.GetComponent<Image>() as Image;
 		Color color = new Color();
 		color.r = 0;
 		color.g = 255;
 		color.b = 0;
 		color.a = 1;
 		imageBar.color = color;
+		
+		RectTransform rectTransform = transformImage.GetComponent<RectTransform> () as RectTransform;
+		Vector2 anchorMin = rectTransform.anchorMin;
+		anchorMin.x = 0;
+		Vector2 anchorMax = rectTransform.anchorMax;
+		anchorMax.x = 1;
+
+		rectTransform.anchorMin = anchorMin;
+		rectTransform.anchorMax = anchorMax;
 	}
 
 	private void HandleFirstTimeContinueButtonClicked (){
