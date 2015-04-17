@@ -18,10 +18,6 @@ public class Map : MonoBehaviour {
 		SetupLevelButton ();
 	}
 
-	void Update(){
-
-	}
-
 	private void SelectLevel(int indexLevel){
 		SetLevelAsNotSelected (indexLevelSelected);
 		SetLevelAsSelected (indexLevel);

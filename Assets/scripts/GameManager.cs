@@ -151,4 +151,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
+	void Awake(){
+		Input.multiTouchEnabled = false;
+	}
 }
