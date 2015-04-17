@@ -104,14 +104,14 @@ public class WordActivity : Activity {
 		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
 		foreach (string correctWord in data.wordsValidsList) {
 			if (nameButton == correctWord){
-				wordButton.image.color = Color.green;
+				ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255));
 				titleList[correctWords].text = correctWord;
 				imageList[correctWords].sprite = GetImageFrom(correctWord);
 				correctWords++;
 				break;
 			}
 			else 
-				wordButton.image.color = Color.red;
+				ChangeColorByState (wordButton, new Color32 (254, 0, 0, 255));
 		}
 		wordButton.interactable = false;
 		if (correctWords >= 2) {
@@ -119,6 +119,11 @@ public class WordActivity : Activity {
 			correctWords = 0;
 			SetActivityAsFinished();
 		}
+	}
+
+	private void ChangeColorByState (Button stateButton, Color32 stateColor){
+		stateButton.transform.FindChild("StateImage").GetComponent<Image>().color = stateColor;
+		stateButton.transform.FindChild("Text").GetComponent<Text>().color = stateColor;
 	}
 
 	private void HandleSelectedCorrectWords () {
