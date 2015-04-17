@@ -1,0 +1,34 @@
+[
+    {
+        "level": 1,
+        "showWords": [
+            "Eres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora"
+        ],
+        "wordValid": "Eres",
+        "wordTranslated": "Eress"
+    },
+    {
+        "level": 2,
+        "showWords": [
+            "Pronto",
+            "habilidad",
+            "casa"
+        ],
+        "wordValid": "Pronto",
+        "wordTranslated": "Prontoss"
+    },
+    {
+        "level": 3,
+        "showWords": [
+            "Cualidad",
+            "todos",
+            "vamos"
+        ],
+        "wordValid": "todos",
+        "wordTranslated": "todoss"
+    }
+]
