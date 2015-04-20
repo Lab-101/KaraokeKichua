@@ -50,6 +50,7 @@ public class JsonWriteParser {
 	Phrase CreatePhraseObject (Dictionary<string,object> phrase)
 	{
 		Phrase phraseObject = new Phrase ();
+		phraseObject.phraseTranslated = phrase ["phraseTranslated"].ToString ();
 		phraseObject.words = CreateWordsList (phrase);
 		return phraseObject;
 	}

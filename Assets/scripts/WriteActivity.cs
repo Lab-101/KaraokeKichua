@@ -16,7 +16,7 @@ public class WriteActivity : Activity {
 	[SerializeField]
 	private WordUI wordUI;
 	[SerializeField]
-	private Image imageHiddenWord;
+	private Text phraseTranslatedField;
 
 	void Awake(){
 		if (level != null) {
@@ -51,13 +51,12 @@ public class WriteActivity : Activity {
 		Word nextWord = GetHiddenWordByIndex (phrase.words, indexHiddenWord);
 		if (nextWord != null) {
 			wordUI.DrawWord (nextWord.text);
-			imageHiddenWord.sprite = nextWord.image;
 		} else {
 			SetActivityAsFinished ();
 		}
 	}
 	
-	private Phrase GetRandomPhraseFromSong(List<Phrase> phrases){
+	private Phrase GetRandomPhrase(List<Phrase> phrases){
 		if (phrases.Count != 0) {
 			int randomIndex = UnityEngine.Random.Range(0, phrases.Count);
 			return phrases[randomIndex];		
@@ -97,7 +96,8 @@ public class WriteActivity : Activity {
 	}
 
 	private void CreateActivity () {
-		phrase = GetRandomPhraseFromSong (data.phrases);
+		phrase = GetRandomPhrase (data.phrases);
+		phraseTranslatedField.text = phrase.phraseTranslated;
 		phraseUI.DrawPhrase (phrase);
 		GetHiddenWordByIndex (0);
 		result.RetryActionExecuted = StartActivity;
