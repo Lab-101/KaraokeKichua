@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 	public KaraokeController karaoke;
 	public WriteActivity writeActivity;
 	public WordActivity wordActivity;
+	public ImageActivity imageActivity;
 	public PhraseActivity pharseActivity;
 	public ResultsController results;
 	public GameStateBehaviour gameStateBehaviour;
@@ -36,6 +37,12 @@ public class GameManager : MonoBehaviour {
 	private bool IsPlayingWordActivity {
 		get{
 			return gameStateBehaviour.GameState == GameState.WordActivity;
+		}
+	}
+
+	private bool IsPlayingImageActivity {
+		get{
+			return gameStateBehaviour.GameState == GameState.ImageActivity;
 		}
 	}
 
@@ -69,6 +76,7 @@ public class GameManager : MonoBehaviour {
 		karaoke.SetActive ();
 		writeActivity.SetActive ();
 		wordActivity.SetActive ();
+		imageActivity.SetActive ();
 		pharseActivity.SetActive ();
 		results.SetActive ();		
 
@@ -86,6 +94,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetInactive ();
 			mainScreen.SetActive(false);
@@ -94,6 +103,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetActive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetInactive ();
 			mainScreen.SetActive(false);
@@ -102,6 +112,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			writeActivity.SetActive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetInactive ();
 			mainScreen.SetActive(false);
@@ -110,6 +121,16 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			wordActivity.SetActive ();
 			writeActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+		}else if (IsPlayingImageActivity) {
+			karaoke.SetInactive ();
+			wordActivity.SetInactive ();
+			writeActivity.SetInactive ();
+			imageActivity.SetActive();
 			pharseActivity.SetInactive();
 			results.SetInactive ();
 			mainScreen.SetActive(false);
@@ -118,6 +139,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			wordActivity.SetInactive ();
 			writeActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetActive();
 			results.SetInactive ();
 			mainScreen.SetActive(false);
@@ -126,6 +148,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetActive();
 			mainScreen.SetActive(false);
@@ -134,6 +157,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetInactive();
 			mainScreen.SetActive(true);
@@ -142,6 +166,7 @@ public class GameManager : MonoBehaviour {
 			karaoke.SetInactive ();
 			writeActivity.SetInactive ();
 			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetInactive();
 			results.SetInactive();
 			mainScreen.SetActive(true);

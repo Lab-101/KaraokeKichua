@@ -168,6 +168,8 @@ public class Level : MonoBehaviour {
 			name =  GameSettings.Instance.wordActivityTag[index];
 		if(activity is WriteActivity)
 			name = GameSettings.Instance.writeActivityTag[index];
+		if(activity is ImageActivity)
+			name = GameSettings.Instance.imageActivityTag[index];
 		if(activity is PhraseActivity)
 			name = GameSettings.Instance.phraseActivityTag[index];
 
