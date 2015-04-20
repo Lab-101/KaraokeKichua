@@ -8,12 +8,15 @@ public class Map : MonoBehaviour {
 	
 	[SerializeField]
 	private int indexLevelSelected;
+	[SerializeField]	
+	private GameObject welcomePanel;
 	[SerializeField]
 	private List<Button> buttonLevelList;
 	[SerializeField]
 	private List<Level> levelList;
 
 	void Start(){
+		welcomePanel.SetActive (true);
 		UpdatePropertiesOfLevels ();
 		SetupLevelButton ();
 	}
@@ -62,6 +65,7 @@ public class Map : MonoBehaviour {
 	private void AddActionToButtonLevel(int index){
 		Action levelBegun = levelList [index].BeginLevel;
 		buttonLevelList [index].onClick.AddListener (delegate {
+			welcomePanel.SetActive (false);
 			SelectLevel(index);
 			levelBegun ();
 		});
@@ -92,8 +96,10 @@ public class Map : MonoBehaviour {
 			bool isLevelUnlocked = LevelDataPersistent.IsLevelUnlock (level.numberLevel);
 			level.isUnlocked = isLevelUnlocked;
 			level.UnlockNextLevel = HandleUnlockNextLevel;
-			if (isLevelUnlocked)
+			if (isLevelUnlocked) {
 				indexLevelSelected = index;
+				welcomePanel.transform.FindChild("WelcomeMessage").GetComponent<Text>().text = (index != 0)? "<b>Nivel " + levelList[index].numberLevel +"</b>" : "\u00A1Inicia el viaje en <b>Otavalo</b>!";
+			}
 		}
 	}
 

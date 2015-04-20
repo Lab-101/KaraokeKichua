@@ -36,7 +36,7 @@ public class Activity : MonoBehaviour {
 		set;
 	}
 
-	void Start (){		
+	void Start (){
 		resultsButton.onClick.AddListener (delegate {
 			CloseActivity ();
 		});
