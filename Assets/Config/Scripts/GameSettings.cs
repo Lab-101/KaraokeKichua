@@ -10,6 +10,7 @@ public class GameSettings : ScriptableObject {
 	public float songPlayTime;
 	public List<string> wordActivityTag;
 	public List<string> writeActivityTag;
+	public List<string> phraseActivityTag;
 	public List<string> imageActivityTag;
 	public List<string> nameLevel;
 	public List<string> bestScoreMessage;

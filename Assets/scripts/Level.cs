@@ -79,6 +79,7 @@ public class Level : MonoBehaviour {
 		int scoreLevel = 0;
 		foreach (Activity activity in activities)
 			scoreLevel += activity.ScoreObtained;
+
 		GameSettings.Instance.scoreByCurrentLevel = scoreLevel;
 		return scoreLevel;
 	}
@@ -167,6 +168,8 @@ public class Level : MonoBehaviour {
 			name =  GameSettings.Instance.wordActivityTag[index];
 		if(activity is WriteActivity)
 			name = GameSettings.Instance.writeActivityTag[index];
+		if(activity is PhraseActivity)
+			name = GameSettings.Instance.phraseActivityTag[index];
 
 		return name;
 	}
