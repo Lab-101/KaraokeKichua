@@ -8,18 +8,29 @@ public class RandomWordUI : MonoBehaviour {
 
 	public Button wordPrefab;
 	private List<Button> randomWordsButtons = new List<Button>();
-	public Action <Button> RandomWordSelected;
-	
+	public Action <Button> RandomWordOfPhraseSelected;
+	public string phraseText = "";
 	public Action SelectedCorrectWords {
 		get;
 		set;
 	}
 	
 	public void DrawButtonsByWord(List<Word> wordList){
+		phraseText = GetPhraseByListOfWords (wordList);
 		wordList.Shuffle ();
+		if (wordList.Count > 1)
+			while (phraseText == GetPhraseByListOfWords (wordList))
+				wordList.Shuffle ();
 		foreach(Word word in wordList){
 			randomWordsButtons.Add(createWordButton(word.text));
 		}
+	}
+
+	private string GetPhraseByListOfWords (List<Word> list){
+		string newPhrase = "";
+		foreach(Word word in list)
+			newPhrase += word.text + " ";
+		return newPhrase;
 	}
 
 	private Button createWordButton(string name){
@@ -29,8 +40,8 @@ public class RandomWordUI : MonoBehaviour {
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).GetComponent<Text>().text = name;
 		newItem.onClick.AddListener (delegate {
-			if(RandomWordSelected!=null)
-				RandomWordSelected(newItem);
+			if(RandomWordOfPhraseSelected!=null)
+				RandomWordOfPhraseSelected(newItem);
 		});
 		return newItem;
 	}
