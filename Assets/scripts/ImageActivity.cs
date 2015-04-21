@@ -79,7 +79,7 @@ public class ImageActivity : Activity {
 		SetActivityAsNotFinished();
 		ClearActivity ();
 		CreateActivity ();
-		gameStateBehaviour.GameState = GameState.WordActivity;
+		gameStateBehaviour.GameState = GameState.ImageActivity;
 	}
 
 	private void HandleRandomWordSelected (Button wordButton) {
