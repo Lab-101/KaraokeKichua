@@ -12,13 +12,17 @@ public class PhraseActivity : Activity {
 	[SerializeField]
 	private Text phraseTranslatedField;
 	[SerializeField]
+	private Text phraseBuiltField;
+	[SerializeField]
 	private RandomWordUI randomWordsPhrase;
+	private int wordsOfPhraseCounter;
 
 	void Awake(){
 		if (level != null) {
 			ReadDataFromJson ();
 		}
-		ActivityStarted += HandleActivityStarted;	
+		randomWordsPhrase.RandomWordOfPhraseSelected += HandleRandomWordOfPhraseSelected;
+		ActivityStarted += HandleActivityStarted;
 		ActivityDataReseted += ReadDataFromJson;	
 	}
 
@@ -41,9 +45,28 @@ public class PhraseActivity : Activity {
 	}
 
 	private void HandleActivityStarted () {
-		//ClearActivity ();
+		ClearActivity ();
 		CreateActivity ();
 		BeginActivity ();
+	}
+
+	private void ClearActivity () {
+		wordsOfPhraseCounter = 0;
+		phraseBuiltField.text = " ";
+	}
+
+	private void HandleRandomWordOfPhraseSelected (Button randomWordButton) {
+		string nameButton = randomWordButton.transform.GetChild(0).GetComponent<Text>().text;
+		string [] correctPhraseArray = randomWordsPhrase.phraseText.Split(' ');
+		if (nameButton == correctPhraseArray [wordsOfPhraseCounter]) {
+			phraseBuiltField.text += (nameButton + " ");
+			wordsOfPhraseCounter++;
+			randomWordButton.interactable = false;
+		}
+		if ( (correctPhraseArray.Length-1) <= wordsOfPhraseCounter) {
+			wordsOfPhraseCounter = 0;
+			SetActivityAsFinished();
+		}
 	}
 
 	private void CreateActivity () {
