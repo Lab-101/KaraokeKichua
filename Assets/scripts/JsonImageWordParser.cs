@@ -35,7 +35,6 @@ public class JsonImageWordParser : MonoBehaviour {
 	
 	private ImageWordActivityData CreateWordActivityDataObject (Dictionary<string, object> levelData)	{
 		ImageWordActivityData data = new ImageWordActivityData ();
-		data.songName = levelData ["name"].ToString();
 		data.wordsList = CreateWordsList( levelData ["showWords"] as List<object>);
 		data.wordValid = levelData["wordValid"].ToString();
 		data.wordTranslated = levelData["wordTranslated"].ToString();
