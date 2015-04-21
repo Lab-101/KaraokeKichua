@@ -164,7 +164,7 @@ public class Level : MonoBehaviour {
 	private string GetActivityName (Activity activity, int index){
 		string name = "";
 
-		if(activity is  WordActivity)
+		if(activity is WordActivity)
 			name =  GameSettings.Instance.wordActivityTag[index];
 		if(activity is WriteActivity)
 			name = GameSettings.Instance.writeActivityTag[index];
