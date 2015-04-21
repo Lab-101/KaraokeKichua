@@ -3,50 +3,38 @@
         "level": 1,
         "phrases": [
             {
-                "phrase": "Eres tanta-tanto gente, que dime",
-                "phraseTranslated": "You are so people, so tell me"
+                "phrase": "Eres tanta gente, que dime",
+                "phraseTranslated": "Traduccion 1"
             },
             {
-				"phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Who am I talking now?"
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "phraseTranslated": "Traduccion 2"
             },
             {
                 "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Don't see that we aren't the same"
+                "phraseTranslated": "Traduccion 3"
+            },
+            {
+                "phrase": "mas alta y ya no pude alcanzarte porque mi corazon es lento",
+                "phraseTranslated": "Traduccion 4"
             }
         ]
-    }
-	{
+    },
+    {
         "level": 2,
         "phrases": [
             {
-                "phrase": "I got one less problem without you!",
-				"phraseTranslated": "Tengo un problema menos sin ti"
-            },
-            {
-                "phrase": "Head in the clouds got no weight on my shoulders",
-				"phraseTranslated": "Cabeza en las nubes no tiene peso en mis hombros"
-            },
-            {
-                "phrase": "Every time you touch me and say you love me",
-				"phraseTranslated": "Cada vez que me tocas y dices que me amas"
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "phraseTranslated": "Traduccion 5"
             }
         ]
-    }
+    },
     {
         "level": 3,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-				"phraseTranslated": "You are so people, so tell me"
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Who am I talking now?"
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Don't see that we aren't the same"
+                "phrase": "!chan chan chaaann!",
+                "phraseTranslated": "Traduccion 6"
             }
         ]
     }
