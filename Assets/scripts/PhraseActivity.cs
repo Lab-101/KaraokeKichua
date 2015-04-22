@@ -22,8 +22,9 @@ public class PhraseActivity : Activity {
 			ReadDataFromJson ();
 		}
 		randomWordsPhrase.RandomWordOfPhraseSelected += HandleRandomWordOfPhraseSelected;
+		randomWordsPhrase.FinishedBuiltPhrase += HandleFinishedBuiltPhrase;
 		ActivityStarted += HandleActivityStarted;
-		ActivityDataReseted += ReadDataFromJson;	
+		ActivityDataReseted += ReadDataFromJson;
 	}
 
 	private void ReadDataFromJson (){
@@ -65,8 +66,13 @@ public class PhraseActivity : Activity {
 		}
 		if ( (correctPhraseArray.Length-1) <= wordsOfPhraseCounter) {
 			wordsOfPhraseCounter = 0;
+			randomWordsPhrase.DestroyAllButtons();
 			SetActivityAsFinished();
 		}
+	}
+
+	private void HandleFinishedBuiltPhrase () {
+		resultsButton.gameObject.SetActive(true);
 	}
 
 	private void CreateActivity () {

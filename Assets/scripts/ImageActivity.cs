@@ -102,11 +102,6 @@ public class ImageActivity : Activity {
 
 	private void HandleSelectedCorrectWords () {
 		resultsButton.gameObject.SetActive(true);
-		LevelData data = new LevelData();
-		data.level = level;
-		data.isUnlocked = true;
-		data.isIntroOpened = true;
-		LevelDataPersistent.SaveLevelData(data);
 	}
 
 	private void ChangeColorByState (Button stateButton, Color32 stateColor){
