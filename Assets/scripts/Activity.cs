@@ -22,6 +22,8 @@ public class Activity : MonoBehaviour {
 	protected ResultsController result;
 	[SerializeField]
 	protected GameStateBehaviour gameStateBehaviour;
+	[SerializeField]
+	protected WordAudioPlayer wordAudio;
 
 	public Action ActivityCompleted {
 		get;

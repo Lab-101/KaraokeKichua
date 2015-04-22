@@ -11,6 +11,7 @@ public class WordActivity : Activity {
 	private int correctWords;
 	private List<Text> titleList = new List<Text>();
 	private List<Image> imageList = new List<Image>();
+	private List<int> indexCorrectWords = new List<int>();
 
 	// GUI Objects
 	[SerializeField]
@@ -29,7 +30,7 @@ public class WordActivity : Activity {
 	void Awake(){
 		ReadDataFromJson ();
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
-		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
+		//randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityStarted += HandleActivityStarted;
 		ActivityDataReseted += ReadDataFromJson;
 	}
@@ -68,6 +69,7 @@ public class WordActivity : Activity {
 	}
 
 	private void ClearImagesAndTittles(){
+		indexCorrectWords.Clear ();
 		imageList = new List<Image>();
 		imageList.Add (firstImage);
 		imageList.Add (secondImage);
@@ -102,31 +104,46 @@ public class WordActivity : Activity {
 
 	private void HandleRandomWordSelected (Button wordButton) {
 		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
-		foreach (string correctWord in data.wordsValidsList) {
-			if (nameButton == correctWord){
-				ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255));
-				titleList[correctWords].text = correctWord;
-				imageList[correctWords].sprite = GetImageFrom(correctWord);
-				correctWords++;
+		for (int index = 0; index < data.wordsValidsList.Count; index++) {
+			string correctWord = data.wordsValidsList [index];
+			if (nameButton == correctWord) {
+				if(!indexCorrectWords.Contains(index)){
+					titleList [correctWords].text = correctWord;
+					imageList [correctWords].sprite = GetImageFrom (correctWord);
+					indexCorrectWords.Add(index);
+					correctWords++;
+				}
+				ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255), true);
+				wordAudio.SetWordToPlay (correctWord);
+				wordAudio.PlayWord ();
 				break;
 			}
 			else 
-				ChangeColorByState (wordButton, new Color32 (254, 0, 0, 255));
+				ChangeColorByState (wordButton, new Color32 (254, 0, 0, 255), false);
 		}
-		wordButton.interactable = false;
-		if (correctWords >= 2) {
-			randomWords.DisableAllButtons();
+		if (indexCorrectWords.Count >= 2) {
+			DisableWords();
 			correctWords = 0;
 			SetActivityAsFinished();
 		}
 	}
 
-	private void ChangeColorByState (Button stateButton, Color32 stateColor){
-		stateButton.transform.FindChild("StateImage").GetComponent<Image>().color = stateColor;
-		stateButton.transform.FindChild("Text").GetComponent<Text>().color = stateColor;
+	private void DisableWords(){
+		for (int indexWord = 0; indexWord < data.wordsList.Count; indexWord++) {
+			string word = data.wordsList [indexWord];
+			if (!data.wordsValidsList.Contains(word) )
+				randomWords.DisableButtonInIndex (indexWord);
+		}
+		FinishPhraseActivity();
 	}
 
-	private void HandleSelectedCorrectWords () {
+	private void ChangeColorByState (Button stateButton, Color32 stateColor, bool buttonState){
+		stateButton.transform.FindChild("StateImage").GetComponent<Image>().color = stateColor;
+		stateButton.transform.FindChild("Text").GetComponent<Text>().color = stateColor;
+		stateButton.interactable = buttonState;
+	}
+
+	private void FinishPhraseActivity () {
 		resultsButton.gameObject.SetActive(true);
 		
 		LevelData data = new LevelData();

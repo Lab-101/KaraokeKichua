@@ -10,12 +10,8 @@ public class RandomWordsList : MonoBehaviour {
 	private List<Button> randomWordsButtons = new List<Button>();
 	public Action <Button> RandomWordSelected;
 
-	public Action SelectedCorrectWords {
-		get;
-		set;
-	}
-
 	public void DrawButtonsByWord(List<string> wordList){
+		randomWordsButtons.Clear ();
 		wordList.Shuffle ();
 		foreach(string word in wordList){
 			randomWordsButtons.Add(createWordButton(word));
@@ -35,16 +31,7 @@ public class RandomWordsList : MonoBehaviour {
 		return newItem;
 	}
 
-	public void DisableAllButtons(){
-		foreach(Button word in randomWordsButtons){
-			if(word != null )word.interactable = false;
-		}
-		FinishGame ();
+	public void DisableButtonInIndex (int index)	{
+		randomWordsButtons [index].interactable = false;
 	}
-
-	private void FinishGame(){
-		if (SelectedCorrectWords!=null)
-			SelectedCorrectWords();
-	}
-
 }

@@ -22,7 +22,7 @@ public class ImageActivity : Activity {
 		resultsButton.gameObject.SetActive(false);
 		ReadDataFromJson ();
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
-		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
+		//randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityStarted += HandleActivityStarted;	
 		ActivityDataReseted += ReadDataFromJson;
 	}
@@ -82,7 +82,7 @@ public class ImageActivity : Activity {
 	}
 
 	private void HandleRandomWordSelected (Button wordButton) {
-		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
+	/*	string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
 
 		if (nameButton == data.wordValid) {
 			ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255));
@@ -94,10 +94,10 @@ public class ImageActivity : Activity {
 
 		wordButton.interactable = false;
 		if (correctWords >= 2) {
-			randomWords.DisableAllButtons();
+			//randomWords.DisableAllButtons();
 			correctWords = 0;
 			SetActivityAsFinished();
-		}
+		}*/
 	}
 
 	private void HandleSelectedCorrectWords () {
