@@ -7,10 +7,7 @@ public class ImageActivity : Activity {
 
 	public TextAsset json;
 	private ImageWordActivityData data = new ImageWordActivityData();
-	private string numberLevel;
 	private int correctWords;
-	//private List<Text> titleList = new List<Text>();
-	//private List<Image> imageList = new List<Image>();
 
 	// GUI Objects
 	[SerializeField]
@@ -21,14 +18,15 @@ public class ImageActivity : Activity {
 	private Text firstTitle;
 
 	void Awake(){
+
 		resultsButton.gameObject.SetActive(false);
 		ReadDataFromJson ();
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
 		randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityStarted += HandleActivityStarted;	
-		ActivityDataReseted += ReadDataFromJson;	
+		ActivityDataReseted += ReadDataFromJson;
 	}
-	
+
 	private void ReadDataFromJson (){
 		JsonImageWordParser parser = new JsonImageWordParser();
 		data = new ImageWordActivityData ();
@@ -64,6 +62,7 @@ public class ImageActivity : Activity {
 	}
 	
 	private void CreateActivity ()	{
+		firstImage.sprite = GetImageFrom (data.wordValid);
 		randomWords.DrawButtonsByWord (data.wordsList);
 		result.RetryActionExecuted = RetryActivity;
 	}
@@ -88,7 +87,6 @@ public class ImageActivity : Activity {
 		if (nameButton == data.wordValid) {
 			ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255));
 			firstTitle.text = data.wordTranslated;
-			firstImage.sprite = GetImageFrom (data.wordValid);
 			correctWords = 2;
 		} else { 
 			ChangeColorByState (wordButton, new Color32 (254, 0, 0, 255));
