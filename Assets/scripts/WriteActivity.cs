@@ -119,6 +119,8 @@ public class WriteActivity : Activity {
 	}
 	
 	private void HandleWordFinished (int indexNextWord)	{
+		wordAudio.SetWordToPlay (GetHiddenWordByIndex (phrase.words, indexNextWord-1).text);
+		wordAudio.PlayWord ();
 		DestroyWord ();
 		GetHiddenWordByIndex (indexNextWord);
 	}

@@ -60,6 +60,8 @@ public class PhraseActivity : Activity {
 		string nameButton = randomWordButton.transform.GetChild(0).GetComponent<Text>().text;
 		string [] correctPhraseArray = randomWordsPhrase.phraseText.Split(' ');
 		if (nameButton == correctPhraseArray [wordsOfPhraseCounter]) {
+			wordAudio.SetWordToPlay (nameButton);
+			wordAudio.PlayWord ();
 			phraseBuiltField.text += (nameButton + " ");
 			wordsOfPhraseCounter++;
 			randomWordButton.interactable = false;
