@@ -82,22 +82,25 @@ public class ImageActivity : Activity {
 	}
 
 	private void HandleRandomWordSelected (Button wordButton) {
-	/*	string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
+		string nameButton = wordButton.transform.GetChild(0).GetComponent<Text>().text;
 
 		if (nameButton == data.wordValid) {
 			ChangeColorByState (wordButton, new Color32 (0, 255, 1, 255));
 			firstTitle.text = data.wordTranslated;
 			correctWords = 2;
+			wordAudio.SetWordToPlay (data.wordValid);
+			wordAudio.PlayWord ();
 		} else { 
 			ChangeColorByState (wordButton, new Color32 (254, 0, 0, 255));
 		}
 
 		wordButton.interactable = false;
+
 		if (correctWords >= 2) {
-			//randomWords.DisableAllButtons();
+			wordButton.interactable = true;
 			correctWords = 0;
 			SetActivityAsFinished();
-		}*/
+		}
 	}
 
 	private void HandleSelectedCorrectWords () {
