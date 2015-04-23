@@ -38,10 +38,12 @@ public class Map : MonoBehaviour {
 
 	private void UnlockLevelButton(int index){
 		buttonLevelList [index].interactable = true;
+		//buttonLevelList [index].image = Resources.Load("Images/level_blocked.png") as Image;
 	}
 
 	private void LockLevelButton(int index){
-		buttonLevelList [index].interactable = false;		
+		buttonLevelList [index].interactable = false;
+		//buttonLevelList [index].image = Resources.Load("Images/level_unblocked.png")as Image;
 	}
 
 	private bool IsTheLevelExist (int index) {
