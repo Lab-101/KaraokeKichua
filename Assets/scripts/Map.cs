@@ -20,7 +20,7 @@ public class Map : MonoBehaviour {
 	void Start(){
 		welcomePanel.SetActive (true);
 		UpdatePropertiesOfLevels ();
-		SetupLevelButton ();
+		SetupLevelButtonAndRoute ();
 	}
 
 	private void SelectLevel(int indexLevel){
@@ -35,7 +35,7 @@ public class Map : MonoBehaviour {
 	}
 
 	private void SetLevelAsNotSelected(int index){
-		buttonLevelList [index].image.color = Color.grey;
+		buttonLevelList [index].image.color = Color.white;
 	}
 
 	private void UnlockLevelButtonAndLevelRoute(int index){
@@ -77,7 +77,7 @@ public class Map : MonoBehaviour {
 	
 	}
 
-	private void SetupLevelButton (){
+	private void SetupLevelButtonAndRoute (){
 		for (int index = 0; index < buttonLevelList.Count ; index++) {
 			if (IsTheLevelExist (index)) {
 				UnlockOrLockButtonLevel (index);
