@@ -13,6 +13,8 @@ public class Map : MonoBehaviour {
 	[SerializeField]
 	private List<Button> buttonLevelList;
 	[SerializeField]
+	private List<Image> routeList;
+	[SerializeField]
 	private List<Level> levelList;
 
 	void Start(){
@@ -36,14 +38,15 @@ public class Map : MonoBehaviour {
 		buttonLevelList [index].image.color = Color.grey;
 	}
 
-	private void UnlockLevelButton(int index){
+	private void UnlockLevelButtonAndLevelRoute(int index){
 		buttonLevelList [index].interactable = true;
-		//buttonLevelList [index].image = Resources.Load("Images/level_blocked.png") as Image;
+		if (index>0)
+		routeList[index-1].enabled =true;
 	}
 
-	private void LockLevelButton(int index){
+	private void LockLevelButtonAndLevelRoute(int index){
 		buttonLevelList [index].interactable = false;
-		//buttonLevelList [index].image = Resources.Load("Images/level_unblocked.png")as Image;
+		routeList[index-1].enabled =false;
 	}
 
 	private bool IsTheLevelExist (int index) {
@@ -52,9 +55,9 @@ public class Map : MonoBehaviour {
 
 	private void UnlockOrLockButtonLevel(int index)	{
 		if (levelList [index].isUnlocked)
-			UnlockLevelButton (index);
+			UnlockLevelButtonAndLevelRoute (index);
 		else
-			LockLevelButton (index);
+			LockLevelButtonAndLevelRoute (index);
 	}
 
 	private void SelectOrOrNotSelectButtonLevel(int index)	{
@@ -81,7 +84,7 @@ public class Map : MonoBehaviour {
 				SelectOrOrNotSelectButtonLevel(index);
 				AddActionToButtonLevel(index);
 			} else {
-				LockLevelButton (index);
+				LockLevelButtonAndLevelRoute (index);
 			}
 		}
 	}
