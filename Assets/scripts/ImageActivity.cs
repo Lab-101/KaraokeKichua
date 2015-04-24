@@ -100,6 +100,7 @@ public class ImageActivity : Activity {
 			wordButton.interactable = true;
 			correctWords = 0;
 			SetActivityAsFinished();
+			resultsButton.gameObject.SetActive(true);
 		}
 	}
 
