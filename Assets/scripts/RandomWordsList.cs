@@ -31,7 +31,12 @@ public class RandomWordsList : MonoBehaviour {
 		return newItem;
 	}
 
-	public void DisableButtonInIndex (int index)	{
+	public void DisableButtonInIndex (int index) {
 		randomWordsButtons [index].interactable = false;
+	}
+
+	public void DissableAllButtons () {
+		foreach(Button button in randomWordsButtons)
+			button.interactable = false;
 	}
 }
