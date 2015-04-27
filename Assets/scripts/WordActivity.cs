@@ -26,6 +26,8 @@ public class WordActivity : Activity {
 	private Text secondTitle;
 	[SerializeField]
 	protected SongController songController;
+	[SerializeField]
+	protected Button translatedSongButton;
 
 	void Awake(){
 		ReadDataFromJson ();
@@ -145,6 +147,7 @@ public class WordActivity : Activity {
 
 	private void FinishPhraseActivity () {
 		resultsButton.gameObject.SetActive(true);
+		translatedSongButton.gameObject.SetActive(true);
 		
 		LevelData data = new LevelData();
 		data.level = level;
