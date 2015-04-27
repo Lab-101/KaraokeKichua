@@ -84,8 +84,6 @@ public class GameManager : MonoBehaviour {
 		writeActivity.SetInactive ();
 		wordActivity.SetInactive ();
 		results.SetInactive ();
-		LevelDataPersistent.ClearDataLevels ();
-		ActivityScorePersistent.ClearScoresActivities ();
 	}
 	
 	void Update(){
