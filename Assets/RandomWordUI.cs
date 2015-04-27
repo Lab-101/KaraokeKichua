@@ -48,10 +48,10 @@ public class RandomWordUI : MonoBehaviour {
 		newItem.name = name;
 		newItem.transform.SetParent(gameObject.transform, false);	
 		newItem.transform.GetChild(0).GetComponent<Text>().text = name;
-		newItem.onClick.AddListener (delegate {
-			if(RandomWordOfPhraseSelected!=null)
-				RandomWordOfPhraseSelected(newItem);
-		});
+		if (RandomWordOfPhraseSelected!=null) {
+			PhraseButton phraseButton = newItem.GetComponent<PhraseButton>() as PhraseButton;
+			phraseButton.ButtonPressed = RandomWordOfPhraseSelected;
+		}
 		return newItem;
 	}
 	

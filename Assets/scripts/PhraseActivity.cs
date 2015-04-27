@@ -62,6 +62,7 @@ public class PhraseActivity : Activity {
 		if (nameButton == correctPhraseArray [wordsOfPhraseCounter]) {
 			wordAudio.SetWordToPlay (nameButton);
 			wordAudio.PlayWord ();
+			randomWordButton.transform.GetChild(0).GetComponent<Text>().color = new Color32 (74, 9, 92, 122);
 			phraseBuiltField.text += (nameButton + " ");
 			wordsOfPhraseCounter++;
 			randomWordButton.interactable = false;
