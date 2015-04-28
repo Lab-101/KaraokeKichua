@@ -12,7 +12,7 @@ public class PhraseButton : MonoBehaviour {
 			this.GetComponent<BoxCollider2D>().size = new Vector2(this.GetComponent<RectTransform>().sizeDelta.x, this.GetComponent<RectTransform>().sizeDelta.y);
 	}
 
-	void OnMouseDown () {
+	void OnMouseUp () {
 		if (ButtonPressed != null)
 			ButtonPressed(this.GetComponent<Button>());
 	}
