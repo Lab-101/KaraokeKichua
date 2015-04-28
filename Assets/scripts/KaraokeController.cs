@@ -8,12 +8,15 @@ public class KaraokeController : MonoBehaviour {
 	public Button finishButton;
 	public Image pausePanel;
 	public Button pauseButton;
-	public LyricSyncManager lyricSync;
+	public Button translationButton;
+    public LyricSyncManager lyricSync;
 	[SerializeField]
 	private Text levelNameText;
 	[SerializeField]
 	private Text songNameText;
-	
+	[SerializeField]
+	private GameObject karaokeUI;
+
 	public Action SongFinished {
 		get;
 		set;
@@ -37,6 +40,11 @@ public class KaraokeController : MonoBehaviour {
 				ChangePauseState();
 			}
 		});
+
+		translationButton.onClick.AddListener(delegate {
+			Debug.Log("translationButton...");
+			karaokeUI.gameObject.SetActive(false);
+		});
 	}
 	
 	public void SetActive(){
@@ -58,6 +66,7 @@ public class KaraokeController : MonoBehaviour {
 		pauseButton.GetComponentInChildren<Text> ().text = pauseState;
 		finishButton.gameObject.SetActive(isVisibleFinishButton);
 		pausePanel.gameObject.SetActive (isVisibleFinishButton);
+		translationButton.gameObject.SetActive(isVisibleFinishButton);
 	}
 	
 	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
