@@ -147,7 +147,7 @@ public class WordActivity : Activity {
 
 	private void FinishPhraseActivity () {
 		resultsButton.gameObject.SetActive(true);
-		translatedSongButton.gameObject.SetActive(true);
+		//translatedSongButton.gameObject.SetActive(true);
 		
 		LevelData data = new LevelData();
 		data.level = level;
