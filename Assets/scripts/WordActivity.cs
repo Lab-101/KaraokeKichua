@@ -32,7 +32,6 @@ public class WordActivity : Activity {
 	void Awake(){
 		ReadDataFromJson ();
 		randomWords.RandomWordSelected += HandleRandomWordSelected;		
-		//randomWords.SelectedCorrectWords += HandleSelectedCorrectWords;
 		ActivityStarted += HandleActivityStarted;
 		ActivityDataReseted += ReadDataFromJson;
 	}

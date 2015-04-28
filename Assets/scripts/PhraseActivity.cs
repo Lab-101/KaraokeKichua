@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 public class PhraseActivity : Activity {
 
@@ -16,6 +17,7 @@ public class PhraseActivity : Activity {
 	[SerializeField]
 	private RandomWordUI randomWordsPhrase;
 	private int wordsOfPhraseCounter;
+	private Regex regex = new Regex(@"[^\w\.@-]");
 
 	void Awake(){
 		if (level != null) {
@@ -60,7 +62,7 @@ public class PhraseActivity : Activity {
 		string nameButton = randomWordButton.transform.GetChild(0).GetComponent<Text>().text;
 		string [] correctPhraseArray = randomWordsPhrase.phraseText.Split(' ');
 		if (nameButton == correctPhraseArray [wordsOfPhraseCounter]) {
-			wordAudio.SetWordToPlay (nameButton);
+			wordAudio.SetWordToPlay (regex.Replace (nameButton, ""));
 			wordAudio.PlayWord ();
 			randomWordButton.transform.GetChild(0).GetComponent<Text>().color = new Color32 (74, 9, 92, 122);
 			phraseBuiltField.text += (nameButton + " ");
