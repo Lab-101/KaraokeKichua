@@ -16,6 +16,7 @@ public class GameSettings : ScriptableObject {
 	public List<string> bestScoreMessage;
 	public List<string> normalScoreMessage;
 	public List<string> regularScoreMessage;
+	public bool isPosibleShowMessage;
 
 	private static GameSettings instance; 
 	

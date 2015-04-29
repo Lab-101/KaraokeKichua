@@ -128,6 +128,10 @@ public class Map : MonoBehaviour {
 				}
 			}
 		}
+		GameSettings.Instance.isPosibleShowMessage = IsFinishedGamePanelVisible (level);
+	}
 
+	private bool IsFinishedGamePanelVisible(Level level){
+		return (levelList[levelList.Count - 1] == level) && (level.IsAllActivitiesCompleted ()) && (!FinishMessagePersistent.GetFinishedGameMessageVisibleState());
 	}
 }

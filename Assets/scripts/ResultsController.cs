@@ -25,6 +25,10 @@ public class ResultsController : MonoBehaviour {
 	private float sizeNumberLevel;
 	private float sizeNameLevel;
 
+	public GameObject finishedGamePanel;
+	[SerializeField]	
+	private Button finishedGameButton;
+
 	public Action BackActionExecuted {
 		get;
 		set;
@@ -35,7 +39,14 @@ public class ResultsController : MonoBehaviour {
 	}
 
 	void Start () {
+		finishedGameButton.onClick.AddListener (delegate {
+			finishedGamePanel.SetActive (false);
+		});
 		exitButton.onClick.AddListener(delegate {
+			if (GameSettings.Instance.isPosibleShowMessage) {
+				finishedGamePanel.SetActive(true);
+				FinishMessagePersistent.SaveFinishedGameMessageVisibleState (true);
+			}
 			gameStateBehaviour.GameState = GameState.SelectingLevel;
 		});
 
@@ -48,6 +59,7 @@ public class ResultsController : MonoBehaviour {
 		sizeNumberLevel = Screen.width / 32;
 		sizeNameLevel = 5 * Screen.width / 128;
 	}
+
 	public void SetActive(){
 		gameObject.SetActive (true);
 		score.text = PutMessageAndRankByLevel (scoreLevel, 1);
