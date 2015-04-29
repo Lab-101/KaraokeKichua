@@ -20,6 +20,8 @@ public class Level : MonoBehaviour {
 	[SerializeField]
 	private bool introScreenItsOpened;
 	private static readonly object syncLock = new object();
+	[SerializeField]
+	private LanguageSelectorController languageSelector;
 
 	//GUI objects
 	[SerializeField]
@@ -34,6 +36,10 @@ public class Level : MonoBehaviour {
 	private GameStateBehaviour gameStateBehaviour;
 	[SerializeField]
 	private List<Button> buttonsActivities;
+	[SerializeField]
+	protected Button selectLanguageOne;
+	[SerializeField]
+	protected Button selectLanguageTwo;
 
 	public Action<Level> UnlockNextLevel;
 
@@ -259,8 +265,27 @@ public class Level : MonoBehaviour {
 	private void HandleClickButtonActivity (GameObject activityButton) {
 		foreach (Activity activity in activities) {
 			if(activityButton.name == GetActivityType(activity)){
-				StopPreviewWordActivity();
-				activity.StartActivity();
+				if(activityButton.name == "WordActivity")
+				{
+					languageSelector.gameObject.SetActive(true);
+					selectLanguageOne.onClick.AddListener (delegate {
+						StopPreviewWordActivity();
+						activity.StartActivity();
+						languageSelector.gameObject.SetActive(false);
+					});
+					selectLanguageTwo.onClick.AddListener (delegate {
+						StopPreviewWordActivity();
+						activity.StartActivity();
+						languageSelector.gameObject.SetActive(false);
+					});
+					return;
+				}
+				else
+				{
+					StopPreviewWordActivity();
+					activity.StartActivity();
+					return;
+				}
 			}
 		}
 	}
