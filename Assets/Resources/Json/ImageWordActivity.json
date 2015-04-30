@@ -31,7 +31,7 @@
         "wordValid": "todos",
         "wordTranslated": "todoss"
     },
-     {
+    {
         "level": 4,
         "showWords": [
             "Eres",
@@ -46,27 +46,23 @@
     {
         "level": 5,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Pronto",
+            "habilidad",
+            "casa"
         ],
-        "wordValid": "Eres",
-        "wordTranslated": "Eress"
+        "wordValid": "Pronto",
+        "wordTranslated": "Prontoss"
     },
     {
         "level": 6,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Cualidad",
+            "todos",
+            "vamos"
         ],
-        "wordValid": "Eres",
-        "wordTranslated": "Eress"
-    } ,
+        "wordValid": "todos",
+        "wordTranslated": "todoss"
+    },
     {
         "level": 7,
         "showWords": [
@@ -82,26 +78,22 @@
     {
         "level": 8,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Pronto",
+            "habilidad",
+            "casa"
         ],
-        "wordValid": "Eres",
-        "wordTranslated": "Eress"
+        "wordValid": "Pronto",
+        "wordTranslated": "Prontoss"
     },
     {
         "level": 9,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Cualidad",
+            "todos",
+            "vamos"
         ],
-        "wordValid": "Eres",
-        "wordTranslated": "Eress"
+        "wordValid": "todos",
+        "wordTranslated": "todoss"
     },
     {
         "level": 10,

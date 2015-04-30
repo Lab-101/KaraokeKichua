@@ -4,7 +4,6 @@
         "phrases": [
             {
                 "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "tanta gente Traduccion",
                 "words": [
                     {
                         "text": "Eres"
@@ -19,236 +18,163 @@
             },
             {
                 "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion: 1",
                 "words": [
                     {
-                        "text": "con"
+                        "text": "qui\u00e9n"
                     },
                     {
-                        "text": "qui\u00e9n"
+                        "text": "ahora"
                     }
                 ]
             },
             {
                 "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion: 1",
                 "words": [
                     {
                         "text": "iguales"
                     }
                 ]
+            },
+            {
+                "phrase": "mas alta y ya no pude alcanzarte",
+                "words": [
+                    {
+                        "text": "alta"
+                    },
+                    {
+                        "text": "alcanzarte"
+                    }
+                ]
             }
         ]
-    }
-	{
+    },
+    {
         "level": 2,
         "phrases": [
             {
-                "phrase": "I got one less problem without you!",
-                "phraseTranslated": "Traduccion: 2",
+                "phrase": "Smart money bettin' I'll be better off without you",
                 "words": [
                     {
-                        "text": "one"
+                        "text": "money"
                     },
                     {
-                        "text": "problem"
-                    },
-                    {
-                        "text": "you"
-                    }
-                ]
-            },
-            {
-                "phrase": "Head in the clouds got no weight on my shoulders",
-                "phraseTranslated": "Traduccion: 2",
-                "words": [
-                    {
-                        "text": "Head"
-                    },
-                    {
-                        "text": "shoulders"
-                    }
-                ]
-            },
-            {
-                "phrase": "Every time you touch me and say you love me",
-                "phraseTranslated": "Traduccion: 2",
-                "words": [
-                    {
-                        "text": "time"
-                    },
-                    {
-                        "text": "touch"
-                    },
-					{
-                        "text": "love"
-                    },
-                    {
-                        "text": "me"
+                        "text": "without"
                     }
                 ]
             }
         ]
-    }
+    },
     {
         "level": 3,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion: 3",
+                "phrase": "!chan chan chaaann!",
                 "words": [
                     {
-                        "text": "Eres"
-                    },
-                    {
-                        "text": "tanta"
-                    },
-                    {
-                        "text": "gente"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "con"
-                    },
-                    {
-                        "text": "qui\u00e9n"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "iguales"
+                        "text": "chaaann"
                     }
                 ]
             }
         ]
-    }
+    },
     {
         "level": 4,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion: 3",
+                "phrase": "Smart money bettin' I'll be better off without you",
                 "words": [
                     {
-                        "text": "Eres"
+                        "text": "money"
                     },
                     {
-                        "text": "tanta"
-                    },
-                    {
-                        "text": "gente"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "con"
-                    },
-                    {
-                        "text": "qui\u00e9n"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "iguales"
+                        "text": "without"
                     }
                 ]
             }
         ]
-    }
+    },
     {
         "level": 5,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion: 3",
+                "phrase": "!chan chan chaaann!",
                 "words": [
                     {
-                        "text": "Eres"
-                    },
-                    {
-                        "text": "tanta"
-                    },
-                    {
-                        "text": "gente"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "con"
-                    },
-                    {
-                        "text": "qui\u00e9n"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "iguales"
+                        "text": "chaaann"
                     }
                 ]
             }
         ]
-    }
-     {
+    },
+    {
+        "level": 6,
+        "phrases": [
+            {
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "words": [
+                    {
+                        "text": "money"
+                    },
+                    {
+                        "text": "without"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level": 7,
+        "phrases": [
+            {
+                "phrase": "!chan chan chaaann!",
+                "words": [
+                    {
+                        "text": "chaaann"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level": 8,
+        "phrases": [
+            {
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "words": [
+                    {
+                        "text": "money"
+                    },
+                    {
+                        "text": "without"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "level": 9,
+        "phrases": [
+            {
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "words": [
+                    {
+                        "text": "money"
+                    },
+                    {
+                        "text": "without"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "level": 10,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion: 3",
+                "phrase": "!chan chan chaaann!",
                 "words": [
                     {
-                        "text": "Eres"
-                    },
-                    {
-                        "text": "tanta"
-                    },
-                    {
-                        "text": "gente"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "con"
-                    },
-                    {
-                        "text": "qui\u00e9n"
-                    }
-                ]
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion: 3",
-                "words": [
-                    {
-                        "text": "iguales"
+                        "text": "chaaann"
                     }
                 ]
             }

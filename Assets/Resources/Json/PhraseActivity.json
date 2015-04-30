@@ -42,8 +42,8 @@
         "level": 4,
         "phrases": [
             {
-                "phrase": "Otra Frase Nivel 4",
-                "phraseTranslated": "NIVEL 4"
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "phraseTranslated": "Traduccion 5"
             }
         ]
     },
@@ -51,8 +51,8 @@
         "level": 5,
         "phrases": [
             {
-                "phrase": "Otra Frase Nivel 5",
-                "phraseTranslated": "NIVEL 5"
+                "phrase": "!chan chan chaaann!",
+                "phraseTranslated": "Traduccion 6"
             }
         ]
     },
@@ -61,7 +61,7 @@
         "phrases": [
             {
                 "phrase": "Smart money bettin' I'll be better off without you",
-                "phraseTranslated": "Traduccion 6"
+                "phraseTranslated": "Traduccion 5"
             }
         ]
     },
@@ -69,8 +69,26 @@
         "level": 7,
         "phrases": [
             {
-                "phrase": "I'll be better off without you",
-                "phraseTranslated": "Traduccion 7"
+                "phrase": "!chan chan chaaann!",
+                "phraseTranslated": "Traduccion 6"
+            }
+        ]
+    },
+    {
+        "level": 8,
+        "phrases": [
+            {
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "phraseTranslated": "Traduccion 5"
+            }
+        ]
+    },
+    {
+        "level": 9,
+        "phrases": [
+            {
+                "phrase": "!chan chan chaaann!",
+                "phraseTranslated": "Traduccion 6"
             }
         ]
     },
@@ -78,8 +96,8 @@
         "level": 10,
         "phrases": [
             {
-                "phrase": "porque mi corazon es lento",
-                "phraseTranslated": "Traduccion 8"
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "phraseTranslated": "Traduccion 5"
             }
         ]
     }

@@ -12,7 +12,7 @@
             "Eres",
             "ahora"
         ],
-        "name": "sumak warmi"
+        "name": "achi mamita kumari"
     },
     {
         "level": 2,
@@ -27,22 +27,22 @@
             "Eres-heres",
             "ahora-hahora"
         ],
-        "name": "urpiku"
+        "name": "aeroplano"
     },
     {
         "level": 3,
         "showWords": [
-            "Eres-heres",
+            "Eres",
             "tanta",
             "gente",
             "qui\u00e9n",
-            "ahora-hahora"
+            "ahora"
         ],
         "wordsValids": [
-            "gente",
-            "ahora-hahora"
+            "Eres",
+            "ahora"
         ],
-        "name": "tia_mamalla"
+        "name": "alejandro sanz no es lo mismo"
     },
     {
         "level": 4,
@@ -62,46 +62,77 @@
     {
         "level": 5,
         "showWords": [
-            "Eres-heres",
+            "Eres",
             "tanta",
             "gente",
             "qui\u00e9n",
-            "ahora-hahora"
+            "ahora"
         ],
         "wordsValids": [
-            "geente",
-            "ahora-hahora"
+            "Eres",
+            "ahora"
         ],
-        "name": "achi mamita kumari"
+        "name": "charipany"
     },
     {
         "level": 6,
         "showWords": [
             "Eres-heres",
-            "estar",
+            "tanta",
             "gente",
             "qui\u00e9n",
             "ahora-hahora"
         ],
         "wordsValids": [
-            "estar",
+            "Eres-heres",
             "ahora-hahora"
         ],
-        "name": "aeroplano"
+        "name": "kusa warmi"
     },
     {
         "level": 7,
         "showWords": [
+            "Eres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora"
+        ],
+        "wordsValids": [
+            "Eres",
+            "ahora"
+        ],
+        "name": "sumak warmi"
+    },
+    {
+        "level": 8,
+        "showWords": [
             "Eres-heres",
             "tanta",
-            "hablo",
+            "gente",
             "qui\u00e9n",
             "ahora-hahora"
         ],
         "wordsValids": [
+            "Eres-heres",
             "ahora-hahora"
         ],
-        "name": "aeroplano"
+        "name": "telefono nucanchi nan"
+    },
+    {
+        "level": 9,
+        "showWords": [
+            "Eres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora"
+        ],
+        "wordsValids": [
+            "Eres",
+            "ahora"
+        ],
+        "name": "urpiku"
     },
     {
         "level": 10,
@@ -116,6 +147,6 @@
             "Eres-heres",
             "ahora-hahora"
         ],
-        "name": "telefono nucanchi nan"
+        "name": "urpiku"
     }
 ]
