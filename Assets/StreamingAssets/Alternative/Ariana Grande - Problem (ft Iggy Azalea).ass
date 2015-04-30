@@ -23,7 +23,7 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:02.62,0:00:04.85,Default,,0,0,0,,{\k22}Kichua raro Uh {\k201}huh!
+Dialogue: 0,0:00:02.62,0:00:04.85,Default,,0,0,0,,{\k22}Uh {\k201}huh!
 Dialogue: 0,0:00:04.87,0:00:06.74,Default,,0,0,0,,{\k20}It's {\k26}Iggy {\k141}Iggs!
 Dialogue: 0,0:00:06.77,0:00:10.53,Default,,0,0,0,,{\k10}I {\k23}got {\k30}one {\k18}more {\k43}problem {\k14}with {\k25}you {\k213}girl
 Dialogue: 0,0:00:10.57,0:00:12.40,Default,,0,0,0,,{\k23}Hey {\k34}baby, {\k24}even {\k20}though {\k9}I {\k29}hate {\k44}ya!
