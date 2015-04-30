@@ -48,7 +48,7 @@ public class KaraokeController : MonoBehaviour {
 		translationButton.onClick.AddListener(delegate {
 
 			TextFileReader textFileReader = new TextFileReader();
-			textFileReader.setPathFile ("/Editor/translations/");
+			textFileReader.setPathFile ("/StreamingAssets/translations/");
 			textFileReader.setFileName("prueba.txt");
 			string str = textFileReader.getFileReader();
 
