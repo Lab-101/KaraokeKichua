@@ -15,7 +15,7 @@
                 "phraseTranslated": "Traduccion 3"
             },
             {
-                "phrase": "mas alta y ya no pude alcanzarte porque mi corazon es lento",
+                "phrase": "mas alta y ya no pude alcanzarte",
                 "phraseTranslated": "Traduccion 4"
             }
         ]
@@ -37,13 +37,13 @@
                 "phraseTranslated": "Traduccion 6"
             }
         ]
-    }
-     {
+    },
+    {
         "level": 4,
         "phrases": [
             {
-                "phrase": "Smart money bettin' I'll be better off without you",
-                "phraseTranslated": "Traduccion 5"
+                "phrase": "Otra Frase Nivel 4",
+                "phraseTranslated": "NIVEL 4"
             }
         ]
     },
@@ -51,29 +51,17 @@
         "level": 5,
         "phrases": [
             {
-                "phrase": "!chan chan chaaann!",
-                "phraseTranslated": "Traduccion 6"
+                "phrase": "Otra Frase Nivel 5",
+                "phraseTranslated": "NIVEL 5"
             }
         ]
-    }
+    },
     {
         "level": 6,
         "phrases": [
             {
-                "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion 1"
-            },
-            {
-                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
-                "phraseTranslated": "Traduccion 2"
-            },
-            {
-                "phrase": "\u00bfno ves que no sois iguales?",
-                "phraseTranslated": "Traduccion 3"
-            },
-            {
-                "phrase": "mas alta y ya no pude alcanzarte porque mi corazon es lento",
-                "phraseTranslated": "Traduccion 4"
+                "phrase": "Smart money bettin' I'll be better off without you",
+                "phraseTranslated": "Traduccion 6"
             }
         ]
     },
@@ -81,26 +69,8 @@
         "level": 7,
         "phrases": [
             {
-                "phrase": "Smart money bettin' I'll be better off without you",
-                "phraseTranslated": "Traduccion 5"
-            }
-        ]
-    },
-    {
-        "level": 8,
-        "phrases": [
-            {
-                "phrase": "!chan chan chaaann!",
-                "phraseTranslated": "Traduccion 6"
-            }
-        ]
-    }
-     {
-        "level": 9,
-        "phrases": [
-            {
-                "phrase": "Smart money bettin' I'll be better off without you",
-                "phraseTranslated": "Traduccion 5"
+                "phrase": "I'll be better off without you",
+                "phraseTranslated": "Traduccion 7"
             }
         ]
     },
@@ -108,8 +78,8 @@
         "level": 10,
         "phrases": [
             {
-                "phrase": "!chan chan chaaann!",
-                "phraseTranslated": "Traduccion 6"
+                "phrase": "porque mi corazon es lento",
+                "phraseTranslated": "Traduccion 8"
             }
         ]
     }
