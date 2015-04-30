@@ -17,6 +17,7 @@ public class GameSettings : ScriptableObject {
 	public List<string> normalScoreMessage;
 	public List<string> regularScoreMessage;
 	public bool isPosibleShowMessage;
+	public bool isRegularKichua;
 
 	private static GameSettings instance; 
 	

@@ -81,12 +81,21 @@ public class SongController : MonoBehaviour {
 	}
 	
 	private string GetDirectionBySystemOperative (string name){
-		if (Application.platform == RuntimePlatform.Android) 
-			return Application.streamingAssetsPath + "/" + name + ".ass";
-		else if (Application.platform == RuntimePlatform.IPhonePlayer) 
-			return "file://" + Application.streamingAssetsPath + "/" + WWW.EscapeURL (name).Replace("+","%20") + ".ass";
-		else 
-			return "file://" + Application.streamingAssetsPath + "/" + name + ".ass";
+		if (GameSettings.Instance.isRegularKichua) {
+			if (Application.platform == RuntimePlatform.Android) 
+				return Application.streamingAssetsPath + "/Regular/" + name + ".ass";
+			else if (Application.platform == RuntimePlatform.IPhonePlayer) 
+				return "file://" + Application.streamingAssetsPath + "/Regular/" + WWW.EscapeURL (name).Replace ("+", "%20") + ".ass";
+			else 
+				return "file://" + Application.streamingAssetsPath + "/Regular/" + name + ".ass";
+		} else {
+			if (Application.platform == RuntimePlatform.Android) 
+				return Application.streamingAssetsPath + "/Alternative/" + name + ".ass";
+			else if (Application.platform == RuntimePlatform.IPhonePlayer) 
+				return "file://" + Application.streamingAssetsPath + "/Alternative/" + WWW.EscapeURL (name).Replace ("+", "%20") + ".ass";
+			else 
+				return "file://" + Application.streamingAssetsPath + "/Alternative/" + name + ".ass";
+		}
 	}
 		
 	private void HandleSubtitlesObtained(string subtitle){
