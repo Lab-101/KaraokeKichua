@@ -268,15 +268,18 @@ public class Level : MonoBehaviour {
 				if(activityButton.name == "WordActivity")
 				{
 					languageSelector.gameObject.SetActive(true);
+
 					selectLanguageOne.onClick.AddListener (delegate {
 						StopPreviewWordActivity();
 						activity.StartActivity();
 						languageSelector.gameObject.SetActive(false);
+						GameSettings.Instance.isRegularKichua = true;
 					});
 					selectLanguageTwo.onClick.AddListener (delegate {
 						StopPreviewWordActivity();
 						activity.StartActivity();
 						languageSelector.gameObject.SetActive(false);
+						GameSettings.Instance.isRegularKichua = false;
 					});
 					return;
 				}
