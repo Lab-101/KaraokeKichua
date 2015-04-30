@@ -4,7 +4,7 @@
         "phrases": [
             {
                 "phrase": "Eres tanta gente, que dime",
-                "phraseTranslated": "Traduccion: 1",
+                "phraseTranslated": "tanta gente Traduccion",
                 "words": [
                     {
                         "text": "Eres"
@@ -92,6 +92,129 @@
     }
     {
         "level": 3,
+        "phrases": [
+            {
+                "phrase": "Eres tanta gente, que dime",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "Eres"
+                    },
+                    {
+                        "text": "tanta"
+                    },
+                    {
+                        "text": "gente"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "con"
+                    },
+                    {
+                        "text": "qui\u00e9n"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfno ves que no sois iguales?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "iguales"
+                    }
+                ]
+            }
+        ]
+    }
+    {
+        "level": 4,
+        "phrases": [
+            {
+                "phrase": "Eres tanta gente, que dime",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "Eres"
+                    },
+                    {
+                        "text": "tanta"
+                    },
+                    {
+                        "text": "gente"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "con"
+                    },
+                    {
+                        "text": "qui\u00e9n"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfno ves que no sois iguales?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "iguales"
+                    }
+                ]
+            }
+        ]
+    }
+    {
+        "level": 5,
+        "phrases": [
+            {
+                "phrase": "Eres tanta gente, que dime",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "Eres"
+                    },
+                    {
+                        "text": "tanta"
+                    },
+                    {
+                        "text": "gente"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfcon qui\u00e9n hablo ahora?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "con"
+                    },
+                    {
+                        "text": "qui\u00e9n"
+                    }
+                ]
+            },
+            {
+                "phrase": "\u00bfno ves que no sois iguales?",
+                "phraseTranslated": "Traduccion: 3",
+                "words": [
+                    {
+                        "text": "iguales"
+                    }
+                ]
+            }
+        ]
+    }
+     {
+        "level": 10,
         "phrases": [
             {
                 "phrase": "Eres tanta gente, que dime",
