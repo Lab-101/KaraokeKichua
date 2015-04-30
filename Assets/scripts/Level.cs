@@ -100,8 +100,10 @@ public class Level : MonoBehaviour {
 	}
 
 	private void SetUpLevelProperties()	{
-		numberLevelField.text = "NIVEL " + numberLevel;
-		nameLevelField.text = nameLevel;
+		float screenAspect = (Screen.width * 1.0f /Screen.height * 1.0f);
+		Debug.Log (numberLevel == 10 && screenAspect <= 1.4f);
+		numberLevelField.text = (numberLevel == 10 && screenAspect <= 1.4f)? "<size=" + (Screen.width/31) + ">NIVEL " + numberLevel + "</size>" : "NIVEL " + numberLevel;
+		nameLevelField.text = (nameLevel == "RECORDANDO LA TIERRITA" && screenAspect <= 1.4f)? "<size=" + (Screen.width/25) + ">" + nameLevel + "</size>" : nameLevel;
 		GameSettings.Instance.nameLevel [0] = numberLevel.ToString ();
 		GameSettings.Instance.nameLevel [1] = nameLevel;
 		scoreLevel = GetTotalScore ();
