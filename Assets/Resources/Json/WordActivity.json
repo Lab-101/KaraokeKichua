@@ -12,7 +12,7 @@
             "Eres",
             "ahora"
         ],
-        "name": "alejandro sanz no es lo mismo"
+        "name": "sumak warmi"
     },
     {
         "level": 2,
@@ -27,6 +27,95 @@
             "Eres-heres",
             "ahora-hahora"
         ],
-        "name": "Mirada ardilla. !chan chan chaaann!"
+        "name": "urpiku"
+    },
+    {
+        "level": 3,
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "gente",
+            "ahora-hahora"
+        ],
+        "name": "tia_mamalla"
+    },
+    {
+        "level": 4,
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "Eres-heres",
+            "ahora-hahora"
+        ],
+        "name": "charipany"
+    },
+    {
+        "level": 5,
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "geente",
+            "ahora-hahora"
+        ],
+        "name": "achi mamita kumari"
+    },
+    {
+        "level": 6,
+        "showWords": [
+            "Eres-heres",
+            "estar",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "estar",
+            "ahora-hahora"
+        ],
+        "name": "aeroplano"
+    },
+    {
+        "level": 7,
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "hablo",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "ahora-hahora"
+        ],
+        "name": "aeroplano"
+    },
+    {
+        "level": 10,
+        "showWords": [
+            "Eres-heres",
+            "tanta",
+            "gente",
+            "qui\u00e9n",
+            "ahora-hahora"
+        ],
+        "wordsValids": [
+            "Eres-heres",
+            "ahora-hahora"
+        ],
+        "name": "telefono nucanchi nan"
     }
 ]
