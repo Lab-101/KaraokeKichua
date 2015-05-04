@@ -78,13 +78,13 @@ public class SongController : MonoBehaviour {
 		string pathLyricsRegular = GetDirectionBySystemOperative (songName, "Regular");		
 		string pathLyricsAlternative = GetDirectionBySystemOperative (songName, "Alternative");
 
-		SubtitleLoader loaderRegular = new SubtitleLoader ();
-		loaderRegular.SubtitlesObtained += HandleSubtitlesObtainedRegular;
+		FileLoader loaderRegular = new FileLoader ();
+		loaderRegular.FileObtained += HandleSubtitlesObtainedRegular;
 		loaderRegular.URL = pathLyricsRegular;
 		StartCoroutine (loaderRegular.Start());
 
-		SubtitleLoader loaderAlternative = new SubtitleLoader ();
-		loaderAlternative.SubtitlesObtained += HandleSubtitlesObtainedAlternative;
+		FileLoader loaderAlternative = new FileLoader ();
+		loaderAlternative.FileObtained += HandleSubtitlesObtainedAlternative;
 		loaderAlternative.URL = pathLyricsAlternative;
 		StartCoroutine (loaderAlternative.Start());
 		

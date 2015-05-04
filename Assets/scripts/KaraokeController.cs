@@ -16,6 +16,7 @@ public class KaraokeController : MonoBehaviour {
 	private Text levelNameText;
 	[SerializeField]
 	private Text songNameText;
+	private string songNameString;
 	[SerializeField]
 	private GameObject translatedSongUI;
 
@@ -46,15 +47,7 @@ public class KaraokeController : MonoBehaviour {
 		});
 
 		translationButton.onClick.AddListener(delegate {
-
-			TextFileReader textFileReader = new TextFileReader();
-			textFileReader.setPathFile ("/StreamingAssets/translations/");
-			textFileReader.setFileName("prueba.txt");
-			string str = textFileReader.getFileReader();
-
-			translationSongText.text = str;
-
-			translatedSongUI.gameObject.SetActive(true);
+			StartCoroutine(ReadTraslate());
 		});
 
 		returnButton.onClick.AddListener(delegate {
@@ -68,6 +61,16 @@ public class KaraokeController : MonoBehaviour {
 	
 	public void SetInactive(){
 		gameObject.SetActive (false);
+	}
+	
+	public void BeginSubtitles(List<string> songLyricRegular, List<string> songLyricAlternative,  AudioSource clip){
+		levelNameText.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=" + (Screen.width/16) + "><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
+		lyricSync.BeginDialogue(songLyricRegular, songLyricAlternative, clip);
+	}
+	
+	public void SetSongName(string name){
+		songNameText.text = name;
+		songNameString = name;
 	}
 
 	private void ChangePauseState(){
@@ -83,13 +86,27 @@ public class KaraokeController : MonoBehaviour {
 		pausePanel.gameObject.SetActive (isVisibleFinishButton);
 		translationButton.gameObject.SetActive(isVisibleFinishButton);
 	}
-	
-	public void BeginSubtitles(List<string> songLyricRegular, List<string> songLyricAlternative,  AudioSource clip){
-		levelNameText.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=" + (Screen.width/16) + "><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
-		lyricSync.BeginDialogue(songLyricRegular, songLyricAlternative, clip);
+
+	private IEnumerator ReadTraslate(){
+		string text = "";
+		WWW data = new WWW(GetDirectionBySystemOperative("Translations", songNameString));
+		yield return data;
+		
+		if(string.IsNullOrEmpty(data.error)) {
+			text = data.text;
+		}
+		translationSongText.text = text;
+		
+		translatedSongUI.gameObject.SetActive(true);
 	}
 
-	public void SetSongName(string name){
-		songNameText.text = name;
+	private string GetDirectionBySystemOperative (string pathFile, string fileName){
+		if (Application.platform == RuntimePlatform.Android) 
+			return Application.streamingAssetsPath + "/" + pathFile + "/" + fileName + ".txt";
+		else if (Application.platform == RuntimePlatform.IPhonePlayer) 
+			return "file://" + Application.streamingAssetsPath + "/" + pathFile + "/" + WWW.EscapeURL (fileName).Replace ("+", "%20") + ".txt";
+		else 
+			return "file://" + Application.streamingAssetsPath + "/" + pathFile + "/" + fileName + ".txt";
 	}
 }
+
