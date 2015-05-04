@@ -4,9 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class SongController : MonoBehaviour {
+	private string song;
 	private AudioClip songAudioClip;
 	private float timeSelectedClip;
-	private List<string> subtitleList;
+	private List<string> subtitleListRegular;
+	private List<string> subtitleListAlternative;
 	
 	[SerializeField]
 	private Player player;
@@ -32,16 +34,17 @@ public class SongController : MonoBehaviour {
 	
 	public void SetSong (string songName){
 		if (songName != null) {
+			song = songName;
 			songAudioClip = Resources.Load (songName, typeof(AudioClip)) as AudioClip;
 			GetSubtitlesFormFile (songName);
 		}
 	}
 	
 	public void StartKaraoke(){
-		gameStateBehaviour.GameState = GameState.PlayingSong;
-		karaoke.BeginSubtitles (subtitleList, GetAudioSourceFromPlayer ());
+		karaoke.BeginSubtitles (subtitleListRegular, subtitleListAlternative, GetAudioSourceFromPlayer ());
 		player.SetActive ();
 		player.PlaySong(songAudioClip);
+		gameStateBehaviour.GameState = GameState.PlayingSong;
 	}
 	
 	public void PlayPreview (string selectedSongUrl)	{
@@ -70,39 +73,45 @@ public class SongController : MonoBehaviour {
 		player.SetActive();
 		player.SetSongLengthInSeconds (0.01f);
 	}
-	
+
 	private void GetSubtitlesFormFile (string songName){
+		string pathLyricsRegular = GetDirectionBySystemOperative (songName, "Regular");		
+		string pathLyricsAlternative = GetDirectionBySystemOperative (songName, "Alternative");
+
+		SubtitleLoader loaderRegular = new SubtitleLoader ();
+		loaderRegular.SubtitlesObtained += HandleSubtitlesObtainedRegular;
+		loaderRegular.URL = pathLyricsRegular;
+		StartCoroutine (loaderRegular.Start());
+
+		SubtitleLoader loaderAlternative = new SubtitleLoader ();
+		loaderAlternative.SubtitlesObtained += HandleSubtitlesObtainedAlternative;
+		loaderAlternative.URL = pathLyricsAlternative;
+		StartCoroutine (loaderAlternative.Start());
+		
 		karaoke.SetSongName (songName);
-		string songNamePath = GetDirectionBySystemOperative (songName);
-		SubtitleLoader loader = new SubtitleLoader ();
-		loader.SubtitlesObtained += HandleSubtitlesObtained;
-		loader.URL = songNamePath;
-		StartCoroutine (loader.Start());
 	}
 	
-	private string GetDirectionBySystemOperative (string name){
-		if (GameSettings.Instance.isRegularKichua) {
-			if (Application.platform == RuntimePlatform.Android) 
-				return Application.streamingAssetsPath + "/Regular/" + name + ".ass";
-			else if (Application.platform == RuntimePlatform.IPhonePlayer) 
-				return "file://" + Application.streamingAssetsPath + "/Regular/" + WWW.EscapeURL (name).Replace ("+", "%20") + ".ass";
-			else 
-				return "file://" + Application.streamingAssetsPath + "/Regular/" + name + ".ass";
-		} else {
-			if (Application.platform == RuntimePlatform.Android) 
-				return Application.streamingAssetsPath + "/Alternative/" + name + ".ass";
-			else if (Application.platform == RuntimePlatform.IPhonePlayer) 
-				return "file://" + Application.streamingAssetsPath + "/Alternative/" + WWW.EscapeURL (name).Replace ("+", "%20") + ".ass";
-			else 
-				return "file://" + Application.streamingAssetsPath + "/Alternative/" + name + ".ass";
-		}
+	private string GetDirectionBySystemOperative (string name, string languageFolder){
+		if (Application.platform == RuntimePlatform.Android) 
+			return Application.streamingAssetsPath + "/" + languageFolder + "/" + name + ".ass";
+		else if (Application.platform == RuntimePlatform.IPhonePlayer) 
+			return "file://" + Application.streamingAssetsPath + "/" + languageFolder + "/" + WWW.EscapeURL (name).Replace ("+", "%20") + ".ass";
+		else 
+			return "file://" + Application.streamingAssetsPath + "/" + languageFolder + "/" + name + ".ass";
 	}
 		
-	private void HandleSubtitlesObtained(string subtitle){
-		subtitleList = new List<string>();
+	private void HandleSubtitlesObtainedRegular(string subtitle){
+		subtitleListRegular = new List<string>();
 		foreach(string line in subtitle.Split('\n')) 
 			if(line.Contains("Dialogue: "))
-				subtitleList.Add(line);
+				subtitleListRegular.Add(line);
+	}
+
+	private void HandleSubtitlesObtainedAlternative (string subtitle){
+		subtitleListAlternative = new List<string>();
+		foreach(string line in subtitle.Split('\n')) 
+			if(line.Contains("Dialogue: "))
+				subtitleListAlternative.Add(line);
 	}
 	
 	private void HandlePlayFinished (){

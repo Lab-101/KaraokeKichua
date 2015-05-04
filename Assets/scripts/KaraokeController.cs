@@ -84,9 +84,9 @@ public class KaraokeController : MonoBehaviour {
 		translationButton.gameObject.SetActive(isVisibleFinishButton);
 	}
 	
-	public void BeginSubtitles(List<string> songLyric, AudioSource clip){
+	public void BeginSubtitles(List<string> songLyricRegular, List<string> songLyricAlternative,  AudioSource clip){
 		levelNameText.text = "<color=#E5C507FF>NIVEL " + GameSettings.Instance.nameLevel[0] + "</color><size=" + (Screen.width/16) + "><color=#FFFFFFFF><b> " + GameSettings.Instance.nameLevel[1] + "</b></color></size>";
-		lyricSync.BeginDialogue(songLyric, clip);
+		lyricSync.BeginDialogue(songLyricRegular, songLyricAlternative, clip);
 	}
 
 	public void SetSongName(string name){

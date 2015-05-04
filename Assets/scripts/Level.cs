@@ -101,7 +101,6 @@ public class Level : MonoBehaviour {
 
 	private void SetUpLevelProperties()	{
 		float screenAspect = (Screen.width * 1.0f /Screen.height * 1.0f);
-		Debug.Log (numberLevel == 10 && screenAspect <= 1.4f);
 		numberLevelField.text = (numberLevel == 10 && screenAspect <= 1.4f)? "<size=" + (Screen.width/31) + ">NIVEL " + numberLevel + "</size>" : "NIVEL " + numberLevel;
 		nameLevelField.text = (nameLevel == "RECORDANDO LA TIERRITA" && screenAspect <= 1.4f)? "<size=" + (Screen.width/25) + ">" + nameLevel + "</size>" : nameLevel;
 		GameSettings.Instance.nameLevel [0] = numberLevel.ToString ();
@@ -267,26 +266,25 @@ public class Level : MonoBehaviour {
 	private void HandleClickButtonActivity (GameObject activityButton) {
 		foreach (Activity activity in activities) {
 			if(activityButton.name == GetActivityType(activity)){
-				if(activityButton.name == "WordActivity")
-				{
+				if(activityButton.name == "WordActivity"){
+					StopPreviewWordActivity();
 					languageSelector.gameObject.SetActive(true);
 
+					selectLanguageOne.onClick.RemoveAllListeners();
 					selectLanguageOne.onClick.AddListener (delegate {
-						StopPreviewWordActivity();
-						activity.StartActivity();
-						languageSelector.gameObject.SetActive(false);
 						GameSettings.Instance.isRegularKichua = true;
+						activity.StartActivity();
+						languageSelector.gameObject.SetActive(false);
 					});
+					selectLanguageTwo.onClick.RemoveAllListeners();
 					selectLanguageTwo.onClick.AddListener (delegate {
+						GameSettings.Instance.isRegularKichua = false;
 						StopPreviewWordActivity();
 						activity.StartActivity();
 						languageSelector.gameObject.SetActive(false);
-						GameSettings.Instance.isRegularKichua = false;
 					});
 					return;
-				}
-				else
-				{
+				}else		{
 					StopPreviewWordActivity();
 					activity.StartActivity();
 					return;

@@ -23,7 +23,7 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:41.08,0:00:43.74,Default,,0,0,0,,{\k48}Achi {\k48}mamita {\k84}kumari {\k86}kumari
+Dialogue: 0,0:00:41.08,0:00:43.74,Default,,0,0,0,,{\k48}Tipo 2 Achi {\k48}mamita {\k84}kumari {\k86}kumari
 Dialogue: 0,0:00:43.74,0:00:46.20,Default,,0,0,0,,{\k38}Achi {\k46}mamita {\k84}kumari {\k78}kumari
 Dialogue: 0,0:00:46.20,0:00:48.72,Default,,0,0,0,,{\k45}Achi {\k47}taytiku {\k78}kumpari {\k82}kumpari
 Dialogue: 0,0:00:48.72,0:00:51.28,Default,,0,0,0,,{\k48}Achi {\k46}taytiku {\k82}kumpari {\k80}kumpari
