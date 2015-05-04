@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using MiniJSON;
 
-public class JsonImageWordParser : MonoBehaviour {
+public class JsonImageWordParser {
 
 	private int levelFilter; 
 	private ImageWordActivityData data;
