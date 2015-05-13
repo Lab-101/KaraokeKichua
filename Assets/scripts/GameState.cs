@@ -10,5 +10,6 @@ public enum GameState {
 	PharseActivity,
 	ShowingResults,
 	SelectingLevel,
-	ShowingIntro
+	ShowingIntro,
+	ShowingCredits
 }
