@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Credits : MonoBehaviour {
 	[SerializeField]
-	private Button backButton;
-	[SerializeField]
 	private GameStateBehaviour gameState;
+	[SerializeField]
+	[Multiline]
+	private string creditDescription;
+	[SerializeField]
+	private List<Sprite> creditImages;
+	
+	[SerializeField]
+	private Text textField;
 
 	void Awake(){
-		backButton.onClick.AddListener (delegate {
-			gameState.GameState = GameState.SelectingLevel;
-		});
+		textField.text = creditDescription;
 	}
 
 	public void SetActive(){
