@@ -9,8 +9,6 @@ public class Credits : MonoBehaviour {
 	[SerializeField]
 	[Multiline]
 	private string creditDescription;
-	[SerializeField]
-	private List<Sprite> creditImages;
 	
 	[SerializeField]
 	private Text textField;
