@@ -91,6 +91,12 @@ public class GameManager : MonoBehaviour {
 		writeActivity.SetInactive ();
 		wordActivity.SetInactive ();
 		results.SetInactive ();
+
+		if (GameSettings.Instance.clearDataOnStartGame) {
+				LevelDataPersistent.ClearDataLevels ();
+				FinishMessagePersistent.ClearFinishMessageData ();
+				ActivityScorePersistent.ClearScoresActivities ();
+		}
 	}
 	
 	void Update(){

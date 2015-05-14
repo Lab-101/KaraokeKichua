@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class GameSettings : ScriptableObject {
 	public const string ASSET_NAME = "GameSettings";
-
+	
+	public bool clearDataOnStartGame;
 	public float songStartTime;
 	public int scoreByCurrentLevel;
 	public float songPlayTime;
