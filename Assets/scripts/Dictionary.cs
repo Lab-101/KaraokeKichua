@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
-public class Credits : MonoBehaviour {
+public class Dictionary : MonoBehaviour {
 	[SerializeField]
 	[Multiline]
-	private string creditDescription;
-	
+	private string message;
+	[SerializeField]
+	private string url;
+
 	[SerializeField]
 	private Text textField;
-
+	
 	void Awake(){
-		textField.text = creditDescription;
+		textField.text = message;
 	}
-
+	
 	public void SetActive(){
 		gameObject.SetActive (true);
 	}
