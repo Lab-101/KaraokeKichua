@@ -2,151 +2,151 @@
     {
         "level": 1,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Urpigu\/Urpiku",
+            "\u00f1abi\/\u00d1awi",
+            "Jatun\/Hatun",
+            "Wasi",
+            "Pay"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "Urpigu\/Urpiku",
+            "\u00f1abi\/\u00d1awi"
         ],
-        "name": "achi mamita kumari"
+        "name": "URPIKU"
     },
     {
         "level": 2,
         "showWords": [
-            "Eres-heres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora-hahora"
+            "Jiwa\/Hiwa",
+            "Churo\/Churu",
+            "Wagra",
+            "Puca\/Puka",
+            "Ali\/Alli"
         ],
         "wordsValids": [
-            "Eres-heres",
-            "ahora-hahora"
+            "Jiwa\/Hiwa",
+            "Churo\/Churu"
         ],
-        "name": "aeroplano"
+        "name": "HIWA"
     },
     {
         "level": 3,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Sumak",
+            "shungu\/Shunku",
+            "Maki",
+            "Chaki",
+            "Shimi"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "Sumak",
+            "shungu\/Shunku"
         ],
-        "name": "alejandro sanz no es lo mismo"
+        "name": "SUMAKWARMI"
     },
     {
         "level": 4,
         "showWords": [
-            "Eres-heres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora-hahora"
+            "Aeroplanuta",
+            "Puyu",
+            "Umasapa",
+            "Rin",
+            "Urco\/Urku"
         ],
         "wordsValids": [
-            "Eres-heres",
-            "ahora-hahora"
+            "Aeroplanuta",
+            "Puyu"
         ],
-        "name": "charipany"
+        "name": "AEROPLANO"
     },
     {
         "level": 5,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "yanawagra\/yanawakra",
+            "Kulki\/Kullki",
+            "Pacari\/Pakary",
+            "Kusa",
+            "Wa\u00f1usca\/Wa\u00f1uska"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "yanawagra\/yanawakra",
+            "Kulki\/Kullki"
         ],
-        "name": "charipany"
+        "name": "CHARIPANI"
     },
     {
         "level": 6,
         "showWords": [
-            "Eres-heres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora-hahora"
+            "Tia",
+            "Ushi",
+            "Mama",
+            "Taita",
+            "Wambra"
         ],
         "wordsValids": [
-            "Eres-heres",
-            "ahora-hahora"
+            "Tia",
+            "Ushi"
         ],
-        "name": "kusa warmi"
+        "name": "TiaMamalla"
     },
     {
         "level": 7,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Tushuy",
+            "Pacari\/Pakari",
+            "Micuy",
+            "Ricuy\/Rikuy",
+            "Munay"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "Tushuy",
+            "Pacari\/Pakari"
         ],
-        "name": "sumak warmi"
+        "name": "ACHIMAMITAKUMARI"
     },
     {
         "level": 8,
         "showWords": [
-            "Eres-heres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora-hahora"
+            "Warmi",
+            "Wacai\/Wakay",
+            "Alcu\/Alku",
+            "\u00d1ucanchi",
+            "Sumak"
         ],
         "wordsValids": [
-            "Eres-heres",
-            "ahora-hahora"
+            "Warmi",
+            "Wacai\/Wakay"
         ],
-        "name": "telefono nucanchi nan"
+        "name": "TELEFONO"
     },
     {
         "level": 9,
         "showWords": [
-            "Eres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora"
+            "Sisakukuna\/Sisagokuna",
+            "Sarakuta\/Saragota",
+            "Kuchi",
+            "Wagra",
+            "Jiwa\/Hiwa"
         ],
         "wordsValids": [
-            "Eres",
-            "ahora"
+            "Sisakukuna\/Sisagokuna",
+            "Sarakuta\/Saragota"
         ],
-        "name": "urpiku"
+        "name": "KUSAWARMI"
     },
     {
         "level": 10,
         "showWords": [
-            "Eres-heres",
-            "tanta",
-            "gente",
-            "qui\u00e9n",
-            "ahora-hahora"
+            "Shimita",
+            "\u00d1an",
+            "Uma",
+            "Inti",
+            "Tuta"
         ],
         "wordsValids": [
-            "Eres-heres",
-            "ahora-hahora"
+            "Shimita",
+            "\u00d1an"
         ],
-        "name": "urpiku"
+        "name": "SUMAKWARMI"
     }
 ]
