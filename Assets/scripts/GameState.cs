@@ -11,5 +11,6 @@ public enum GameState {
 	ShowingResults,
 	SelectingLevel,
 	ShowingIntro,
-	ShowingCredits
+	ShowingCredits,
+	ShowingDictionary
 }
