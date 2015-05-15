@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
-using System;
 
 public class Dictionary : MonoBehaviour {
 	[SerializeField]
@@ -12,15 +11,9 @@ public class Dictionary : MonoBehaviour {
 
 	[SerializeField]
 	private Text textField;
-	[SerializeField]
-	private Button openUrlButton;
 	
 	void Awake(){
 		textField.text = message;
-		openUrlButton.onClick.AddListener(delegate{
-			Application.OpenURL(url);
-//			Application.OpenURL(WWW.EscapeURL(url));
-		});
 	}
 	
 	public void SetActive(){
