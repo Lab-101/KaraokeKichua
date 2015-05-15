@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour {
 	public GameObject mainScreen;
 	public IntroController intro;
 	public Credits credits;
-	public Dictionary dictionary;
 
 	private bool IsSelectingSong 
 	{
@@ -78,12 +77,6 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	private bool IsShowingDictionary {
-		get{
-			return gameStateBehaviour.GameState == GameState.ShowingDictionary;
-		}
-	}
-
 	void Start () {
 		gameStateBehaviour.GameState = GameState.SelectingLevel;
 
@@ -111,39 +104,105 @@ public class GameManager : MonoBehaviour {
 			Application.Quit(); 
 
 		if (IsSelectingSong) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		} else if (IsPlayingSong) {
-			InactiveAllViews();
 			karaoke.SetActive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		} else if (IsPlayingWriteActivity) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
 			writeActivity.SetActive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		}else if (IsPlayingWordActivity) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
 			wordActivity.SetActive ();
+			writeActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		}else if (IsPlayingImageActivity) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			wordActivity.SetInactive ();
+			writeActivity.SetInactive ();
 			imageActivity.SetActive();
+			pharseActivity.SetInactive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		} else if (IsPlayingPharseActivity) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			wordActivity.SetInactive ();
+			writeActivity.SetInactive ();
+			imageActivity.SetInactive();
 			pharseActivity.SetActive();
+			results.SetInactive ();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		}else if (IsShowingResults){
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
 			results.SetActive();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
+			credits.SetInactive();
 		} else if(IsSelectingLevel) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive();
 			mainScreen.SetActive(true);
+			intro.SetInactive();
+			credits.SetInactive();
 		} else if(IsShowingIntro) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive();
 			mainScreen.SetActive(true);
 			intro.SetActive();
+			credits.SetInactive();
 		} else if(IsShowingCredits) {
-			InactiveAllViews();
+			karaoke.SetInactive ();
+			writeActivity.SetInactive ();
+			wordActivity.SetInactive ();
+			imageActivity.SetInactive();
+			pharseActivity.SetInactive();
+			results.SetInactive();
+			mainScreen.SetActive(false);
+			intro.SetInactive();
 			credits.SetActive();
-		} else if(IsShowingDictionary) {
-			InactiveAllViews();
-			mainScreen.SetActive(true);
-			dictionary.SetActive();
 		} else {
 			karaoke.SetInactive ();
 		}
@@ -151,18 +210,5 @@ public class GameManager : MonoBehaviour {
 
 	void Awake(){
 		Input.multiTouchEnabled = false;
-	}
-
-	private void InactiveAllViews(){
-		karaoke.SetInactive ();
-		writeActivity.SetInactive ();
-		wordActivity.SetInactive ();
-		imageActivity.SetInactive();
-		pharseActivity.SetInactive();
-		results.SetInactive();
-		mainScreen.SetActive(false);
-		intro.SetInactive();
-		credits.SetInactive();
-		dictionary.SetInactive();		
 	}
 }

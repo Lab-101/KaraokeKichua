@@ -5,6 +5,8 @@ using System.Collections.Generic;
 
 public class Credits : MonoBehaviour {
 	[SerializeField]
+	private GameStateBehaviour gameState;
+	[SerializeField]
 	[Multiline]
 	private string creditDescription;
 	
