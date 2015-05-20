@@ -15,6 +15,10 @@ public class Map : MonoBehaviour {
 	[SerializeField]
 	private List<Image> routeList;
 	[SerializeField]
+	private List<Sprite> imageNotSelectButtonList;
+	[SerializeField]
+	private List<Sprite> imageSelectButtonList;
+	[SerializeField]
 	private List<Level> levelList;
 
 	void Start(){
@@ -31,11 +35,13 @@ public class Map : MonoBehaviour {
 	}
 
 	private void SetLevelAsSelected(int index){
-		buttonLevelList [index].image.color = Color.green;
+		if(index < imageSelectButtonList.Count)
+			buttonLevelList [index].image.sprite = imageSelectButtonList[index];
 	}
 
 	private void SetLevelAsNotSelected(int index){
-		buttonLevelList [index].image.color = Color.white;
+		if(index < imageSelectButtonList.Count)
+			buttonLevelList [index].image.sprite = imageNotSelectButtonList[index];
 	}
 
 	private void UnlockLevelButtonAndLevelRoute(int index){
