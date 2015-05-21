@@ -89,7 +89,7 @@ public class KaraokeController : MonoBehaviour {
 
 	private IEnumerator ReadTraslate(){
 		string text = "";
-		WWW data = new WWW(GetDirectionBySystemOperative("translations", songNameString));
+		WWW data = new WWW(GetDirectionBySystemOperative("Translations", songNameString));
 		yield return data;
 		
 		if(string.IsNullOrEmpty(data.error)) {
