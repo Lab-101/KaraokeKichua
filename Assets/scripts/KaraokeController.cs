@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System;
+using System.Text;
 using System.Collections;
 using System.Collections.Generic; 
 using UnityEngine.UI;
@@ -91,12 +92,15 @@ public class KaraokeController : MonoBehaviour {
 		string text = "";
 		WWW data = new WWW(GetDirectionBySystemOperative("Translations", songNameString));
 		yield return data;
-		
-		if(string.IsNullOrEmpty(data.error)) {
-			text = data.text;
+
+		if (string.IsNullOrEmpty (data.error)) {			
+			byte [] sourceBytes = data.bytes;
+			string fileText = Encoding.Default.GetString (sourceBytes);
+			translationSongText.text = fileText;
+		} else {			
+			translationSongText.text = "Archivo de traduccion no encontrado";
 		}
-		translationSongText.text = text;
-		
+
 		translatedSongUI.gameObject.SetActive(true);
 	}
 
