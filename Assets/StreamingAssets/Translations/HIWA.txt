@@ -1,4 +1,3 @@
-I
 Hierva…
 Colada de caracol voy a comer
 Cómo te llamas dilo otra vez dilo otra vez
@@ -14,11 +13,11 @@ Colada de caracol voy a comer
 Agua de hierba voy a tomar
 Colada de caracol voy a comer…jaaaaaaajaayyyy…
 Sirve sirve rápido
- Chicha chicha padrino
-Que dices si agua de hierba tenemos que tomar jajayyyy…. 
+Chicha chicha padrino
+Que dices si agua de hierba tenemos que tomar jajayyyy….
 esssss...
 Baila…ssss
-<Agua de la hierba estarás tomando
+Agua de la hierba estarás tomando
 Toca tomar eso para poder bailar bien
 aahh… jajaaaa
 Despierta carajo
@@ -27,10 +26,10 @@ Colada de caracol voy a comer
 Agua de hierba voy a tomar
 Colada de caracol voy a comer…jaaaaaaajaayyyy…
 Sirve sirve rápido
- Chicha chicha padrino
-Que dices si agua de hierba tenemos que tomar jajayyyy…. 
+Chicha chicha padrino
+Que dices si agua de hierba tenemos que tomar jajayyyy….
 esssss...
-<Agua de la hierba estarás tomando
+Agua de la hierba estarás tomando
 Toca tomar eso para poder bailar bien
 Agua de hierba voy a tomar
 Colada de caracol voy a comer
@@ -38,10 +37,10 @@ Agua de hierba voy a tomar
 Colada de caracol voy a comer…jaaaaaaajaayyyy…
 si he de alcanzar para comer
 Sirve sirve rápido
- Chicha chicha padrino
-Que dices si agua de hierba tenemos que tomar jajayyyy…. 
+Chicha chicha padrino
+Que dices si agua de hierba tenemos que tomar jajayyyy….
 esssss...
-<Agua de la hierba estarás tomando
+Agua de la hierba estarás tomando
 Toca tomar eso para poder bailar bien
 Despierta carajo
 Agua de hierba voy a tomar
