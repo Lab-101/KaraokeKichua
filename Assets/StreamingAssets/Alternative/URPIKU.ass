@@ -24,36 +24,36 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:01:22.56,0:01:24.38,Default,,0,0,0,,{\k76}Maypita {\k106}purinki
-Dialogue: 0,0:01:24.38,0:01:26.38,Default,,0,0,0,,{\k68}maymanta {\k132}rirkanki 
-Dialogue: 0,0:01:26.38,0:01:27.86,Default,,0,0,0,,{\k42}Ñuka {\k158}urpikulla
-Dialogue: 0,0:01:27.86,0:01:29.56,Default,,0,0,0,,{\k42}ñuka {\k128}sisakulla
-Dialogue: 0,0:01:29.56,0:01:31.42,Default,,0,0,0,,{\k78}Piwanta {\k108}wakanki {\k0}
-Dialogue: 0,0:01:31.42,0:01:33.28,Default,,0,0,0,,{\k74}piwan {\k112}asinki
-Dialogue: 0,0:01:33.28,0:01:34.84,Default,,0,0,0,,{\k40}Ñuka {\k116}urpikulla
-Dialogue: 0,0:01:34.84,0:01:36.60,Default,,0,0,0,,{\k64}ñuka {\k112}sisakulla
-Dialogue: 0,0:01:36.60,0:01:38.60,Default,,0,0,0,,{\k66}Mayman {\k134}rishkakashpa
+Dialogue: 0,0:01:22.56,0:01:24.38,Default,,0,0,0,,{\k76}Maypita {\k106}puringui
+Dialogue: 0,0:01:24.38,0:01:26.38,Default,,0,0,0,,{\k68}Maymanda {\k132}rrircangui 
+Dialogue: 0,0:01:26.38,0:01:27.86,Default,,0,0,0,,{\k42}Ñuca {\k158}urpigulla
+Dialogue: 0,0:01:27.86,0:01:29.56,Default,,0,0,0,,{\k42}Ñuca {\k128}sisagulla
+Dialogue: 0,0:01:29.56,0:01:31.42,Default,,0,0,0,,{\k78}Piwanda {\k108}wacangui {\k0}
+Dialogue: 0,0:01:31.42,0:01:33.28,Default,,0,0,0,,{\k74}piwan {\k112}asingui
+Dialogue: 0,0:01:33.28,0:01:34.84,Default,,0,0,0,,{\k40}Ñuca {\k116}urpigulla
+Dialogue: 0,0:01:34.84,0:01:36.60,Default,,0,0,0,,{\k64}Ñuca {\k112}sisagulla
+Dialogue: 0,0:01:36.60,0:01:38.60,Default,,0,0,0,,{\k66}Mayman {\k134}rishcacashpa
 Dialogue: 0,0:01:38.60,0:01:40.30,Default,,0,0,0,,{\k44}tushuy {\k126}tushuyari
-Dialogue: 0,0:01:40.30,0:01:42.08,Default,,0,0,0,,{\k84}chakikuta {\k94}kuyuchispa {\k0}
-Dialogue: 0,0:01:42.08,0:01:43.76,Default,,0,0,0,,{\k92}makikuta {\k76}kuyuchi
-Dialogue: 0,0:01:43.76,0:01:45.62,Default,,0,0,0,,{\k58}shina {\k38}ñuka {\k90}shunku
-Dialogue: 0,0:01:45.62,0:01:47.38,Default,,0,0,0,,kushiyankamari
-Dialogue: 0,0:01:47.38,0:01:49.02,Default,,0,0,0,,{\k48}ñuka {\k36}yana {\k80}ñawiku
-Dialogue: 0,0:01:49.02,0:01:51.10,Default,,0,0,0,,{\k56}ñuka {\k44}huyay {\k108}sisaku
-Dialogue: 0,0:02:04.82,0:02:06.60,Default,,0,0,0,,{\k76}Maypita {\k106}purinki
-Dialogue: 0,0:02:06.60,0:02:08.48,Default,,0,0,0,,{\k82}maymanta {\k118}rirkanki
-Dialogue: 0,0:02:08.48,0:02:10.16,Default,,0,0,0,,{\k48}Ñuka {\k108}urpikulla
-Dialogue: 0,0:02:10.18,0:02:11.96,Default,,0,0,0,,{\k48}ñuka {\k130}sisakulla
-Dialogue: 0,0:02:11.96,0:02:13.82,Default,,0,0,0,,{\k72}Piwanta {\k114}wakanki {\k0}
-Dialogue: 0,0:02:13.82,0:02:15.54,Default,,0,0,0,,{\k60}piwan {\k112}asinki
-Dialogue: 0,0:02:15.54,0:02:17.24,Default,,0,0,0,,{\k48}Ñuka {\k122}urpikulla
-Dialogue: 0,0:02:17.24,0:02:18.98,Default,,0,0,0,,{\k48}ñuka {\k126}sisakulla
-Dialogue: 0,0:02:18.98,0:02:20.82,Default,,0,0,0,,{\k52}Mayman {\k132}rishkakashpa
+Dialogue: 0,0:01:40.30,0:01:42.08,Default,,0,0,0,,{\k84}Chakiguta {\k94}Kuyuchispa {\k0}
+Dialogue: 0,0:01:42.08,0:01:43.76,Default,,0,0,0,,{\k92}Makiguta {\k76}Kuyuchi
+Dialogue: 0,0:01:43.76,0:01:45.62,Default,,0,0,0,,{\k58}shina {\k38}Ñuca {\k90}shungu
+Dialogue: 0,0:01:45.62,0:01:47.38,Default,,0,0,0,,Kushiyangamari
+Dialogue: 0,0:01:47.38,0:01:49.02,Default,,0,0,0,,{\k48}Ñuca {\k36}yana {\k80}ñawigu
+Dialogue: 0,0:01:49.02,0:01:51.10,Default,,0,0,0,,{\k56}Ñuca {\k44}juyay {\k108}sisagu
+Dialogue: 0,0:02:04.82,0:02:06.60,Default,,0,0,0,,{\k76}Maypita {\k106}puringui
+Dialogue: 0,0:02:06.60,0:02:08.48,Default,,0,0,0,,{\k82}Maymanda {\k118}rrircangui
+Dialogue: 0,0:02:08.48,0:02:10.16,Default,,0,0,0,,{\k48}Ñuca {\k108}urpigulla
+Dialogue: 0,0:02:10.18,0:02:11.96,Default,,0,0,0,,{\k48}Ñuca {\k130}sisagulla
+Dialogue: 0,0:02:11.96,0:02:13.82,Default,,0,0,0,,{\k72}Piwanda {\k114}wacangui {\k0}
+Dialogue: 0,0:02:13.82,0:02:15.54,Default,,0,0,0,,{\k60}piwan {\k112}asingui
+Dialogue: 0,0:02:15.54,0:02:17.24,Default,,0,0,0,,{\k48}Ñuca {\k122}urpigulla
+Dialogue: 0,0:02:17.24,0:02:18.98,Default,,0,0,0,,{\k48}Ñuca {\k126}sisagulla
+Dialogue: 0,0:02:18.98,0:02:20.82,Default,,0,0,0,,{\k52}Mayman {\k132}rishcacashpa
 Dialogue: 0,0:02:20.82,0:02:22.56,Default,,0,0,0,,{\k44}tushuy {\k126}tushuyari
-Dialogue: 0,0:02:22.56,0:02:24.38,Default,,0,0,0,,{\k90}chakikuta {\k92}kuyuchispa
-Dialogue: 0,0:02:24.38,0:02:25.96,Default,,0,0,0,,{\k88}makikuta {\k70}kuyuchi
-Dialogue: 0,0:02:25.96,0:02:27.82,Default,,0,0,0,,{\k58}shina {\k48}ñuka {\k80}shunku
-Dialogue: 0,0:02:27.82,0:02:29.58,Default,,0,0,0,,kushiyankamari
-Dialogue: 0,0:02:29.58,0:02:31.34,Default,,0,0,0,,{\k48}ñuka {\k50}yana {\k78}ñawiku
-Dialogue: 0,0:02:31.34,0:02:33.44,Default,,0,0,0,,{\k56}ñuka {\k44}huyay {\k108}sisaku
+Dialogue: 0,0:02:22.56,0:02:24.38,Default,,0,0,0,,{\k90}Chakiguta {\k92}Kuyuchispa
+Dialogue: 0,0:02:24.38,0:02:25.96,Default,,0,0,0,,{\k88}Makiguta {\k70}Kuyuchi
+Dialogue: 0,0:02:25.96,0:02:27.82,Default,,0,0,0,,{\k58}shina {\k48}Ñuca {\k80}shungu
+Dialogue: 0,0:02:27.82,0:02:29.58,Default,,0,0,0,,Kushiyangamari
+Dialogue: 0,0:02:29.58,0:02:31.34,Default,,0,0,0,,{\k48}Ñuca {\k50}yana {\k78}ñawigu
+Dialogue: 0,0:02:31.34,0:02:33.44,Default,,0,0,0,,{\k56}Ñuca {\k44}juyay {\k108}sisagu
 Dialogue: 0,0:02:33.44,0:02:35.44,Default,,0,0,0,,

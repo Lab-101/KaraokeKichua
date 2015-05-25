@@ -22,19 +22,19 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:01:12.00,0:01:17.84,Default,,0,0,0,,{\k232}Kunankarimpa {\k122}shamupanimi {\k40}tia {\k190}mamalla
-Dialogue: 0,0:01:17.84,0:01:21.92,Default,,0,0,0,,{\k130}Ushikutaka {\k68}apankapak {\k30}mi {\k180}shamukupani
-Dialogue: 0,0:01:22.04,0:01:26.18,Default,,0,0,0,,{\k160}Kunankarimpa {\k127}shamupanimi {\k27}tia {\k100}mamalla
-Dialogue: 0,0:01:26.88,0:01:30.94,Default,,0,0,0,,{\k128}Ushikutaka {\k80}apankapak {\k34}mi {\k164}shamukupani
-Dialogue: 0,0:01:31.54,0:01:36.16,Default,,0,0,0,,{\k50}Maski {\k70}Butakukpipa {\k44}maski {\k68}rimakpi {\k230}shamupanimi
-Dialogue: 0,0:01:36.16,0:01:40.62,Default,,0,0,0,,{\k118}Ushikutaka {\k124}apashpamari {\k204}tikraripasha
-Dialogue: 0,0:01:40.62,0:01:45.38,Default,,0,0,0,,{\k62}Maski {\k64}Butakukpipa {\k48}maski {\k66}rimakpi {\k236}shamupanimi
-Dialogue: 0,0:01:45.38,0:01:49.80,Default,,0,0,0,,{\k116}Ushikutaka {\k108}apashpamari {\k218}tikraripasha {\k0}
-Dialogue: 0,0:03:03.00,0:03:07.00,Default,,0,0,0,,{\k130}Kunankarimpa {\k66}shamupani {\k38}mi {\k48}tia {\k118}mamalla
-Dialogue: 0,0:03:07.62,0:03:12.38,Default,,0,0,0,,{\k130}Ushikutaka {\k78}apankapak {\k24}mi {\k244}shamukupani
-Dialogue: 0,0:03:12.38,0:03:16.26,Default,,0,0,0,,{\k88}Kunankarimpa {\k146}shamupanimi {\k30}tia {\k110}mamalla
-Dialogue: 0,0:03:16.92,0:03:21.42,Default,,0,0,0,,{\k110}Ushikutaka {\k78}apankapak {\k32}mi {\k230}shamukupani
-Dialogue: 0,0:03:21.42,0:03:26.04,Default,,0,0,0,,{\k56}Maski {\k58}Butakukpipa {\k42}maski {\k66}rimakpi {\k240}shamupanimi
-Dialogue: 0,0:03:26.04,0:03:30.36,Default,,0,0,0,,{\k124}Ushikutaka {\k106}apashpamari {\k202}tikraripasha
-Dialogue: 0,0:03:30.40,0:03:35.22,Default,,0,0,0,,{\k66}Maski {\k68}Butakukpipa {\k50}maski {\k56}rimakpi {\k242}shamupanimi {\k0}
-Dialogue: 0,0:03:35.22,0:03:39.86,Default,,0,0,0,,{\k110}Ushikutaka {\k104}apashpamari {\k250}tikraripasha
+Dialogue: 0,0:01:12.00,0:01:17.84,Default,,0,0,0,,{\k232}Kunangarimba {\k122}shamupanimi {\k40}tia {\k190}mamalla
+Dialogue: 0,0:01:17.84,0:01:21.92,Default,,0,0,0,,{\k130}Ushigutaca {\k68}apangapami {\k30} {\k180}shamujupanii
+Dialogue: 0,0:01:22.04,0:01:26.18,Default,,0,0,0,,{\k160}Kunangarimba {\k127}shamupanimi {\k27}tia {\k100}mamalla
+Dialogue: 0,0:01:26.88,0:01:30.94,Default,,0,0,0,,{\k128}Ushigutaca {\k80}apangapami {\k34} {\k164}shamujupanii
+Dialogue: 0,0:01:31.54,0:01:36.16,Default,,0,0,0,,{\k50}Maski {\k70}Butajukpipa {\k44}maski {\k68}rimakpi {\k230}shamupanimi
+Dialogue: 0,0:01:36.16,0:01:40.62,Default,,0,0,0,,{\k118}Ushigutaca {\k124}apashpamari {\k204}tigraripasha
+Dialogue: 0,0:01:40.62,0:01:45.38,Default,,0,0,0,,{\k62}Maski {\k64}Butajukpipa {\k48}maski {\k66}rimakpi {\k236}shamupanimi
+Dialogue: 0,0:01:45.38,0:01:49.80,Default,,0,0,0,,{\k116}Ushigutaca {\k108}apashpamari {\k218}tigraripasha {\k0}
+Dialogue: 0,0:03:03.00,0:03:07.00,Default,,0,0,0,,{\k130}Kunangarimba {\k66}shamupanimi {\k38} {\k48}tia {\k118}mamalla
+Dialogue: 0,0:03:07.62,0:03:12.38,Default,,0,0,0,,{\k130}Ushigutaca {\k78}apangapami {\k24} {\k244}shamujupanii
+Dialogue: 0,0:03:12.38,0:03:16.26,Default,,0,0,0,,{\k88}Kunangarimba {\k146}shamupanimi {\k30}tia {\k110}mamalla
+Dialogue: 0,0:03:16.92,0:03:21.42,Default,,0,0,0,,{\k110}Ushigutaca {\k78}apangapami {\k32} {\k230}shamujupanii
+Dialogue: 0,0:03:21.42,0:03:26.04,Default,,0,0,0,,{\k56}Maski {\k58}Butajukpipa {\k42}maski {\k66}rimakpi {\k240}shamupanimi
+Dialogue: 0,0:03:26.04,0:03:30.36,Default,,0,0,0,,{\k124}Ushigutaca {\k106}apashpamari {\k202}tigraripasha
+Dialogue: 0,0:03:30.40,0:03:35.22,Default,,0,0,0,,{\k66}Maski {\k68}Butajukpipa {\k50}maski {\k56}rimakpi {\k242}shamupanimi {\k0}
+Dialogue: 0,0:03:35.22,0:03:39.86,Default,,0,0,0,,{\k110}Ushigutaca {\k104}apashpamari {\k250}tigraripasha
