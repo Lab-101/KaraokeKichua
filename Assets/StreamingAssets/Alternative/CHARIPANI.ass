@@ -23,39 +23,39 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:10.80,0:00:12.24,Default,,0,0,0,,{\k14}Kay {\k70}tonokutami {\k60}karanchi {\k0}
-Dialogue: 0,0:00:12.84,0:00:17.44,Default,,0,0,0,,{\k134}ñukanchi {\k88}Kichwa {\k82}llaktaman {\k114}masickunaman {\k66}tukuy {\k0}
-Dialogue: 0,0:00:17.44,0:00:21.30,Default,,0,0,0,,{\k124}shunkuwan {\k140}uyapankichi {\k122}tushupankichi
+Dialogue: 0,0:00:10.80,0:00:12.24,Default,,0,0,0,,{\k14}Kay {\k70}tonocutami {\k60}karanchi {\k0}
+Dialogue: 0,0:00:12.84,0:00:17.44,Default,,0,0,0,,{\k134}Ñucanchi {\k88}Kichwa {\k82}llagta {\k114}mashickunaman {\k66}tucuy {\k0}
+Dialogue: 0,0:00:17.44,0:00:21.30,Default,,0,0,0,,{\k124}shunguwan {\k140}uyapangichi {\k122}tushupangichi
 Dialogue: 0,0:00:28.20,0:00:29.76,Default,,0,0,0,,{\k40}Salud {\k116}papachu
-Dialogue: 0,0:00:48.60,0:00:50.14,Default,,0,0,0,,{\k94}Paykumantalla {\k138}nachu
-Dialogue: 0,0:00:54.86,0:00:58.68,Default,,0,0,0,,{\k170}kawsaykamanka {\k78}huyaypachu {\k38}kawsana {\k96}kaskanchi
-Dialogue: 0,0:01:08.48,0:01:10.76,Default,,0,0,0,,{\k44}Ñuka {\k76}kuchita {\k108}charirkani, {\k0}
-Dialogue: 0,0:01:10.78,0:01:13.00,Default,,0,0,0,,{\k40}yana {\k70}wakrata {\k112}charirkani {\k0}
-Dialogue: 0,0:01:13.00,0:01:15.00,Default,,0,0,0,,{\k118}Chaykutamari {\k82}katurkani {\k0}
-Dialogue: 0,0:01:15.28,0:01:17.56,Default,,0,0,0,,{\k44}Ñuka {\k68}kuchita {\k112}charirkani, {\k4}
-Dialogue: 0,0:01:17.58,0:01:19.70,Default,,0,0,0,,{\k40}yana {\k72}wakrata {\k100}charirkani {\k0}
-Dialogue: 0,0:01:19.76,0:01:22.08,Default,,0,0,0,,{\k118}Chaykutamari {\k112}katurkani {\k2}
-Dialogue: 0,0:01:22.10,0:01:24.28,Default,,0,0,0,,{\k40}Huyaylla {\k76}chumpi {\k102}karashami
+Dialogue: 0,0:00:48.60,0:00:50.14,Default,,0,0,0,,{\k94}Paygumandalla {\k138}nachu
+Dialogue: 0,0:00:54.86,0:00:58.68,Default,,0,0,0,,{\k170}Kawsaycamanga {\k78}juyaypachu {\k38}kausana {\k96}kascanchi
+Dialogue: 0,0:01:08.48,0:01:10.76,Default,,0,0,0,,{\k44}Yana {\k76}kuchita {\k108}charircanii, {\k0}
+Dialogue: 0,0:01:10.78,0:01:13.00,Default,,0,0,0,,{\k40}yana {\k70}wuagrata {\k112}charircanii {\k0}
+Dialogue: 0,0:01:13.00,0:01:15.00,Default,,0,0,0,,{\k118}Chaygutamari  {\k82}jaturcanii {\k0}
+Dialogue: 0,0:01:15.28,0:01:17.56,Default,,0,0,0,,{\k44}yana {\k68}kuchita {\k112}charircanii, {\k4}
+Dialogue: 0,0:01:17.58,0:01:19.70,Default,,0,0,0,,{\k40}yana {\k72}wuagrata {\k100}charircanii {\k0}
+Dialogue: 0,0:01:19.76,0:01:22.08,Default,,0,0,0,,{\k118}Chaygutamari  {\k112}jaturcanii {\k2}
+Dialogue: 0,0:01:22.10,0:01:24.28,Default,,0,0,0,,{\k40}Juyaylla {\k76}chumbita {\k102}Karashami
 Dialogue: 0,0:01:24.30,0:01:26.60,Default,,0,0,0,,{\k54}Anaco {\k34}de {\k54}paño {\k88}kushami
-Dialogue: 0,0:01:26.62,0:01:28.86,Default,,0,0,0,,{\k62}Kunanka {\k96}kulkiyukmi {\k66}kani {\k0}
-Dialogue: 0,0:01:28.88,0:01:31.12,Default,,0,0,0,,{\k56}Huyaylla {\k60}chumpi {\k108}karashami
+Dialogue: 0,0:01:26.62,0:01:28.86,Default,,0,0,0,,{\k62}Kunanga {\k96}kulkiyukmi {\k66}kani {\k0}
+Dialogue: 0,0:01:28.88,0:01:31.12,Default,,0,0,0,,{\k56}Juyaylla {\k60}chumbita {\k108}Karashami
 Dialogue: 0,0:01:31.15,0:01:33.36,Default,,0,0,0,,{\k52}Anaco {\k30}de {\k54}paño {\k64}kushami
-Dialogue: 0,0:01:33.38,0:01:35.62,Default,,0,0,0,,{\k64}Kunanka {\k90}kulkiyukmi {\k70}kani {\k0}
-Dialogue: 0,0:01:38.32,0:01:41.30,Default,,0,0,0,,{\k60}Kunanka {\k40}kikin {\k52}munashkata {\k20}ma {\k46}karasha {\k80}warmiku
-Dialogue: 0,0:01:42.02,0:01:43.06,Default,,0,0,0,,{\k36}kulki {\k24}yukma {\k44}kani
-Dialogue: 0,0:02:39.00,0:02:41.28,Default,,0,0,0,,{\k38}Kashna {\k76}huyaylla {\k114}warmikuta {\k0}
-Dialogue: 0,0:02:41.29,0:02:43.44,Default,,0,0,0,,{\k31}Tukuy {\k96}shunkukuwanmi {\k86}huyani {\k2}
-Dialogue: 0,0:02:43.45,0:02:45.80,Default,,0,0,0,,{\k114}Sawarinkapak {\k23}mi {\k98}munani
-Dialogue: 0,0:02:45.81,0:02:48.04,Default,,0,0,0,,{\k43}Kasna {\k66}huyaylla {\k110}warmikuta {\k0}
-Dialogue: 0,0:02:48.05,0:02:50.28,Default,,0,0,0,,{\k44}Tukuy {\k89}shunkukuwanmi {\k90}huyani {\k0}
-Dialogue: 0,0:02:50.30,0:02:52.60,Default,,0,0,0,,{\k116}Sawarinkapak {\k24}mi {\k100}munani
-Dialogue: 0,0:02:52.60,0:02:54.82,Default,,0,0,0,,{\k120}Ayllukuna {\k180}kumbawaychiya {\k0}
-Dialogue: 0,0:02:54.85,0:02:57.02,Default,,0,0,0,,{\k83}Mashikuna {\k117}ripashunchiya {\k17}
+Dialogue: 0,0:01:33.38,0:01:35.62,Default,,0,0,0,,{\k64}Kunanga {\k90}kulkiyukmi {\k70}kani {\k0}
+Dialogue: 0,0:01:38.32,0:01:41.30,Default,,0,0,0,,{\k60}Kunanga {\k40}kan {\k52}munashkata {\k20}ma {\k46}karasha {\k80}warmigu
+Dialogue: 0,0:01:42.02,0:01:43.06,Default,,0,0,0,,{\k36}kulki {\k24}yugma {\k44}kani
+Dialogue: 0,0:02:39.00,0:02:41.28,Default,,0,0,0,,{\k38}Kashna {\k76}juyaylla {\k114}wuarmiguta {\k0}
+Dialogue: 0,0:02:41.29,0:02:43.44,Default,,0,0,0,,{\k31}Tucuy {\k96}shunguguwan mi {\k86}juyani {\k2}
+Dialogue: 0,0:02:43.45,0:02:45.80,Default,,0,0,0,,{\k114}Sawaringapami {\k23} {\k98}munani
+Dialogue: 0,0:02:45.81,0:02:48.04,Default,,0,0,0,,{\k43}Kashna {\k66}juyaylla {\k110}wuarmiguta {\k0}
+Dialogue: 0,0:02:48.05,0:02:50.28,Default,,0,0,0,,{\k44}Tucuy {\k89}shunguguwan mi {\k90}juyani {\k0}
+Dialogue: 0,0:02:50.30,0:02:52.60,Default,,0,0,0,,{\k116}Sawaringapami {\k24} {\k100}munani
+Dialogue: 0,0:02:52.60,0:02:54.82,Default,,0,0,0,,{\k120}Ayllucuna {\k180}kumbawaychilla {\k0}
+Dialogue: 0,0:02:54.85,0:02:57.02,Default,,0,0,0,,{\k83}Mashicuna {\k117}ripashunchilla {\k17}
 Dialogue: 0,0:02:57.02,0:02:59.30,Default,,0,0,0,,{\k64}Takishpa {\k78}tushushpa {\k84}kushilla {\k2}
-Dialogue: 0,0:02:59.32,0:03:01.64,Default,,0,0,0,,{\k90}Ayllukuna {\k158}kumbawaychiya {\k0}
-Dialogue: 0,0:03:01.65,0:03:03.83,Default,,0,0,0,,{\k80}Mashikuna {\k138}ripashunchiya {\k0}
+Dialogue: 0,0:02:59.32,0:03:01.64,Default,,0,0,0,,{\k90}Ayllucuna {\k158}kumbawaychilla {\k0}
+Dialogue: 0,0:03:01.65,0:03:03.83,Default,,0,0,0,,{\k80}Mashicuna {\k138}ripashunchilla {\k0}
 Dialogue: 0,0:03:03.84,0:03:06.12,Default,,0,0,0,,{\k64}Takishpa {\k74}tushushpa {\k86}kushilla {\k4}
-Dialogue: 0,0:03:08.82,0:03:10.68,Default,,0,0,0,,{\k32}Kashna {\k41}huyaylla {\k113}warmikuwanka {\k0}
+Dialogue: 0,0:03:08.82,0:03:10.68,Default,,0,0,0,,{\k32}Kashna {\k41}juyaylla {\k113}warmiguanga {\k0}
 Dialogue: 0,0:03:10.70,0:03:12.94,Default,,0,0,0,,{\k50}paktama {\k82} {\k92}kawsanayan {\k0}wayunkakaman
-Dialogue: 0,0:03:44.16,0:03:47.44,Default,,0,0,0,,{\k42}Kunanka {\k80}imashnata {\k30}llakilla {\k50}karinka {\k66}kushikushun {\k60}hay
+Dialogue: 0,0:03:44.16,0:03:47.44,Default,,0,0,0,,{\k42}Kunanga {\k80}imashnata {\k30}llakilla {\k50}karinga {\k66}kushijushun {\k60}ayyyy
 Dialogue: 0,0:03:47.48,0:03:48.00,Default,,0,0,0,,

@@ -10,10 +10,12 @@ PlayResX: 640
 PlayResY: 480
 
 [Aegisub Project Garbage]
-Audio File: C:/Users/Desarrollo/Desktop/Canciones/Aeroplano - Curi Pichamba.mp3
+Audio File: ../../Resources/AEROPLANO.mp3
+Video File: ?dummy:23.976000:40000:640:480:47:163:254:
+Video AR Value: 1.333333
 Video Zoom Percent: 1.000000
-Scroll Position: 13
-Active Line: 31
+Active Line: 12
+Video Position: 2153
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -21,36 +23,36 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:39.26,0:00:41.80,Default,,0,0,0,,{\k128}Hakullayari {\k126}mamita
-Dialogue: 0,0:00:41.80,0:00:44.30,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:00:44.30,0:00:46.84,Default,,0,0,0,,{\k128}Hakullayari {\k126}mamita
-Dialogue: 0,0:00:46.84,0:00:49.34,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:00:49.42,0:00:51.86,Default,,0,0,0,,{\k122}Aeroplanuta {\k122}hapishpa {\k0}
-Dialogue: 0,0:00:51.86,0:00:54.42,Default,,0,0,0,,{\k58}puyu {\k76}ukuma {\k122}chinkarka
-Dialogue: 0,0:00:54.42,0:00:56.86,Default,,0,0,0,,{\k128}Aeroplanuta {\k116}hapishpa {\k0}
-Dialogue: 0,0:00:57.00,0:00:59.42,Default,,0,0,0,,{\k58}puyu {\k76}ukuma {\k122}chinkarka
-Dialogue: 0,0:01:19.80,0:01:22.22,Default,,0,0,0,,{\k116}Hakullayari {\k138}mamita
-Dialogue: 0,0:01:22.22,0:01:24.72,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:01:24.72,0:01:27.26,Default,,0,0,0,,{\k136}Hakullayari {\k118}mamita
-Dialogue: 0,0:01:27.26,0:01:29.76,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:01:29.76,0:01:32.20,Default,,0,0,0,,{\k138}Aeroplanuta {\k106}hapishpa {\k0}
-Dialogue: 0,0:01:32.42,0:01:34.88,Default,,0,0,0,,{\k50}puyu {\k78}ukuma {\k118}chinkarka
-Dialogue: 0,0:01:34.98,0:01:37.38,Default,,0,0,0,,{\k126}Aeroplanuta {\k112}hapishpa {\k2}
-Dialogue: 0,0:01:37.50,0:01:40.00,Default,,0,0,0,,{\k46}puyu {\k74}ukuma {\k130}chinkarka
-Dialogue: 0,0:02:30.48,0:02:33.02,Default,,0,0,0,,{\k116}Hakullayari {\k138}mamita
-Dialogue: 0,0:02:33.02,0:02:35.52,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:02:35.52,0:02:38.06,Default,,0,0,0,,{\k128}Hakullayari {\k126}mamita
-Dialogue: 0,0:02:38.06,0:02:40.56,Default,,0,0,0,,{\k128}papasituka {\k122}rirkami {\k0}
-Dialogue: 0,0:02:40.56,0:02:43.10,Default,,0,0,0,,{\k134}Aeroplanuta {\k110}hapishpa {\k0}
-Dialogue: 0,0:02:43.14,0:02:45.56,Default,,0,0,0,,{\k58}puyu {\k76}ukuma {\k122}chinkarka
-Dialogue: 0,0:02:45.70,0:02:48.20,Default,,0,0,0,,{\k128}Aeroplanuta {\k116}hapishpa {\k6}
-Dialogue: 0,0:02:48.30,0:02:50.74,Default,,0,0,0,,{\k48}puyu {\k76}ukuma {\k120}chinkarka
-Dialogue: 0,0:03:10.96,0:03:13.50,Default,,0,0,0,,{\k128}Hakullayari {\k126}mamita
-Dialogue: 0,0:03:13.54,0:03:16.04,Default,,0,0,0,,{\k126}papasituka {\k124}rirkami {\k0}
-Dialogue: 0,0:03:16.04,0:03:18.54,Default,,0,0,0,,{\k128}Hakullayari {\k126}mamita
-Dialogue: 0,0:03:18.58,0:03:21.02,Default,,0,0,0,,{\k128}papasituka {\k116}rirkami {\k6}
-Dialogue: 0,0:03:21.08,0:03:23.52,Default,,0,0,0,,{\k124}Aeroplanuta {\k120}hapishpa {\k10}
-Dialogue: 0,0:03:23.62,0:03:26.04,Default,,0,0,0,,{\k48}puyu {\k78}ukuma {\k116}chinkarka
-Dialogue: 0,0:03:26.04,0:03:28.58,Default,,0,0,0,,{\k134}Aeroplanuta {\k118}hapishpa {\k2}
-Dialogue: 0,0:03:28.58,0:03:31.12,Default,,0,0,0,,{\k50}puyu {\k80}ukuma {\k124}chinkarka
+Dialogue: 0,0:00:39.26,0:00:41.80,Default,,0,0,0,,{\k128}Jacullayaricha {\k126}mamita
+Dialogue: 0,0:00:41.80,0:00:44.30,Default,,0,0,0,,{\k128}Papasituca {\k122}rrircami {\k0}
+Dialogue: 0,0:00:44.30,0:00:46.84,Default,,0,0,0,,{\k128}Jacullayaricha {\k126}mamita
+Dialogue: 0,0:00:46.84,0:00:49.34,Default,,0,0,0,,{\k128}Papasituca {\k122}rrircami {\k0}
+Dialogue: 0,0:00:49.42,0:00:51.86,Default,,0,0,0,,{\k122}Aeroplanota {\k122}japishpa {\k0}
+Dialogue: 0,0:00:51.86,0:00:54.42,Default,,0,0,0,,{\k58}Fuyu {\k76}ucuman {\k122}chingarca
+Dialogue: 0,0:00:54.42,0:00:56.86,Default,,0,0,0,,{\k128}Aeroplanota  {\k116}japishpa {\k0}
+Dialogue: 0,0:00:57.00,0:00:59.42,Default,,0,0,0,,{\k58}Fuyu  {\k76}ucuman  {\k122}chingarca
+Dialogue: 0,0:01:19.80,0:01:22.22,Default,,0,0,0,,{\k116}Jacullayaricha  {\k138}mamita
+Dialogue: 0,0:01:22.22,0:01:24.72,Default,,0,0,0,,{\k128}Papasituca  {\k122}rrircami {\k0}
+Dialogue: 0,0:01:24.72,0:01:27.26,Default,,0,0,0,,{\k136}Jacullayaricha {\k118}mamita
+Dialogue: 0,0:01:27.26,0:01:29.76,Default,,0,0,0,,{\k128}Papasituca  {\k122}rrircami {\k0}
+Dialogue: 0,0:01:29.76,0:01:32.20,Default,,0,0,0,,{\k138}Aeroplanota  {\k106}japishpa {\k0}
+Dialogue: 0,0:01:32.42,0:01:34.88,Default,,0,0,0,,{\k50}Fuyu {\k78}ucuman {\k118}chingarca
+Dialogue: 0,0:01:34.98,0:01:37.38,Default,,0,0,0,,{\k126}Aeroplanota {\k112}japishpa {\k2}
+Dialogue: 0,0:01:37.50,0:01:40.00,Default,,0,0,0,,{\k46}Fuyu {\k74}ucuman {\k130}chingarca
+Dialogue: 0,0:02:30.48,0:02:33.02,Default,,0,0,0,,{\k116}Jacullayaricha {\k138}mamita
+Dialogue: 0,0:02:33.02,0:02:35.52,Default,,0,0,0,,{\k128}Papasituca {\k122}rrircami {\k0}
+Dialogue: 0,0:02:35.52,0:02:38.06,Default,,0,0,0,,{\k128}Jacullayaricha {\k126}mamita
+Dialogue: 0,0:02:38.06,0:02:40.56,Default,,0,0,0,,{\k128}Papasituca {\k122}rrircami {\k0}
+Dialogue: 0,0:02:40.56,0:02:43.10,Default,,0,0,0,,{\k134}Aeroplanota {\k110}japishpa {\k0}
+Dialogue: 0,0:02:43.14,0:02:45.56,Default,,0,0,0,,{\k58}Fuyu {\k76}ucuman {\k122}chingarca
+Dialogue: 0,0:02:45.70,0:02:48.20,Default,,0,0,0,,{\k128}Aeroplanota {\k116}japishpa {\k6}
+Dialogue: 0,0:02:48.30,0:02:50.74,Default,,0,0,0,,{\k48}Fuyu {\k76}ucuman {\k120}chingarca
+Dialogue: 0,0:03:10.96,0:03:13.50,Default,,0,0,0,,{\k128}Jacullayaricha {\k126}mamita
+Dialogue: 0,0:03:13.54,0:03:16.04,Default,,0,0,0,,{\k126}Papasituca {\k124}rrircami {\k0}
+Dialogue: 0,0:03:16.04,0:03:18.54,Default,,0,0,0,,{\k128}Jacullayaricha {\k126}mamita
+Dialogue: 0,0:03:18.58,0:03:21.02,Default,,0,0,0,,{\k128}Papasituca {\k116}rrircami {\k6}
+Dialogue: 0,0:03:21.08,0:03:23.52,Default,,0,0,0,,{\k124}Aeroplanota {\k120}japishpa {\k10}
+Dialogue: 0,0:03:23.62,0:03:26.04,Default,,0,0,0,,{\k48}Fuyu {\k78}ucuman {\k116}chingarca
+Dialogue: 0,0:03:26.04,0:03:28.58,Default,,0,0,0,,{\k134}Aeroplanota {\k118}japishpa {\k2}
+Dialogue: 0,0:03:28.58,0:03:31.12,Default,,0,0,0,,{\k50}Fuyu {\k80}ucuman {\k124}chingarca
 Dialogue: 0,0:03:31.12,0:03:33.12,Default,,0,0,0,,
