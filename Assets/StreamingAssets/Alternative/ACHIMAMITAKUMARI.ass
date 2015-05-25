@@ -23,28 +23,28 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:41.08,0:00:43.74,Default,,0,0,0,,{\k48}Tipo 2 Achi {\k48}mamita {\k84}kumari {\k86}kumari
+Dialogue: 0,0:00:41.08,0:00:43.74,Default,,0,0,0,,{\k48}Achi {\k48}mamita {\k84}kumari {\k86}kumari
 Dialogue: 0,0:00:43.74,0:00:46.20,Default,,0,0,0,,{\k38}Achi {\k46}mamita {\k84}kumari {\k78}kumari
-Dialogue: 0,0:00:46.20,0:00:48.72,Default,,0,0,0,,{\k45}Achi {\k47}taytiku {\k78}kumpari {\k82}kumpari
-Dialogue: 0,0:00:48.72,0:00:51.28,Default,,0,0,0,,{\k48}Achi {\k46}taytiku {\k82}kumpari {\k80}kumpari
-Dialogue: 0,0:00:51.28,0:00:53.84,Default,,0,0,0,,{\k94}Kulpikullata {\k84}tushushun {\k78}kumpari
-Dialogue: 0,0:00:53.84,0:00:56.40,Default,,0,0,0,,{\k94}Kulpikullata {\k84}tushushun {\k78}kumpari
-Dialogue: 0,0:00:56.40,0:00:58.94,Default,,0,0,0,,{\k92}Pakarinkapak {\k86}tushushun {\k76}kumpari
-Dialogue: 0,0:00:58.94,0:01:01.52,Default,,0,0,0,,{\k92}Pakarinkapak {\k86}tushushun {\k76}kumpari
+Dialogue: 0,0:00:46.20,0:00:48.72,Default,,0,0,0,,{\k45}Achi {\k47}taiticu {\k78}kumbari {\k82}kumbari
+Dialogue: 0,0:00:48.72,0:00:51.28,Default,,0,0,0,,{\k48}Achi {\k46}taiticu {\k82}kumbari {\k80}kumbari
+Dialogue: 0,0:00:51.28,0:00:53.84,Default,,0,0,0,,{\k94}gulpigullata {\k84}tushushun {\k78}kumbari
+Dialogue: 0,0:00:53.84,0:00:56.40,Default,,0,0,0,,{\k94}gulpigullata {\k84}tushushun {\k78}kumbari
+Dialogue: 0,0:00:56.40,0:00:58.94,Default,,0,0,0,,{\k92}Pakaringapak {\k86}tushushun {\k76}kumbari
+Dialogue: 0,0:00:58.94,0:01:01.52,Default,,0,0,0,,{\k92}Pakaringapak {\k86}tushushun {\k76}kumbari
 Dialogue: 0,0:01:13.42,0:01:16.08,Default,,0,0,0,,{\k50}Achi {\k50}mamita {\k84}kumari {\k82}kumari
 Dialogue: 0,0:01:16.08,0:01:18.60,Default,,0,0,0,,{\k38}Achi {\k52}mamita {\k82}kumari {\k80}kumari
-Dialogue: 0,0:01:18.60,0:01:21.20,Default,,0,0,0,,{\k48}Achi {\k50}taytiku {\k68}kumpari {\k94}kumpari
-Dialogue: 0,0:01:21.20,0:01:23.82,Default,,0,0,0,,{\k50}Achi {\k48}taytiku {\k82}kumpari {\k82}kumpari
-Dialogue: 0,0:01:23.82,0:01:26.38,Default,,0,0,0,,{\k50}Kunan {\k46}punllaka {\k64}machashun {\k96}kumari
-Dialogue: 0,0:01:26.38,0:01:28.94,Default,,0,0,0,,{\k50}Kunan {\k46}punllaka {\k86}machashun {\k74}kumari
-Dialogue: 0,0:01:28.94,0:01:31.56,Default,,0,0,0,,{\k48}Kaya {\k40}punllaka {\k94}ñawikuta {\k80}mayllashun
-Dialogue: 0,0:01:31.56,0:01:34.18,Default,,0,0,0,,{\k48}Kaya {\k34}punllaka {\k96}ñawikuta {\k84}mayllashun
+Dialogue: 0,0:01:18.60,0:01:21.20,Default,,0,0,0,,{\k48}Achi {\k50}tayticu {\k68}kumbari {\k94}kumbari
+Dialogue: 0,0:01:21.20,0:01:23.82,Default,,0,0,0,,{\k50}Achi {\k48}tayticu {\k82}kumbari {\k82}kumbari
+Dialogue: 0,0:01:23.82,0:01:26.38,Default,,0,0,0,,{\k50}Kunan {\k46}punllaca {\k64}machashun {\k96}kumari
+Dialogue: 0,0:01:26.38,0:01:28.94,Default,,0,0,0,,{\k50}Kunan {\k46}punllaca {\k86}machashun {\k74}kumari
+Dialogue: 0,0:01:28.94,0:01:31.56,Default,,0,0,0,,{\k48}Kaya {\k40}punllaka {\k94}ñawiguta {\k80}mayllashun
+Dialogue: 0,0:01:31.56,0:01:34.18,Default,,0,0,0,,{\k48}Kaya {\k34}punllaka {\k96}ñawiguta {\k84}mayllashun
 Dialogue: 0,0:01:58.98,0:02:01.56,Default,,0,0,0,,{\k46}Achi {\k48}mamita {\k82}kumari {\k82}kumari
 Dialogue: 0,0:02:01.56,0:02:04.12,Default,,0,0,0,,{\k40}Achi {\k44}mamita {\k88}kumari {\k84}kumari
-Dialogue: 0,0:02:04.12,0:02:06.68,Default,,0,0,0,,{\k45}Achi {\k47}taytiku {\k84}kumpari {\k80}kumpari
-Dialogue: 0,0:02:06.69,0:02:09.28,Default,,0,0,0,,{\k48}Achi {\k46}taytiku {\k82}kumpari {\k80}kumpari
-Dialogue: 0,0:02:09.29,0:02:11.86,Default,,0,0,0,,{\k95}Kulpikullata {\k84}tushushun {\k78}kumpari
-Dialogue: 0,0:02:11.88,0:02:14.46,Default,,0,0,0,,{\k92}Kulpikullata {\k84}tushushun {\k82}kumpari
-Dialogue: 0,0:02:14.46,0:02:17.04,Default,,0,0,0,,{\k92}Pakarinkapak {\k86}tushushun {\k76}kumpari
-Dialogue: 0,0:02:17.04,0:02:19.62,Default,,0,0,0,,{\k92}Pakarinkapak {\k86}tushushun {\k76}kumpari
+Dialogue: 0,0:02:04.12,0:02:06.68,Default,,0,0,0,,{\k45}Achi {\k47}taiticu {\k84}kumbari {\k80}kumbari
+Dialogue: 0,0:02:06.69,0:02:09.28,Default,,0,0,0,,{\k48}Achi {\k46}taiticu {\k82}kumbari {\k80}kumbari
+Dialogue: 0,0:02:09.29,0:02:11.86,Default,,0,0,0,,{\k95}gulpigullata {\k84}tushushun {\k78}kumari
+Dialogue: 0,0:02:11.88,0:02:14.46,Default,,0,0,0,,{\k92}gulpigullata {\k84}tushushun {\k82}kumari
+Dialogue: 0,0:02:14.46,0:02:17.04,Default,,0,0,0,,{\k92}Pakaringapak {\k86}tushushun {\k76}kumbari
+Dialogue: 0,0:02:17.04,0:02:19.62,Default,,0,0,0,,{\k92}Pakaringapak {\k86}tushushun {\k76}kumbari
 Dialogue: 0,0:02:19.62,0:02:21.62,Default,,0,0,0,,
