@@ -2,23 +2,23 @@
     {
         "level": 1,
         "showWords": [
-            "Jatun Taita \/Hatun Taita",
-            "  Jatun Mama\/Hatun Mama",
-            " Cucha\/Kucha",
-            "  Jachun\/Hachu",
-            " Curi\/Kuri"
+            "jatun taita-hatun taita",
+            "  jatun mama-hatun mama",
+            " cucha-kucha",
+            "  jachun-hachu",
+            " curi-kuri"
         ],
-        "wordValid": "Jatun Taita \/Hatun Taita",
+        "wordValid": "jatun taita-hatun taita ",
         "wordTranslated": "ABUELO"
     },
     {
         "level": 2,
         "showWords": [
             "maki",
-            " Alpa\/ Allpa",
-            " Pungu \/ Punku",
-            " Samanawasi",
-            " Puca\/Puka"
+            " alpa-allpa",
+            " pungu-punku",
+            " samanawasi",
+            " puca-puka"
         ],
         "wordValid": "maki",
         "wordTranslated": "MANOS"
@@ -26,98 +26,98 @@
     {
         "level": 3,
         "showWords": [
-            "Rricuy \/ Rikuna",
-            " Cucha\/Kucha ",
-            " Atalpa\/Atallpa",
-            " Kaspi",
-            " \u00d1uca\/\u00d1uka"
+            "rricuy-rikuna",
+            " cucha-kucha ",
+            " atalpa-atallpa",
+            " kaspi",
+            " \u00f1uca-\u00f1uka"
         ],
-        "wordValid": "Rricuy \/ Rikuna",
+        "wordValid": "rricuy-rikuna",
         "wordTranslated": "VER"
     },
     {
         "level": 4,
         "showWords": [
-            "Sara \/ Zara",
-            "  Urpigo\/ Urpiku",
-            " Wasigo\/ Wasiku",
-            " Jachun\/Hachun",
-            " Llacta \/Llakta"
+            "sara-zara",
+            "  urpigo-urpiku",
+            " wasigo-wasiku",
+            " jachun-hachun",
+            " llacta-llakta"
         ],
-        "wordValid": "Sara \/ Zara",
+        "wordValid": "sara-zara",
         "wordTranslated": "MAIZ"
     },
     {
         "level": 5,
         "showWords": [
-            "Ushi",
-            " Maki",
-            " Sara",
-            " Wasi",
-            " Runa"
+            "ushi",
+            " maki",
+            " sara",
+            " wasi",
+            " runa"
         ],
-        "wordValid": "Ushi",
+        "wordValid": "ushi",
         "wordTranslated": "HIJAS"
     },
     {
         "level": 6,
         "showWords": [
-            "Sisa",
-            " Kaspi",
+            "sisa",
+            " kaspi",
             " wawa",
             " shimi",
-            " Uma"
+            " uma"
         ],
-        "wordValid": "Sisa",
+        "wordValid": "sisa",
         "wordTranslated": "FLORES"
     },
     {
         "level": 7,
         "showWords": [
-            "Ushtacuna \/Ushutacuna",
-            " Pamba\/pampa",
-            " Curi\/Kuri",
-            " Cucha\/ Kucha",
-            " Jawa\/Hawa",
-            " Rricuy\/Ricuna"
+            "ushtacuna-ushutacuna",
+            " pamba-pampa",
+            " curi-kuri",
+            " cucha-kucha",
+            " jawa-hawa",
+            " rricuy-ricuna"
         ],
-        "wordValid": "Ushtacuna \/Ushutacuna",
+        "wordValid": "ushtacuna-ushutacuna",
         "wordTranslated": "ZAPATOS (ALPARGATES)"
     },
     {
         "level": 8,
         "showWords": [
-            "\u00d1an",
-            " Maki",
-            " Uma",
-            " Kamya",
-            " Sara"
+            "\u00f1an",
+            " maki",
+            " uma",
+            " kamya",
+            " sara"
         ],
-        "wordValid": "\u00d1an",
+        "wordValid": "\u00f1an",
         "wordTranslated": "CAMINO"
     },
     {
         "level": 9,
         "showWords": [
-            "Muchiju",
-            " Shimi",
-            "  Wagra",
-            " Killu",
-            " Yana"
+            "muchiju",
+            " shimi",
+            "  wagra",
+            " killu",
+            " yana"
         ],
-        "wordValid": "Muchiju",
+        "wordValid": "muchiju",
         "wordTranslated": "SOMBRERO"
     },
     {
         "level": 10,
         "showWords": [
-            "Urku \/Urcu",
-            "  Rrimay\/Riman",
-            "  Jatun Taita\/ Hatun Taita ",
-            " Paycuna\/Paykuna",
-            " \u00d1uca\/\u00d1uka"
+            "urku-urcu",
+            "  rrimay-riman",
+            "  jatun taita-hatun taita ",
+            " paycuna-paykuna",
+            " \u00f1uca-\u00f1uka"
         ],
-        "wordValid": "Urku \/Urcu ",
+        "wordValid": "urku-urcu ",
         "wordTranslated": "MONTA\u00d1A "
     }
 ]

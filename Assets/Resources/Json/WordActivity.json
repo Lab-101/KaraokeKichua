@@ -2,150 +2,150 @@
     {
         "level": 1,
         "showWords": [
-            "Urpigu\/Urpiku",
-            "\u00f1abi\/\u00d1awi",
-            "Jatun\/Hatun",
-            "Wasi",
-            "Pay"
+            "urpigu-urpiku",
+            "\u00f1abi-\u00f1awi",
+            "jatun-hatun",
+            "wasi",
+            "pay"
         ],
         "wordsValids": [
-            "Urpigu\/Urpiku",
-            "\u00f1abi\/\u00d1awi"
+            "urpigu-urpiku",
+            "\u00f1abi-\u00f1awi"
         ],
         "name": "URPIKU"
     },
     {
         "level": 2,
         "showWords": [
-            "Jiwa\/Hiwa",
-            "Churo\/Churu",
-            "Wagra",
-            "Puca\/Puka",
-            "Ali\/Alli"
+            "jiwa-hiwa",
+            "churo-churu",
+            "wagra",
+            "puca-puka",
+            "ali-alli"
         ],
         "wordsValids": [
-            "Jiwa\/Hiwa",
-            "Churo\/Churu"
+            "jiwa-hiwa",
+            "churo-churu"
         ],
         "name": "HIWA"
     },
     {
         "level": 3,
         "showWords": [
-            "Sumak",
-            "shungu\/Shunku",
-            "Maki",
-            "Chaki",
-            "Shimi"
+            "sumak",
+            "shungu-shunku",
+            "maki",
+            "chaki",
+            "shimi"
         ],
         "wordsValids": [
-            "Sumak",
-            "shungu\/Shunku"
+            "sumak",
+            "shungu-shunku"
         ],
         "name": "SUMAKWARMI"
     },
     {
         "level": 4,
         "showWords": [
-            "Aeroplanuta",
-            "Puyu",
-            "Umasapa",
-            "Rin",
-            "Urco\/Urku"
+            "aeroplanuta",
+            "puyu",
+            "umasapa",
+            "rin",
+            "urco-urku"
         ],
         "wordsValids": [
-            "Aeroplanuta",
-            "Puyu"
+            "aeroplanuta",
+            "puyu"
         ],
         "name": "AEROPLANO"
     },
     {
         "level": 5,
         "showWords": [
-            "yanawagra\/yanawakra",
-            "Kulki\/Kullki",
-            "Pacari\/Pakary",
-            "Kusa",
-            "Wa\u00f1usca\/Wa\u00f1uska"
+            "yanawagra-yanawakra",
+            "kulki-kullki",
+            "pacari-pakary",
+            "kusa",
+            "wa\u00f1usca-wa\u00f1uska"
         ],
         "wordsValids": [
-            "yanawagra\/yanawakra",
-            "Kulki\/Kullki"
+            "yanawagra-yanawakra",
+            "kulki-kullki"
         ],
         "name": "CHARIPANI"
     },
     {
         "level": 6,
         "showWords": [
-            "Tia",
-            "Ushi",
-            "Mama",
-            "Taita",
-            "Wambra"
+            "tia",
+            "ushi",
+            "mama",
+            "taita",
+            "wambra"
         ],
         "wordsValids": [
-            "Tia",
-            "Ushi"
+            "tia",
+            "ushi"
         ],
         "name": "TiaMamalla"
     },
     {
         "level": 7,
         "showWords": [
-            "Tushuy",
-            "Pacari\/Pakari",
-            "Micuy",
-            "Ricuy\/Rikuy",
-            "Munay"
+            "tushuy",
+            "pacari-pakari",
+            "micuy",
+            "ricuy-rikuy",
+            "munay"
         ],
         "wordsValids": [
-            "Tushuy",
-            "Pacari\/Pakari"
+            "tushuy",
+            "pacari-pakari"
         ],
         "name": "ACHIMAMITAKUMARI"
     },
     {
         "level": 8,
         "showWords": [
-            "Warmi",
-            "Wacai\/Wakay",
-            "Alcu\/Alku",
-            "\u00d1ucanchi",
-            "Sumak"
+            "warmi",
+            "wacai-wakay",
+            "alcu-alku",
+            "\u00f1ucanchi",
+            "sumak"
         ],
         "wordsValids": [
-            "Warmi",
-            "Wacai\/Wakay"
+            "warmi",
+            "wacai-wakay"
         ],
         "name": "TELEFONO"
     },
     {
         "level": 9,
         "showWords": [
-            "Sisakukuna\/Sisagokuna",
-            "Sarakuta\/Saragota",
-            "Kuchi",
-            "Wagra",
-            "Jiwa\/Hiwa"
+            "sisakukuna-sisagokuna",
+            "sarakuta-saragota",
+            "kuchi",
+            "wagra",
+            "jiwa-hiwa"
         ],
         "wordsValids": [
-            "Sisakukuna\/Sisagokuna",
-            "Sarakuta\/Saragota"
+            "sisakukuna-sisagokuna",
+            "sarakuta-saragota"
         ],
         "name": "KUSAWARMI"
     },
     {
         "level": 10,
         "showWords": [
-            "Shimita",
-            "\u00d1an",
-            "Uma",
-            "Inti",
-            "Tuta"
+            "shimita",
+            "\u00f1an",
+            "uma",
+            "inti",
+            "tuta"
         ],
         "wordsValids": [
-            "Shimita",
-            "\u00d1an"
+            "shimita",
+            "\u00f1an"
         ],
         "name": "SUMAKWARMI"
     }
