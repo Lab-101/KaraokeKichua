@@ -7,7 +7,7 @@ public class WordAudioPlayer : MonoBehaviour {
 
 	public void SetWordToPlay (string word){
 		if (word != null) {
-			wordAudioClip = Resources.Load ("word_records/palabra_" + word, typeof(AudioClip)) as AudioClip;
+			wordAudioClip = Resources.Load ("word_records/palabra_" + word.ToLower(), typeof(AudioClip)) as AudioClip;
 			SetAudioClipToAudioSource (wordAudioClip);
 		}
 	}
