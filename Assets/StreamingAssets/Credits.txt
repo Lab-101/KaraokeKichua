@@ -1,0 +1,38 @@
+<size=60><b>Runa Shimi</b></size>
+
+Es una aplicación construida bajo el desarrollo del proyecto titulado <b>Aplicación Móvil para la Preservación y el Fomento del uso  de la Lengua Tradicional de la Comunidad Kichwa de  Sesquilé, Cundinamarca</b>, iniciativa seleccionada en la CONVOCATORIA NACIONAL DE EXTENSIÓN SOLIDARIA PARA EL FORTALECIMIENTO DE LA INNOVACIÓN SOCIAL EN LA UNIVERSIDAD NACIONAL DE COLOMBIA, 2014. El proyecto se desarrolló entre mes de noviembre de 2014 y julio de 2015 gracias a:
+
+<size=40>CABILDO KICHWA DE SESQUILÉ</size>
+
+Agradecimientos a la comunidad en general, al antiguo gobernador Samuel Cushcagua y en especial a los señores:
+
+<b>Fabián Remache, Gobernador  en 2015
+Juan Cuschacugua, Autoridad Mayor
+José Carrascal,  Autoridad Mayor</b>
+
+Quienes apoyaron el proceso lingüístico y etnográfico proporcionando  su conocimiento e historias de vida para construir de manera participativa esta herramienta tecnológica.
+
+Al señor José Villagrán presidente de la Organización Nacional de Pueblo Indígena Kichwa en Colombia ONPICK, quien facilitó el contacto con la comunidad de  Sesquilé.
+
+<size=40>VIVELAB Bogotá</size>
+
+Equipo de desarrollo y diseño
+<Equipo CREAR>
+
+<size=40>Equipo de Ciencias Humanas</size>
+
+<b>Yamile Pérez Poveda,</b>
+
+Lingüista con énfasis en lenguas indígenas y criollas de Colombia egresada de la Universidad Nacional. Quien realizó el levantamiento y análisis de la información gramatical y fonética de la lengua.
+
+<b>Catalina García Acevedo,</b>
+
+Antropóloga, Egresada de la Universidad de Colombia.  Recolección etnográfica, trabajo con  comunidad y construcción de contenidos y narrativas de la aplicación. 
+
+<b>CIER</b>
+
+Dany García, Productor Audiovisual,  encargado de la grabación de Audio en Estudio
+Jhazley Pinzón, quien realizó la   Edición del sonido para la aplicación
+
+<b>FOTOGRAFÍAS EN LA APLICACIÓN</b>
+Sergio Castro Méndez (Nivel 1), Catalina García (Niveles 2,4,5,6,7, 8, 9, 10)  y Luis Villagrán (Nivel 3), tomadas en Otavalo, Ecuador en 2013, archivos personales.

@@ -4,15 +4,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Credits : MonoBehaviour {
-	[SerializeField]
-	[Multiline]
-	private string creditDescription;
+	public TextAsset creditsFile;
 	
 	[SerializeField]
 	private Text textField;
 
 	void Awake(){
-		textField.text = creditDescription;
+		textField.text = creditsFile.text;
 	}
 
 	public void SetActive(){
