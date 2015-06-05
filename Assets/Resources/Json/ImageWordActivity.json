@@ -3,34 +3,34 @@
         "level": 1,
         "showWords": [
             "jatun taita-hatun taita",
-            "  jatun mama-hatun mama",
-            " cucha-kucha",
-            "  jachun-hachu",
-            " curi-kuri"
+            "jatun mama-hatun mama",
+            "cucha-kucha",
+            "jachun-hachu",
+            "curi-kuri"
         ],
-        "wordValid": "jatun taita-hatun taita ",
+        "wordValid": "jatun taita-hatun taita",
         "wordTranslated": "ABUELO"
     },
     {
         "level": 2,
         "showWords": [
             "maki",
-            " alpa-allpa",
-            " pungu-punku",
-            " samanawasi",
-            " puca-puka"
+            "alpa-allpa",
+            "pungu-punku",
+            "samanawasi",
+            "puca-puka"
         ],
         "wordValid": "maki",
-        "wordTranslated": "MANOS"
+        "wordTranslated": "MANO"
     },
     {
         "level": 3,
         "showWords": [
             "rricuy-rikuna",
-            " cucha-kucha ",
-            " atalpa-atallpa",
-            " kaspi",
-            " \u00f1uca-\u00f1uka"
+            "cucha-kucha",
+            "atalpa-atallpa",
+            "kaspi",
+            "\u00f1uca-\u00f1uka"
         ],
         "wordValid": "rricuy-rikuna",
         "wordTranslated": "VER"
@@ -39,10 +39,10 @@
         "level": 4,
         "showWords": [
             "sara-zara",
-            "  urpigo-urpiku",
-            " wasigo-wasiku",
-            " jachun-hachun",
-            " llacta-llakta"
+            "urpigo-urpiku",
+            "wasigo-wasiku",
+            "jachun-hachun",
+            "llacta-llakta"
         ],
         "wordValid": "sara-zara",
         "wordTranslated": "MAIZ"
@@ -51,35 +51,35 @@
         "level": 5,
         "showWords": [
             "ushi",
-            " maki",
-            " sara",
-            " wasi",
-            " runa"
+            "maki",
+            "sara",
+            "wasi",
+            "runa"
         ],
         "wordValid": "ushi",
-        "wordTranslated": "HIJAS"
+        "wordTranslated": "HIJA"
     },
     {
         "level": 6,
         "showWords": [
             "sisa",
-            " kaspi",
-            " wawa",
-            " shimi",
-            " uma"
+            "kaspi",
+            "wawa",
+            "shimi",
+            "uma"
         ],
         "wordValid": "sisa",
-        "wordTranslated": "FLORES"
+        "wordTranslated": "FLOR"
     },
     {
         "level": 7,
         "showWords": [
             "ushtacuna-ushutacuna",
-            " pamba-pampa",
-            " curi-kuri",
-            " cucha-kucha",
-            " jawa-hawa",
-            " rricuy-ricuna"
+            "pamba-pampa",
+            "curi-kuri",
+            "cucha-kucha",
+            "jawa-hawa",
+            "rricuy-ricuna"
         ],
         "wordValid": "ushtacuna-ushutacuna",
         "wordTranslated": "ZAPATOS (ALPARGATES)"
@@ -88,10 +88,10 @@
         "level": 8,
         "showWords": [
             "\u00f1an",
-            " maki",
-            " uma",
-            " kamya",
-            " sara"
+            "maki",
+            "uma",
+            "kamya",
+            "sara"
         ],
         "wordValid": "\u00f1an",
         "wordTranslated": "CAMINO"
@@ -100,10 +100,10 @@
         "level": 9,
         "showWords": [
             "muchiju",
-            " shimi",
-            "  wagra",
-            " killu",
-            " yana"
+            "shimi",
+            "wagra",
+            "killu",
+            "yana"
         ],
         "wordValid": "muchiju",
         "wordTranslated": "SOMBRERO"
@@ -112,12 +112,12 @@
         "level": 10,
         "showWords": [
             "urku-urcu",
-            "  rrimay-riman",
-            "  jatun taita-hatun taita ",
-            " paycuna-paykuna",
-            " \u00f1uca-\u00f1uka"
+            "rrimay-riman",
+            "jatun taita-hatun taita",
+            "paycuna-paykuna",
+            "\u00f1uca-\u00f1uka"
         ],
-        "wordValid": "urku-urcu ",
+        "wordValid": "urku-urcu",
         "wordTranslated": "MONTA\u00d1A "
     }
 ]

@@ -21,7 +21,7 @@
             "churo-churu",
             "wagra",
             "puca-puka",
-            "ali-alli"
+            "ali-alli "
         ],
         "wordsValids": [
             "jiwa-hiwa",
@@ -36,13 +36,13 @@
             "shungu-shunku",
             "maki",
             "chaki",
-            "shimi"
+            "shimi "
         ],
         "wordsValids": [
             "sumak",
             "shungu-shunku"
         ],
-        "name": "SUMAKWARMI"
+        "name": "SUMAK WARMI"
     },
     {
         "level": 4,
@@ -62,14 +62,14 @@
     {
         "level": 5,
         "showWords": [
-            "yanawagra-yanawakra",
+            "yana wagra-yana wakra",
             "kulki-kullki",
             "pacari-pakary",
             "kusa",
             "wa\u00f1usca-wa\u00f1uska"
         ],
         "wordsValids": [
-            "yanawagra-yanawakra",
+            "yana wagra-yana wakra",
             "kulki-kullki"
         ],
         "name": "CHARIPANI"
@@ -87,7 +87,7 @@
             "tia",
             "ushi"
         ],
-        "name": "TiaMamalla"
+        "name": "Tia Mamalla"
     },
     {
         "level": 7,
@@ -102,7 +102,7 @@
             "tushuy",
             "pacari-pakari"
         ],
-        "name": "ACHIMAMITAKUMARI"
+        "name": "ACHI MAMITA KUMARI"
     },
     {
         "level": 8,
@@ -132,7 +132,7 @@
             "sisakukuna-sisagokuna",
             "sarakuta-saragota"
         ],
-        "name": "KUSAWARMI"
+        "name": "KUSA WARMI"
     },
     {
         "level": 10,
@@ -147,6 +147,6 @@
             "shimita",
             "\u00f1an"
         ],
-        "name": "SUMAKWARMI"
+        "name": "SUMAK WARMI"
     }
 ]
