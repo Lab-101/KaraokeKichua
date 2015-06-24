@@ -1,152 +1,152 @@
 [
     {
-        "level": 1,
-        "showWords": [
-            "urpigu-urpiku",
-            "\u00f1abi-\u00f1awi",
-            "jatun-hatun",
-            "wasi",
-            "pay"
+       "level": 1,
+       "showWords": [
+           "urpigu-urpiku",
+           "\u00f1abi-\u00f1awi",
+           "jatun-hatun",
+           "wasi",
+           "pay"
         ],
-        "wordsValids": [
-            "urpigu-urpiku",
-            "\u00f1abi-\u00f1awi"
+       "wordsValids": [
+           "urpigu-urpiku",
+           "\u00f1abi-\u00f1awi"
         ],
-        "name": "URPIKU"
+       "name":"URPIKU"
     },
     {
-        "level": 2,
-        "showWords": [
-            "jiwa-hiwa",
-            "churo-churu",
-            "wagra",
-            "puca-puka",
-            "ali-alli "
+       "level": 2,
+       "showWords": [
+           "jiwa-hiwa",
+           "churo-churu",
+           "wagra",
+           "puca-puka",
+           "ali-alli"
         ],
-        "wordsValids": [
-            "jiwa-hiwa",
-            "churo-churu"
+       "wordsValids": [
+           "jiwa-hiwa",
+           "churo-churu"
         ],
-        "name": "HIWA"
+       "name":"HIWA"
     },
     {
-        "level": 3,
-        "showWords": [
-            "sumak",
-            "shungu-shunku",
-            "maki",
-            "chaki",
-            "shimi "
+       "level": 3,
+       "showWords": [
+           "sumak",
+           "shungu-shunku",
+           "maki",
+           "chaki",
+           "shimi"
         ],
-        "wordsValids": [
-            "sumak",
-            "shungu-shunku"
+       "wordsValids": [
+           "sumak",
+           "shungu-shunku"
         ],
-        "name": "SUMAK WARMI"
+       "name":"SUMAK WARMI"
     },
     {
-        "level": 4,
-        "showWords": [
-            "aeroplanuta",
-            "puyu",
-            "umasapa",
-            "rin",
-            "urco-urku"
+       "level": 4,
+       "showWords": [
+           "aeroplanuta",
+           "puyu",
+           "umasapa",
+           "rin",
+           "urco-urku"
         ],
-        "wordsValids": [
-            "aeroplanuta",
-            "puyu"
+       "wordsValids": [
+           "aeroplanuta",
+           "puyu"
         ],
-        "name": "AEROPLANO"
+       "name":"AEROPLANO"
     },
     {
-        "level": 5,
-        "showWords": [
-            "yana wagra-yana wakra",
-            "kulki-kullki",
-            "pacari-pakary",
-            "kusa",
-            "wa\u00f1usca-wa\u00f1uska"
+       "level": 5,
+       "showWords": [
+           "yana wagra-yana wakra",
+           "kulki-kullki",
+           "pacari-pakary",
+           "kusa",
+           "wa\u00f1usca-wa\u00f1uska"
         ],
-        "wordsValids": [
-            "yana wagra-yana wakra",
-            "kulki-kullki"
+       "wordsValids": [
+           "yana wagra-yana wakra",
+           "kulki-kullki"
         ],
-        "name": "CHARIPANI"
+       "name":"CHARIPANI"
     },
     {
-        "level": 6,
-        "showWords": [
-            "tia",
-            "ushi",
-            "mama",
-            "taita",
-            "wambra"
+       "level": 6,
+       "showWords": [
+           "tia",
+           "ushi",
+           "mama",
+           "taita",
+           "wambra"
         ],
-        "wordsValids": [
-            "tia",
-            "ushi"
+       "wordsValids": [
+           "tia",
+           "ushi"
         ],
-        "name": "Tia Mamalla"
+       "name":"Tia Mamalla"
     },
     {
-        "level": 7,
-        "showWords": [
-            "tushuy",
-            "pacari-pakari",
-            "micuy",
-            "ricuy-rikuy",
-            "munay"
+       "level": 7,
+       "showWords": [
+           "tushuy",
+           "pacari-pakari",
+           "micuy",
+           "ricuy-rikuy",
+           "munay"
         ],
-        "wordsValids": [
-            "tushuy",
-            "pacari-pakari"
+       "wordsValids": [
+           "tushuy",
+           "pacari-pakari"
         ],
-        "name": "ACHI MAMITA KUMARI"
+       "name":"ACHI MAMITA KUMARI"
     },
     {
-        "level": 8,
-        "showWords": [
-            "warmi",
-            "wacai-wakay",
-            "alcu-alku",
-            "\u00f1ucanchi",
-            "sumak"
+       "level": 8,
+       "showWords": [
+           "warmi",
+           "wacai-wakay",
+           "alcu-alku",
+           "\u00f1ucanchi",
+           "sumak"
         ],
-        "wordsValids": [
-            "warmi",
-            "wacai-wakay"
+       "wordsValids": [
+           "warmi",
+           "wacai-wakay"
         ],
-        "name": "TELEFONO"
+       "name":"TELEFONO"
     },
     {
-        "level": 9,
-        "showWords": [
-            "sisakukuna-sisagokuna",
-            "sarakuta-saragota",
-            "kuchi",
-            "wagra",
-            "jiwa-hiwa"
+       "level": 9,
+       "showWords": [
+           "sisakukuna-sisagokuna",
+           "sarakuta-saragota",
+           "kuchi",
+           "wagra",
+           "jiwa-hiwa"
         ],
-        "wordsValids": [
-            "sisakukuna-sisagokuna",
-            "sarakuta-saragota"
+       "wordsValids": [
+           "sisakukuna-sisagokuna",
+           "sarakuta-saragota"
         ],
-        "name": "KUSA WARMI"
+       "name":"KUSA WARMI"
     },
     {
-        "level": 10,
-        "showWords": [
-            "shimita",
-            "\u00f1an",
-            "uma",
-            "inti",
-            "tuta"
+       "level": 10,
+       "showWords": [
+           "shimita",
+           "\u00f1an",
+           "uma",
+           "inti",
+           "tuta"
         ],
-        "wordsValids": [
-            "shimita",
-            "\u00f1an"
+       "wordsValids": [
+           "shimita",
+           "\u00f1an"
         ],
-        "name": "SUMAK WARMI"
+       "name":"SUMAK WARMI"
     }
 ]

@@ -6,11 +6,16 @@ ScriptType: v4.00+
 WrapStyle: 0
 ScaledBorderAndShadow: yes
 YCbCr Matrix: None
+PlayResX: 640
+PlayResY: 480
 
 [Aegisub Project Garbage]
-Audio File: C:/Users/Desarrollo/Desktop/Canciones/Folklore Latinoamericano - Jihua (Charijayac).mp3
-Scroll Position: 16
-Active Line: 48
+Audio File: ../../Resources/HIWA.mp3
+Video File: ?dummy:23.976000:40000:640:480:47:163:254:
+Video AR Value: 1.333333
+Scroll Position: 12
+Active Line: 50
+Video Position: 7296
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
@@ -18,52 +23,56 @@ Style: Default,Arial,20,&H00FFFFFF,&H000000FF,&H00000000,&H00000000,0,0,0,0,100,
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:23.00,0:00:27.00,Default,,0,0,0,,Hiwaaaa….
-Dialogue: 0,0:00:34.00,0:00:35.92,Default,,0,0,0,,churu apita mikukra
-Dialogue: 0,0:00:36.00,0:00:39.00,Default,,0,0,0,,imashutimi kanki kutin ni kutin ni
-Dialogue: 0,0:00:41.00,0:00:43.00,Default,,0,0,0,,sssss…
-Dialogue: 0,0:00:44.00,0:00:48.00,Default,,0,0,0,,Azuw azuw compadrito
-Dialogue: 0,0:00:59.00,0:01:02.00,Default,,0,0,0,,Asi asita tushushun
-Dialogue: 0,0:01:14.00,0:01:17.00,Default,,0,0,0,,Churay runa karaku
-Dialogue: 0,0:01:18.00,0:01:19.00,Default,,0,0,0,,assss…
-Dialogue: 0,0:01:19.00,0:01:23.00,Default,,0,0,0,,Ñukataka shina churachun munan yarin churasha
-Dialogue: 0,0:01:24.00,0:01:28.00,Default,,0,0,0,,ñukapa kumpasha...
-Dialogue: 0,0:01:28.00,0:01:30.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:01:30.00,0:01:33.00,Default,,0,0,0,,Churu apita mikusha
-Dialogue: 0,0:01:34.00,0:01:36.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:01:36.00,0:01:44.00,Default,,0,0,0,,Churu apita mikusha…jaaaaaaajaayyyy…
-Dialogue: 0,0:01:48.00,0:01:50.00,Default,,0,0,0,,Uchika uchika purichichi
-Dialogue: 0,0:01:50.00,0:01:52.00,Default,,0,0,0,,Azuwata azuwata compadrito
-Dialogue: 0,0:01:53.00,0:01:58.00,Default,,0,0,0,,imata nikunkiyari kiwa yakutamari upiwkrinchi jajayyyy….
-Dialogue: 0,0:02:00.00,0:02:04.00,Default,,0,0,0,,esssss... Churay…ssss
-Dialogue: 0,0:02:07.00,0:02:10.00,Default,,0,0,0,,Chilka yakutachu upiwkrinki
-Dialogue: 0,0:02:10.00,0:02:14.00,Default,,0,0,0,,Chaytallata mi upiwna urmanka churankapaka
-Dialogue: 0,0:02:16.00,0:02:19.00,Default,,0,0,0,,aahh… jajaaaa
-Dialogue: 0,0:02:20.00,0:02:25.00,Default,,0,0,0,,rikcharinki karaku
-Dialogue: 0,0:02:37.00,0:02:39.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:02:39.00,0:02:40.00,Default,,0,0,0,,Churu apita mikusha
-Dialogue: 0,0:02:40.00,0:02:43.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:02:43.00,0:02:48.00,Default,,0,0,0,,Churu apita mikusha…jaaaaaaajaayyyy…
-Dialogue: 0,0:02:55.00,0:02:58.00,Default,,0,0,0,,Uchika uchika purichichi
-Dialogue: 0,0:02:58.00,0:03:00.00,Default,,0,0,0,,Azuwata azuwata compadrito
-Dialogue: 0,0:03:00.00,0:03:04.00,Default,,0,0,0,,imata nikunkiyari kiwa yakutamari upiwkrinchi jajayyyy…
-Dialogue: 0,0:03:05.00,0:03:07.00,Default,,0,0,0,,esssss...
-Dialogue: 0,0:03:12.00,0:03:14.00,Default,,0,0,0,,Chilka yakutachu upiwkrinki
-Dialogue: 0,0:03:14.00,0:03:22.00,Default,,0,0,0,,Chaytallata mi upiwna urmanka churankapaka
-Dialogue: 0,0:03:43.00,0:03:45.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:03:45.00,0:03:47.00,Default,,0,0,0,,Churu apita mikusha
-Dialogue: 0,0:03:47.00,0:03:49.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:03:49.00,0:03:54.00,Default,,0,0,0,,Churu apita mikusha…jaaaaaaajaayyyy…
-Dialogue: 0,0:03:57.00,0:04:00.00,Default,,0,0,0,,mikunkapakllaka atishami
-Dialogue: 0,0:04:01.00,0:04:03.00,Default,,0,0,0,,Uchika uchika purichichi
-Dialogue: 0,0:04:03.00,0:04:06.00,Default,,0,0,0,,Azuwata azuwata compadrito
-Dialogue: 0,0:04:07.00,0:04:12.00,Default,,0,0,0,,imata nikunkiyari kiwa yakutamari upiwkrinchi jajayyyy….
-Dialogue: 0,0:04:14.00,0:04:16.00,Default,,0,0,0,,esssss...
-Dialogue: 0,0:04:19.00,0:04:22.00,Default,,0,0,0,,Chilka yakutachu upiwkrinki
-Dialogue: 0,0:04:22.00,0:04:28.00,Default,,0,0,0,,Chaytallata mi upiwna urmanka churankapaka
-Dialogue: 0,0:04:35.00,0:04:40.00,Default,,0,0,0,,rikcharinki karaku
-Dialogue: 0,0:04:50.00,0:04:52.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:04:52.00,0:04:54.00,Default,,0,0,0,,Churu apita mikusha
-Dialogue: 0,0:04:54.00,0:04:56.00,Default,,0,0,0,,Ahí kiwa yakuta upiasha
-Dialogue: 0,0:04:56.00,0:04:58.00,Default,,0,0,0,,Churu apita mikusha…jaaaaaaajaayyyy…
+Dialogue: 0,0:00:00.00,0:00:23.00,Default,,0,0,0,,...
+Dialogue: 0,0:00:23.00,0:00:27.00,Default,,0,0,0,,Hiwaaaa
+Dialogue: 0,0:00:27.00,0:00:33.80,Default,,0,0,0,,...
+Dialogue: 0,0:00:34.00,0:00:35.92,Default,,0,0,0,,{\k50}churu {\k5}apita {\k71}mikukra
+Dialogue: 0,0:00:36.00,0:00:39.00,Default,,0,0,0,,{\k5}imashutimi {\k153}kanki {\k8}kutin {\k58}ni {\k13}kutin {\k63}ni
+Dialogue: 0,0:00:41.00,0:00:43.00,Default,,0,0,0,,{\k200}sssss…
+Dialogue: 0,0:00:44.00,0:00:48.00,Default,,0,0,0,,{\k30}Azuw {\k30}azuw {\k200}compadrito
+Dialogue: 0,0:00:59.00,0:01:02.00,Default,,0,0,0,,{\k63}Asi {\k95}asita {\k142}tushushun
+Dialogue: 0,0:01:14.00,0:01:17.00,Default,,0,0,0,,{\k60}Churay {\k40}runa {\k100}karaku
+Dialogue: 0,0:01:18.00,0:01:19.00,Default,,0,0,0,,{\k100}assss…
+Dialogue: 0,0:01:19.00,0:01:23.00,Default,,0,0,0,,{\k87}Ñukataka {\k52}shina {\k87}churachun {\k52}munan {\k12}yarin {\k110}churasha
+Dialogue: 0,0:01:23.00,0:01:28.00,Default,,0,0,0,,{\k5}ñukapa {\k232}kumpasha...
+Dialogue: 0,0:01:29.84,0:01:32.70,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k100}upiasha
+Dialogue: 0,0:01:32.70,0:01:34.51,Default,,0,0,0,,{\k50}Churu {\k50}apita {\k10}mikusha
+Dialogue: 0,0:01:34.51,0:01:36.48,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:01:36.51,0:01:40.06,Default,,0,0,0,,{\k50}Churu {\k50}apita {\k150}mikusha…{\k461}jaaaaaaajaayyyy…
+Dialogue: 0,0:01:40.16,0:01:47.92,Default,,0,0,0,,...
+Dialogue: 0,0:01:48.42,0:01:50.50,Default,,0,0,0,,{\k23}Ucha {\k35}purichichi {\k58}ucha {\k128}purichichi
+Dialogue: 0,0:01:50.56,0:01:51.76,Default,,0,0,0,,{\k62}Azuwata {\k77}compadrito
+Dialogue: 0,0:01:53.74,0:01:58.00,Default,,0,0,0,,{\k52}imata {\k50}nikunkiyari {\k43}hiwa {\k50}yakutamari {\k103}upiwkrinchi {\k80}jajayyyy….
+Dialogue: 0,0:01:59.08,0:02:04.00,Default,,0,0,0,,{\k174}esssss... {\k226}Churay…ssss
+Dialogue: 0,0:02:06.22,0:02:08.78,Default,,0,0,0,,{\k78}Chilka {\k20}yakutachu {\k111}upiwkrinki
+Dialogue: 0,0:02:08.86,0:02:14.00,Default,,0,0,0,,{\k20}Ari {\k140}Chaytallata {\k29}mi {\k30}upiwna {\k30}urmanka {\k114}churankapaka
+Dialogue: 0,0:02:15.42,0:02:19.00,Default,,0,0,0,,{\k160}aahh… {\k140}jajaaaa
+Dialogue: 0,0:02:20.00,0:02:25.00,Default,,0,0,0,,{\k200}rikcharinki {\k167}karaku
+Dialogue: 0,0:02:37.00,0:02:39.00,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:02:39.00,0:02:40.76,Default,,0,0,0,,{\k32}Churu {\k80}apita {\k37}mikusha
+Dialogue: 0,0:02:40.76,0:02:43.00,Default,,0,0,0,,{\k62}Ay {\k63}hiwa {\k30}yakuta {\k88}upiasha
+Dialogue: 0,0:02:43.00,0:02:48.00,Default,,0,0,0,,{\k75}Churu {\k75}apita {\k105}mikusha…{\k225}jaaaaaaajaayyyy…
+Dialogue: 0,0:02:55.00,0:02:58.00,Default,,0,0,0,,{\k23}Ucha {\k35}purichichi {\k58}ucha {\k128}purichichi
+Dialogue: 0,0:02:58.00,0:02:59.62,Default,,0,0,0,,{\k62}Azuwata {\k77}compadrito
+Dialogue: 0,0:02:59.64,0:03:04.00,Default,,0,0,0,,{\k42}imata {\k130}nikunkiyari {\k35}hiwa {\k30}yakutamari {\k85}upiwkrinchi {\k77}jajayyyy…
+Dialogue: 0,0:03:05.00,0:03:07.00,Default,,0,0,0,,{\k200}esssss...
+Dialogue: 0,0:03:13.06,0:03:15.56,Default,,0,0,0,,{\k52}Chilka {\k74}yakutachu {\k74}upiwkrinki
+Dialogue: 0,0:03:15.58,0:03:20.30,Default,,0,0,0,,{\k30}Ari {\k50}Chaytallata {\k10}mi {\k50}upiwna {\k20}urmanka {\k229}churankapaka
+Dialogue: 0,0:03:20.30,0:03:41.60,Default,,0,0,0,,...
+Dialogue: 0,0:03:43.11,0:03:45.00,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:03:45.00,0:03:47.00,Default,,0,0,0,,{\k63}Churu {\k63}apita {\k74}mikusha
+Dialogue: 0,0:03:47.00,0:03:49.00,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:03:49.00,0:03:54.00,Default,,0,0,0,,{\k75}Churu {\k75}apita {\k150}mikusha…{\k225}jaaaaaaajaayyyy…
+Dialogue: 0,0:03:55.96,0:04:00.00,Default,,0,0,0,,{\k200}mikunkapakllaka {\k100}atishami
+Dialogue: 0,0:04:01.00,0:04:03.00,Default,,0,0,0,,{\k23}Ucha {\k35}purichichi {\k58}ucha {\k128}purichichi
+Dialogue: 0,0:04:03.00,0:04:06.00,Default,,0,0,0,,{\k62}Azuwata {\k77}compadrito
+Dialogue: 0,0:04:07.00,0:04:12.00,Default,,0,0,0,,{\k52}imata {\k50}nikunkiyari {\k43}hiwa {\k50}yakutamari {\k80}upiwkrinchi {\k80}jajayyyy….
+Dialogue: 0,0:04:12.00,0:04:16.00,Default,,0,0,0,,{\k200}esssss...
+Dialogue: 0,0:04:20.10,0:04:22.00,Default,,0,0,0,,{\k30}Chilka {\k50}yakutachu {\k111}upiwkrinki
+Dialogue: 0,0:04:22.00,0:04:28.00,Default,,0,0,0,,{\k30}Ari {\k50}Chaytallata {\k10}mi {\k50}upiwna {\k20}urmanka {\k229}churankapaka
+Dialogue: 0,0:04:32.46,0:04:40.00,Default,,0,0,0,,{\k200}rikcharinki {\k167}karaku
+Dialogue: 0,0:04:50.00,0:04:52.00,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:04:52.00,0:04:54.00,Default,,0,0,0,,{\k63}Churu {\k63}apita {\k74}mikusha
+Dialogue: 0,0:04:54.00,0:04:56.00,Default,,0,0,0,,{\k42}Ay {\k42}hiwa {\k58}yakuta {\k58}upiasha
+Dialogue: 0,0:04:56.00,0:04:58.00,Default,,0,0,0,,{\k50}Churu {\k50}apita {\k150}mikusha…{\k461}jaaaaaaajaayyyy…
 Dialogue: 0,0:04:58.00,0:05:00.00,Default,,0,0,0,,

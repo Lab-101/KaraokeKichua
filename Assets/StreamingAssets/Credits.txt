@@ -1,10 +1,12 @@
 <size=60><b>Runa Shimi</b></size>
 
-Es una aplicación construida bajo el desarrollo del proyecto titulado <b>Aplicación Móvil para la Preservación y el Fomento del uso  de la Lengua Tradicional de la Comunidad Kichwa de  Sesquilé, Cundinamarca</b>, iniciativa seleccionada en la CONVOCATORIA NACIONAL DE EXTENSIÓN SOLIDARIA PARA EL FORTALECIMIENTO DE LA INNOVACIÓN SOCIAL EN LA UNIVERSIDAD NACIONAL DE COLOMBIA, 2014. El proyecto se desarrolló entre mes de noviembre de 2014 y julio de 2015 gracias a:
+Es  una  aplicación  construida  bajo  el  desarrollo  del  proyecto  titulado  Aplicación  Móvil  para  la Preservación  y  el  Fomento del uso  de  la  Lengua  Tradicional de  la Comunidad Kichwa de  Sesquilé, Cundinamarca, iniciativa seleccionada en la CONVOCATORIA NACIONAL DE EXTENSIÓN SOLIDARIA PARA EL FORTALECIMIENTO DE LA INNOVACIÓN SOCIAL EN LA UNIVERSIDAD NACIONAL DE COLOMBIA, 2014. 
+
+El proyecto se desarrolló gracias a:
 
 <size=40>CABILDO KICHWA DE SESQUILÉ</size>
 
-Agradecimientos a la comunidad en general, al antiguo gobernador Samuel Cushcagua y en especial a los señores:
+Agradecimientos a la comunidad en general, al antiguo gobernador Samuel Cushcagua y en especial a los señores: 
 
 <b>Fabián Remache, Gobernador  en 2015
 Juan Cuschacugua, Autoridad Mayor
@@ -16,23 +18,49 @@ Al señor José Villagrán presidente de la Organización Nacional de Pueblo Ind
 
 <size=40>VIVELAB Bogotá</size>
 
-Equipo de desarrollo y diseño
-<Equipo CREAR>
+<b>Dirección</b>
 
-<size=40>Equipo de Ciencias Humanas</size>
+Enrique Segoviano
+Pablo Enrique Rodríguez Espinosa
 
-<b>Yamile Pérez Poveda,</b>
+Docente del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional y Director del Vivelab Bogotá, propició y facilitó la ejecución del proyecto.
+
+<b>Coordinación Proyecto</b>
+
+Jhon Alexander García Camargo
+
+Ingeniero Electricista de la Universidad Nacional de Colombia, MSc en Ingeniería Industrial de la Universidad Nacional de Colombia, quien apoyó en la metodología de trabajo, gestionando y coordinando las diferentes etapas y actividades durante el desarrollo del proyecto.
+
+Mateo Rojas - Diseñador Gráfico
+
+Oscar Romero - Diseñador Gráfico
+
+Álvaro Triana - Scrum Master
+
+Dayana Alejo - QA
+
+Camilo Bello - Desarrollador
+
+Yesid Daza Pico - Desarrollador
+
+Diego Castellanos - Desarrollador
+
+Emilio Peñaloza - Desarrollador
+
+Yamile Pérez Poveda,
 
 Lingüista con énfasis en lenguas indígenas y criollas de Colombia egresada de la Universidad Nacional. Quien realizó el levantamiento y análisis de la información gramatical y fonética de la lengua.
 
-<b>Catalina García Acevedo,</b>
+Catalina García Acevedo,
 
 Antropóloga, Egresada de la Universidad de Colombia.  Recolección etnográfica, trabajo con  comunidad y construcción de contenidos y narrativas de la aplicación. 
 
-<b>CIER</b>
+<b>CIER CENTRO</b>
 
 Dany García, Productor Audiovisual,  encargado de la grabación de Audio en Estudio
-Jhazley Pinzón, quien realizó la   Edición del sonido para la aplicación
+
+Jhazley Pinzón, quien realizó la  Edición del sonido para la aplicación
 
 <b>FOTOGRAFÍAS EN LA APLICACIÓN</b>
-Sergio Castro Méndez (Nivel 1), Catalina García (Niveles 2,4,5,6,7, 8, 9, 10)  y Luis Villagrán (Nivel 3), tomadas en Otavalo, Ecuador en 2013, archivos personales.
+
+Sergio Castro Méndez (Nivel 1), Catalina García (Niveles 2,4,5,6,7,  8, 9, 10)  y  Luis Villagrán (Nivel 3), tomadas en Otavalo, Ecuador en 2013, archivos personales.
