@@ -95,7 +95,7 @@ public class KaraokeController : MonoBehaviour {
 
 		if (string.IsNullOrEmpty (data.error)) {			
 			byte [] sourceBytes = data.bytes;
-			string fileText = Encoding.Default.GetString (sourceBytes);
+			string fileText = data.text;
 			translationSongText.text = fileText.ToString();
 		} else {			
 			translationSongText.text = "Archivo de traduccion no encontrado";

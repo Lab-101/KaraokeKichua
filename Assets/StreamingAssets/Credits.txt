@@ -1,6 +1,6 @@
 <size=60><b>Runa Shimi</b></size>
 
-Es  una  aplicación  construida  bajo  el  desarrollo  del  proyecto  titulado  Aplicación  Móvil  para  la Preservación  y  el  Fomento del uso  de  la  Lengua  Tradicional de  la Comunidad Kichwa de  Sesquilé, Cundinamarca, iniciativa seleccionada en la CONVOCATORIA NACIONAL DE EXTENSIÓN SOLIDARIA PARA EL FORTALECIMIENTO DE LA INNOVACIÓN SOCIAL EN LA UNIVERSIDAD NACIONAL DE COLOMBIA, 2014. 
+Es  una  aplicación  construida en el marco del  proyecto  titulado  <b>Aplicación  Móvil  para  la Preservación  y  el  Fomento del uso  de  la  Lengua  Tradicional de  la Comunidad Kichwa de  Sesquilé, Cundinamarca</b>, iniciativa seleccionada en la <b>CONVOCATORIA NACIONAL DE EXTENSIÓN SOLIDARIA PARA EL FORTALECIMIENTO DE LA INNOVACIÓN SOCIAL EN LA UNIVERSIDAD NACIONAL DE COLOMBIA, 2014.</b> 
 
 El proyecto se desarrolló gracias a:
 
@@ -8,58 +8,53 @@ El proyecto se desarrolló gracias a:
 
 Agradecimientos a la comunidad en general, al antiguo gobernador Samuel Cushcagua y en especial a los señores: 
 
-<b>Fabián Remache, Gobernador  en 2015
+Fabián Remache, Gobernador  en 2015
 Juan Cuschacugua, Autoridad Mayor
-José Carrascal,  Autoridad Mayor</b>
+José Carrascal,  Autoridad Mayor
 
 Quienes apoyaron el proceso lingüístico y etnográfico proporcionando  su conocimiento e historias de vida para construir de manera participativa esta herramienta tecnológica.
 
-Al señor José Villagrán presidente de la Organización Nacional de Pueblo Indígena Kichwa en Colombia ONPICK, quien facilitó el contacto con la comunidad de  Sesquilé.
+Mención especial al señor José Villagrán, presidente de la Organización Nacional de Pueblo Indígena Kichwa en Colombia ONPICK, quien facilitó el contacto con la comunidad de  Sesquilé.
 
 <size=40>VIVELAB Bogotá</size>
 
-<b>Dirección</b>
+Laboratorio abierto de innovación de los ciudadanos
 
-Enrique Segoviano
+Quiénes lideraron y apoyaron la iniciativa, mayor información www.vivelabbogota.com
+
+<size=30><b>Dirección</b></size>
+
 Pablo Enrique Rodríguez Espinosa
 
-Docente del Departamento de Ingeniería Eléctrica y Electrónica de la Universidad Nacional y Director del Vivelab Bogotá, propició y facilitó la ejecución del proyecto.
-
-<b>Coordinación Proyecto</b>
+<size=30><b>Coordinación Proyecto</b></size>
 
 Jhon Alexander García Camargo
 
-Ingeniero Electricista de la Universidad Nacional de Colombia, MSc en Ingeniería Industrial de la Universidad Nacional de Colombia, quien apoyó en la metodología de trabajo, gestionando y coordinando las diferentes etapas y actividades durante el desarrollo del proyecto.
+<size=30><b>Equipo de Diseño</b></size>
 
-Mateo Rojas - Diseñador Gráfico
+Mateo Rojas - Dirección Creativa
+Oscar Romero - Diseño de interfaces - Arte 2D
 
-Oscar Romero - Diseñador Gráfico
+<size=30><b>Equipo de Desarrollo</b></size>
 
 Álvaro Triana - Scrum Master
-
 Dayana Alejo - QA
-
 Camilo Bello - Desarrollador
-
 Yesid Daza Pico - Desarrollador
-
 Diego Castellanos - Desarrollador
-
 Emilio Peñaloza - Desarrollador
 
-Yamile Pérez Poveda,
+<size=30><b>Equipo Ciencias Humanas</b></size>
 
-Lingüista con énfasis en lenguas indígenas y criollas de Colombia egresada de la Universidad Nacional. Quien realizó el levantamiento y análisis de la información gramatical y fonética de la lengua.
-
-Catalina García Acevedo,
-
-Antropóloga, Egresada de la Universidad de Colombia.  Recolección etnográfica, trabajo con  comunidad y construcción de contenidos y narrativas de la aplicación. 
+Yamile Pérez Poveda - Lingüista
+Catalina García Acevedo - Antropóloga
 
 <b>CIER CENTRO</b>
 
-Dany García, Productor Audiovisual,  encargado de la grabación de Audio en Estudio
+Centro de Innovación Educativo Regional, mayor información www.ciercentro.edu.co 
 
-Jhazley Pinzón, quien realizó la  Edición del sonido para la aplicación
+Dany García - Productor Audiovisual
+Jhazley Pinzón - Edición de sonido 
 
 <b>FOTOGRAFÍAS EN LA APLICACIÓN</b>
 
