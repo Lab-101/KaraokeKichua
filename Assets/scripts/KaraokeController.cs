@@ -70,8 +70,9 @@ public class KaraokeController : MonoBehaviour {
 	}
 	
 	public void SetSongName(string name){
-		songNameText.text = name;
 		songNameString = name;
+		if(name == "TELEFONO")name = "Teléfono";
+		songNameText.text = name;
 	}
 
 	private void ChangePauseState(){
