@@ -448,12 +448,12 @@
                 "phraseTranslated": "HASTA MA\u00d1ANA",
                 "words": [
                     {
-                        "text": "kayakama"
+                        "text": "kayakaman"
                     }
                 ]
             },
             {
-                "phrase": "kausanguichu wa\u00f1ushca yanica",
+                "phrase": "kausanguichu wa\u00f1ushka yanica",
                 "phraseTranslated": "\u00bfVIVES? (\u00bfVives? Pens\u00e9 que hab\u00edas muerto \u00a1Broma!)",
                 "words": [
                     {
@@ -462,16 +462,16 @@
                 ]
             },
             {
-                "phrase": "kausanguichu wa\u00f1ushca yanica",
+                "phrase": "kausanguichu wa\u00f1ushka yanica",
                 "phraseTranslated": "\u00bfVIVES? (\u00bfVives? Pens\u00e9 que hab\u00edas muerto \u00a1Broma!)",
                 "words": [
                     {
-                        "text": "wa\u00f1ushca"
+                        "text": "wa\u00f1ushka"
                     }
                 ]
             },
             {
-                "phrase": "kausanguichu wa\u00f1ushca yanica",
+                "phrase": "kausanguichu wa\u00f1ushka yanica",
                 "phraseTranslated": "\u00bfVIVES? (\u00bfVives? Pens\u00e9 que hab\u00edas muerto \u00a1Broma!)",
                 "words": [
                     {
@@ -480,7 +480,7 @@
                 ]
             },
             {
-                "phrase": "kausanguichu wa\u00f1ushca yanica",
+                "phrase": "kausanguichu wa\u00f1ushka yanica",
                 "phraseTranslated": "\u00bfVIVES? (\u00bfVives? Pens\u00e9 que hab\u00edas muerto \u00a1Broma!)",
                 "words": [
                     {
@@ -522,7 +522,7 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca mar\u00eda capani",
+                "phrase": "\u00f1uca Mar\u00eda capani",
                 "phraseTranslated": "YO (Yo soy Mar\u00eda)",
                 "words": [
                     {
@@ -531,7 +531,7 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca mar\u00eda capani",
+                "phrase": "\u00f1uca Mar\u00eda capani",
                 "phraseTranslated": "YO (Yo soy Mar\u00eda)",
                 "words": [
                     {
@@ -1046,7 +1046,7 @@
                 ]
             },
             {
-                "phrase": "paycuna trabajashpa shinarka",
+                "phrase": "paycuna trabajashka shinarka",
                 "phraseTranslated": "CON SU TRABAJO (Ellos con su trabajo lo hicieron)",
                 "words": [
                     {
@@ -1055,7 +1055,7 @@
                 ]
             },
             {
-                "phrase": "paycuna trabajashpa shinarka",
+                "phrase": "paycuna trabajashka shinarka",
                 "phraseTranslated": "CON SU TRABAJO (Ellos con su trabajo lo hicieron)",
                 "words": [
                     {
@@ -1064,7 +1064,7 @@
                 ]
             },
             {
-                "phrase": "paycuna trabajashpa shinarka",
+                "phrase": "paycuna trabajashka shinarka",
                 "phraseTranslated": "CON SU TRABAJO (Ellos con su trabajo lo hicieron)",
                 "words": [
                     {
@@ -1643,7 +1643,7 @@
                 ]
             },
             {
-                "phrase": "kuitza jariwan rijun",
+                "phrase": "kuitza jariwan rrijun",
                 "phraseTranslated": "SE\u00d1ORITA\/ MUCHACHA (Se\u00f1orita yendo con Joven)",
                 "words": [
                     {
@@ -1652,7 +1652,7 @@
                 ]
             },
             {
-                "phrase": "kuitza jariwan rijun",
+                "phrase": "kuitza jariwan rrijun",
                 "phraseTranslated": "SE\u00d1ORITA\/ MUCHACHA (Se\u00f1orita yendo con Joven)",
                 "words": [
                     {
@@ -1662,7 +1662,7 @@
             },
             {
                 "phrase": "kuitza jariwan rrijun",
-                "phraseTranslated": "YENDO (La se\u00f1orita se est\u00e1 yendo con el hombre)",
+                "phraseTranslated": "SE\u00d1ORITA\/ MUCHACHA (Se\u00f1orita yendo con Joven)",
                 "words": [
                     {
                         "text": "rrijun"
@@ -2016,7 +2016,7 @@
                 "phraseTranslated": "AL PERRO ( Vaya ba\u00f1e al perro)",
                 "words": [
                     {
-                        "text": "armachigri"
+                        "text": "armanchigri"
                     }
                 ]
             }
@@ -2443,7 +2443,7 @@
                 ]
             },
             {
-                "phrase": "kamitza sisacuna charin",
+                "phrase": "kamitza sisacunata charin",
                 "phraseTranslated": "CAMISA (La camisa tiene flores)",
                 "words": [
                     {
@@ -2453,7 +2453,7 @@
             },
             {
                 "phrase": "kamitza sisacunata charin",
-                "phraseTranslated": "LAS FLORES (La camisa tiene flores)",
+                "phraseTranslated": "CAMISA (La camisa tiene flores)",
                 "words": [
                     {
                         "text": "sisacunata"
@@ -2461,7 +2461,7 @@
                 ]
             },
             {
-                "phrase": "kamitza sisacuna charin",
+                "phrase": "kamitza sisacunata charin",
                 "phraseTranslated": "CAMISA (La camisa tiene flores)",
                 "words": [
                     {
@@ -2809,7 +2809,7 @@
                 ]
             },
             {
-                "phrase": "waranga pichapatsapami apan",
+                "phrase": "waranga pichapatsagpami apan",
                 "phraseTranslated": "QUINIENTOS (Me llevan por mil quinientos)",
                 "words": [
                     {
@@ -2818,8 +2818,8 @@
                 ]
             },
             {
-                "phrase": "waranga picha patsagpami apan",
-                "phraseTranslated": "ME LLEVAN(Me llevan por mil quinientos)",
+                "phrase": "waranga pichapatsagpami apan",
+                "phraseTranslated": "QUINIENTOS (Me llevan por mil quinientos)",
                 "words": [
                     {
                         "text": "apan"
@@ -2944,7 +2944,7 @@
                 ]
             },
             {
-                "phrase": "wawaka cuita micujun",
+                "phrase": "wawaka kuita micujun",
                 "phraseTranslated": "EL NI\u00d1O (El ni\u00f1o come cuy)",
                 "words": [
                     {
@@ -2953,16 +2953,16 @@
                 ]
             },
             {
-                "phrase": "wawaka cuita micujun",
+                "phrase": "wawaka kuita micujun",
                 "phraseTranslated": "EL NI\u00d1O (El ni\u00f1o come cuy)",
                 "words": [
                     {
-                        "text": "cuita"
+                        "text": "kuita"
                     }
                 ]
             },
             {
-                "phrase": "wawaka cuita micujun",
+                "phrase": "wawaka kuita micujun",
                 "phraseTranslated": "EL NI\u00d1O (El ni\u00f1o come cuy)",
                 "words": [
                     {
@@ -2971,7 +2971,7 @@
                 ]
             },
             {
-                "phrase": "wawaka cuita micujun",
+                "phrase": "wawaka kuita micujun",
                 "phraseTranslated": "EL NI\u00d1O (El ni\u00f1o come cuy)",
                 "words": [
                     {
@@ -3064,7 +3064,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3073,7 +3073,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3082,7 +3082,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3091,7 +3091,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3100,7 +3100,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3109,16 +3109,16 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
-                        "text": "sesquilepi"
+                        "text": "Sesquilepi"
                     }
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3133,7 +3133,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -3837,8 +3837,8 @@
                 ]
             },
             {
-                "phrase": "chay tandaka \u00f1ucapami",
-                "phraseTranslated": "ESE (Ese pan es m\u00edo)",
+                "phrase": "chay wasika kikinbagchu",
+                "phraseTranslated": "ESA (\u00bfEsa casa es de usted?)",
                 "words": [
                     {
                         "text": "chay"
@@ -3846,8 +3846,8 @@
                 ]
             },
             {
-                "phrase": "chay tandaka \u00f1ucapami",
-                "phraseTranslated": "ESE (Ese pan es m\u00edo)",
+                "phrase": "chay wasika kikinbagchu",
+                "phraseTranslated": "ESA (\u00bfEsa casa es de usted?)",
                 "words": [
                     {
                         "text": "wasika"
@@ -3855,8 +3855,8 @@
                 ]
             },
             {
-                "phrase": "chay tandaka \u00f1ucapami",
-                "phraseTranslated": "ESE (Ese pan es m\u00edo)",
+                "phrase": "chay wasika kikinbagchu",
+                "phraseTranslated": "ESA (\u00bfEsa casa es de usted?)",
                 "words": [
                     {
                         "text": "kikinbagchu"
@@ -3864,8 +3864,8 @@
                 ]
             },
             {
-                "phrase": "chay tandaka \u00f1ucapami",
-                "phraseTranslated": "ESE (Ese pan es m\u00edo)",
+                "phrase": "chay wasika kikinbagchu",
+                "phraseTranslated": "ESA (\u00bfEsa casa es de usted?)",
                 "words": [
                     {
                         "text": "chay"
@@ -4343,7 +4343,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4352,7 +4352,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4361,16 +4361,16 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
-                        "text": "juanbami"
+                        "text": "Juanbami"
                     }
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4379,7 +4379,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4388,7 +4388,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4397,7 +4397,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4412,7 +4412,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -4427,7 +4427,7 @@
                 ]
             },
             {
-                "phrase": "chay sisaka rosami kaika waitasisami",
+                "phrase": "chay sisaka Rosami kaika waitasisami",
                 "phraseTranslated": "ESA(Esa flor es una rosa y esta es una margarita)",
                 "words": [
                     {
@@ -4436,7 +4436,7 @@
                 ]
             },
             {
-                "phrase": "chay sisaka rosami kaika waitasisami",
+                "phrase": "chay sisaka Rosami kaika waitasisami",
                 "phraseTranslated": "ESA(Esa flor es una rosa y esta es una margarita)",
                 "words": [
                     {
@@ -4445,16 +4445,16 @@
                 ]
             },
             {
-                "phrase": "chay sisaka rosami kaika waitasisami",
+                "phrase": "chay sisaka Rosami kaika waitasisami",
                 "phraseTranslated": "ESA(Esa flor es una rosa y esta es una margarita)",
                 "words": [
                     {
-                        "text": "rosami"
+                        "text": "Rosami"
                     }
                 ]
             },
             {
-                "phrase": "chay sisaka rosami kaika waitasisami",
+                "phrase": "chay sisaka Rosami kaika waitasisami",
                 "phraseTranslated": "ESA(Esa flor es una rosa y esta es una margarita)",
                 "words": [
                     {
@@ -4463,7 +4463,7 @@
                 ]
             },
             {
-                "phrase": "chay sisaka rosami kaika waitasisami",
+                "phrase": "chay sisaka Rosami kaika waitasisami",
                 "phraseTranslated": "ESA(Esa flor es una rosa y esta es una margarita)",
                 "words": [
                     {
@@ -4700,16 +4700,16 @@
                 ]
             },
             {
-                "phrase": "juanito vira",
+                "phrase": "Juanito vira",
                 "phraseTranslated": "JUANITO (Juanito es gordo)",
                 "words": [
                     {
-                        "text": "juanito"
+                        "text": "Juanito"
                     }
                 ]
             },
             {
-                "phrase": "juanito vira",
+                "phrase": "Juanito vira",
                 "phraseTranslated": "JUANITO (Juanito es gordo)",
                 "words": [
                     {
@@ -4736,7 +4736,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -4745,7 +4745,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -4754,7 +4754,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -4763,16 +4763,16 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
-                        "text": "rukucarca"
+                        "text": "rukucarka"
                     }
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
@@ -4781,7 +4781,7 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
@@ -4790,16 +4790,16 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
-                        "text": "rosata"
+                        "text": "Rosata"
                     }
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
@@ -4808,7 +4808,7 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
@@ -4817,7 +4817,7 @@
                 ]
             },
             {
-                "phrase": "\u00f1uca tia rosata ninanda juyani",
+                "phrase": "\u00f1uca tia Rosata ninanda juyani",
                 "phraseTranslated": "MI (Quiero mucho a mi t\u00eda Rosa)",
                 "words": [
                     {
@@ -4827,7 +4827,7 @@
                         "text": "tia"
                     },
                     {
-                        "text": "rosata"
+                        "text": "Rosata"
                     },
                     {
                         "text": "juyani"
@@ -4933,7 +4933,7 @@
                 ]
             },
             {
-                "phrase": "kamba kiru killuyashca",
+                "phrase": "kamba kiru killuyashka",
                 "phraseTranslated": "TUS (Tus dientes est\u00e1n amarillos)",
                 "words": [
                     {
@@ -4942,7 +4942,7 @@
                 ]
             },
             {
-                "phrase": "kamba kiru killuyashca",
+                "phrase": "kamba kiru killuyashka",
                 "phraseTranslated": "TUS (Tus dientes est\u00e1n amarillos)",
                 "words": [
                     {
@@ -4951,11 +4951,11 @@
                 ]
             },
             {
-                "phrase": "kamba kiru killuyashca",
+                "phrase": "kamba kiru killuyashka",
                 "phraseTranslated": "TUS (Tus dientes est\u00e1n amarillos)",
                 "words": [
                     {
-                        "text": "killuyashca"
+                        "text": "killuyashka"
                     }
                 ]
             },
@@ -5068,7 +5068,7 @@
                 ]
             },
             {
-                "phrase": "kamba walcaca Kurichu",
+                "phrase": "kamba walcaka Kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
@@ -5077,16 +5077,16 @@
                 ]
             },
             {
-                "phrase": "kamba walcaca Kurichu",
+                "phrase": "kamba walcaka Kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
-                        "text": "walcaca"
+                        "text": "walcaka"
                     }
                 ]
             },
             {
-                "phrase": "kamba walcaca Kurichu",
+                "phrase": "kamba walcaka Kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
@@ -5158,16 +5158,16 @@
                 ]
             },
             {
-                "phrase": "carlituspag jatunuma",
+                "phrase": "Carlituspag jatunuma",
                 "phraseTranslated": "CARLITOS ES(Carlitos es cabez\u00f3n)",
                 "words": [
                     {
-                        "text": "carlituspag"
+                        "text": "Carlituspag"
                     }
                 ]
             },
             {
-                "phrase": "carlituspag jatunuma",
+                "phrase": "Carlituspag jatunuma",
                 "phraseTranslated": "CARLITOS ES(Carlitos es cabez\u00f3n)",
                 "words": [
                     {
@@ -5176,7 +5176,7 @@
                 ]
             },
             {
-                "phrase": "awaucuka paskarianllu",
+                "phrase": "awaucuka pascarianllu",
                 "phraseTranslated": "EL TALLER (\u00bfEl taller est\u00e1 abierto?)",
                 "words": [
                     {
@@ -5185,11 +5185,11 @@
                 ]
             },
             {
-                "phrase": "awaucuka paskarianllu",
+                "phrase": "awaucuka pascarianllu",
                 "phraseTranslated": "EL TALLER (\u00bfEl taller est\u00e1 abierto?)",
                 "words": [
                     {
-                        "text": "paskarianllu"
+                        "text": "pascarianllu"
                     }
                 ]
             },
@@ -5275,16 +5275,16 @@
                 ]
             },
             {
-                "phrase": "ximenapa \u00f1awiguka aligupachami",
+                "phrase": "Ximenapa \u00f1awiguka aligupachami",
                 "phraseTranslated": "XIMENA(La cara de Ximena si es bonita)",
                 "words": [
                     {
-                        "text": "ximenapa"
+                        "text": "Ximenapa"
                     }
                 ]
             },
             {
-                "phrase": "ximenapa \u00f1awiguka aligupachami",
+                "phrase": "Ximenapa \u00f1awiguka aligupachami",
                 "phraseTranslated": "XIMENA(La cara de Ximena si es bonita)",
                 "words": [
                     {
@@ -5293,7 +5293,7 @@
                 ]
             },
             {
-                "phrase": "ximenapa \u00f1awiguka aligupachami",
+                "phrase": "Ximenapa \u00f1awiguka aligupachami",
                 "phraseTranslated": "XIMENA(La cara de Ximena si es bonita)",
                 "words": [
                     {
@@ -5540,7 +5540,7 @@
                 "phraseTranslated": "CARMEN (Carmen tiene dos orejas)",
                 "words": [
                     {
-                        "text": "carmen"
+                        "text": "Carmen"
                     },
                     {
                         "text": "iskai"
@@ -5937,7 +5937,7 @@
                 ]
             },
             {
-                "phrase": "tauca kachicambucuna rrirca",
+                "phrase": "tauca kachicambucuna rrirka",
                 "phraseTranslated": "MUCHOS(Muchos armadillos se fueron)",
                 "words": [
                     {
@@ -5946,7 +5946,7 @@
                 ]
             },
             {
-                "phrase": "tauca kachicambucuna rrirca",
+                "phrase": "tauca kachicambucuna rrirka",
                 "phraseTranslated": "MUCHOS(Muchos armadillos se fueron)",
                 "words": [
                     {
@@ -5955,16 +5955,16 @@
                 ]
             },
             {
-                "phrase": "tauca kachicambucuna rrirca",
+                "phrase": "tauca kachicambucuna rrirka",
                 "phraseTranslated": "MUCHOS(Muchos armadillos se fueron)",
                 "words": [
                     {
-                        "text": "rrirca"
+                        "text": "rrirka"
                     }
                 ]
             },
             {
-                "phrase": "tauca kachicambucuna rrirca",
+                "phrase": "tauca kachicambucuna rrirka",
                 "phraseTranslated": "MUCHOS(Muchos armadillos se fueron)",
                 "words": [
                     {
@@ -6476,7 +6476,7 @@
         "level": 8,
         "phrases": [
             {
-                "phrase": "mizapi yaku jicharishka finduan chakichi",
+                "phrase": "mizapi yaku jicharishka finduan chakishi",
                 "phraseTranslated": "EN LA MESA (Se reg\u00f3 agua en la mesa, limpie con trapo)",
                 "words": [
                     {
@@ -6485,7 +6485,7 @@
                 ]
             },
             {
-                "phrase": "mizapi yaku jicharishka finduan chakichi",
+                "phrase": "mizapi yaku jicharishka finduan chakishi",
                 "phraseTranslated": "EN LA MESA (Se reg\u00f3 agua en la mesa, limpie con trapo)",
                 "words": [
                     {
@@ -6494,7 +6494,7 @@
                 ]
             },
             {
-                "phrase": "mizapi yaku jicharishka finduan chakichi",
+                "phrase": "mizapi yaku jicharishka finduan chakishi",
                 "phraseTranslated": "EN LA MESA (Se reg\u00f3 agua en la mesa, limpie con trapo)",
                 "words": [
                     {
@@ -6503,7 +6503,7 @@
                 ]
             },
             {
-                "phrase": "mizapi yaku jicharishka finduan chakichi",
+                "phrase": "mizapi yaku jicharishka finduan chakishi",
                 "phraseTranslated": "EN LA MESA (Se reg\u00f3 agua en la mesa, limpie con trapo)",
                 "words": [
                     {
@@ -6512,7 +6512,7 @@
                 ]
             },
             {
-                "phrase": "mizapi yaku jicharishka finduan chakichi",
+                "phrase": "mizapi yaku jicharishka finduan chakishi",
                 "phraseTranslated": "EN LA MESA (Se reg\u00f3 agua en la mesa, limpie con trapo)",
                 "words": [
                     {
@@ -8011,7 +8011,7 @@
             },
             {
                 "phrase": "kamitza sisacunata charin",
-                "phraseTranslated": "LAS FLORES (La camisa tiene flores)",
+                "phraseTranslated": "CAMISA (La camisa tiene flores)",
                 "words": [
                     {
                         "text": "sisacunata"
@@ -8154,7 +8154,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -8163,7 +8163,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -8172,7 +8172,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -8181,7 +8181,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -8190,7 +8190,7 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
@@ -8199,11 +8199,11 @@
                 ]
             },
             {
-                "phrase": "picha chunga kimsa kilkayta yachachicuna sesquilepi",
+                "phrase": "picha chunga kimsa kilkayta yachachicuna Sesquilepi",
                 "phraseTranslated": "CINCO (53 profesores escriben en Sesquil\u00e9)",
                 "words": [
                     {
-                        "text": "sesquilepi"
+                        "text": "Sesquilepi"
                     }
                 ]
             },
@@ -8703,7 +8703,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8712,7 +8712,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8721,16 +8721,16 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
-                        "text": "juanbami"
+                        "text": "Juanbami"
                     }
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8739,7 +8739,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8748,7 +8748,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8757,7 +8757,7 @@
                 ]
             },
             {
-                "phrase": "kay libruka juanbami chaika \u00f1uca librumi",
+                "phrase": "kay libruka Juanbami chaika \u00f1uca librumi",
                 "phraseTranslated": "ESTE (Este libro es de Juan y ese es m\u00edo)",
                 "words": [
                     {
@@ -8853,7 +8853,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -8862,7 +8862,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -8871,7 +8871,7 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
@@ -8880,11 +8880,11 @@
                 ]
             },
             {
-                "phrase": "culebra suni suni rukucarca",
+                "phrase": "culebra suni suni rukucarka",
                 "phraseTranslated": "CULEBRA (Esa culebra era muy larga)",
                 "words": [
                     {
-                        "text": "rukucarca"
+                        "text": "rukucarka"
                     }
                 ]
             },
@@ -8916,7 +8916,7 @@
                 ]
             },
             {
-                "phrase": "kamba walcaca kurichu",
+                "phrase": "kamba walcaka kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
@@ -8925,16 +8925,16 @@
                 ]
             },
             {
-                "phrase": "kamba walcaca kurichu",
+                "phrase": "kamba walcaka kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
-                        "text": "walcaca"
+                        "text": "walcaka"
                     }
                 ]
             },
             {
-                "phrase": "kamba walcaca kurichu",
+                "phrase": "kamba walcaka kurichu",
                 "phraseTranslated": "TU(\u00bfT\u00fa collar es de oro?)",
                 "words": [
                     {
@@ -9216,11 +9216,11 @@
                 ]
             },
             {
-                "phrase": "tauca kachicambucuna rrirca",
+                "phrase": "tauca kachicambucuna rrirka",
                 "phraseTranslated": "MUCHOS(Muchos armadillos se fueron)",
                 "words": [
                     {
-                        "text": "rrirca"
+                        "text": "rrirka"
                     }
                 ]
             },
