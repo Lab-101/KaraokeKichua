@@ -91,6 +91,7 @@ public class WriteActivity : Activity {
 	}
 
 	private void ClearActivity () {
+		resultsButton.gameObject.SetActive(false);
 		DestroyPhrase ();
 		DestroyWord ();
 	}

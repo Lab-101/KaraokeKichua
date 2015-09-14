@@ -93,6 +93,7 @@ public class WordActivity : Activity {
 	} 
 	
 	private void ClearActivity () {
+		correctWords = 0;
 		DestroyWordList ();
 		ClearImagesAndTittles ();
 	}

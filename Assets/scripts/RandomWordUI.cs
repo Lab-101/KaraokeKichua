@@ -10,10 +10,6 @@ public class RandomWordUI : MonoBehaviour {
 	private List<Button> randomWordsButtons = new List<Button>();
 	public Action <Button> RandomWordOfPhraseSelected;
 	public string phraseText = "";
-	public Action FinishedBuiltPhrase {
-		get;
-		set;
-	}
 	
 	public void DrawButtonsByWord(List<Word> wordList){
 		List<Word> randomList = GetNewListOfWords (wordList);
@@ -60,11 +56,6 @@ public class RandomWordUI : MonoBehaviour {
 			Destroy (button.gameObject);
 		}
 		randomWordsButtons.Clear ();
-		FinishGame ();
 	}
-	
-	private void FinishGame(){
-		if (FinishedBuiltPhrase!=null)
-			FinishedBuiltPhrase();
-	}
+
 }

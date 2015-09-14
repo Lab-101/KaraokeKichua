@@ -24,7 +24,6 @@ public class PhraseActivity : Activity {
 			ReadDataFromJson ();
 		}
 		randomWordsPhrase.RandomWordOfPhraseSelected += HandleRandomWordOfPhraseSelected;
-		randomWordsPhrase.FinishedBuiltPhrase += HandleFinishedBuiltPhrase;
 		ActivityStarted += HandleActivityStarted;
 		ActivityDataReseted += ReadDataFromJson;
 	}
@@ -56,6 +55,8 @@ public class PhraseActivity : Activity {
 	private void ClearActivity () {
 		wordsOfPhraseCounter = 0;
 		phraseBuiltField.text = " ";
+		randomWordsPhrase.DestroyAllButtons();
+		resultsButton.gameObject.SetActive(false);
 	}
 
 	private void HandleRandomWordOfPhraseSelected (Button randomWordButton) {
@@ -73,14 +74,16 @@ public class PhraseActivity : Activity {
 			wordsOfPhraseCounter = 0;
 			randomWordsPhrase.DestroyAllButtons();
 			SetActivityAsFinished();
+			FinishBuiltPhrase();
 		}
 	}
 
-	private void HandleFinishedBuiltPhrase () {
+	private void FinishBuiltPhrase () {
 		resultsButton.gameObject.SetActive(true);
 	}
 
 	private void CreateActivity () {
+		randomWordsPhrase.DestroyAllButtons();
 		phrase = GetRandomPhrase (data.phrases);
 		phraseTranslatedField.text = phrase.phraseTranslated;
 		randomWordsPhrase.DrawButtonsByWord (phrase.words);
