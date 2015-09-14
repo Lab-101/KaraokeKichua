@@ -109,7 +109,7 @@ public class Map : MonoBehaviour {
 			level.UnlockNextLevel = HandleUnlockNextLevel;
 			if (isLevelUnlocked) {
 				indexLevelSelected = index;
-				welcomePanel.transform.FindChild("WelcomeMessage").GetComponent<Text>().text = (index != 0)? "Contin\u00FAa tu viaje en el <b>Nivel " + levelList[index].numberLevel +"</b>" : "\u00A1Inicia el viaje en <b>Otavalo</b>! haciendo click en el nivel 1";
+				welcomePanel.transform.FindChild("WelcomeMessage").GetComponent<Text>().text = (index != 0)? "Contin\u00FAa tu viaje. Haz click en el <b>Nivel " + levelList[index].numberLevel +"</b>" : "\u00A1Inicia el viaje en <b>Otavalo</b>! Haz click en el Nivel " +  levelList[index].numberLevel;
 			}
 		}
 	}
