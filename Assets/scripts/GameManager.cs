@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
 	public IntroController intro;
 	public Credits credits;
 	public Dictionary dictionary;
+	public GameObject exitPanel;
+	public ExitController exitController;
 
 	private bool IsSelectingSong 
 	{
@@ -106,9 +108,11 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	
-	void Update(){
-		if (Input.GetKeyDown(KeyCode.Escape)) 
-			Application.Quit(); 
+	void Update(){		
+		if (Input.GetKeyDown (KeyCode.Escape)) {
+			exitPanel.SetActive(true);
+			exitController.ChangeCurrentGameState(gameStateBehaviour.GameState);
+		}
 
 		if (IsSelectingSong) {
 			karaoke.SetInactive ();
